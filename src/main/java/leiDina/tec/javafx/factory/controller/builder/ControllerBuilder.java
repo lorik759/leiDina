@@ -4,7 +4,7 @@ package main.java.leiDina.tec.javafx.factory.controller.builder;
 import main.java.leiDina.tec.javafx.exception.BuilderException;
 
 /**
- * The root interface for a controller builder. This interface is implemented my objects that ar abel to instantiate and build a controller for a
+ * The root interface for a controller builder. This interface is implemented my objects that are abel to instantiate and build a controller for a
  * javafx scene.
  *
  * @author vitor.alves

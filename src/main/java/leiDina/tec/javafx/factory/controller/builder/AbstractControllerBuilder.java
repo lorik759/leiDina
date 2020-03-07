@@ -14,7 +14,6 @@ public abstract class AbstractControllerBuilder<T> implements ControllerBuilder<
 
     /**
      * {@inheritDoc}
-     * @param clazz
      */
     @Override
     public T build(Class<?> clazz) throws BuilderException {

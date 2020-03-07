@@ -1,33 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/ApplicationContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/ApplicationContextImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/ApplicationThreadContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/VApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/controller/BaseController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/controller/BaseModelController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/exception/BaseException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/exception/BuilderException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/exception/ControllerException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/exception/VFMLLoaderException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/controller/ControllerFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/controller/ControllerFactoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/controller/builder/AbstractControllerBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/controller/builder/ControllerBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/controller/builder/GenericControllerBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/messages/BaseSystemMessages.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/messages/MessageCreator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/messages/MessageDelegate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/messages/MessageHolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/messages/MessageHolderImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resource/system-messages-holder.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Base implantation of a ControllerFactory and a simple exception creator.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/controller/builder/AbstractControllerBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/controller/builder/AbstractControllerBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/controller/builder/ControllerBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/controller/builder/ControllerBuilder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,8 +209,16 @@
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1582807034440" duration="91000" />
       <workItem from="1583157537325" duration="829000" />
-      <workItem from="1583596940220" duration="2753000" />
+      <workItem from="1583596940220" duration="3959000" />
     </task>
+    <task id="LOCAL-00001" summary="Base implantation of a ControllerFactory and a simple exception creator.">
+      <created>1583601470898</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1583601470898</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,12 +227,22 @@
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <MESSAGE value="Base implantation of a ControllerFactory and a simple exception creator." />
+    <option name="LAST_COMMIT_MESSAGE" value="Base implantation of a ControllerFactory and a simple exception creator." />
   </component>
   <component name="WindowStateProjectService">
+    <state x="879" y="29" width="792" height="982" key="CommitChangelistDialog2" timestamp="1583601470744">
+      <screen x="0" y="27" width="2560" height="988" />
+    </state>
+    <state x="879" y="29" width="792" height="982" key="CommitChangelistDialog2/2560.0.1920.1080/0.27.2560.988@0.27.2560.988" timestamp="1583601470744" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1583600499430">
       <screen x="0" y="27" width="2560" height="988" />
     </state>
     <state width="498" height="446" key="SwitcherDM/2560.0.1920.1080/0.27.2560.988@0.27.2560.988" timestamp="1583600499430" />
+    <state x="943" y="241" width="672" height="678" key="search.everywhere.popup" timestamp="1583601834229">
+      <screen x="0" y="27" width="2560" height="988" />
+    </state>
+    <state x="943" y="241" width="672" height="678" key="search.everywhere.popup/2560.0.1920.1080/0.27.2560.988@0.27.2560.988" timestamp="1583601834229" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
