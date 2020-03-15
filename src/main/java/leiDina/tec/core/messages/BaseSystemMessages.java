@@ -1,11 +1,11 @@
-package main.java.leiDina.tec.messages;
+package main.java.leiDina.tec.core.messages;
 
 /**
  * @author vitor.alves
  */
 public enum BaseSystemMessages implements MessageCreator {
 
-    CONTROLLER_BUILDER_EXCEPTION("controller.builder.exception", 1);
+    ;
 
     private MessageDelegate delagate;
 

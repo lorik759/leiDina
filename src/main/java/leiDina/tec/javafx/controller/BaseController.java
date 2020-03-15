@@ -16,10 +16,6 @@ public abstract class BaseController {
     public BaseController() {
     }
 
-    public void add(Node control) {
-        components.put(control.getId(), control);
-    }
-
     public Node get(String key) {
         return components.get(key);
     }

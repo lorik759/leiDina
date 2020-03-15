@@ -1,4 +1,4 @@
-package main.java.leiDina.tec.messages;
+package main.java.leiDina.tec.core.messages;
 
 /**
  * A message creator indicates and provides information on a resource bundle. It than is able to create a simple {@link MessageHolder} that contains a

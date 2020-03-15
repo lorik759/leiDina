@@ -1,4 +1,4 @@
-package main.java.leiDina.tec.messages;
+package main.java.leiDina.tec.core.messages;
 
 /**
  * A base implantation of a {@link MessageHolder}. It works as a simple pojo that holds a message to be used by the system.

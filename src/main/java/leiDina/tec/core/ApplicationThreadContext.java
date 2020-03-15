@@ -1,4 +1,4 @@
-package main.java.leiDina.tec.javafx;
+package main.java.leiDina.tec.core;
 
 /**
  * @author vitor.alves

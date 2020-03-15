@@ -1,7 +1,7 @@
-package main.java.leiDina.tec.javafx.exception;
+package main.java.leiDina.tec.core.exception;
 
 
-import main.java.leiDina.tec.messages.MessageHolder;
+import main.java.leiDina.tec.core.messages.MessageHolder;
 
 /**
  * @author vitor.alves

@@ -1,8 +1,8 @@
 package main.java.leiDina.tec.javafx.factory.controller.builder;
 
 
+import main.java.leiDina.tec.core.messages.BaseSystemMessages;
 import main.java.leiDina.tec.javafx.exception.BuilderException;
-import main.java.leiDina.tec.messages.BaseSystemMessages;
 import sun.reflect.misc.ReflectUtil;
 
 /**

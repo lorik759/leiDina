@@ -2,7 +2,8 @@ package main.java.leiDina.tec.javafx.factory.controller;
 
 import java.util.HashMap;
 import java.util.Map;
-import main.java.leiDina.tec.javafx.controller.BaseController;
+import main.java.leiDina.tec.core.model.ClassSystemProperties;
+import main.java.leiDina.tec.core.utils.ReflectionUtils;
 import main.java.leiDina.tec.javafx.factory.controller.builder.ControllerBuilder;
 import main.java.leiDina.tec.javafx.factory.controller.builder.GenericControllerBuilder;
 
@@ -15,12 +16,19 @@ import main.java.leiDina.tec.javafx.factory.controller.builder.GenericController
  */
 public class ControllerFactoryImpl implements ControllerFactory {
 
-    private final static Map<Class<?>, ControllerBuilder<?>> buiders = new HashMap<>();
+    private final Map<Class<?>, ControllerBuilder<?>> buiders = new HashMap<>();
 
-    private BaseController currentSceneBaseController;
+    public ControllerFactoryImpl(ClassSystemProperties classSystemProperties) {
+        getBuildersFromProperties(classSystemProperties);
+    }
 
-    static {
-        // Empty for now
+    private void getBuildersFromProperties(ClassSystemProperties classSystemProperties) {
+        for (ClassSystemProperties systemProperty : classSystemProperties.getClassSystemProperties()) {
+            Class<?> type = systemProperty.getType();
+            if (type.isAssignableFrom(ControllerBuilder.class)) {
+                buiders.put(type, (ControllerBuilder<?>) ReflectionUtils.newInstance(type));
+            }
+        }
     }
 
     /**

@@ -1,6 +1,8 @@
-package main.java.leiDina.tec.javafx;
+package main.java.leiDina.tec.core;
 
 
+import main.java.leiDina.tec.beans.factory.BeanFactory;
+import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironment;
 import main.java.leiDina.tec.javafx.factory.controller.ControllerFactory;
 
 /**
@@ -13,10 +15,8 @@ public interface ApplicationContext {
 
     /**
      * A base method to initilize the application context with a reference to the starter class.
-     *
-     * @param starterClass the {@link Class} the started the application.
      */
-    void init(Class<?> starterClass);
+    void init();
 
     /**
      * The base controller factory of the application.
@@ -24,5 +24,9 @@ public interface ApplicationContext {
      * @return the root {@link ControllerFactory} of the application.
      */
     ControllerFactory getControllerFactory();
+
+    BeanFactory getBeanFactory();
+
+    void setEnvironment(ConfigurableApplicationEnvironment environment);
 
 }

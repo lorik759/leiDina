@@ -1,4 +1,4 @@
-package main.java.leiDina.tec.messages;
+package main.java.leiDina.tec.core.messages;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
