@@ -1,4 +1,4 @@
-package main.java.leiDina.tec.javafx.factory.controller.builder;
+package main.java.leiDina.tec.javafx.factory.builder;
 
 /**
  * A generic builder for a controller. Instantiates a simple object with no new functionality.
@@ -6,6 +6,11 @@ package main.java.leiDina.tec.javafx.factory.controller.builder;
  * @author vitor.alves
  */
 public class GenericControllerBuilder extends AbstractControllerBuilder<Object> {
+
+    @Override
+    public Class<Object> getType() {
+        return Object.class;
+    }
 
     /**
      * {@inheritDoc}

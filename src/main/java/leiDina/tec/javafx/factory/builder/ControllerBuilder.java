@@ -1,4 +1,4 @@
-package main.java.leiDina.tec.javafx.factory.controller.builder;
+package main.java.leiDina.tec.javafx.factory.builder;
 
 
 import main.java.leiDina.tec.javafx.exception.BuilderException;
@@ -19,5 +19,7 @@ public interface ControllerBuilder<T> {
      * @throws BuilderException if the instantiation or configuration of the object fails.
      */
     T build(Class<?> clazz) throws BuilderException;
+
+    Class<T> getType();
 
 }

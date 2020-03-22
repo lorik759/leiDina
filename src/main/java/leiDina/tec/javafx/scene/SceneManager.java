@@ -1,12 +1,17 @@
 package main.java.leiDina.tec.javafx.scene;
 
-import main.java.leiDina.tec.javafx.controller.BaseController;
+import java.io.IOException;
+import javafx.scene.Node;
+import main.java.leiDina.tec.javafx.VFXMLLoader;
 
 /**
  * @author vitor.alves
  */
-public interface SceneManager {
+public class SceneManager {
 
-    BaseController getCurrentController();
+    public Node getScene(Scenes scene) throws IOException {
+        VFXMLLoader loader = new VFXMLLoader(scene);
+        return loader.load();
+    }
 
 }

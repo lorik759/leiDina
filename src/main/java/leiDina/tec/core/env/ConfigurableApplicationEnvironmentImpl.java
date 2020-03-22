@@ -27,7 +27,7 @@ public class ConfigurableApplicationEnvironmentImpl implements ConfigurableAppli
     }
 
     private SystemProperties<Class<?>> loadSystemPropertiesFor(ClassLoader classLoader, Class<?> type) {
-        String name = type.getName();
+        String name = type.getSimpleName();
         ClassSystemProperties classSystemProperties = cache.get(name);
         if (classSystemProperties != null) {
             return classSystemProperties;

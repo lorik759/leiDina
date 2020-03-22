@@ -7,19 +7,19 @@ import main.java.leiDina.tec.core.messages.MessageHolder;
 /**
  * @author vitor.alves
  */
-public class VFMLLoaderException extends BaseException {
+public class VFXException extends BaseException {
 
     private static final long serialVersionUID = 6853471773656296804L;
 
-    public VFMLLoaderException(MessageHolder messageHolder) {
+    public VFXException(MessageHolder messageHolder) {
         super(messageHolder);
     }
 
-    public VFMLLoaderException(MessageHolder messageHolder, Throwable cause) {
+    public VFXException(MessageHolder messageHolder, Throwable cause) {
         super(messageHolder, cause);
     }
 
-    public VFMLLoaderException(Throwable cause) {
+    public VFXException(Throwable cause) {
         super(cause);
     }
 }

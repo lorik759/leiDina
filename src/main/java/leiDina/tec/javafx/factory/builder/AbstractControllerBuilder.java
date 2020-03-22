@@ -1,4 +1,4 @@
-package main.java.leiDina.tec.javafx.factory.controller.builder;
+package main.java.leiDina.tec.javafx.factory.builder;
 
 
 import main.java.leiDina.tec.javafx.exception.BuilderException;
@@ -21,6 +21,9 @@ public abstract class AbstractControllerBuilder<T> implements ControllerBuilder<
         doSpecificStuff(instance);
         return instance;
     }
+
+    @Override
+    public abstract Class<T> getType();
 
     /**
      * Do specific stuff to the instance.

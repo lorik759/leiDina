@@ -11,7 +11,15 @@ public enum FXSystemMessages implements MessageCreator {
 
     INSTANTIATING_CONTROLLER_EXCEPTION("instantiating.controller.exception", 1),
 
-    CREATE_CONTROLLER_BUILDER_EXCEPTION("create.controller.builder", 1);
+    CREATE_CONTROLLER_BUILDER_EXCEPTION("create.controller.builder", 1),
+
+    CREATE_NODE_ASSOCIATION_EXCEPTION("create.node.association", 1),
+
+    NO_COMPONENT_OF_ID("no.component.of.id", 1),
+
+    MODEL_SCENE_ASSOCIATION("model.scene.association", 2),
+
+    SCENE_LOADING_EXCEPTION("scene.loading.exception", 1);
 
     private MessageDelegate delagate;
 
@@ -26,6 +34,7 @@ public enum FXSystemMessages implements MessageCreator {
         this.numArgs = numArgs;
         this.delagate = MessageDelegate.getMessageDelegate();
     }
+
     @Override
     public MessageHolder create(Object... args) {
         return delagate.createMessageHolder(this, args);

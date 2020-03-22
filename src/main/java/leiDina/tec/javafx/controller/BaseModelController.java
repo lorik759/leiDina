@@ -5,12 +5,15 @@ package main.java.leiDina.tec.javafx.controller;
  *
  * @author vitor.alves
  */
-public abstract class BaseController<M> {
+public abstract class BaseModelController<M> {
 
     private M model;
 
-    public BaseController() {
+    public BaseModelController() {
         super();
+    }
+
+    public void initialize() {
         this.model = createModel();
     }
 

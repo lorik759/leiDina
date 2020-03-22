@@ -15,14 +15,9 @@ public class ResourceUtils {
         URLConnection urlConnection = null;
         Properties properties = new Properties();
         urlConnection = url.openConnection();
-        InputStream inputStream = urlConnection.getInputStream();
-        try {
+        try (InputStream inputStream = urlConnection.getInputStream()) {
             properties.loadFromXML(inputStream);
             return properties;
-        } catch (IOException e) {
-            throw e;
-        } finally {
-            inputStream.close();
         }
     }
 }

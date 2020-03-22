@@ -1,13 +1,10 @@
 package main.java.leiDina.tec.core;
 
 
-import javafx.util.BuilderFactory;
-import main.java.leiDina.tec.beans.factory.BeanFactory;
 import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironment;
 import main.java.leiDina.tec.core.model.ApplicationDefinitions;
-import main.java.leiDina.tec.core.model.SystemProperties;
-import main.java.leiDina.tec.javafx.factory.controller.ControllerFactory;
-import main.java.leiDina.tec.javafx.factory.controller.ControllerFactoryImpl;
+import main.java.leiDina.tec.javafx.factory.ControllerFactory;
+import main.java.leiDina.tec.javafx.factory.ControllerFactoryImpl;
 
 /**
  * A base implementation of the {@link ApplicationContext} interface. This implementation provides the base implementation of all application context
@@ -15,27 +12,23 @@ import main.java.leiDina.tec.javafx.factory.controller.ControllerFactoryImpl;
  *
  * @author vitor.alves
  */
-public class FullApplicationContext implements ApplicationContext {
+public class ApplicationContextImpl implements ApplicationContext {
 
     private final ApplicationDefinitions applicationDefinitions;
 
     private ControllerFactory controllerFactory;
 
-    private BuilderFactory builderFactory;
-
-    private BeanFactory beanFactory;
-
     private ConfigurableApplicationEnvironment environment;
 
-    public FullApplicationContext(ApplicationDefinitions applicationDefinitions) {
+    public ApplicationContextImpl(ApplicationDefinitions applicationDefinitions) {
         this.applicationDefinitions = applicationDefinitions;
     }
 
     @Override
     public void init() {
         applicationDefinitions.getLogger().info("Creating Controller Factory.");
-        SystemProperties<Class<?>> classSystemPropertiesForControllerFactory = environment.loadSystemPropertiesFor(ControllerFactory.class);
-        this.controllerFactory = new ControllerFactoryImpl(classSystemPropertiesForControllerFactory);
+        this.controllerFactory = new ControllerFactoryImpl();
+        controllerFactory.init(environment);
     }
 
     /**
@@ -44,11 +37,6 @@ public class FullApplicationContext implements ApplicationContext {
     @Override
     public ControllerFactory getControllerFactory() {
         return this.controllerFactory;
-    }
-
-    @Override
-    public BeanFactory getBeanFactory() {
-        return this.beanFactory;
     }
 
     @Override

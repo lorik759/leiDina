@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
-    <entry key="ControllerFactory"></entry>
+    <entry key="ControllerFactory">
+        main.java.leiDina.tec.javafx.factory.builder.GenericControllerBuilder
+    </entry>
+    <entry key="ModelSceneWire">
+        main.java.leiDina.tec.javafx.service.TextFieldNodeAssociation
+    </entry>
 </properties>

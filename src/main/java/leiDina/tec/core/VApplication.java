@@ -10,18 +10,13 @@ import main.java.leiDina.tec.core.model.ApplicationDefinitions;
 
 /**
  * A class that can bootstrap and launch a VApplication. The VApplication works as a additional structure for a simple fx application, in which a
- * VApplication adds a dependency injection support and a full integration with a java fx controllers and controls. Base an a {@link
- * main.java.leiDina.tec.core.enums.Profile} the application knows which features to utilize.
+ * VApplication adds a full integration with a java fx controllers and models, for a full MVC structure.
  *
  * @author vitor.alves
  */
 public class VApplication {
 
     private static final Logger logger = Logger.getLogger(VApplication.class.getName());
-
-    private Set<Class<?>> primeryClasses;
-
-    private Class<?> mainApplicationClass;
 
     private ApplicationDefinitions applicationDefinitions;
 
@@ -32,16 +27,16 @@ public class VApplication {
     }
 
     public VApplication(Class<?>... primeryClasses) {
-        this.primeryClasses = new LinkedHashSet<>(Arrays.asList(primeryClasses));
-        this.mainApplicationClass = deduceMainClass();
-        this.applicationDefinitions = new ApplicationDefinitions(logger, this.mainApplicationClass, this.primeryClasses);
+        Set<Class<?>> primeryClassesSet = new LinkedHashSet<>(Arrays.asList(primeryClasses));
+        Class<?> mainApplicationClass = deduceMainClass();
+        this.applicationDefinitions = new ApplicationDefinitions(logger, mainApplicationClass, primeryClassesSet);
     }
 
     private Class<?> deduceMainClass() {
         try {
             StackTraceElement[] stackTraceElements = new RuntimeException().getStackTrace();
             for (StackTraceElement stackTraceElement : stackTraceElements) {
-                // if using with a FX application, the starting method is "start"
+                // using with a FX application, the starting method is "start"
                 if ("main".equals(stackTraceElement.getMethodName()) || "start".equals(stackTraceElement.getMethodName())) {
                     return Class.forName(stackTraceElement.getClassName());
                 }
@@ -73,15 +68,8 @@ public class VApplication {
         return this.environment;
     }
 
-    private ApplicationContext createApplicationContext() {
-        switch (applicationDefinitions.getProfile()) {
-            case BEAN:
-                return null;
-            case FX:
-                return null;
-            default:
-                return new FullApplicationContext(applicationDefinitions);
-        }
+    protected ApplicationContext createApplicationContext() {
+        return new ApplicationContextImpl(applicationDefinitions);
     }
 
     public void setEnvironment(ConfigurableApplicationEnvironment environment) {

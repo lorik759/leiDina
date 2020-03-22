@@ -2,8 +2,6 @@ package main.java.leiDina.tec.core.model;
 
 import java.util.Set;
 import java.util.logging.Logger;
-import main.java.leiDina.tec.core.annotation.VApplicationProfile;
-import main.java.leiDina.tec.core.enums.Profile;
 
 /**
  * A model for the base definitions for a VApplication. This contains all information for the startup of the application.
@@ -17,8 +15,6 @@ public class ApplicationDefinitions {
     private final Class<?> starterClass;
 
     private final Set<Class<?>> primeryClasses;
-
-    private Profile profile;
 
     public ApplicationDefinitions(Logger logger, Class<?> starterClass, Set<Class<?>> primeryClasses) {
         this.logger = logger;
@@ -50,22 +46,5 @@ public class ApplicationDefinitions {
      */
     public Set<Class<?>> getPrimeryClasses() {
         return primeryClasses;
-    }
-
-    /**
-     * Gets the profile of the application.
-     *
-     * @return {@link Profile}
-     */
-    public Profile getProfile() {
-        if (profile == null) {
-            VApplicationProfile annotation = starterClass.getAnnotation(VApplicationProfile.class);
-            if (annotation != null) {
-                this.profile = annotation.value();
-            } else {
-                this.profile = Profile.FULL;
-            }
-        }
-        return this.profile;
     }
 }
