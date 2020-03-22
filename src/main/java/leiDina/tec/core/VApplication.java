@@ -41,6 +41,7 @@ public class VApplication {
         try {
             StackTraceElement[] stackTraceElements = new RuntimeException().getStackTrace();
             for (StackTraceElement stackTraceElement : stackTraceElements) {
+                // if using with a FX application, the starting method is "start"
                 if ("main".equals(stackTraceElement.getMethodName()) || "start".equals(stackTraceElement.getMethodName())) {
                     return Class.forName(stackTraceElement.getClassName());
                 }

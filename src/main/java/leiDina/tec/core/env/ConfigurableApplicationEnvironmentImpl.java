@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 import main.java.leiDina.tec.core.model.ClassSystemProperties;
+import main.java.leiDina.tec.core.model.SystemProperties;
 import main.java.leiDina.tec.core.utils.ClassUtils;
 import main.java.leiDina.tec.core.utils.ResourceUtils;
 import main.java.leiDina.tec.core.utils.StringUtils;
@@ -20,12 +21,12 @@ public class ConfigurableApplicationEnvironmentImpl implements ConfigurableAppli
 
     private static final Map<String, ClassSystemProperties> cache = new HashMap<>();
 
-    public ClassSystemProperties loadSystemPropertiesFor(Class<?> type) {
+    public SystemProperties<Class<?>> loadSystemPropertiesFor(Class<?> type) {
         ClassLoader classLoader = ClassUtils.getClassLoader();
         return loadSystemPropertiesFor(classLoader, type);
     }
 
-    private ClassSystemProperties loadSystemPropertiesFor(ClassLoader classLoader, Class<?> type) {
+    private SystemProperties<Class<?>> loadSystemPropertiesFor(ClassLoader classLoader, Class<?> type) {
         String name = type.getName();
         ClassSystemProperties classSystemProperties = cache.get(name);
         if (classSystemProperties != null) {
@@ -40,7 +41,7 @@ public class ConfigurableApplicationEnvironmentImpl implements ConfigurableAppli
                 String values = (String) properties.get(name);
                 for (String classes : StringUtils.replaceNewLineAndSplitComma(values)) {
                     Class<?> aClass = Class.forName(classes.trim());
-                    classSystemProperties.addSystemProperty(new ClassSystemProperties(aClass, aClass.getSimpleName()));
+                    classSystemProperties.addSystemProperty(aClass);
                 }
             }
             cache.put(name, classSystemProperties);

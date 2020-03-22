@@ -4,15 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * A model for system properties of type classes.
+ *
  * @author vitor.alves
  */
-public class ClassSystemProperties {
+public class ClassSystemProperties implements SystemProperties<Class<?>> {
 
     private Class<?> type;
 
     private String name;
 
-    private List<ClassSystemProperties> classSystemProperties;
+    private List<Class<?>> classSystemProperties;
 
     public ClassSystemProperties(Class<?> type, String name) {
         this.type = type;
@@ -28,11 +30,11 @@ public class ClassSystemProperties {
         return name;
     }
 
-    public List<ClassSystemProperties> getClassSystemProperties() {
+    public List<Class<?>> getSystemProperties() {
         return classSystemProperties;
     }
 
-    public void addSystemProperty(ClassSystemProperties classSystemProperties) {
+    public void addSystemProperty(Class<?> classSystemProperties) {
         this.classSystemProperties.add(classSystemProperties);
     }
 }

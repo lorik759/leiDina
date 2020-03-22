@@ -16,9 +16,6 @@ public class StringUtils {
         if (string == null) {
             return false;
         }
-        if (string.isEmpty()) {
-            return false;
-        }
-        return true;
+        return !string.isEmpty();
     }
 }

@@ -1,11 +1,15 @@
 package main.java.leiDina.tec.javafx.factory.controller;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
-import main.java.leiDina.tec.core.model.ClassSystemProperties;
+import main.java.leiDina.tec.core.model.SystemProperties;
 import main.java.leiDina.tec.core.utils.ReflectionUtils;
+import main.java.leiDina.tec.javafx.controller.BaseController;
+import main.java.leiDina.tec.javafx.exception.ControllerException;
 import main.java.leiDina.tec.javafx.factory.controller.builder.ControllerBuilder;
 import main.java.leiDina.tec.javafx.factory.controller.builder.GenericControllerBuilder;
+import main.java.leiDina.tec.javafx.messages.FXSystemMessages;
 
 /**
  * A base implementation of a {@link ControllerFactory}. Identifies controllers base on class en uses a {@link ControllerBuilder} to build e setup
@@ -18,15 +22,20 @@ public class ControllerFactoryImpl implements ControllerFactory {
 
     private final Map<Class<?>, ControllerBuilder<?>> buiders = new HashMap<>();
 
-    public ControllerFactoryImpl(ClassSystemProperties classSystemProperties) {
-        getBuildersFromProperties(classSystemProperties);
+    private BaseController baseController = null;
+
+    public ControllerFactoryImpl(SystemProperties<Class<?>> classSystemProperties) {
+        setBuildersFromProperties(classSystemProperties);
     }
 
-    private void getBuildersFromProperties(ClassSystemProperties classSystemProperties) {
-        for (ClassSystemProperties systemProperty : classSystemProperties.getClassSystemProperties()) {
-            Class<?> type = systemProperty.getType();
-            if (type.isAssignableFrom(ControllerBuilder.class)) {
-                buiders.put(type, (ControllerBuilder<?>) ReflectionUtils.newInstance(type));
+    private void setBuildersFromProperties(SystemProperties<Class<?>> classSystemProperties) {
+        for (Class<?> clazz : classSystemProperties.getSystemProperties()) {
+            if (clazz.isAssignableFrom(ControllerBuilder.class)) {
+                try {
+                    buiders.put(clazz, (ControllerBuilder<?>) ReflectionUtils.newInstance(clazz));
+                } catch (NoSuchMethodException | IllegalAccessException | InstantiationException | InvocationTargetException e) {
+                    throw new ControllerException(FXSystemMessages.CREATE_CONTROLLER_BUILDER_EXCEPTION.create(clazz), e);
+                }
             }
         }
     }

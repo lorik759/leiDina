@@ -1,12 +1,12 @@
 package main.java.leiDina.tec.core.env;
 
-import main.java.leiDina.tec.core.model.ClassSystemProperties;
+import main.java.leiDina.tec.core.model.SystemProperties;
 
 /**
  * @author vitor.alves
  */
 public interface ConfigurableApplicationEnvironment {
 
-    ClassSystemProperties loadSystemPropertiesFor(Class<?> type);
+    SystemProperties<Class<?>> loadSystemPropertiesFor(Class<?> type);
 
 }

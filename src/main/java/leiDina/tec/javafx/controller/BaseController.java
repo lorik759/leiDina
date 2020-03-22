@@ -1,22 +1,22 @@
 package main.java.leiDina.tec.javafx.controller;
 
-import java.util.HashMap;
-import java.util.Map;
-import javafx.scene.Node;
-
 /**
  * A base structure of a Controller.
  *
  * @author vitor.alves
  */
-public abstract class BaseController {
+public abstract class BaseController<M> {
 
-    private final Map<String, Node> components = new HashMap<>();
+    private M model;
 
     public BaseController() {
+        super();
+        this.model = createModel();
     }
 
-    public Node get(String key) {
-        return components.get(key);
+    protected abstract M createModel();
+
+    public M getModel() {
+        return model;
     }
 }

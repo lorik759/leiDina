@@ -1,8 +1,8 @@
 package main.java.leiDina.tec.javafx.factory.controller.builder;
 
 
-import main.java.leiDina.tec.core.messages.BaseSystemMessages;
 import main.java.leiDina.tec.javafx.exception.BuilderException;
+import main.java.leiDina.tec.javafx.messages.FXSystemMessages;
 import sun.reflect.misc.ReflectUtil;
 
 /**
@@ -39,7 +39,7 @@ public abstract class AbstractControllerBuilder<T> implements ControllerBuilder<
         try {
             return (T) ReflectUtil.newInstance(clazz);
         } catch (InstantiationException | IllegalAccessException e) {
-            throw new BuilderException(BaseSystemMessages.CONTROLLER_BUILDER_EXCEPTION.create(clazz.getName()), e);
+            throw new BuilderException(FXSystemMessages.INSTANTIATING_CONTROLLER_EXCEPTION.create(clazz.getName()), e);
         }
     }
 }
