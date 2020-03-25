@@ -1,6 +1,5 @@
 package main.java.leiDina.tec.javafx.service;
 
-import java.lang.annotation.Annotation;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
@@ -13,12 +12,11 @@ import main.java.leiDina.tec.javafx.messages.FXSystemMessages;
 /**
  * @author vitor.alves
  */
-public class TextFieldNodeAssociation implements NodeAssociation {
+public class TextFieldNodeAssociation implements NodeAssociation<TextField> {
 
     @Override
-    public void associate(final Object model, Annotation declaredAnnotation, final Method method, Map<String, Object> componants) {
-        TextField annotation = (TextField) declaredAnnotation;
-        final String id = annotation.id();
+    public void associate(final Object model, TextField declaredAnnotation, final Method method, Map<String, Object> componants) {
+        final String id = declaredAnnotation.id();
         javafx.scene.control.TextField textField = (javafx.scene.control.TextField) componants.get(id);
         if (textField == null) {
             throw new VFXException(FXSystemMessages.NO_COMPONENT_OF_ID.create(id));
@@ -41,7 +39,7 @@ public class TextFieldNodeAssociation implements NodeAssociation {
     }
 
     @Override
-    public Class<? extends Annotation> type() {
+    public Class<TextField> type() {
         return TextField.class;
     }
 }

@@ -7,10 +7,10 @@ import java.util.Map;
 /**
  * @author vitor.alves
  */
-public interface NodeAssociation {
+public interface NodeAssociation<A extends Annotation> {
 
-    void associate(Object model, Annotation declaredAnnotation, Method method, Map<String, Object> componants);
+    void associate(Object model, A declaredAnnotation, Method method, Map<String, Object> componants);
 
-    Class<? extends Annotation> type();
+    Class<A> type();
 
 }
