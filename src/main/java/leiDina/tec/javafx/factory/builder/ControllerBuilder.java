@@ -20,6 +20,9 @@ public interface ControllerBuilder<T> {
      */
     T build(Class<?> clazz) throws BuilderException;
 
+    /**
+     * @return the type of the controller this controller builder will build.
+     */
     Class<T> getType();
 
 }

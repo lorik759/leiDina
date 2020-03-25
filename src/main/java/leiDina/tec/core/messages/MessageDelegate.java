@@ -7,7 +7,7 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 /**
- * A simple message delegate that creates {@link MessageHolder}, using a resource bundles and formatting the string with a array of arguments.
+ * A simple message delegate that creates {@link MessageHolder}, using a resource bundles and formatting the string with an array of arguments.
  *
  * @author vitor.alves
  */
@@ -68,7 +68,7 @@ public class MessageDelegate {
     }
 
     /**
-     * A auxiliary method to get the string value of the arguments.
+     * An auxiliary method to get the string value of the arguments.
      *
      * @param args An array of arguments to be used in the message.
      * @return An array of the string value of the arguments.

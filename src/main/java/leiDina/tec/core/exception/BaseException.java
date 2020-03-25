@@ -4,6 +4,8 @@ package main.java.leiDina.tec.core.exception;
 import main.java.leiDina.tec.core.messages.MessageHolder;
 
 /**
+ * A base {@link RuntimeException} that accepts a {@link MessageHolder} as parameter.
+ *
  * @author vitor.alves
  */
 public abstract class BaseException extends RuntimeException {

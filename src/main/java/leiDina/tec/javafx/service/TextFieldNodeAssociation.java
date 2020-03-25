@@ -16,8 +16,8 @@ import main.java.leiDina.tec.javafx.messages.FXSystemMessages;
 public class TextFieldNodeAssociation implements NodeAssociation {
 
     @Override
-    public void associate(final Object model, final Method method, Map<String, Object> componants) {
-        TextField annotation = method.getAnnotation(TextField.class);
+    public void associate(final Object model, Annotation declaredAnnotation, final Method method, Map<String, Object> componants) {
+        TextField annotation = (TextField) declaredAnnotation;
         final String id = annotation.id();
         javafx.scene.control.TextField textField = (javafx.scene.control.TextField) componants.get(id);
         if (textField == null) {

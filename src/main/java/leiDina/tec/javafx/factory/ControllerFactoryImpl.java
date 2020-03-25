@@ -4,7 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
 import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironment;
-import main.java.leiDina.tec.core.model.SystemProperties;
+import main.java.leiDina.tec.core.model.SystemProperty;
 import main.java.leiDina.tec.core.utils.ReflectionUtils;
 import main.java.leiDina.tec.javafx.exception.ControllerException;
 import main.java.leiDina.tec.javafx.factory.builder.ControllerBuilder;
@@ -14,7 +14,7 @@ import main.java.leiDina.tec.javafx.service.ModelSceneWire;
 import main.java.leiDina.tec.javafx.service.NodeAssociation;
 
 /**
- * A base implementation of a {@link ControllerFactory}. Identifies controllers base on class en uses a {@link ControllerBuilder} to build e setup
+ * A base implementation of a {@link ControllerFactory}. Identifies controllers base on class and uses a {@link ControllerBuilder} to build and setup
  * controller objects. A builder is searched by class and super class until a builder is found. If no builder is found, {@link
  * GenericControllerBuilder} is used instead.
  *
@@ -31,28 +31,12 @@ public class ControllerFactoryImpl implements ControllerFactory {
      */
     @Override
     public void init(ConfigurableApplicationEnvironment environment) {
-        SystemProperties<Class<?>> controllerFactorySystemProperties = environment.loadSystemPropertiesFor(ControllerFactory.class);
-        this.setBuildersFromProperties(controllerFactorySystemProperties);
-        SystemProperties<Class<?>> modelSceneSystemPropertys = environment.loadSystemPropertiesFor(ModelSceneWire.class);
-        this.createModelSceneWire(modelSceneSystemPropertys);
+        SystemProperty<Class<?>> controllerFactorySystemProperty = environment.loadSystemPropertiesFor(ControllerFactory.class);
+        this.setBuildersFromProperties(controllerFactorySystemProperty);
     }
 
-    private void createModelSceneWire(SystemProperties<Class<?>> modelSceneSystemPropertys) {
-        this.modelSceneWire = new ModelSceneWire();
-        for (Class<?> clazz : modelSceneSystemPropertys.getSystemProperties()) {
-            if (NodeAssociation.class.isAssignableFrom(clazz)) {
-                try {
-                    NodeAssociation nodeAssociation = (NodeAssociation) ReflectionUtils.newInstance(clazz);
-                    modelSceneWire.addModelComponantAssociation(nodeAssociation.type(), nodeAssociation);
-                } catch (NoSuchMethodException | IllegalAccessException | InstantiationException | InvocationTargetException e) {
-                    throw new ControllerException(FXSystemMessages.CREATE_NODE_ASSOCIATION_EXCEPTION.create(clazz), e);
-                }
-            }
-        }
-    }
-
-    private void setBuildersFromProperties(SystemProperties<Class<?>> controllerFactorySystemProperties) {
-        for (Class<?> clazz : controllerFactorySystemProperties.getSystemProperties()) {
+    private void setBuildersFromProperties(SystemProperty<Class<?>> controllerFactorySystemProperty) {
+        for (Class<?> clazz : controllerFactorySystemProperty.getProperties()) {
             if (ControllerBuilder.class.isAssignableFrom(clazz)) {
                 try {
                     ControllerBuilder<?> controllerBuilder = (ControllerBuilder<?>) ReflectionUtils.newInstance(clazz);
@@ -81,13 +65,5 @@ public class ControllerFactoryImpl implements ControllerFactory {
             builder = buiders.get(Object.class);
         }
         return builder.build(controllerClass);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public ModelSceneWire getModelWire() {
-        return this.modelSceneWire;
     }
 }

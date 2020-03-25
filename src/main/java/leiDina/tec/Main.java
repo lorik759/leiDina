@@ -12,7 +12,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         VApplication.run(Main.class);
-        VFXMLLoader vfxmlLoader = new VFXMLLoader(getClass().getResource("/main/java/leiDina/view/MainView.fxml"));
+        VFXMLLoader vfxmlLoader = new VFXMLLoader(getClass().getResource("sample.fxml"));
         Parent root = vfxmlLoader.load();
         primaryStage.setTitle("Leitura Dinamica");
         primaryStage.setScene(new Scene(root, 300, 275));

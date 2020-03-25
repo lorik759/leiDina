@@ -23,9 +23,7 @@ public class ApplicationDefinitions {
     }
 
     /**
-     * Returns the starting class of the application.
-     *
-     * @return {@link Class}
+     * @return the starting class of the application.
      */
     public Class<?> getStarterClass() {
         return starterClass;
@@ -39,10 +37,8 @@ public class ApplicationDefinitions {
     }
 
     /**
-     * Returns primary classes of the application. Usually the primary classes are the classes within different packages where bean resources are
+     * @return primary classes of the application. Usually the primary classes are the classes within different packages where bean resources are
      * located in.
-     *
-     * @return a set with classes.
      */
     public Set<Class<?>> getPrimeryClasses() {
         return primeryClasses;

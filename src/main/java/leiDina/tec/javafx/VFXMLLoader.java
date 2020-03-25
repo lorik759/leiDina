@@ -4,6 +4,7 @@ package main.java.leiDina.tec.javafx;
 import java.io.IOException;
 import java.net.URL;
 import javafx.fxml.FXMLLoader;
+import main.java.leiDina.tec.core.ApplicationContext;
 import main.java.leiDina.tec.core.ApplicationThreadContext;
 import main.java.leiDina.tec.javafx.controller.BaseModelController;
 import main.java.leiDina.tec.javafx.factory.ControllerFactory;
@@ -21,9 +22,10 @@ public class VFXMLLoader {
 
     public VFXMLLoader(URL scene) {
         this.fxmlLoader = new FXMLLoader(scene);
-        ControllerFactory controllerFactory = ApplicationThreadContext.getApplicationContext().getControllerFactory();
+        ApplicationContext applicationContext = ApplicationThreadContext.getApplicationContext();
+        ControllerFactory controllerFactory = applicationContext.getControllerFactory();
         this.fxmlLoader.setControllerFactory(controllerFactory::getController);
-        this.modelWire = controllerFactory.getModelWire();
+        this.modelWire = applicationContext.getModelWire();
         this.modelWire.setFxmlLoader(this.fxmlLoader);
     }
 
@@ -38,7 +40,7 @@ public class VFXMLLoader {
      * @return the loaded scene
      * @throws IOException if unable to load scene.
      */
-    public <T> T load() throws IOException {
+    public <T> T load() throws Exception {
         T load = this.fxmlLoader.load();
         this.wireControllerToModelIfNeed();
         return load;
@@ -47,7 +49,7 @@ public class VFXMLLoader {
     /**
      * Checks if controller is of type {@link BaseModelController}, and if true, than wire the model to scene;
      */
-    private void wireControllerToModelIfNeed() {
+    private void wireControllerToModelIfNeed() throws Exception {
         Object controller = this.fxmlLoader.getController();
         if (controller instanceof BaseModelController) {
             this.modelWire.wire((BaseModelController<?>) controller);

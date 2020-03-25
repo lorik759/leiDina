@@ -9,8 +9,8 @@ import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironmentImpl;
 import main.java.leiDina.tec.core.model.ApplicationDefinitions;
 
 /**
- * A class that can bootstrap and launch a VApplication. The VApplication works as a additional structure for a simple fx application, in which a
- * VApplication adds a full integration with a java fx controllers and models, for a full MVC structure.
+ * A class that can bootstrap and launch a VApplication. The VApplication works as an additional structure for a simple fx application, in which a
+ * VApplication adds a full integration with java fx controllers and models, for a full MVC structure.
  *
  * @author vitor.alves
  */

@@ -9,7 +9,7 @@ import java.util.Map;
  */
 public interface NodeAssociation {
 
-    void associate(Object model, Method method, Map<String, Object> componants);
+    void associate(Object model, Annotation declaredAnnotation, Method method, Map<String, Object> componants);
 
     Class<? extends Annotation> type();
 

@@ -25,11 +25,4 @@ public interface ControllerFactory {
      * @return a instance of a the specified class.
      */
     Object getController(Class<?> controllerClass);
-
-    /**
-     * Returns the wire for a model and a scene
-     *
-     * @return {@link ModelSceneWire}
-     */
-    ModelSceneWire getModelWire();
 }

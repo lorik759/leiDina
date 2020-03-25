@@ -1,7 +1,7 @@
 package main.java.leiDina.tec.javafx.controller;
 
 /**
- * A base structure of a Controller.
+ * A base structure of a Controller that contains a model to associate with a scene.
  *
  * @author vitor.alves
  */
