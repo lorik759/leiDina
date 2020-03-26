@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import main.java.leiDina.tec.javafx.control.SceneButton?>
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+    prefHeight="500.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8"
+    xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.leiDina.biz.controllers.MainController">
+    <left>
+        <VBox prefHeight="400.0" prefWidth="143.0" styleClass="sidebar" stylesheets="@style.css"
+            BorderPane.alignment="CENTER">
+            <children>
+                <Label alignment="CENTER" prefHeight="52.0" prefWidth="145.0" text="" textFill="#b5b2b2"
+                    VBox.vgrow="ALWAYS">
+                    <font>
+                        <Font name="System Bold Italic" size="13.0"/>
+                    </font>
+                </Label>
+                <SceneButton fx:id="leitura" alignment="CENTER" contentDisplay="CENTER"
+                    mnemonicParsing="false" onMouseClicked="#setScene" prefHeight="35.0" prefWidth="155.0"
+                    styleClass="sidebar-btn" text="Leitura"
+                    textAlignment="CENTER" scenes="main.java.leiDina.biz.scene.LeituraScene">
+                    <VBox.margin>
+                        <Insets bottom="10.0" right="10.0" top="10.0"/>
+                    </VBox.margin>
+                </SceneButton>
+            </children>
+        </VBox>
+    </left>
+</BorderPane>

@@ -1,6 +1,7 @@
 package main.java.leiDina.tec;
 
-import main.java.leiDina.tec.javafx.annotation.TextField;
+
+import main.java.leiDina.tec.javafx.annotation.TextInput;
 
 /**
  * @author vitor.alves
@@ -13,7 +14,7 @@ public class Model {
         return text;
     }
 
-    @TextField(id = "text")
+    @TextInput(id = "text")
     public void setText(String text) {
         this.text = text;
     }

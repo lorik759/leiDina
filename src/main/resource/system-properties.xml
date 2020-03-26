@@ -5,6 +5,6 @@
         main.java.leiDina.tec.javafx.factory.builder.GenericControllerBuilder
     </entry>
     <entry key="ModelSceneWire">
-        main.java.leiDina.tec.javafx.service.TextFieldNodeAssociation
+        main.java.leiDina.tec.javafx.service.TextInputNodeAssociation
     </entry>
 </properties>
