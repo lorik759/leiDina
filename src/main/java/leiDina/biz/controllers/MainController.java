@@ -21,6 +21,11 @@ public class MainController implements Initializable {
     @FXML
     private BorderPane borderPane;
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        this.setScene(LeiDinamicaScenes.LEITURA.getScene());
+    }
+
     @FXML
     public void setScene(MouseEvent mouseEvent) {
         SceneButton sceneButton = (SceneButton) mouseEvent.getSource();
@@ -34,10 +39,5 @@ public class MainController implements Initializable {
         } catch (Exception e) {
             throw new VFXException(FXSystemMessages.SCENE_LOADING_EXCEPTION.create(scene.getTitle()), e);
         }
-    }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        this.setScene(LeiDinamicaScenes.LEITURA.getScene());
     }
 }
