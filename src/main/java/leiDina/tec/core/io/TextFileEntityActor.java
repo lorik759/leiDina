@@ -1,11 +1,9 @@
 package main.java.leiDina.tec.core.io;
 
 import java.beans.IntrospectionException;
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
@@ -29,6 +27,7 @@ public class TextFileEntityActor {
     public TextFileEntityActor(File file) {
         this.file = file;
         this.textFileEntityDigester = new TextFileEntityDigester();
+        this.entityToTextDigester = new EntityToTextDigester();
     }
 
     public TextFileEntityActor(String name) {
@@ -51,7 +50,7 @@ public class TextFileEntityActor {
         while (this.scanner.hasNextLine()) {
             Map<String, String> properties = textFileEntityDigester.digestLine(this.scanner.nextLine());
             String id = properties.get("id");
-            if (entityId.equals(id)) {
+            if (entityId.toString().equals(id)) {
                 this.closeToRead();
                 return true;
             }

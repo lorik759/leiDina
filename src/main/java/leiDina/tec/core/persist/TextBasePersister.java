@@ -1,9 +1,6 @@
 package main.java.leiDina.tec.core.persist;
 
-import java.beans.IntrospectionException;
-import java.io.IOException;
 import java.io.Serializable;
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import main.java.leiDina.tec.core.annotations.Entity;
 import main.java.leiDina.tec.core.exception.PersistenceException;
