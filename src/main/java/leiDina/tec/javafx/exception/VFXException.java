@@ -7,19 +7,19 @@ import main.java.leiDina.tec.core.messages.MessageHolder;
 /**
  * @author vitor.alves
  */
-public class BuilderException extends BaseException {
+public class VFXException extends BaseException {
 
-    private static final long serialVersionUID = 4522812311766583592L;
+    private static final long serialVersionUID = 6853471773656296804L;
 
-    public BuilderException(MessageHolder messageHolder) {
+    public VFXException(MessageHolder messageHolder) {
         super(messageHolder);
     }
 
-    public BuilderException(MessageHolder messageHolder, Throwable cause) {
+    public VFXException(MessageHolder messageHolder, Throwable cause) {
         super(messageHolder, cause);
     }
 
-    public BuilderException(Throwable cause) {
+    public VFXException(Throwable cause) {
         super(cause);
     }
 }
