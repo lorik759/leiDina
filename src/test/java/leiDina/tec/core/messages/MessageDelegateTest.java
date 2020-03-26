@@ -1,7 +1,7 @@
-package test.java.leiDina.tec.messages;
+package java.leiDina.tec.core.messages;
 
 
-import main.java.leiDina.tec.messages.MessageHolder;
+import main.java.leiDina.tec.core.messages.MessageHolder;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

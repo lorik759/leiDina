@@ -1,9 +1,9 @@
-package test.java.leiDina.tec.messages;
+package java.leiDina.tec.core.messages;
 
 
-import main.java.leiDina.tec.messages.MessageCreator;
-import main.java.leiDina.tec.messages.MessageDelegate;
-import main.java.leiDina.tec.messages.MessageHolder;
+import main.java.leiDina.tec.core.messages.MessageCreator;
+import main.java.leiDina.tec.core.messages.MessageDelegate;
+import main.java.leiDina.tec.core.messages.MessageHolder;
 
 /**
  * @author vitor.alves
