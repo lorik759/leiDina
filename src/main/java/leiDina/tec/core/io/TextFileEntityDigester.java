@@ -11,10 +11,10 @@ public class TextFileEntityDigester {
 
     public Map<String, String> digestLine(String line) {
         Map<String, String> propertiesMap = new HashMap<>();
-        String[] propertiesKeysAndValues = StringUtils.split(line, ":");
+        String[] propertiesKeysAndValues = StringUtils.split(line, ";");
         for (String property : propertiesKeysAndValues) {
             String[] keyAndValue = StringUtils.split(property, ":");
-            propertiesMap.put(keyAndValue[0], keyAndValue[0]);
+            propertiesMap.put(keyAndValue[0], keyAndValue[1]);
         }
         return propertiesMap;
     }

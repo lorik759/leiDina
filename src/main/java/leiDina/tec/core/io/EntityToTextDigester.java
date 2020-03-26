@@ -30,7 +30,7 @@ public class EntityToTextDigester {
                         throw new PersistenceException(BaseSystemMessages.NO_GETTER_METHOD.create(entity.getClass(), propertyDescriptor.getName()));
                     }
                     Object value = readMethod.invoke(entity);
-                    entityLine = entityLine.append(column.name()).append(":").append(value).append(";");
+                    entityLine = entityLine.append(";").append(column.name()).append(":").append(value);
                 }
             }
         }
