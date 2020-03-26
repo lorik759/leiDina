@@ -18,4 +18,11 @@ public class StringUtils {
         }
         return !string.isEmpty();
     }
+
+    public static String[] split(String string, String regex) {
+        if (isNotEmpty(string)) {
+            return string.split(regex);
+        }
+        return new String[]{};
+    }
 }

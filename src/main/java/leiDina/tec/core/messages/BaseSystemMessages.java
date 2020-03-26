@@ -5,7 +5,11 @@ package main.java.leiDina.tec.core.messages;
  */
 public enum BaseSystemMessages implements MessageCreator {
 
-    ;
+    OBJECT_NOT_ENTITY("object.not.entity", 1),
+
+    UNABLE_TO_SAVE_ENTITY("unable.to.save.entity", 1),
+
+    NO_GETTER_METHOD("no.getter.method", 2);
 
     private MessageDelegate delagate;
 
