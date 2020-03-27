@@ -7,9 +7,9 @@ import main.java.leiDina.tec.core.utils.StringUtils;
 /**
  * @author vitor.alves
  */
-public class TextFileEntityDigester {
+public class TextToEntityDigester {
 
-    public Map<String, String> digestLine(String line) {
+    public Map<String, String> digest(String line) {
         Map<String, String> propertiesMap = new HashMap<>();
         String[] propertiesKeysAndValues = StringUtils.split(line, ";");
         for (String property : propertiesKeysAndValues) {

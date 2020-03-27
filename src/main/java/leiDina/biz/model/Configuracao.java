@@ -1,8 +1,6 @@
 package main.java.leiDina.biz.model;
 
-import java.io.Serializable;
 import main.java.leiDina.tec.core.annotations.Entity;
-import main.java.leiDina.tec.core.annotations.ID;
 import main.java.leiDina.tec.core.persist.Persistable;
 
 /**
@@ -11,15 +9,14 @@ import main.java.leiDina.tec.core.persist.Persistable;
 @Entity
 public class Configuracao implements Persistable {
 
-    private Serializable id;
+    private Long id;
 
-    @ID
     @Override
-    public Serializable getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Serializable id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

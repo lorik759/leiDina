@@ -29,6 +29,7 @@ public class TextBasePersister implements Persister {
             if (existe) {
                 textFileEntityActor.upDateEntity(entity);
             } else {
+                textFileEntityActor.saveNew(entity);
             }
         } catch (Exception e) {
             throw new PersistenceException(BaseSystemMessages.UNABLE_TO_SAVE_ENTITY.create(entity.getClass()), e);
