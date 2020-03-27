@@ -6,27 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Unit tests!!! And correcting bugs!!">
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/biz/controllers/configuration/ConfigurationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/controller/EntityPersisterController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/builder/TextEntityPersisterControllerBuilder.java" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Grammar and removing unused classes. Created entity controller and a builder for the controller.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/Model.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/ModelController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/ApplicationContextImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/ApplicationContextImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/ConfigurableApplicationEnvironmentImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/ConfigurableApplicationEnvironmentImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/service/Wire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/service/Wire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/utils/ReflectionUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/utils/ReflectionUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/ControllerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/ControllerFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/ControllerFactoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/ControllerFactoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/builder/AbstractControllerBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/builder/AbstractControllerBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/builder/GenericControllerBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/builder/GenericControllerBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/messages/FXSystemMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/messages/FXSystemMessages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/service/ModelSceneWire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/service/ModelSceneWire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/sample.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resource/fx-system-messages-holder.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resource/fx-system-messages-holder.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resource/system-properties.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resource/system-properties.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resource/Entity.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/biz/controllers/configuration/ConfigurationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/biz/controllers/configuration/ConfiguracaoController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -418,7 +400,7 @@
       <workItem from="1585316285376" duration="201000" />
       <workItem from="1585316505304" duration="521000" />
       <workItem from="1585317334441" duration="14857000" />
-      <workItem from="1585349593017" duration="2451000" />
+      <workItem from="1585349593017" duration="2728000" />
     </task>
     <task id="LOCAL-00001" summary="Base implantation of a ControllerFactory and a simple exception creator.">
       <created>1583601470898</created>
@@ -504,7 +486,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585347680283</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Grammar and removing unused classes. Created entity controller and a builder for the controller.">
+      <created>1585352246634</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1585352246634</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -526,7 +515,8 @@
     <MESSAGE value="Correcting order." />
     <MESSAGE value="Correcting bugs." />
     <MESSAGE value="Unit tests!!! And correcting bugs!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Unit tests!!! And correcting bugs!!" />
+    <MESSAGE value="Grammar and removing unused classes. Created entity controller and a builder for the controller." />
+    <option name="LAST_COMMIT_MESSAGE" value="Grammar and removing unused classes. Created entity controller and a builder for the controller." />
   </component>
   <component name="WindowStateProjectService">
     <state x="325" y="181" width="800" height="677" key="#Inspections" timestamp="1585222473143">
@@ -587,10 +577,10 @@
     </state>
     <state x="930" y="167" width="903" height="765" key="#xdebugger.evaluate/0.27.1920.988@0.27.1920.988" timestamp="1585352106356" />
     <state x="840" y="144" width="922" height="765" key="#xdebugger.evaluate/0.27.3280.988@0.27.3280.988" timestamp="1584314102380" />
-    <state x="225" y="29" width="989" height="982" key="CommitChangelistDialog2" timestamp="1585352134257">
+    <state x="225" y="29" width="989" height="982" key="CommitChangelistDialog2" timestamp="1585352246551">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="225" y="29" width="989" height="982" key="CommitChangelistDialog2/0.27.1920.988@0.27.1920.988" timestamp="1585352134257" />
+    <state x="225" y="29" width="989" height="982" key="CommitChangelistDialog2/0.27.1920.988@0.27.1920.988" timestamp="1585352246551" />
     <state x="385" y="29" width="1535" height="982" key="CommitChangelistDialog2/0.27.3280.988@0.27.3280.988" timestamp="1584315935198" />
     <state x="879" y="29" width="792" height="982" key="CommitChangelistDialog2/2560.0.1920.1080/0.27.2560.988@0.27.2560.988" timestamp="1583619615635" />
     <state x="354" y="78" width="1124" height="820" maximized="true" key="DiffContextDialog" timestamp="1585347673332">
@@ -602,45 +592,45 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="738" y="263" width="495" height="513" key="FileChooserDialogImpl/0.27.1920.988@0.27.1920.988" timestamp="1585346777994" />
-    <state width="1874" height="292" key="GridCell.Tab.0.bottom" timestamp="1585352126713">
+    <state width="1874" height="292" key="GridCell.Tab.0.bottom" timestamp="1585352254236">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="292" key="GridCell.Tab.0.bottom/0.27.1920.988@0.27.1920.988" timestamp="1585352126713" />
+    <state width="1874" height="292" key="GridCell.Tab.0.bottom/0.27.1920.988@0.27.1920.988" timestamp="1585352254236" />
     <state width="1874" height="292" key="GridCell.Tab.0.bottom/0.27.3280.988@0.27.3280.988" timestamp="1584316431086" />
-    <state width="1874" height="292" key="GridCell.Tab.0.center" timestamp="1585352126711">
+    <state width="1874" height="292" key="GridCell.Tab.0.center" timestamp="1585352254235">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="292" key="GridCell.Tab.0.center/0.27.1920.988@0.27.1920.988" timestamp="1585352126711" />
+    <state width="1874" height="292" key="GridCell.Tab.0.center/0.27.1920.988@0.27.1920.988" timestamp="1585352254235" />
     <state width="1874" height="292" key="GridCell.Tab.0.center/0.27.3280.988@0.27.3280.988" timestamp="1584316431083" />
-    <state width="1874" height="292" key="GridCell.Tab.0.left" timestamp="1585352126711">
+    <state width="1874" height="292" key="GridCell.Tab.0.left" timestamp="1585352254234">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="292" key="GridCell.Tab.0.left/0.27.1920.988@0.27.1920.988" timestamp="1585352126711" />
+    <state width="1874" height="292" key="GridCell.Tab.0.left/0.27.1920.988@0.27.1920.988" timestamp="1585352254233" />
     <state width="1874" height="292" key="GridCell.Tab.0.left/0.27.3280.988@0.27.3280.988" timestamp="1584316431082" />
-    <state width="1874" height="292" key="GridCell.Tab.0.right" timestamp="1585352126712">
+    <state width="1874" height="292" key="GridCell.Tab.0.right" timestamp="1585352254235">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="292" key="GridCell.Tab.0.right/0.27.1920.988@0.27.1920.988" timestamp="1585352126712" />
+    <state width="1874" height="292" key="GridCell.Tab.0.right/0.27.1920.988@0.27.1920.988" timestamp="1585352254235" />
     <state width="1874" height="292" key="GridCell.Tab.0.right/0.27.3280.988@0.27.3280.988" timestamp="1584316431084" />
-    <state width="1874" height="292" key="GridCell.Tab.1.bottom" timestamp="1585352126714">
+    <state width="1874" height="292" key="GridCell.Tab.1.bottom" timestamp="1585352254238">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="292" key="GridCell.Tab.1.bottom/0.27.1920.988@0.27.1920.988" timestamp="1585352126714" />
+    <state width="1874" height="292" key="GridCell.Tab.1.bottom/0.27.1920.988@0.27.1920.988" timestamp="1585352254238" />
     <state width="1874" height="292" key="GridCell.Tab.1.bottom/0.27.3280.988@0.27.3280.988" timestamp="1584316431089" />
-    <state width="1874" height="292" key="GridCell.Tab.1.center" timestamp="1585352126714">
+    <state width="1874" height="292" key="GridCell.Tab.1.center" timestamp="1585352254237">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="292" key="GridCell.Tab.1.center/0.27.1920.988@0.27.1920.988" timestamp="1585352126714" />
+    <state width="1874" height="292" key="GridCell.Tab.1.center/0.27.1920.988@0.27.1920.988" timestamp="1585352254237" />
     <state width="1874" height="292" key="GridCell.Tab.1.center/0.27.3280.988@0.27.3280.988" timestamp="1584316431087" />
-    <state width="1874" height="292" key="GridCell.Tab.1.left" timestamp="1585352126713">
+    <state width="1874" height="292" key="GridCell.Tab.1.left" timestamp="1585352254236">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="292" key="GridCell.Tab.1.left/0.27.1920.988@0.27.1920.988" timestamp="1585352126713" />
+    <state width="1874" height="292" key="GridCell.Tab.1.left/0.27.1920.988@0.27.1920.988" timestamp="1585352254236" />
     <state width="1874" height="292" key="GridCell.Tab.1.left/0.27.3280.988@0.27.3280.988" timestamp="1584316431086" />
-    <state width="1874" height="292" key="GridCell.Tab.1.right" timestamp="1585352126714">
+    <state width="1874" height="292" key="GridCell.Tab.1.right" timestamp="1585352254238">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="292" key="GridCell.Tab.1.right/0.27.1920.988@0.27.1920.988" timestamp="1585352126714" />
+    <state width="1874" height="292" key="GridCell.Tab.1.right/0.27.1920.988@0.27.1920.988" timestamp="1585352254238" />
     <state width="1874" height="292" key="GridCell.Tab.1.right/0.27.3280.988@0.27.3280.988" timestamp="1584316431088" />
     <state x="740" y="228" width="628" height="584" key="MultipleFileMergeDialog" timestamp="1585264308952">
       <screen x="0" y="27" width="1920" height="988" />

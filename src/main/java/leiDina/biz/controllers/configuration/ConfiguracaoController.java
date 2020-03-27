@@ -6,7 +6,7 @@ import main.java.leiDina.tec.javafx.controller.EntityPersisterController;
 /**
  * @author vitor.alves
  */
-public class ConfigurationController extends EntityPersisterController<Configuracao> {
+public class ConfiguracaoController extends EntityPersisterController<Configuracao> {
 
     @Override
     protected Configuracao createModel() {
