@@ -87,4 +87,17 @@ public class ReflectionUtils {
     public static <T> void invoke(Method method, T object, Object... args) throws InvocationTargetException, IllegalAccessException {
         makeAccessible(method).invoke(object, args);
     }
+
+    /**
+     * Sets field with the passed value.
+     *
+     * @param field field in which value will be set to.
+     * @param object object that contain the field.
+     * @param value the value that will be set in the field.
+     * @param <T> the type of the object.
+     * @throws IllegalAccessException {@link IllegalAccessException}.
+     */
+    public static <T> void set(Field field, T object, Object value) throws IllegalAccessException {
+        makeAccessible(field).set(object, value);
+    }
 }

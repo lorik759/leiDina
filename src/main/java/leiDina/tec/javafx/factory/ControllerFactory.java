@@ -4,7 +4,7 @@ import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironment;
 import main.java.leiDina.tec.javafx.service.ModelSceneWire;
 
 /**
- * The root interface for a controller factory. This interface is implemented by object that can identify and create controller for a javafx scene.
+ * The root interface for a controller factory. This interface is implemented by an object that can identify and create a controller for a javafx scene.
  *
  * @author vitor.alves
  */

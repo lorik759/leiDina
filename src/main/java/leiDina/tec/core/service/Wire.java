@@ -8,7 +8,7 @@ package main.java.leiDina.tec.core.service;
 public interface Wire<T> {
 
     /**
-     * Wire object to something.
+     * Wires an object to something.
      *
      * @param object object to be wired.
      * @throws Exception An exception.

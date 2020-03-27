@@ -7,6 +7,9 @@ package main.java.leiDina.tec.javafx.factory.builder;
  */
 public class GenericControllerBuilder extends AbstractControllerBuilder<Object> {
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Class<Object> getType() {
         return Object.class;

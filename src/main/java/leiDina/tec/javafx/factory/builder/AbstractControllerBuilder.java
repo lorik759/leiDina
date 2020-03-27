@@ -22,9 +22,6 @@ public abstract class AbstractControllerBuilder<T> implements ControllerBuilder<
         return instance;
     }
 
-    @Override
-    public abstract Class<T> getType();
-
     /**
      * Do specific stuff to the instance.
      *
@@ -33,7 +30,7 @@ public abstract class AbstractControllerBuilder<T> implements ControllerBuilder<
     protected abstract void doSpecificStuff(T instance);
 
     /**
-     * Creates a intense of the specified class.
+     * Creates a instance of the specified class.
      *
      * @param clazz a {@link Class}
      * @return the intense of the specified class.

@@ -55,8 +55,8 @@ public class ApplicationContextImpl implements ApplicationContext {
         for (Class<?> clazz : modelSceneSystemPropertys.getProperties()) {
             if (NodeAssociation.class.isAssignableFrom(clazz)) {
                 try {
-                    NodeAssociation nodeAssociation = (NodeAssociation) ReflectionUtils.newInstance(clazz);
-                    modelSceneWire.addModelComponantAssociation(nodeAssociation.type(), nodeAssociation);
+                    NodeAssociation<?> nodeAssociation = (NodeAssociation<?>) ReflectionUtils.newInstance(clazz);
+                    modelSceneWire.addModelComponentAssociation(nodeAssociation.type(), nodeAssociation);
                 } catch (ReflectiveOperationException e) {
                     throw new ControllerException(FXSystemMessages.CREATE_NODE_ASSOCIATION_EXCEPTION.create(clazz), e);
                 }

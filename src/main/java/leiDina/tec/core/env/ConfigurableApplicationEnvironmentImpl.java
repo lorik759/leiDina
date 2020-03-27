@@ -46,8 +46,10 @@ public class ConfigurableApplicationEnvironmentImpl implements ConfigurableAppli
                 Properties properties = ResourceUtils.getXMLPropertiesFromURL(url);
                 String values = (String) properties.get(name);
                 for (String classes : StringUtils.replaceNewLineAndSplitComma(values)) {
-                    Class<?> aClass = Class.forName(classes.trim());
-                    classSystemProperties.addProperty(aClass);
+                    if (StringUtils.isNotEmpty(classes)) {
+                        Class<?> aClass = Class.forName(classes.trim());
+                        classSystemProperties.addProperty(aClass);
+                    }
                 }
             }
             cache.put(name, classSystemProperties);

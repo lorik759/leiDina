@@ -42,7 +42,7 @@ public class ModelSceneWire implements Wire<BaseModelController<?>> {
         this.fxmlLoader = fxmlLoader;
     }
 
-    public void addModelComponantAssociation(Class<? extends Annotation> clazz, NodeAssociation nodeAssociation) {
+    public void addModelComponentAssociation(Class<? extends Annotation> clazz, NodeAssociation<?> nodeAssociation) {
         this.associationMap.put(clazz, nodeAssociation);
     }
 }

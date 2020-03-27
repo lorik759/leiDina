@@ -19,7 +19,9 @@ public enum FXSystemMessages implements MessageCreator {
 
     MODEL_SCENE_ASSOCIATION("model.scene.association", 2),
 
-    SCENE_LOADING_EXCEPTION("scene.loading.exception", 1);
+    SCENE_LOADING_EXCEPTION("scene.loading.exception", 1),
+
+    FAILED_TO_BUILD_CONTROLLER("failed.to.build.controller", 1);
 
     private MessageDelegate delagate;
 

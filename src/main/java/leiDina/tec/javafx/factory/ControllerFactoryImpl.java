@@ -10,8 +10,6 @@ import main.java.leiDina.tec.javafx.exception.ControllerException;
 import main.java.leiDina.tec.javafx.factory.builder.ControllerBuilder;
 import main.java.leiDina.tec.javafx.factory.builder.GenericControllerBuilder;
 import main.java.leiDina.tec.javafx.messages.FXSystemMessages;
-import main.java.leiDina.tec.javafx.service.ModelSceneWire;
-import main.java.leiDina.tec.javafx.service.NodeAssociation;
 
 /**
  * A base implementation of a {@link ControllerFactory}. Identifies controllers base on class and uses a {@link ControllerBuilder} to build and setup
@@ -23,8 +21,6 @@ import main.java.leiDina.tec.javafx.service.NodeAssociation;
 public class ControllerFactoryImpl implements ControllerFactory {
 
     private final Map<Class<?>, ControllerBuilder<?>> buiders = new HashMap<>();
-
-    private ModelSceneWire modelSceneWire;
 
     /**
      * {@inheritDoc}
