@@ -47,7 +47,7 @@ public class ConfigurableApplicationEnvironmentImpl implements ConfigurableAppli
                 String values = (String) properties.get(name);
                 for (String classes : StringUtils.replaceNewLineAndSplitComma(values)) {
                     if (StringUtils.isNotEmpty(classes)) {
-                        Class<?> aClass = Class.forName(classes.replaceAll("^\\s+", ""));
+                        Class<?> aClass = Class.forName(StringUtils.removeSpaces(classes));
                         classSystemProperties.addProperty(aClass);
                     }
                 }

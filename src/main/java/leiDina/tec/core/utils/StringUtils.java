@@ -12,6 +12,10 @@ public class StringUtils {
         return new String[]{};
     }
 
+    public static String removeSpaces(String string) {
+        return string.replaceAll("^\\s+", "");
+    }
+
     public static boolean isNotEmpty(String string) {
         if (string == null) {
             return false;
