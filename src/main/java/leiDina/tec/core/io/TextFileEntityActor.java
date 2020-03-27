@@ -20,13 +20,13 @@ public class TextFileEntityActor {
 
     private Scanner scanner;
 
-    private TextFileEntityDigester textFileEntityDigester;
+    private TextToEntityDigester textToEntityDigester;
 
     private EntityToTextDigester entityToTextDigester;
 
     public TextFileEntityActor(File file) {
         this.file = file;
-        this.textFileEntityDigester = new TextFileEntityDigester();
+        this.textToEntityDigester = new TextToEntityDigester();
         this.entityToTextDigester = new EntityToTextDigester();
     }
 
@@ -48,7 +48,7 @@ public class TextFileEntityActor {
         }
         this.openToRead();
         while (this.scanner.hasNextLine()) {
-            Map<String, String> properties = textFileEntityDigester.digestLine(this.scanner.nextLine());
+            Map<String, String> properties = textToEntityDigester.digest(this.scanner.nextLine());
             String id = properties.get("id");
             if (entityId.toString().equals(id)) {
                 this.closeToRead();
@@ -63,26 +63,32 @@ public class TextFileEntityActor {
         throws IllegalAccessException, IntrospectionException, InvocationTargetException, IOException {
         String entityLine = entityToTextDigester.digest(entity);
         Serializable id = entity.getId();
-        StringBuffer inputBuffer = new StringBuffer();
+        StringBuffer stringBuffer = new StringBuffer();
         String line;
 
         this.openToRead();
         while (this.scanner.hasNextLine()) {
             line = this.scanner.nextLine();
-            Map<String, String> properties = textFileEntityDigester.digestLine(line);
+            Map<String, String> properties = textToEntityDigester.digest(line);
             if (properties.get("id").equals(String.valueOf(id))) {
-                inputBuffer.append(entityLine);
+                stringBuffer.append(entityLine);
             } else {
-                inputBuffer.append(line);
+                stringBuffer.append(line);
             }
-            inputBuffer.append(System.lineSeparator());
+            stringBuffer.append(System.lineSeparator());
         }
         this.closeToRead();
-        this.overwriteFile(inputBuffer);
+        this.writeToFile(stringBuffer, false);
     }
 
-    private void overwriteFile(StringBuffer inputBuffer) throws IOException {
-        FileOutputStream fileOut = new FileOutputStream(file);
+    public void saveNew(Persistable entity) throws IllegalAccessException, IntrospectionException, InvocationTargetException, IOException {
+        String entityLine = entityToTextDigester.digest(entity);
+        StringBuffer stringBuffer = new StringBuffer();
+        this.writeToFile(stringBuffer.append(entityLine), true);
+    }
+
+    private void writeToFile(StringBuffer inputBuffer, boolean append) throws IOException {
+        FileOutputStream fileOut = new FileOutputStream(file, append);
         fileOut.write(inputBuffer.toString().getBytes());
         fileOut.close();
     }

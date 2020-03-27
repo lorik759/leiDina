@@ -7,6 +7,8 @@ import java.io.Serializable;
  */
 public interface Persistable {
 
-    Serializable getId();
+    Long getId();
+
+    void setId(Long id);
 
 }
