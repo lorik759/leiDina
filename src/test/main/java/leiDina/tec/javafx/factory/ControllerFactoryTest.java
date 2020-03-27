@@ -1,4 +1,4 @@
-package java.leiDina.tec.javafx.factory;
+package main.java.leiDina.tec.javafx.factory;
 
 
 import java.util.ArrayList;
@@ -11,7 +11,6 @@ import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironment;
 import main.java.leiDina.tec.core.model.ApplicationDefinitions;
 import main.java.leiDina.tec.core.model.SystemProperty;
 import main.java.leiDina.tec.javafx.exception.BuilderException;
-import main.java.leiDina.tec.javafx.factory.ControllerFactory;
 import main.java.leiDina.tec.javafx.factory.builder.GenericControllerBuilder;
 import main.java.leiDina.tec.javafx.service.ModelSceneWire;
 import org.junit.jupiter.api.Assertions;

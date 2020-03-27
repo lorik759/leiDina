@@ -9,7 +9,13 @@ public enum BaseSystemMessages implements MessageCreator {
 
     UNABLE_TO_SAVE_ENTITY("unable.to.save.entity", 1),
 
-    NO_GETTER_METHOD("no.getter.method", 2);
+    NO_GETTER_METHOD("no.getter.method", 2),
+
+    ENTITY_NOT_FOUND("entity.not.found", 2),
+
+    TOO_MANY_ENTITY_FOUND("to.many.entity.found", 2),
+
+    ENTITY_ALREADY_EXISTS("entity.already.exists", 2);
 
     private MessageDelegate delagate;
 

@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * @author vitor.alves
  */
-public interface Persistable {
+public interface Persistable extends Serializable {
 
     Long getId();
 

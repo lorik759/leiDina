@@ -27,7 +27,7 @@ public class TextBasePersister implements Persister {
         try {
             boolean existe = textFileEntityActor.entityWithIdExists(entity.getId());
             if (existe) {
-                textFileEntityActor.upDateEntity(entity);
+                textFileEntityActor.updateEntity(entity);
             } else {
                 textFileEntityActor.saveNew(entity);
             }

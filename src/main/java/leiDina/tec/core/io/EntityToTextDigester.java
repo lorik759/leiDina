@@ -15,12 +15,17 @@ import main.java.leiDina.tec.core.persist.Persistable;
  */
 public class EntityToTextDigester {
 
-    public String digest(Persistable entity) throws IntrospectionException, InvocationTargetException, IllegalAccessException {
+    public String digest(Persistable entity) throws InvocationTargetException, IllegalAccessException {
         StringBuffer entityLine = new StringBuffer();
         Field[] declaredFields = entity.getClass().getDeclaredFields();
-        entityLine = entityLine.append("id:").append(entity.getId());
+        entityLine.append("id:").append(entity.getId());
         for (Field declaredField : declaredFields) {
-            PropertyDescriptor propertyDescriptor = new PropertyDescriptor(declaredField.getName(), entity.getClass());
+            PropertyDescriptor propertyDescriptor;
+            try {
+                propertyDescriptor = new PropertyDescriptor(declaredField.getName(), entity.getClass());
+            } catch (Exception e) {
+                throw new PersistenceException(e);
+            }
             Method writeMethod = propertyDescriptor.getWriteMethod();
             if (writeMethod != null) {
                 Column column = writeMethod.getDeclaredAnnotation(Column.class);
@@ -30,7 +35,7 @@ public class EntityToTextDigester {
                         throw new PersistenceException(BaseSystemMessages.NO_GETTER_METHOD.create(entity.getClass(), propertyDescriptor.getName()));
                     }
                     Object value = readMethod.invoke(entity);
-                    entityLine = entityLine.append(";").append(column.name()).append(":").append(value);
+                    entityLine.append(";").append(column.name()).append(":").append(value);
                 }
             }
         }

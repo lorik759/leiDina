@@ -9,6 +9,8 @@ import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 import java.util.Scanner;
+import main.java.leiDina.tec.core.exception.PersistenceException;
+import main.java.leiDina.tec.core.messages.BaseSystemMessages;
 import main.java.leiDina.tec.core.persist.Persistable;
 
 /**
@@ -59,37 +61,54 @@ public class TextFileEntityActor {
         return false;
     }
 
-    public void upDateEntity(Persistable entity)
-        throws IllegalAccessException, IntrospectionException, InvocationTargetException, IOException {
+    public void updateEntity(Persistable entity) throws IllegalAccessException, IntrospectionException, InvocationTargetException, IOException {
         String entityLine = entityToTextDigester.digest(entity);
         Serializable id = entity.getId();
         StringBuffer stringBuffer = new StringBuffer();
         String line;
+        boolean found = false;
 
         this.openToRead();
         while (this.scanner.hasNextLine()) {
             line = this.scanner.nextLine();
             Map<String, String> properties = textToEntityDigester.digest(line);
-            if (properties.get("id").equals(String.valueOf(id))) {
+            String idFound = properties.get("id");
+            boolean sameId = idFound.equals(String.valueOf(id));
+            if (sameId && !found) {
                 stringBuffer.append(entityLine);
-            } else {
+                found = true;
+            } else if (!sameId) {
                 stringBuffer.append(line);
+            } else {
+                throw new PersistenceException(BaseSystemMessages.TOO_MANY_ENTITY_FOUND.create(entity.getClass(), entity.getId()));
             }
             stringBuffer.append(System.lineSeparator());
         }
+        if (!found) {
+            throw new PersistenceException(BaseSystemMessages.ENTITY_NOT_FOUND.create(entity.getClass(), entity.getId()));
+        }
         this.closeToRead();
-        this.writeToFile(stringBuffer, false);
+        this.writeToFile(stringBuffer);
     }
 
     public void saveNew(Persistable entity) throws IllegalAccessException, IntrospectionException, InvocationTargetException, IOException {
         String entityLine = entityToTextDigester.digest(entity);
+        String line;
         StringBuffer stringBuffer = new StringBuffer();
-        this.writeToFile(stringBuffer.append(entityLine), true);
+        if (this.entityWithIdExists(entity)) {
+            throw new PersistenceException(BaseSystemMessages.ENTITY_ALREADY_EXISTS.create(entity.getClass(), entity.getId()));
+        }
+        this.openToRead();
+        while (this.scanner.hasNextLine()) {
+            line = this.scanner.nextLine();
+            stringBuffer.append(line).append(System.lineSeparator());
+        }
+        this.writeToFile(stringBuffer.append(entityLine));
     }
 
-    private void writeToFile(StringBuffer inputBuffer, boolean append) throws IOException {
-        FileOutputStream fileOut = new FileOutputStream(file, append);
-        fileOut.write(inputBuffer.toString().getBytes());
+    private void writeToFile(StringBuffer stringBuffer) throws IOException {
+        FileOutputStream fileOut = new FileOutputStream(file);
+        fileOut.write(stringBuffer.toString().getBytes());
         fileOut.close();
     }
 }

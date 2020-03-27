@@ -19,6 +19,10 @@ public class StringUtils {
         return !string.isEmpty();
     }
 
+    public static boolean isEmpty(String string) {
+        return !isNotEmpty(string);
+    }
+
     public static String[] split(String string, String regex) {
         if (isNotEmpty(string)) {
             return string.split(regex);
