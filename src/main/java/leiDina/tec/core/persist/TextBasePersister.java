@@ -43,20 +43,33 @@ public class TextBasePersister implements Persister {
     }
 
     private TextFileEntityActor getActor(Persistable entity) {
-        Entity entityAnnotation = entity.getClass().getAnnotation(Entity.class);
+        return this.getActor(entity.getClass());
+    }
+
+    private TextFileEntityActor getActor(Class<? extends Persistable> aClass) {
+        Entity entityAnnotation = aClass.getAnnotation(Entity.class);
         if (entityAnnotation == null) {
-            throw new PersistenceException(BaseSystemMessages.OBJECT_NOT_ENTITY.create(entity.getClass()));
+            throw new PersistenceException(BaseSystemMessages.OBJECT_NOT_ENTITY.create(aClass));
         }
         String name = entityAnnotation.name();
         if (!StringUtils.isNotEmpty(name)) {
-            name = entity.getClass().getSimpleName();
+            name = aClass.getSimpleName();
         }
         return new TextFileEntityActor(name);
     }
 
     @Override
     public <T extends Persistable> T get(Serializable id, Class<T> type) {
-        return null;
+        TextFileEntityActor actor = getActor(type);
+        try {
+            if (actor.entityWithIdExists(id)) {
+                return actor.get(id, type);
+            } else {
+                throw new PersistenceException(BaseSystemMessages.ENTITY_NOT_FOUND.create(type, id));
+            }
+        } catch (IOException e) {
+            throw new PersistenceException(e);
+        }
     }
 
     @Override

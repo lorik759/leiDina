@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.Scanner;
 import main.java.leiDina.tec.core.exception.PersistenceException;
 import main.java.leiDina.tec.core.messages.BaseSystemMessages;
+import main.java.leiDina.tec.core.model.EntityDescriptor;
 import main.java.leiDina.tec.core.persist.Persistable;
 
 /**
@@ -184,5 +185,19 @@ public class TextFileEntityActor {
         FileOutputStream fileOut = new FileOutputStream(file);
         fileOut.write(stringBuffer.toString().getBytes());
         fileOut.close();
+    }
+
+    public <T extends Persistable> T get(Serializable id, Class<T> type) throws FileNotFoundException {
+        String line;
+        this.openToRead();
+        while (this.scanner.hasNextLine()) {
+            line = this.scanner.nextLine();
+            Map<String, String> properties = textToEntityDigester.digest(line);
+            String idFound = properties.get("id");
+            if (idFound.equals(String.valueOf(id))) {
+                return (T) new EntityDescriptor(type).createInstanceFromLine(line);
+            }
+        }
+        throw new PersistenceException(BaseSystemMessages.ENTITY_NOT_FOUND.create(type, id));
     }
 }
