@@ -1,5 +1,6 @@
 package main.java.leiDina.tec.core.persist;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.List;
 import main.java.leiDina.tec.core.annotations.Entity;
@@ -15,15 +16,7 @@ public class TextBasePersister implements Persister {
 
     @Override
     public void save(Persistable entity) {
-        Entity entityAnnotation = entity.getClass().getAnnotation(Entity.class);
-        if (entityAnnotation == null) {
-            throw new PersistenceException(BaseSystemMessages.OBJECT_NOT_ENTITY.create(entity.getClass()));
-        }
-        String name = entityAnnotation.name();
-        if (!StringUtils.isNotEmpty(name)) {
-            name = entity.getClass().getSimpleName();
-        }
-        TextFileEntityActor textFileEntityActor = new TextFileEntityActor(name);
+        TextFileEntityActor textFileEntityActor = getActor(entity);
         try {
             boolean existe = textFileEntityActor.entityWithIdExists(entity.getId());
             if (existe) {
@@ -38,7 +31,27 @@ public class TextBasePersister implements Persister {
 
     @Override
     public void remove(Persistable entity) {
+        TextFileEntityActor textFileEntityActor = getActor(entity);
+        try {
+            if (!textFileEntityActor.entityWithIdExists(entity)) {
+                throw new PersistenceException(BaseSystemMessages.ENTITY_NOT_FOUND.create(entity.getClass(), entity.getId()));
+            }
+            textFileEntityActor.removeEntity(entity);
+        } catch (IOException e) {
+            throw new PersistenceException(BaseSystemMessages.UNABLE_TO_SAVE_ENTITY.create(entity.getClass()), e);
+        }
+    }
 
+    private TextFileEntityActor getActor(Persistable entity) {
+        Entity entityAnnotation = entity.getClass().getAnnotation(Entity.class);
+        if (entityAnnotation == null) {
+            throw new PersistenceException(BaseSystemMessages.OBJECT_NOT_ENTITY.create(entity.getClass()));
+        }
+        String name = entityAnnotation.name();
+        if (!StringUtils.isNotEmpty(name)) {
+            name = entity.getClass().getSimpleName();
+        }
+        return new TextFileEntityActor(name);
     }
 
     @Override

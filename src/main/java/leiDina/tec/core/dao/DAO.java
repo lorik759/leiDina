@@ -1,4 +1,4 @@
-package main.java.leiDina.tec.core.persist;
+package main.java.leiDina.tec.core.dao;
 
 import java.io.Serializable;
 import java.util.List;

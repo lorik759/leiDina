@@ -1,6 +1,5 @@
 package main.java.leiDina.tec.core.io;
 
-import java.beans.IntrospectionException;
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;

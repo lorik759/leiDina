@@ -10,7 +10,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="org.mockito:mockito-core:3.3.3" level="project" />
+    <orderEntry type="library" name="org.mockito:mockito-core:3.3.3" level="project" />
     <orderEntry type="module-library">
       <library name="JUnit5.4">
         <CLASSES>

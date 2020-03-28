@@ -1,6 +1,5 @@
 package main.java.leiDina.tec.core.io;
 
-import java.beans.IntrospectionException;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -8,12 +7,12 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Scanner;
 import main.java.leiDina.tec.core.exception.PersistenceException;
+import main.java.leiDina.tec.core.model.Entity;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import main.java.leiDina.tec.core.model.Entity;
 
 /**
  * @author vitor.alves
@@ -53,7 +52,7 @@ public class TextFileEntityActorTest {
     }
 
     @Test
-    public void testUpdteEntity() throws InvocationTargetException, IOException, IntrospectionException, IllegalAccessException {
+    public void testUpdteEntity() throws InvocationTargetException, IOException, IllegalAccessException {
         TextFileEntityActor textFileEntityActor = new TextFileEntityActor(FILE_NAME);
         Entity entity = createEntity(1L, "test");
         textFileEntityActor.updateEntity(entity);
@@ -64,19 +63,19 @@ public class TextFileEntityActorTest {
     }
 
     @Test
-    public void testNewSave() throws InvocationTargetException, IOException, IntrospectionException, IllegalAccessException {
+    public void testNewSave() throws InvocationTargetException, IOException, IllegalAccessException {
         validateNewSave(ORIGINAL_TEXT);
     }
 
     @Test
-    public void testNewSaveThanUpdateEntity() throws IOException, IntrospectionException, IllegalAccessException, InvocationTargetException {
+    public void testNewSaveThanUpdateEntity() throws IOException, IllegalAccessException, InvocationTargetException {
         this.testNewSave();
         this.testUpdteEntity();
         this.validateUpdateAndNewSave();
     }
 
     @Test
-    public void testUpdateThanNewSave() throws IOException, IntrospectionException, IllegalAccessException, InvocationTargetException {
+    public void testUpdateThanNewSave() throws IOException, IllegalAccessException, InvocationTargetException {
         this.testUpdteEntity();
         this.validateNewSave(EXPECTED_TEXT_AFTER_UPDATE);
         this.validateUpdateAndNewSave();
@@ -89,8 +88,7 @@ public class TextFileEntityActorTest {
         Assertions.assertThrows(PersistenceException.class, () -> textFileEntityActor.updateEntity(entity));
     }
 
-    private void validateNewSave(String lineOneText)
-        throws IllegalAccessException, IntrospectionException, InvocationTargetException, IOException {
+    private void validateNewSave(String lineOneText) throws IllegalAccessException, InvocationTargetException, IOException {
         TextFileEntityActor textFileEntityActor = new TextFileEntityActor(FILE_NAME);
         Entity entity = createEntity(2L, "second test");
         textFileEntityActor.saveNew(entity);
@@ -116,6 +114,26 @@ public class TextFileEntityActorTest {
         String string = stringBuffer.toString();
         Assertions.assertEquals(EXPECTED_TEXT_AFTER_UPDATE + System.lineSeparator() + NEW_SAVE, string);
         Assertions.assertEquals(2, cont);
+    }
+
+    @Test
+    public void testRemove() throws IllegalAccessException, IOException, InvocationTargetException {
+        this.testNewSaveThanUpdateEntity();
+        TextFileEntityActor textFileEntityActor = new TextFileEntityActor(testFile);
+        Entity entity = new Entity();
+        entity.setId(1L);
+        entity.setNome("test");
+        textFileEntityActor.removeEntity(entity);
+        Scanner scanner = new Scanner(testFile);
+        int cont = 0;
+        StringBuffer stringBuffer = new StringBuffer();
+        while (scanner.hasNextLine()) {
+            cont++;
+            stringBuffer.append(scanner.nextLine());
+        }
+        String string = stringBuffer.toString();
+        Assertions.assertEquals(NEW_SAVE, string);
+        Assertions.assertEquals(1, cont);
     }
 
     private Entity createEntity(Long id, String name) {

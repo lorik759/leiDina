@@ -6,10 +6,17 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Regex to remove leading and trailing spaces.">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Moving regex to StringUtils.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/ConfigurableApplicationEnvironmentImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/ConfigurableApplicationEnvironmentImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/utils/StringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/utils/StringUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leiDina.iml" beforeDir="false" afterPath="$PROJECT_DIR$/leiDina.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/biz/dao/ConfiguracaoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/biz/dao/ConfiguracaoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/annotations/ID.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/io/EntityToTextDigester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/io/EntityToTextDigester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/io/TextFileEntityActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/io/TextFileEntityActor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/persist/BaseDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/dao/BaseDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/persist/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/dao/DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/persist/TextBasePersister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/persist/TextBasePersister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/main/java/leiDina/tec/core/io/TextFileEntityActorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/main/java/leiDina/tec/core/io/TextFileEntityActorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,15 +151,24 @@
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="main.java.leiDina.tec.core.io" />
+      <recent name="main.java.leiDina.tec.core.annotations" />
+      <recent name="main.java.leiDina.tec.core.persist.exception" />
+      <recent name="main.java.leiDina.tec.core.persist" />
+      <recent name="main.java.leiDina.controllers" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="main.java.leiDina.tec.core.persist" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/java/leiDina/view" />
-      <recent name="$PROJECT_DIR$/src/main/java/leiDina/tec" />
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="main.java.leiDina.tec.core.model" />
+      <recent name="main.java.leiDina.tec.core.io" />
+      <recent name="main.java.leiDina.tec.javafx.factory" />
+      <recent name="main.java.leiDina.tec.core.messages" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/leiDina/tec" />
@@ -161,25 +177,16 @@
       <recent name="$PROJECT_DIR$/src/main/java/leiDina/tec/core" />
       <recent name="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx" />
     </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="main.java.leiDina.tec.javafx.factory" />
-      <recent name="main.java.leiDina.tec.core.model" />
-      <recent name="main.java.leiDina.tec.core.io" />
-      <recent name="main.java.leiDina.tec.core.messages" />
-    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="test.java.leiDina.tec.javafx.factory" />
       <recent name="main.java.leiDina.tec.javafx" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="main.java.leiDina.tec.core.io" />
-      <recent name="main.java.leiDina.tec.core.annotations" />
-      <recent name="main.java.leiDina.tec.core.persist.exception" />
-      <recent name="main.java.leiDina.tec.core.persist" />
-      <recent name="main.java.leiDina.controllers" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/leiDina/view" />
+      <recent name="$PROJECT_DIR$/src/main/java/leiDina/tec" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.TextFileEntityActorTest">
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -246,25 +253,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EntityToTextDigesterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="leiDina" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="main.java.leiDina.tec.core.io.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="main.java.leiDina.tec.core.io" />
-      <option name="MAIN_CLASS_NAME" value="main.java.leiDina.tec.core.io.EntityToTextDigesterTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="MessageDelegateTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="leiDina" />
       <extension name="coverage">
@@ -284,16 +272,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TextBasePersisterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TextFileEntityActorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="leiDina" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="main.java.leiDina.tec.core.persist.*" />
+          <option name="PATTERN" value="main.java.leiDina.tec.core.model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="main.java.leiDina.tec.core.persist" />
-      <option name="MAIN_CLASS_NAME" value="main.java.leiDina.tec.core.persist.TextBasePersisterTest" />
+      <option name="PACKAGE_NAME" value="main.java.leiDina.tec.core.io" />
+      <option name="MAIN_CLASS_NAME" value="main.java.leiDina.tec.core.io.TextFileEntityActorTest" />
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
@@ -303,17 +291,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TextFileEntityActorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TextFileEntityActorTest.testEntityWithIdExists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="leiDina" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="main.java.leiDina.tec.core.io.*" />
+          <option name="PATTERN" value="main.java.leiDina.tec.core.model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="main.java.leiDina.tec.core.io" />
       <option name="MAIN_CLASS_NAME" value="main.java.leiDina.tec.core.io.TextFileEntityActorTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="testEntityWithIdExists" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TextFileEntityActorTest.testRemove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="leiDina" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.java.leiDina.tec.core.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="main.java.leiDina.tec.core.io" />
+      <option name="MAIN_CLASS_NAME" value="main.java.leiDina.tec.core.io.TextFileEntityActorTest" />
+      <option name="METHOD_NAME" value="testRemove" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="moduleWithDependencies" />
@@ -356,9 +365,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.TextFileEntityActorTest" />
+        <item itemvalue="JUnit.TextFileEntityActorTest.testRemove" />
+        <item itemvalue="JUnit.TextFileEntityActorTest.testEntityWithIdExists" />
         <item itemvalue="JUnit.ControllerFactoryTest" />
         <item itemvalue="JUnit.MessageDelegateTest" />
-        <item itemvalue="JUnit.TextBasePersisterTest" />
       </list>
     </recent_temporary>
   </component>
@@ -401,7 +411,9 @@
       <workItem from="1585316285376" duration="201000" />
       <workItem from="1585316505304" duration="521000" />
       <workItem from="1585317334441" duration="14857000" />
-      <workItem from="1585349593017" duration="3557000" />
+      <workItem from="1585349593017" duration="3978000" />
+      <workItem from="1585395177521" duration="1812000" />
+      <workItem from="1585397009491" duration="2427000" />
     </task>
     <task id="LOCAL-00001" summary="Base implantation of a ControllerFactory and a simple exception creator.">
       <created>1583601470898</created>
@@ -508,7 +520,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585352741889</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Moving regex to StringUtils.">
+      <created>1585353300964</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1585353300964</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -533,7 +552,8 @@
     <MESSAGE value="Grammar and removing unused classes. Created entity controller and a builder for the controller." />
     <MESSAGE value="Renaming class." />
     <MESSAGE value="Regex to remove leading and trailing spaces." />
-    <option name="LAST_COMMIT_MESSAGE" value="Regex to remove leading and trailing spaces." />
+    <MESSAGE value="Moving regex to StringUtils." />
+    <option name="LAST_COMMIT_MESSAGE" value="Moving regex to StringUtils." />
   </component>
   <component name="WindowStateProjectService">
     <state x="325" y="181" width="800" height="677" key="#Inspections" timestamp="1585222473143">
@@ -545,10 +565,10 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="555" y="181" width="800" height="677" key="#Notifications/0.27.1920.988@0.27.1920.988" timestamp="1585349578053" />
-    <state x="100" y="125" width="1720" height="790" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1585326937732">
+    <state x="100" y="125" width="1720" height="790" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1585397278617">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="100" y="125" width="1720" height="790" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.27.1920.988@0.27.1920.988" timestamp="1585326937732" />
+    <state x="100" y="125" width="1720" height="790" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.27.1920.988@0.27.1920.988" timestamp="1585397278617" />
     <state x="653" y="312" width="651" height="416" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584305264807">
       <screen x="0" y="27" width="3280" height="988" />
     </state>
@@ -575,10 +595,10 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="546" y="438" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.27.1920.988@0.27.1920.988" timestamp="1585347710868" />
-    <state x="697" y="362" width="525" height="318" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1585347380188">
+    <state x="697" y="362" width="525" height="318" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1585410884049">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="697" y="362" width="525" height="318" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.27.1920.988@0.27.1920.988" timestamp="1585347380188" />
+    <state x="697" y="362" width="525" height="318" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.27.1920.988@0.27.1920.988" timestamp="1585410884049" />
     <state x="377" y="27" width="636" height="988" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1585343739259">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
@@ -589,15 +609,15 @@
     </state>
     <state x="693" y="269" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1920.988@0.27.1920.988" timestamp="1585347765866" />
     <state x="1024" y="269" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.3280.988@0.27.3280.988" timestamp="1584313473856" />
-    <state x="45" y="157" width="903" height="765" key="#xdebugger.evaluate" timestamp="1585353182099">
+    <state x="45" y="157" width="903" height="765" key="#xdebugger.evaluate" timestamp="1585397318756">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="45" y="157" width="903" height="765" key="#xdebugger.evaluate/0.27.1920.988@0.27.1920.988" timestamp="1585353182099" />
+    <state x="45" y="157" width="903" height="765" key="#xdebugger.evaluate/0.27.1920.988@0.27.1920.988" timestamp="1585397318756" />
     <state x="840" y="144" width="922" height="765" key="#xdebugger.evaluate/0.27.3280.988@0.27.3280.988" timestamp="1584314102380" />
-    <state x="225" y="29" width="989" height="982" key="CommitChangelistDialog2" timestamp="1585352741838">
+    <state x="225" y="29" width="989" height="982" key="CommitChangelistDialog2" timestamp="1585412198402">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="225" y="29" width="989" height="982" key="CommitChangelistDialog2/0.27.1920.988@0.27.1920.988" timestamp="1585352741838" />
+    <state x="225" y="29" width="989" height="982" key="CommitChangelistDialog2/0.27.1920.988@0.27.1920.988" timestamp="1585412198402" />
     <state x="385" y="29" width="1535" height="982" key="CommitChangelistDialog2/0.27.3280.988@0.27.3280.988" timestamp="1584315935198" />
     <state x="879" y="29" width="792" height="982" key="CommitChangelistDialog2/2560.0.1920.1080/0.27.2560.988@0.27.2560.988" timestamp="1583619615635" />
     <state x="354" y="78" width="1124" height="820" maximized="true" key="DiffContextDialog" timestamp="1585347673332">
@@ -609,45 +629,45 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="738" y="263" width="495" height="513" key="FileChooserDialogImpl/0.27.1920.988@0.27.1920.988" timestamp="1585346777994" />
-    <state width="1874" height="292" key="GridCell.Tab.0.bottom" timestamp="1585353265913">
+    <state width="1874" height="292" key="GridCell.Tab.0.bottom" timestamp="1585410984696">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="292" key="GridCell.Tab.0.bottom/0.27.1920.988@0.27.1920.988" timestamp="1585353265913" />
+    <state width="1874" height="292" key="GridCell.Tab.0.bottom/0.27.1920.988@0.27.1920.988" timestamp="1585410984696" />
     <state width="1874" height="292" key="GridCell.Tab.0.bottom/0.27.3280.988@0.27.3280.988" timestamp="1584316431086" />
-    <state width="1874" height="292" key="GridCell.Tab.0.center" timestamp="1585353265912">
+    <state width="1874" height="292" key="GridCell.Tab.0.center" timestamp="1585410984695">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="292" key="GridCell.Tab.0.center/0.27.1920.988@0.27.1920.988" timestamp="1585353265912" />
+    <state width="1874" height="292" key="GridCell.Tab.0.center/0.27.1920.988@0.27.1920.988" timestamp="1585410984695" />
     <state width="1874" height="292" key="GridCell.Tab.0.center/0.27.3280.988@0.27.3280.988" timestamp="1584316431083" />
-    <state width="1874" height="292" key="GridCell.Tab.0.left" timestamp="1585353265910">
+    <state width="1874" height="292" key="GridCell.Tab.0.left" timestamp="1585410984694">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="292" key="GridCell.Tab.0.left/0.27.1920.988@0.27.1920.988" timestamp="1585353265910" />
+    <state width="1874" height="292" key="GridCell.Tab.0.left/0.27.1920.988@0.27.1920.988" timestamp="1585410984694" />
     <state width="1874" height="292" key="GridCell.Tab.0.left/0.27.3280.988@0.27.3280.988" timestamp="1584316431082" />
-    <state width="1874" height="292" key="GridCell.Tab.0.right" timestamp="1585353265912">
+    <state width="1874" height="292" key="GridCell.Tab.0.right" timestamp="1585410984695">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="292" key="GridCell.Tab.0.right/0.27.1920.988@0.27.1920.988" timestamp="1585353265912" />
+    <state width="1874" height="292" key="GridCell.Tab.0.right/0.27.1920.988@0.27.1920.988" timestamp="1585410984695" />
     <state width="1874" height="292" key="GridCell.Tab.0.right/0.27.3280.988@0.27.3280.988" timestamp="1584316431084" />
-    <state width="1874" height="292" key="GridCell.Tab.1.bottom" timestamp="1585353152550">
+    <state width="1874" height="292" key="GridCell.Tab.1.bottom" timestamp="1585410984697">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="292" key="GridCell.Tab.1.bottom/0.27.1920.988@0.27.1920.988" timestamp="1585353152550" />
+    <state width="1874" height="292" key="GridCell.Tab.1.bottom/0.27.1920.988@0.27.1920.988" timestamp="1585410984697" />
     <state width="1874" height="292" key="GridCell.Tab.1.bottom/0.27.3280.988@0.27.3280.988" timestamp="1584316431089" />
-    <state width="1874" height="292" key="GridCell.Tab.1.center" timestamp="1585353152550">
+    <state width="1874" height="292" key="GridCell.Tab.1.center" timestamp="1585410984696">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="292" key="GridCell.Tab.1.center/0.27.1920.988@0.27.1920.988" timestamp="1585353152550" />
+    <state width="1874" height="292" key="GridCell.Tab.1.center/0.27.1920.988@0.27.1920.988" timestamp="1585410984696" />
     <state width="1874" height="292" key="GridCell.Tab.1.center/0.27.3280.988@0.27.3280.988" timestamp="1584316431087" />
-    <state width="1874" height="292" key="GridCell.Tab.1.left" timestamp="1585353152549">
+    <state width="1874" height="292" key="GridCell.Tab.1.left" timestamp="1585410984696">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="292" key="GridCell.Tab.1.left/0.27.1920.988@0.27.1920.988" timestamp="1585353152549" />
+    <state width="1874" height="292" key="GridCell.Tab.1.left/0.27.1920.988@0.27.1920.988" timestamp="1585410984696" />
     <state width="1874" height="292" key="GridCell.Tab.1.left/0.27.3280.988@0.27.3280.988" timestamp="1584316431086" />
-    <state width="1874" height="292" key="GridCell.Tab.1.right" timestamp="1585353152550">
+    <state width="1874" height="292" key="GridCell.Tab.1.right" timestamp="1585410984697">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="292" key="GridCell.Tab.1.right/0.27.1920.988@0.27.1920.988" timestamp="1585353152550" />
+    <state width="1874" height="292" key="GridCell.Tab.1.right/0.27.1920.988@0.27.1920.988" timestamp="1585410984697" />
     <state width="1874" height="292" key="GridCell.Tab.1.right/0.27.3280.988@0.27.3280.988" timestamp="1584316431088" />
     <state x="740" y="228" width="628" height="584" key="MultipleFileMergeDialog" timestamp="1585264308952">
       <screen x="0" y="27" width="1920" height="988" />
@@ -662,10 +682,10 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="774" y="148" width="361" height="744" key="RollbackChangesDialog/0.27.1920.988@0.27.1920.988" timestamp="1585261085116" />
-    <state x="259" y="97" width="900" height="901" key="SettingsEditor" timestamp="1585346867650">
+    <state x="259" y="97" width="900" height="901" key="SettingsEditor" timestamp="1585397201770">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="259" y="97" width="900" height="845" key="SettingsEditor/0.27.1920.988@0.27.1920.988" timestamp="1585346867650" />
+    <state x="259" y="97" width="900" height="845" key="SettingsEditor/0.27.1920.988@0.27.1920.988" timestamp="1585397201770" />
     <state x="443" y="97" width="1024" height="845" key="SettingsEditor/0.27.3280.988@0.27.3280.988" timestamp="1584307986404" />
     <state x="317" y="102" width="900" height="901" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1584980743995" />
     <state x="757" y="254" width="633" height="540" key="StructurePopup" timestamp="1585263913674">
@@ -674,10 +694,10 @@
     <state x="757" y="254" width="633" height="540" key="StructurePopup/0.27.1920.988@0.27.1920.988" timestamp="1585263913674" />
     <state x="1009" y="254" width="633" height="540" key="StructurePopup/0.27.2560.988/2560.0.1920.1080@0.27.2560.988" timestamp="1583694649173" />
     <state x="1293" y="254" width="1082" height="540" key="StructurePopup/0.27.3280.988@0.27.3280.988" timestamp="1584302674739" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1585353138323">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1585410945024">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.27.1920.988@0.27.1920.988" timestamp="1585353138323" />
+    <state width="498" height="446" key="SwitcherDM/0.27.1920.988@0.27.1920.988" timestamp="1585410945024" />
     <state width="498" height="446" key="SwitcherDM/0.27.2560.988/2560.0.1920.1080@0.27.2560.988" timestamp="1583694940835" />
     <state width="851" height="446" key="SwitcherDM/0.27.3280.988@0.27.3280.988" timestamp="1584314136899" />
     <state width="498" height="446" key="SwitcherDM/2560.0.1920.1080/0.27.2560.988@0.27.2560.988" timestamp="1583619418412" />
@@ -698,10 +718,10 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="100" y="125" width="1720" height="790" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.27.1920.988@0.27.1920.988" timestamp="1585264472318" />
-    <state x="614" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1585349593340">
+    <state x="614" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1585397143588">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="614" y="347" key="com.intellij.ide.util.TipDialog/0.27.1920.988@0.27.1920.988" timestamp="1585349593339" />
+    <state x="614" y="347" key="com.intellij.ide.util.TipDialog/0.27.1920.988@0.27.1920.988" timestamp="1585397143588" />
     <state x="660" y="368" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1584996216979" />
     <state x="714" y="410" width="538" height="236" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1585346828652">
       <screen x="0" y="27" width="1920" height="988" />
@@ -716,10 +736,10 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="678" y="209" width="554" height="621" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.27.1920.988@0.27.1920.988" timestamp="1585347247319" />
-    <state x="365" y="250" width="568" height="539" key="extract.method.dialog" timestamp="1585333777092">
+    <state x="365" y="250" width="568" height="539" key="extract.method.dialog" timestamp="1585395579759">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="365" y="250" width="568" height="539" key="extract.method.dialog/0.27.1920.988@0.27.1920.988" timestamp="1585333777092" />
+    <state x="365" y="250" width="568" height="539" key="extract.method.dialog/0.27.1920.988@0.27.1920.988" timestamp="1585395579759" />
     <state x="623" y="250" width="664" height="539" key="extract.method.dialog/0.27.3280.988@0.27.3280.988" timestamp="1584310892634" />
     <state x="755" y="152" width="456" height="736" key="git4idea.branch.GitSmartOperationDialog" timestamp="1585264279337">
       <screen x="0" y="27" width="1920" height="988" />
