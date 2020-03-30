@@ -187,6 +187,15 @@ public class TextFileEntityActor {
         fileOut.close();
     }
 
+    /**
+     * Finds an entity line from within a text file, and creates and returns the entity with the specified id.
+     *
+     * @param id of the entity to be found.
+     * @param type the Class of the entity to be created.
+     * @param <T> the type of the entity to be created.
+     * @return the entity with the information saved in the text file.
+     * @throws FileNotFoundException {@link FileNotFoundException}.
+     */
     public <T extends Persistable> T get(Serializable id, Class<T> type) throws FileNotFoundException {
         String line;
         this.openToRead();
