@@ -136,6 +136,31 @@ public class TextFileEntityActorTest {
         Assertions.assertEquals(1, cont);
     }
 
+    @Test
+    public void testGet() throws IOException, IllegalAccessException, InvocationTargetException {
+        Entity entity = createEntity(25L, "test");
+        TextFileEntityActor textFileEntityActor = new TextFileEntityActor(testFile);
+        textFileEntityActor.saveNew(entity);
+        Entity getEntity = textFileEntityActor.get(25L, Entity.class);
+        Assertions.assertNotNull(getEntity.getId());
+        Assertions.assertEquals(entity.getId(), getEntity.getId());
+        Assertions.assertNotNull(getEntity.getNome());
+        Assertions.assertEquals(entity.getNome(), getEntity.getNome());
+    }
+
+    @Test
+    public void testSaveUpdateGet() throws IOException, IllegalAccessException, InvocationTargetException {
+        this.testUpdteEntity();
+        this.validateNewSave(EXPECTED_TEXT_AFTER_UPDATE);
+        this.validateUpdateAndNewSave();
+        TextFileEntityActor textFileEntityActor = new TextFileEntityActor(testFile);
+        Entity entity = textFileEntityActor.get(1L, Entity.class);
+        Assertions.assertNotNull(entity.getId());
+        Assertions.assertEquals(1L, entity.getId());
+        Assertions.assertNotNull(entity.getNome());
+        Assertions.assertEquals("test", entity.getNome());
+    }
+
     private Entity createEntity(Long id, String name) {
         Entity entity = new Entity();
         entity.setId(id);

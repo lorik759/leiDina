@@ -14,7 +14,7 @@ import main.java.leiDina.tec.core.model.EntityDescriptor;
 import main.java.leiDina.tec.core.persist.Persistable;
 
 /**
- * An actor that knows how to open e write in a text file that contains a persistable entity.
+ * An actor that knows how to write, read and edit in a text file that contains a persistable entity.
  *
  * @author vitor.alves
  */
