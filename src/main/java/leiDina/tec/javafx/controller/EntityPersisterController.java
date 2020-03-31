@@ -10,13 +10,15 @@ import main.java.leiDina.tec.core.persist.Persister;
  *
  * @author vitor.alves
  */
-public abstract class EntityPersisterController<M extends Persistable> extends BaseModelController<M> {
+public abstract class EntityPersisterController<M> extends BaseModelController<M> {
 
     @Resource(name = "persister")
     private Persister persister;
 
+    protected abstract <E extends Persistable> E getEntityFromModel();
+
     @FXML
     public void save() {
-        persister.save(this.getModel());
+        persister.save(this.getEntityFromModel());
     }
 }

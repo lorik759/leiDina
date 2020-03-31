@@ -1,15 +1,20 @@
 package main.java.leiDina.biz.controllers.configuration;
 
-import main.java.leiDina.biz.model.Configuracao;
+import main.java.leiDina.tec.core.persist.Persistable;
 import main.java.leiDina.tec.javafx.controller.EntityPersisterController;
 
 /**
  * @author vitor.alves
  */
-public class ConfiguracaoController extends EntityPersisterController<Configuracao> {
+public class ConfiguracaoController extends EntityPersisterController<ConfiguracaoModel> {
 
     @Override
-    protected Configuracao createModel() {
-        return new Configuracao();
+    protected ConfiguracaoModel createModel() {
+        return new ConfiguracaoModel();
+    }
+
+    @Override
+    protected <E extends Persistable> E getEntityFromModel() {
+        return null;
     }
 }
