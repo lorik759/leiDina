@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.util.List;
 import java.util.Scanner;
 import main.java.leiDina.tec.core.exception.PersistenceException;
 import main.java.leiDina.tec.core.model.Entity;
@@ -159,6 +160,58 @@ public class TextFileEntityActorTest {
         Assertions.assertEquals(1L, entity.getId());
         Assertions.assertNotNull(entity.getNome());
         Assertions.assertEquals("test", entity.getNome());
+    }
+
+    @Test
+    public void testGetAll() throws IllegalAccessException, IOException, InvocationTargetException {
+        TextFileEntityActor textFileEntityActor = new TextFileEntityActor(testFile);
+        Entity entity = createEntity(20L, "test1");
+        textFileEntityActor.saveNew(entity);
+        Entity entity2 = createEntity(21L, "test2");
+        textFileEntityActor.saveNew(entity2);
+        Entity entity3 = createEntity(22L, "test3");
+        textFileEntityActor.saveNew(entity3);
+        List<Entity> entities = textFileEntityActor.getAll(Entity.class);
+        Assertions.assertEquals(4, entities.size());
+        Assertions.assertEquals(1L, entities.get(0).getId());
+        Assertions.assertEquals("vitor", entities.get(0).getNome());
+
+        Assertions.assertEquals(entity.getId(), entities.get(1).getId());
+        Assertions.assertEquals(entity.getNome(), entities.get(1).getNome());
+
+        Assertions.assertEquals(entity2.getId(), entities.get(2).getId());
+        Assertions.assertEquals(entity2.getId(), entities.get(2).getId());
+
+        Assertions.assertEquals(entity3.getId(), entities.get(3).getId());
+        Assertions.assertEquals(entity3.getId(), entities.get(3).getId());
+    }
+
+    @Test
+    public void testSaveUpdateGetGetAll() throws IOException, IllegalAccessException, InvocationTargetException {
+        this.testSaveUpdateGet();
+        TextFileEntityActor textFileEntityActor = new TextFileEntityActor(testFile);
+        Entity entity = createEntity(20L, "test1");
+        textFileEntityActor.saveNew(entity);
+        Entity entity2 = createEntity(21L, "test2");
+        textFileEntityActor.saveNew(entity2);
+        Entity entity3 = createEntity(22L, "test3");
+        textFileEntityActor.saveNew(entity3);
+        List<Entity> entities = textFileEntityActor.getAll(Entity.class);
+        Assertions.assertEquals(5, entities.size());
+        Assertions.assertEquals(1L, entities.get(0).getId());
+        Assertions.assertEquals("test", entities.get(0).getNome());
+
+        Assertions.assertEquals(2L, entities.get(1).getId());
+        Assertions.assertEquals("second test", entities.get(1).getNome());
+
+        Assertions.assertEquals(entity.getId(), entities.get(2).getId());
+        Assertions.assertEquals(entity.getNome(), entities.get(2).getNome());
+
+        Assertions.assertEquals(entity2.getId(), entities.get(3).getId());
+        Assertions.assertEquals(entity2.getId(), entities.get(3).getId());
+
+        Assertions.assertEquals(entity3.getId(), entities.get(4).getId());
+        Assertions.assertEquals(entity3.getId(), entities.get(4).getId());
     }
 
     private Entity createEntity(Long id, String name) {

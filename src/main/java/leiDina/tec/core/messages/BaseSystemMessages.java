@@ -15,7 +15,9 @@ public enum BaseSystemMessages implements MessageCreator {
 
     TOO_MANY_ENTITY_FOUND("to.many.entity.found", 2),
 
-    ENTITY_ALREADY_EXISTS("entity.already.exists", 2);
+    ENTITY_ALREADY_EXISTS("entity.already.exists", 2),
+
+    UNABLE_TO_REMOVE_ENTITY("unable.to.remove.entity", 1);
 
     private MessageDelegate delagate;
 

@@ -6,6 +6,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 import main.java.leiDina.tec.core.exception.PersistenceException;
@@ -55,7 +57,8 @@ public class TextFileEntityActor {
     }
 
     /**
-     * Opens and reads the text file of an entity. If the entity with the same id exists in the text file than the return value is <>true</> and <>false</> otherwise.
+     * Opens and reads the text file of an entity. If the entity with the same id exists in the text file than the return value is <>true</> and
+     * <>false</> otherwise.
      *
      * @param entityId entity to be checked if exists.
      * @return A boolean.
@@ -208,5 +211,25 @@ public class TextFileEntityActor {
             }
         }
         throw new PersistenceException(BaseSystemMessages.ENTITY_NOT_FOUND.create(type, id));
+    }
+
+    /**
+     * Find all entity lines from within a text file, and creates and returns a list of all the entities.
+     *
+     * @param type the Class of the entities.
+     * @param <T> the type of the entities.
+     * @return a list of all the entities from within the text file.
+     * @throws FileNotFoundException {@link FileNotFoundException}.
+     */
+    public <T extends Persistable> List<T> getAll(Class<T> type) throws FileNotFoundException {
+        List<T> allEntities = new ArrayList<>();
+        String line;
+        this.openToRead();
+        EntityDescriptor<T> entityDescriptor = new EntityDescriptor<>(type);
+        while (this.scanner.hasNextLine()) {
+            line = this.scanner.nextLine();
+            allEntities.add(entityDescriptor.createInstanceFromLine(line));
+        }
+        return allEntities;
     }
 }

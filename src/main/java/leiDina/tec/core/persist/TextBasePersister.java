@@ -1,5 +1,6 @@
 package main.java.leiDina.tec.core.persist;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.List;
@@ -38,24 +39,8 @@ public class TextBasePersister implements Persister {
             }
             textFileEntityActor.removeEntity(entity);
         } catch (IOException e) {
-            throw new PersistenceException(BaseSystemMessages.UNABLE_TO_SAVE_ENTITY.create(entity.getClass()), e);
+            throw new PersistenceException(BaseSystemMessages.UNABLE_TO_REMOVE_ENTITY.create(entity.getClass()), e);
         }
-    }
-
-    private TextFileEntityActor getActor(Persistable entity) {
-        return this.getActor(entity.getClass());
-    }
-
-    private TextFileEntityActor getActor(Class<? extends Persistable> aClass) {
-        Entity entityAnnotation = aClass.getAnnotation(Entity.class);
-        if (entityAnnotation == null) {
-            throw new PersistenceException(BaseSystemMessages.OBJECT_NOT_ENTITY.create(aClass));
-        }
-        String name = entityAnnotation.name();
-        if (!StringUtils.isNotEmpty(name)) {
-            name = aClass.getSimpleName();
-        }
-        return new TextFileEntityActor(name);
     }
 
     @Override
@@ -74,6 +59,26 @@ public class TextBasePersister implements Persister {
 
     @Override
     public <T extends Persistable> List<T> getAll(Class<T> type) {
-        return null;
+        try {
+            return getActor(type).getAll(type);
+        } catch (FileNotFoundException e) {
+            throw new PersistenceException(e);
+        }
+    }
+
+    private TextFileEntityActor getActor(Persistable entity) {
+        return this.getActor(entity.getClass());
+    }
+
+    private TextFileEntityActor getActor(Class<? extends Persistable> aClass) {
+        Entity entityAnnotation = aClass.getAnnotation(Entity.class);
+        if (entityAnnotation == null) {
+            throw new PersistenceException(BaseSystemMessages.OBJECT_NOT_ENTITY.create(aClass));
+        }
+        String name = entityAnnotation.name();
+        if (StringUtils.isEmpty(name)) {
+            name = aClass.getSimpleName();
+        }
+        return new TextFileEntityActor(name);
     }
 }

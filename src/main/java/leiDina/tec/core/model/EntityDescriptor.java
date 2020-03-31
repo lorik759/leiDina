@@ -21,8 +21,6 @@ public class EntityDescriptor<T extends Persistable> {
 
     private Class<T> type;
 
-    private T instance;
-
     public EntityDescriptor(Class<T> type) {
         this.type = type;
         this.createByType(type);
@@ -76,8 +74,7 @@ public class EntityDescriptor<T extends Persistable> {
                 }
                 // TODO: Add so that its possible to convert entity as well and not just primitive types.
             }
-            this.instance = entity;
-            return this.instance;
+            return entity;
         } catch (ReflectiveOperationException e) {
             throw new EntityCreationException(e);
         }

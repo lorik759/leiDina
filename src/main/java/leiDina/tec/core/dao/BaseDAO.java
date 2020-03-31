@@ -29,8 +29,8 @@ public abstract class BaseDAO<T extends Persistable> implements DAO<T> {
     }
 
     @Override
-    public T findById(Serializable pk) throws EntityNotFoundException {
-        return persister.get(pk, getPersistableType());
+    public T findById(Serializable id) throws EntityNotFoundException {
+        return persister.get(id, getPersistableType());
     }
 
     @Override
