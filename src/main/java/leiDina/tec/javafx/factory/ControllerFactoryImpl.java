@@ -57,9 +57,6 @@ public class ControllerFactoryImpl implements ControllerFactory {
                 clazz = clazz.getSuperclass();
             }
         }
-        if (builder == null) {
-            builder = buiders.get(Object.class);
-        }
         return builder.build(controllerClass);
     }
 }

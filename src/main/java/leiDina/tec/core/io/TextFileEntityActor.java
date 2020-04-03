@@ -16,10 +16,11 @@ import main.java.leiDina.tec.core.model.EntityDescriptor;
 import main.java.leiDina.tec.core.persist.Persistable;
 
 /**
- * An actor that knows how to write, read and edit in a text file that contains a persistable entity.
+ * An actor that knows how to write, read and edit a text file that represents a persistable entity.
  *
  * @author vitor.alves
  */
+//TODO: Refactor this entire class... Its to long and complicated.
 public class TextFileEntityActor {
 
     private File file;
@@ -50,7 +51,7 @@ public class TextFileEntityActor {
     }
 
     /**
-     * Closes the file of the entity to be read.
+     * Closes the file of the entity.
      */
     private void closeToRead() {
         this.scanner.close();
@@ -66,6 +67,9 @@ public class TextFileEntityActor {
      */
     public boolean entityWithIdExists(Serializable entityId) throws IOException {
         if (file.createNewFile()) {
+            return false;
+        }
+        if (entityId == null) {
             return false;
         }
         this.openToRead();
@@ -128,18 +132,39 @@ public class TextFileEntityActor {
      * @throws IOException {@link IOException}.
      */
     public void saveNew(Persistable entity) throws IllegalAccessException, InvocationTargetException, IOException {
-        String entityLine = entityToTextDigester.digest(entity);
         String line;
         StringBuffer stringBuffer = new StringBuffer();
-        if (this.entityWithIdExists(entity)) {
+        Long maxId = this.findMaxId();
+        if (this.entityWithIdExists(entity.getId())) {
             throw new PersistenceException(BaseSystemMessages.ENTITY_ALREADY_EXISTS.create(entity.getClass(), entity.getId()));
         }
+        entity.setId(maxId + 1);
+        String entityLine = entityToTextDigester.digest(entity);
         this.openToRead();
         while (this.scanner.hasNextLine()) {
             line = this.scanner.nextLine();
             stringBuffer.append(line).append(System.lineSeparator());
         }
         this.writeToFile(stringBuffer.append(entityLine));
+    }
+
+    /**
+     * @return the largest id used.
+     * @throws FileNotFoundException {@link FileNotFoundException}.
+     */
+    private Long findMaxId() throws FileNotFoundException {
+        String line;
+        Long lastUsedId = 0L;
+        this.openToRead();
+        while (this.scanner.hasNextLine()) {
+            line = this.scanner.nextLine();
+            Map<String, String> properties = textToEntityDigester.digest(line);
+            Long id = Long.parseLong(properties.get("id"));
+            if (lastUsedId.compareTo(id) < 0) {
+                lastUsedId = id;
+            }
+        }
+        return lastUsedId;
     }
 
     /**

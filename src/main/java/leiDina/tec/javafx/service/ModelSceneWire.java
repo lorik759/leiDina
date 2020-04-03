@@ -1,15 +1,17 @@
 package main.java.leiDina.tec.javafx.service;
 
-import javafx.fxml.FXMLLoader;
-import main.java.leiDina.tec.core.service.Wire;
-import main.java.leiDina.tec.javafx.controller.BaseModelController;
-
 import java.beans.PropertyDescriptor;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import main.java.leiDina.tec.core.service.Wire;
+import main.java.leiDina.tec.javafx.controller.BaseModelController;
+import main.java.leiDina.tec.javafx.exception.VFXException;
+import main.java.leiDina.tec.javafx.messages.FXSystemMessages;
 
 /**
  * @author vitor.alves
@@ -31,7 +33,12 @@ public class ModelSceneWire implements Wire<BaseModelController<?>> {
                 for (Annotation declaredAnnotation : writeMethod.getDeclaredAnnotations()) {
                     NodeAssociation nodeAssociation = associationMap.get(declaredAnnotation.annotationType());
                     if (nodeAssociation != null) {
-                        nodeAssociation.associate(model, declaredAnnotation, writeMethod, fxmlLoader.getNamespace());
+                        String name = propertyDescriptor.getName();
+                        Node node = (Node) fxmlLoader.getNamespace().get(name);
+                        if (node == null) {
+                            throw new VFXException(FXSystemMessages.NO_COMPONENT_OF_ID.create(name));
+                        }
+                        nodeAssociation.associate(model, declaredAnnotation, writeMethod, node);
                     }
                 }
             }
@@ -42,7 +49,7 @@ public class ModelSceneWire implements Wire<BaseModelController<?>> {
         this.fxmlLoader = fxmlLoader;
     }
 
-    public void addModelComponentAssociation(Class<? extends Annotation> clazz, NodeAssociation<?> nodeAssociation) {
+    public void addModelComponentAssociation(Class<? extends Annotation> clazz, NodeAssociation<?, ?> nodeAssociation) {
         this.associationMap.put(clazz, nodeAssociation);
     }
 }

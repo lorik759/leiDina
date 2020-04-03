@@ -34,7 +34,7 @@ public class TextBasePersister implements Persister {
     public void remove(Persistable entity) {
         TextFileEntityActor textFileEntityActor = getActor(entity);
         try {
-            if (!textFileEntityActor.entityWithIdExists(entity)) {
+            if (!textFileEntityActor.entityWithIdExists(entity.getId())) {
                 throw new PersistenceException(BaseSystemMessages.ENTITY_NOT_FOUND.create(entity.getClass(), entity.getId()));
             }
             textFileEntityActor.removeEntity(entity);
