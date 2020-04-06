@@ -14,7 +14,7 @@
    <top>
       <VBox prefHeight="45.0" prefWidth="800.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" text="Ler">
+            <Button mnemonicParsing="false" text="Ler" onMouseClicked="#lerTexto">
                <font>
                   <Font size="15.0" />
                </font>
