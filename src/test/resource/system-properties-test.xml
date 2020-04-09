@@ -3,6 +3,6 @@
 <properties>
     <entry key="Services">
         main.java.leiDina.tec.core.mock.SystemServiceMock,
-
+        main.java.leiDina.tec.core.mock.SecondSystemServiceMock
     </entry>
 </properties>

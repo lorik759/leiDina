@@ -8,7 +8,7 @@ import main.java.leiDina.tec.core.persist.Persistable;
  * @author vitor.alves
  */
 @Entity
-public class EntityToo implements Persistable {
+public class EntityTwo implements Persistable {
 
     private Long id;
 

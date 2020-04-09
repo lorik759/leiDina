@@ -22,7 +22,7 @@ import main.java.leiDina.tec.javafx.service.VFXKey;
  */
 public class VFXSystemService extends BaseSystemService {
 
-    private static final String FX_SYSTEM_ENVIRONMENT = "fx-system-properties.xml";
+    private static final String FX_SYSTEM_ENVIRONMENT = "fx-service-properties.xml";
 
     @Override
     public void init(ConfigurableApplicationEnvironment environment) {

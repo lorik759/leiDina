@@ -8,7 +8,7 @@ import main.java.leiDina.tec.core.service.SystemService;
 /**
  * @author vitor.alves
  */
-public class SystemServiceMock implements SystemService {
+public class SecondSystemServiceMock implements SystemService {
 
     @Override
     public void init(ConfigurableApplicationEnvironment environment) {
@@ -17,7 +17,7 @@ public class SystemServiceMock implements SystemService {
 
     @Override
     public SystemKey getKey() {
-        return new MockServiceKey();
+        return new MockSecondServiceKey();
     }
 
     @Override

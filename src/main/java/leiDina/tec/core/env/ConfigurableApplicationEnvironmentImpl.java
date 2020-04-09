@@ -11,7 +11,7 @@ import main.java.leiDina.tec.core.utils.ResourceUtils;
 
 /**
  * A base implementation of the {@link ConfigurableApplicationEnvironment} that reads and loads the system properties from within a
- * "system-properties.xml". It's a simple xml properties that holds a key, and a list of classes to be used by the system.
+ * the environment location. It's a simple xml properties that holds a key, and a property.
  *
  * @author vitor.alves
  */

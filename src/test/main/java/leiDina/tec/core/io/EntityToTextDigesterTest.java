@@ -5,7 +5,7 @@ import main.java.leiDina.tec.core.exception.PersistenceException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import main.java.leiDina.tec.core.model.EntityOne;
-import main.java.leiDina.tec.core.model.EntityToo;
+import main.java.leiDina.tec.core.model.EntityTwo;
 
 /**
  * @author vitor.alves
@@ -28,11 +28,11 @@ public class EntityToTextDigesterTest {
 
     @Test
     public void testNoGeterMethodException() {
-        EntityToo entityToo = new EntityToo();
-        entityToo.setId(6L);
-        entityToo.setInteger(5);
+        EntityTwo entityTwo = new EntityTwo();
+        entityTwo.setId(6L);
+        entityTwo.setInteger(5);
         EntityToTextDigester entityToTextDigester = new EntityToTextDigester();
-        Assertions.assertThrows(PersistenceException.class, () -> entityToTextDigester.digest(entityToo));
+        Assertions.assertThrows(PersistenceException.class, () -> entityToTextDigester.digest(entityTwo));
     }
 
 }
