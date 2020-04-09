@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 public class ApplicationContextImplTest {
 
     @Test
-    public void testApplicationContectInit() {
+    public void testApplicationContextInit() {
         ApplicationContext applicationContext = new ApplicationContextImpl(null);
         applicationContext.setEnvironmentProvider(new ConfigurableApplicationProviderImpl());
         applicationContext.init();
