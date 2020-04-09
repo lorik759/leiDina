@@ -1,6 +1,6 @@
 package main.java.leiDina.tec.core.model;
 
-import java.util.List;
+import java.util.Collection;
 
 /**
  * A base interface that represents a set of properties to be used by the system.
@@ -22,7 +22,12 @@ public interface SystemProperty<T> {
     /**
      * @return A list of properties.
      */
-    List<T> getProperties();
+    Collection<T> getProperties();
+
+    /**
+     * @return a property.
+     */
+    T getProperty();
 
     /**
      * Adds a property to the set of properties.
@@ -30,4 +35,6 @@ public interface SystemProperty<T> {
      * @param property a property.
      */
     void addProperty(T property);
+
+    void addProperties(Collection<?> properties);
 }

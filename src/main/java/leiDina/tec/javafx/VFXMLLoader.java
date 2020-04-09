@@ -6,10 +6,13 @@ import java.net.URL;
 import javafx.fxml.FXMLLoader;
 import main.java.leiDina.tec.core.ApplicationContext;
 import main.java.leiDina.tec.core.ApplicationThreadContext;
+import main.java.leiDina.tec.core.model.SystemProperty;
+import main.java.leiDina.tec.core.service.SystemService;
 import main.java.leiDina.tec.javafx.controller.BaseModelController;
 import main.java.leiDina.tec.javafx.factory.ControllerFactory;
 import main.java.leiDina.tec.javafx.scene.Scenes;
 import main.java.leiDina.tec.javafx.service.ModelSceneWire;
+import main.java.leiDina.tec.javafx.service.VFXKey;
 
 /**
  * @author vitor.alves
@@ -23,9 +26,12 @@ public class VFXMLLoader {
     public VFXMLLoader(URL scene) {
         this.fxmlLoader = new FXMLLoader(scene);
         ApplicationContext applicationContext = ApplicationThreadContext.getApplicationContext();
-        ControllerFactory controllerFactory = applicationContext.getControllerFactory();
+        SystemService fxService = applicationContext.getService(new VFXKey());
+        SystemProperty<ModelSceneWire> modelSceneWire = fxService.getPropertyByType(ModelSceneWire.class);
+        SystemProperty<ControllerFactory> controllerFactoryService = fxService.getPropertyByType(ControllerFactory.class);
+        this.modelWire = modelSceneWire.getProperty();
+        ControllerFactory controllerFactory = controllerFactoryService.getProperty();
         this.fxmlLoader.setControllerFactory(controllerFactory::getController);
-        this.modelWire = applicationContext.getModelWire();
         this.modelWire.setFxmlLoader(this.fxmlLoader);
     }
 

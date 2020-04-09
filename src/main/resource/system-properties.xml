@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
-    <entry key="ControllerFactory">
-        main.java.leiDina.tec.javafx.factory.builder.GenericControllerBuilder,
-        main.java.leiDina.tec.javafx.factory.builder.TextEntityPersisterControllerBuilder
-    </entry>
-    <entry key="ModelSceneWire">
-        main.java.leiDina.tec.javafx.service.TextInputNodeAssociation
+    <entry key="Services">
+        main.java.leiDina.tec.javafx.VFXSystemService
     </entry>
 </properties>

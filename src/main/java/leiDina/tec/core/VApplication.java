@@ -5,7 +5,8 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.logging.Logger;
 import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironment;
-import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironmentImpl;
+import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironmentProvider;
+import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironmentProviderImpl;
 import main.java.leiDina.tec.core.model.ApplicationDefinitions;
 
 /**
@@ -20,7 +21,7 @@ public class VApplication {
 
     private ApplicationDefinitions applicationDefinitions;
 
-    private ConfigurableApplicationEnvironment environment;
+    private ConfigurableApplicationEnvironmentProvider environmentProvider;
 
     public VApplication(Class<?> primeryClasses) {
         this(new Class[]{primeryClasses});
@@ -54,25 +55,25 @@ public class VApplication {
     public ApplicationContext run() {
         logger.info("Starting VApplication");
         ApplicationContext applicationContext = createApplicationContext();
-        ConfigurableApplicationEnvironment applicationEnvironment = getOrCreateEnvironment();
-        applicationContext.setEnvironment(applicationEnvironment);
+        ConfigurableApplicationEnvironmentProvider applicationEnvironmentProvider = getOrCreateEnvironmentProvider();
+        applicationContext.setEnvironmentProvider(applicationEnvironmentProvider);
         applicationContext.init();
         ApplicationThreadContext.init(applicationContext);
         return applicationContext;
     }
 
-    protected ConfigurableApplicationEnvironment getOrCreateEnvironment() {
-        if (this.environment == null) {
-            this.environment = new ConfigurableApplicationEnvironmentImpl();
+    protected ConfigurableApplicationEnvironmentProvider getOrCreateEnvironmentProvider() {
+        if (this.environmentProvider == null) {
+            this.environmentProvider = new ConfigurableApplicationEnvironmentProviderImpl();
         }
-        return this.environment;
+        return this.environmentProvider;
     }
 
     protected ApplicationContext createApplicationContext() {
         return new ApplicationContextImpl(applicationDefinitions);
     }
 
-    public void setEnvironment(ConfigurableApplicationEnvironment environment) {
-        this.environment = environment;
+    public void setEnvironmentProvider(ConfigurableApplicationEnvironmentProvider environmentProvider) {
+        this.environmentProvider = environmentProvider;
     }
 }

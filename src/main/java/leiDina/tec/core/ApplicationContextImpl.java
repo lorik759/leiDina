@@ -1,9 +1,18 @@
 package main.java.leiDina.tec.core;
 
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironment;
+import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironmentProvider;
+import main.java.leiDina.tec.core.env.SystemLoader;
+import main.java.leiDina.tec.core.env.SystemLoaderImpl;
 import main.java.leiDina.tec.core.model.ApplicationDefinitions;
+import main.java.leiDina.tec.core.model.SystemKey;
 import main.java.leiDina.tec.core.model.SystemProperty;
+import main.java.leiDina.tec.core.service.SystemService;
+import main.java.leiDina.tec.core.service.Wire;
 import main.java.leiDina.tec.core.utils.ReflectionUtils;
 import main.java.leiDina.tec.javafx.exception.ControllerException;
 import main.java.leiDina.tec.javafx.factory.ControllerFactory;
@@ -22,11 +31,9 @@ public class ApplicationContextImpl implements ApplicationContext {
 
     private final ApplicationDefinitions applicationDefinitions;
 
-    private ControllerFactory controllerFactory;
+    private ConfigurableApplicationEnvironmentProvider environment;
 
-    private ConfigurableApplicationEnvironment environment;
-
-    private ModelSceneWire modelSceneWire;
+    private final Map<SystemKey, SystemService> systemServices = new HashMap<>();
 
     public ApplicationContextImpl(ApplicationDefinitions applicationDefinitions) {
         this.applicationDefinitions = applicationDefinitions;
@@ -37,30 +44,11 @@ public class ApplicationContextImpl implements ApplicationContext {
      */
     @Override
     public void init() {
-        applicationDefinitions.getLogger().info("Creating Controller Factory.");
-        this.controllerFactory = new ControllerFactoryImpl();
-        controllerFactory.init(environment);
-        applicationDefinitions.getLogger().info("Creating Model Wire.");
-        SystemProperty<Class<?>> modelSceneSystemPropertys = environment.loadSystemPropertiesFor(ModelSceneWire.class);
-        this.createModelSceneWire(modelSceneSystemPropertys);
-    }
-
-    /**
-     * Creates and builds the {@link ModelSceneWire} with the properties pass by the {@link ConfigurableApplicationEnvironment}
-     *
-     * @param modelSceneSystemPropertys A set of properties that will be used to set up the {@link ModelSceneWire}.
-     */
-    private void createModelSceneWire(SystemProperty<Class<?>> modelSceneSystemPropertys) {
-        this.modelSceneWire = new ModelSceneWire();
-        for (Class<?> clazz : modelSceneSystemPropertys.getProperties()) {
-            if (NodeAssociation.class.isAssignableFrom(clazz)) {
-                try {
-                    NodeAssociation<?, ?> nodeAssociation = (NodeAssociation<?, ?>) ReflectionUtils.newInstance(clazz);
-                    modelSceneWire.addModelComponentAssociation(nodeAssociation.type(), nodeAssociation);
-                } catch (ReflectiveOperationException e) {
-                    throw new ControllerException(FXSystemMessages.CREATE_NODE_ASSOCIATION_EXCEPTION.create(clazz), e);
-                }
-            }
+        SystemLoader systemLoader = new SystemLoaderImpl();
+        List<SystemService> systemServices = systemLoader.loadSystemServices();
+        for (SystemService systemService : systemServices) {
+            this.systemServices.put(systemService.getKey(), systemService);
+            systemService.init(environment);
         }
     }
 
@@ -68,31 +56,12 @@ public class ApplicationContextImpl implements ApplicationContext {
      * {@inheritDoc}
      */
     @Override
-    public ControllerFactory getControllerFactory() {
-        return this.controllerFactory;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public ConfigurableApplicationEnvironment getConfigurableApplicationEnvironment() {
-        return this.environment;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void setEnvironment(ConfigurableApplicationEnvironment environment) {
+    public void setEnvironmentProvider(ConfigurableApplicationEnvironmentProvider environment) {
         this.environment = environment;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
-    public ModelSceneWire getModelWire() {
-        return this.modelSceneWire;
+    public SystemService getService(SystemKey key) {
+        return this.systemServices.get(key);
     }
 }

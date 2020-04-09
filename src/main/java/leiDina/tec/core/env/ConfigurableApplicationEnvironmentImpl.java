@@ -3,14 +3,11 @@ package main.java.leiDina.tec.core.env;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Properties;
-import main.java.leiDina.tec.core.model.ClassSystemProperty;
 import main.java.leiDina.tec.core.model.SystemProperty;
+import main.java.leiDina.tec.core.service.PropertyResolver;
 import main.java.leiDina.tec.core.utils.ClassUtils;
 import main.java.leiDina.tec.core.utils.ResourceUtils;
-import main.java.leiDina.tec.core.utils.StringUtils;
 
 /**
  * A base implementation of the {@link ConfigurableApplicationEnvironment} that reads and loads the system properties from within a
@@ -20,42 +17,42 @@ import main.java.leiDina.tec.core.utils.StringUtils;
  */
 public class ConfigurableApplicationEnvironmentImpl implements ConfigurableApplicationEnvironment {
 
-    private static final String SYSTEM_PROPERTIES = "system-properties.xml";
+    private final String environmentLocation;
 
-    private static final Map<String, ClassSystemProperty> cache = new HashMap<>();
-
-    /**
-     * {@inheritDoc}
-     */
-    public SystemProperty<Class<?>> loadSystemPropertiesFor(Class<?> type) {
-        ClassLoader classLoader = ClassUtils.getClassLoader();
-        return loadSystemPropertiesFor(classLoader, type);
+    public ConfigurableApplicationEnvironmentImpl(String environmentLocation) {
+        this.environmentLocation = environmentLocation;
     }
 
-    private SystemProperty<Class<?>> loadSystemPropertiesFor(ClassLoader classLoader, Class<?> type) {
-        String name = type.getSimpleName();
-        ClassSystemProperty classSystemProperties = cache.get(name);
-        if (classSystemProperties != null) {
-            return classSystemProperties;
-        }
-        classSystemProperties = new ClassSystemProperty(type, name);
+    @Override
+    public <T> SystemProperty<T> loadSystemPropertiesFor(Class<?> type, PropertyResolver<?> resolver) {
+        ClassLoader classLoader = ClassUtils.getClassLoader();
+        return loadSystemPropertiesFor(classLoader, type.getSimpleName(), resolver);
+    }
+
+    @Override
+    public <T> SystemProperty<T> loadSystemPropertiesFor(String key, PropertyResolver<?> resolver) {
+        ClassLoader classLoader = ClassUtils.getClassLoader();
+        return loadSystemPropertiesFor(classLoader, key, resolver);
+    }
+
+    private <T> SystemProperty<T> loadSystemPropertiesFor(ClassLoader classLoader, String key, PropertyResolver<?> resolver) {
+        SystemProperty<T> systemProperty = null;
         try {
-            Enumeration<URL> resources = classLoader.getResources(SYSTEM_PROPERTIES);
+            Enumeration<URL> resources = classLoader.getResources(environmentLocation);
             while (resources.hasMoreElements()) {
                 URL url = resources.nextElement();
                 Properties properties = ResourceUtils.getXMLPropertiesFromURL(url);
-                String values = (String) properties.get(name);
-                for (String classes : StringUtils.replaceNewLineAndSplitComma(values)) {
-                    if (StringUtils.isNotEmpty(classes)) {
-                        Class<?> aClass = Class.forName(StringUtils.removeSpaces(classes));
-                        classSystemProperties.addProperty(aClass);
-                    }
+                String values = (String) properties.get(key);
+                SystemProperty<T> property = resolver.resolve(key, values);
+                if (systemProperty == null) {
+                    systemProperty = property;
+                } else {
+                    systemProperty.addProperties(property.getProperties());
                 }
             }
-            cache.put(name, classSystemProperties);
-        } catch (IOException | ClassNotFoundException e) {
-            throw new IllegalArgumentException("Unable to load properteis from: " + SYSTEM_PROPERTIES, e);
+        } catch (IOException e) {
+            throw new IllegalArgumentException("Unable to load properteis from: " + environmentLocation, e);
         }
-        return classSystemProperties;
+        return systemProperty;
     }
 }

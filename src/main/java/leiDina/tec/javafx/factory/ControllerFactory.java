@@ -1,7 +1,7 @@
 package main.java.leiDina.tec.javafx.factory;
 
 import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironment;
-import main.java.leiDina.tec.javafx.service.ModelSceneWire;
+import main.java.leiDina.tec.javafx.factory.builder.ControllerBuilder;
 
 /**
  * The root interface for a controller factory. This interface is implemented by an object that can identify and create a controller for a javafx scene.
@@ -10,14 +10,6 @@ import main.java.leiDina.tec.javafx.service.ModelSceneWire;
  */
 public interface ControllerFactory {
 
-
-    /**
-     * The initializing method of a controller factory. This method, once called, will initialize and configure the controller factory.
-     *
-     * @param applicationEnvironment {@link ConfigurableApplicationEnvironment}.
-     */
-    void init(ConfigurableApplicationEnvironment applicationEnvironment);
-
     /**
      * Returns a specific controller for a javafx scene, of a specific class.
      *
@@ -25,4 +17,6 @@ public interface ControllerFactory {
      * @return a instance of a the specified class.
      */
     Object getController(Class<?> controllerClass);
+
+    <T> void addControllerBuilder(ControllerBuilder<T> builder);
 }

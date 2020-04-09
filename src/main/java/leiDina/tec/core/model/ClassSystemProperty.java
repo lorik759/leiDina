@@ -1,6 +1,7 @@
 package main.java.leiDina.tec.core.model;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -10,14 +11,11 @@ import java.util.List;
  */
 public class ClassSystemProperty implements SystemProperty<Class<?>> {
 
-    private Class<?> type;
-
     private String name;
 
     private List<Class<?>> properties;
 
-    public ClassSystemProperty(Class<?> type, String name) {
-        this.type = type;
+    public ClassSystemProperty(String name) {
         this.name = name;
         this.properties = new ArrayList<>();
     }
@@ -26,7 +24,7 @@ public class ClassSystemProperty implements SystemProperty<Class<?>> {
      * {@inheritDoc}
      */
     public Class<?> getType() {
-        return type;
+        return Class.class;
     }
 
     /**
@@ -43,10 +41,20 @@ public class ClassSystemProperty implements SystemProperty<Class<?>> {
         return properties;
     }
 
+    @Override
+    public Class<?> getProperty() {
+        return null;
+    }
+
     /**
      * {@inheritDoc}
      */
     public void addProperty(Class<?> classSystemProperties) {
         this.properties.add(classSystemProperties);
+    }
+
+    @Override
+    public void addProperties(Collection<?> properties) {
+        this.properties.addAll((Collection<? extends Class<?>>) properties);
     }
 }
