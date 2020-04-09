@@ -2,7 +2,7 @@ package main.java.leiDina.tec.core;
 
 
 import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironment;
-import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironmentProvider;
+import main.java.leiDina.tec.core.env.ConfigurableApplicationProvider;
 import main.java.leiDina.tec.core.model.SystemKey;
 import main.java.leiDina.tec.core.service.SystemService;
 import main.java.leiDina.tec.javafx.factory.ControllerFactory;
@@ -25,7 +25,7 @@ public interface ApplicationContext {
      *
      * @param environment the {@link ConfigurableApplicationEnvironment} to be used by the application.
      */
-    void setEnvironmentProvider(ConfigurableApplicationEnvironmentProvider environment);
+    void setEnvironmentProvider(ConfigurableApplicationProvider environment);
 
     SystemService getService(SystemKey key);
 }

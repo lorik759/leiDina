@@ -18,9 +18,13 @@ import main.java.leiDina.tec.core.utils.StringUtils;
  */
 public class SystemLoaderImpl implements SystemLoader {
 
-    private static final String SYSTEM_PROPERTIES = "system-properties.xml";
-
     private static final String SERVICES = "Services";
+
+    private final String systemProperties;
+
+    public SystemLoaderImpl(String systemProperties) {
+        this.systemProperties = systemProperties;
+    }
 
     @Override
     public List<SystemService> loadSystemServices() {
@@ -31,7 +35,7 @@ public class SystemLoaderImpl implements SystemLoader {
     private List<SystemService> loadSystemServices(ClassLoader classLoader) {
         List<SystemService> systemServices = new ArrayList<>();
         try {
-            Enumeration<URL> resources = classLoader.getResources(SYSTEM_PROPERTIES);
+            Enumeration<URL> resources = classLoader.getResources(systemProperties);
             while (resources.hasMoreElements()) {
                 URL url = resources.nextElement();
                 Properties properties = ResourceUtils.getXMLPropertiesFromURL(url);
@@ -50,7 +54,7 @@ public class SystemLoaderImpl implements SystemLoader {
                 }
             }
         } catch (IOException | ClassNotFoundException e) {
-            throw new IllegalArgumentException("Unable to load properteis from: " + SYSTEM_PROPERTIES, e);
+            throw new IllegalArgumentException("Unable to load properteis from: " + systemProperties, e);
         }
         return systemServices;
     }

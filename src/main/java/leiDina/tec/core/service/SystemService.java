@@ -1,7 +1,7 @@
 package main.java.leiDina.tec.core.service;
 
-import java.util.List;
-import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironmentProvider;
+import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironment;
+import main.java.leiDina.tec.core.env.ConfigurableApplicationProvider;
 import main.java.leiDina.tec.core.model.SystemKey;
 import main.java.leiDina.tec.core.model.SystemProperty;
 
@@ -10,7 +10,7 @@ import main.java.leiDina.tec.core.model.SystemProperty;
  */
 public interface SystemService {
 
-    void init(ConfigurableApplicationEnvironmentProvider applicationEnvironment);
+    void init(ConfigurableApplicationEnvironment environment);
 
     /**
      * @return {@link SystemKey} that represents the service.
@@ -33,5 +33,7 @@ public interface SystemService {
      * @param property a property.
      */
     <T extends SystemProperty<?>> void addProperty(T property);
+
+    String getEnvironmentName();
 
 }

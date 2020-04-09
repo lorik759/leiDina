@@ -4,9 +4,8 @@ import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.logging.Logger;
-import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironment;
-import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironmentProvider;
-import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironmentProviderImpl;
+import main.java.leiDina.tec.core.env.ConfigurableApplicationProvider;
+import main.java.leiDina.tec.core.env.ConfigurableApplicationProviderImpl;
 import main.java.leiDina.tec.core.model.ApplicationDefinitions;
 
 /**
@@ -21,7 +20,7 @@ public class VApplication {
 
     private ApplicationDefinitions applicationDefinitions;
 
-    private ConfigurableApplicationEnvironmentProvider environmentProvider;
+    private ConfigurableApplicationProvider environmentProvider;
 
     public VApplication(Class<?> primeryClasses) {
         this(new Class[]{primeryClasses});
@@ -55,16 +54,16 @@ public class VApplication {
     public ApplicationContext run() {
         logger.info("Starting VApplication");
         ApplicationContext applicationContext = createApplicationContext();
-        ConfigurableApplicationEnvironmentProvider applicationEnvironmentProvider = getOrCreateEnvironmentProvider();
+        ConfigurableApplicationProvider applicationEnvironmentProvider = getOrCreateEnvironmentProvider();
         applicationContext.setEnvironmentProvider(applicationEnvironmentProvider);
         applicationContext.init();
         ApplicationThreadContext.init(applicationContext);
         return applicationContext;
     }
 
-    protected ConfigurableApplicationEnvironmentProvider getOrCreateEnvironmentProvider() {
+    protected ConfigurableApplicationProvider getOrCreateEnvironmentProvider() {
         if (this.environmentProvider == null) {
-            this.environmentProvider = new ConfigurableApplicationEnvironmentProviderImpl();
+            this.environmentProvider = new ConfigurableApplicationProviderImpl();
         }
         return this.environmentProvider;
     }
@@ -73,7 +72,7 @@ public class VApplication {
         return new ApplicationContextImpl(applicationDefinitions);
     }
 
-    public void setEnvironmentProvider(ConfigurableApplicationEnvironmentProvider environmentProvider) {
+    public void setEnvironmentProvider(ConfigurableApplicationProvider environmentProvider) {
         this.environmentProvider = environmentProvider;
     }
 }

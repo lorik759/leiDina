@@ -2,7 +2,6 @@ package main.java.leiDina.tec.javafx;
 
 import java.lang.reflect.InvocationTargetException;
 import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironment;
-import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironmentProvider;
 import main.java.leiDina.tec.core.model.SingleObjectProperty;
 import main.java.leiDina.tec.core.model.SystemKey;
 import main.java.leiDina.tec.core.model.SystemProperty;
@@ -26,8 +25,7 @@ public class VFXSystemService extends BaseSystemService {
     private static final String FX_SYSTEM_ENVIRONMENT = "fx-system-properties.xml";
 
     @Override
-    public void init(ConfigurableApplicationEnvironmentProvider applicationEnvironmentProvider) {
-        ConfigurableApplicationEnvironment environment = applicationEnvironmentProvider.getEnvironmentFor(FX_SYSTEM_ENVIRONMENT);
+    public void init(ConfigurableApplicationEnvironment environment) {
         this.createModelSceneWireProperty(environment);
         this.createControllerFactoryProperty(environment);
     }
@@ -86,5 +84,10 @@ public class VFXSystemService extends BaseSystemService {
     @Override
     public SystemKey getKey() {
         return new VFXKey();
+    }
+
+    @Override
+    public String getEnvironmentName() {
+        return FX_SYSTEM_ENVIRONMENT;
     }
 }

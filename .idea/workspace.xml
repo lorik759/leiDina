@@ -6,36 +6,19 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Logic for dynamic reading implemented.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/ConfigurableApplicationEnvironmentProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/ConfigurableApplicationEnvironmentProviderImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/SystemLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/SystemLoaderImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/model/SingleObjectProperty.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/model/SystemKey.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/service/BaseSystemService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/service/ClassPropertyResolver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/service/PropertyResolver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/service/SingleObjectPropertyResolver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/service/SystemService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/VFXSystemService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/service/VFXKey.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resource/fx-system-properties.xml" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Restructuring application.">
+      <change afterPath="$PROJECT_DIR$/src/test/main/java/leiDina/tec/core/ApplicationContextImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/main/java/leiDina/tec/core/mock/SystemServiceMock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resource/system-properties.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/biz/view/Leitura.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/biz/view/Leitura.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/ApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/ApplicationContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/ApplicationContextImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/ApplicationContextImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/VApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/VApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/ConfigurableApplicationEnvironment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/ConfigurableApplicationEnvironment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/ConfigurableApplicationEnvironmentImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/ConfigurableApplicationEnvironmentImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/model/ClassSystemProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/model/ClassSystemProperty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/model/SystemProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/model/SystemProperty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/VFXMLLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/VFXMLLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/ControllerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/ControllerFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/ControllerFactoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/ControllerFactoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resource/system-properties.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resource/system-properties.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/main/java/leiDina/tec/javafx/factory/Controller.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/main/java/leiDina/tec/javafx/factory/ControllerFactoryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/ConfigurableApplicationEnvironmentProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/ConfigurableApplicationProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/ConfigurableApplicationEnvironmentProviderImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/ConfigurableApplicationProviderImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/SystemLoaderImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/SystemLoaderImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/service/SystemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/service/SystemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/VFXSystemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/VFXSystemService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +145,7 @@
     <property name="dynamic.classpath" value="false" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/java" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resource" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/resource" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -170,6 +153,13 @@
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="main.java.leiDina.tec.javafx" />
+      <recent name="main.java.leiDina.tec.core.annotations" />
+      <recent name="main.java.leiDina.tec.core.io" />
+      <recent name="main.java.leiDina.tec.core.persist.exception" />
+      <recent name="main.java.leiDina.tec.core.persist" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="main.java.leiDina.tec.core.persist" />
     </key>
@@ -182,27 +172,20 @@
       <recent name="main.java.leiDina.tec.javafx.factory" />
       <recent name="main.java.leiDina.tec.core.messages" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/java/leiDina/view" />
-      <recent name="$PROJECT_DIR$/src/main/java/leiDina/tec" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/resource" />
       <recent name="$PROJECT_DIR$/src/main/resource" />
       <recent name="$PROJECT_DIR$/src/main/java/leiDina/tec" />
       <recent name="$PROJECT_DIR$/src/main/java/leiDina/view" />
       <recent name="$PROJECT_DIR$/src/main/java/leiDina/tec/view" />
-      <recent name="$PROJECT_DIR$/src/main/java/leiDina/tec/core" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="test.java.leiDina.tec.javafx.factory" />
       <recent name="main.java.leiDina.tec.javafx" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="main.java.leiDina.tec.javafx" />
-      <recent name="main.java.leiDina.tec.core.annotations" />
-      <recent name="main.java.leiDina.tec.core.io" />
-      <recent name="main.java.leiDina.tec.core.persist.exception" />
-      <recent name="main.java.leiDina.tec.core.persist" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/leiDina/view" />
+      <recent name="$PROJECT_DIR$/src/main/java/leiDina/tec" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -444,7 +427,8 @@
       <workItem from="1586269714306" duration="2066000" />
       <workItem from="1586280379263" duration="3238000" />
       <workItem from="1586343621295" duration="13428000" />
-      <workItem from="1586390793453" duration="1499000" />
+      <workItem from="1586390793453" duration="1545000" />
+      <workItem from="1586462380867" duration="1415000" />
     </task>
     <task id="LOCAL-00001" summary="Base implantation of a ControllerFactory and a simple exception creator.">
       <created>1583601470898</created>
@@ -614,7 +598,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586217192699</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Restructuring application.">
+      <created>1586392329218</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1586392329218</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -623,7 +614,6 @@
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-    <MESSAGE value="Base implantation of a ControllerFactory and a simple exception creator." />
     <MESSAGE value="Simple unit test for a ControllerFactory and the MessageCreator" />
     <MESSAGE value="Refactoring and redesigning application structure." />
     <MESSAGE value="Adding java doc and restructuring the base idea of the application." />
@@ -648,7 +638,8 @@
     <MESSAGE value="Refactoring EntityPersisterController." />
     <MESSAGE value="Refactoring NodeAssociation and adding java doc. Cleaning code and java doc from different classes." />
     <MESSAGE value="Logic for dynamic reading implemented." />
-    <option name="LAST_COMMIT_MESSAGE" value="Logic for dynamic reading implemented." />
+    <MESSAGE value="Restructuring application." />
+    <option name="LAST_COMMIT_MESSAGE" value="Restructuring application." />
   </component>
   <component name="WindowStateProjectService">
     <state x="325" y="181" width="800" height="677" key="#Inspections" timestamp="1585222473143">
@@ -668,10 +659,10 @@
       <screen x="0" y="27" width="3280" height="988" />
     </state>
     <state x="653" y="312" width="651" height="416" key="#com.intellij.fileTypes.FileTypeChooser/0.27.3280.988@0.27.3280.988" timestamp="1584305264807" />
-    <state x="816" y="239" width="374" height="642" key="#com.intellij.ide.util.MemberChooser" timestamp="1586392037966">
+    <state x="816" y="239" width="374" height="642" key="#com.intellij.ide.util.MemberChooser" timestamp="1586468315377">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="816" y="239" width="346" height="562" key="#com.intellij.ide.util.MemberChooser/0.27.1920.988@0.27.1920.988" timestamp="1586392037966" />
+    <state x="816" y="239" width="346" height="562" key="#com.intellij.ide.util.MemberChooser/0.27.1920.988@0.27.1920.988" timestamp="1586468315377" />
     <state x="1088" y="239" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/0.27.2560.988/2560.0.1920.1080@0.27.2560.988" timestamp="1583693908435" />
     <state x="1328" y="239" width="374" height="642" key="#com.intellij.ide.util.MemberChooser/0.27.3280.988@0.27.3280.988" timestamp="1584312622876" />
     <state x="804" y="412" width="302" height="216" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1585066933401">
@@ -694,10 +685,10 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="697" y="362" width="525" height="318" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.27.1920.988@0.27.1920.988" timestamp="1585668484748" />
-    <state x="377" y="27" width="636" height="988" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1586378176775">
+    <state x="377" y="27" width="636" height="988" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1586468034809">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="377" y="27" width="636" height="988" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1920.988@0.27.1920.988" timestamp="1586378176775" />
+    <state x="377" y="27" width="636" height="988" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1920.988@0.27.1920.988" timestamp="1586468034809" />
     <state x="644" y="27" width="622" height="988" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.3280.988@0.27.3280.988" timestamp="1584312596543" />
     <state x="693" y="269" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586344768072">
       <screen x="0" y="27" width="1920" height="988" />
@@ -709,10 +700,10 @@
     </state>
     <state x="705" y="173" width="903" height="765" key="#xdebugger.evaluate/0.27.1920.988@0.27.1920.988" timestamp="1586391957143" />
     <state x="840" y="144" width="922" height="765" key="#xdebugger.evaluate/0.27.3280.988@0.27.3280.988" timestamp="1584314102380" />
-    <state x="225" y="29" width="989" height="982" key="CommitChangelistDialog2" timestamp="1586217192364">
+    <state x="225" y="29" width="989" height="982" key="CommitChangelistDialog2" timestamp="1586392329025">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="225" y="29" width="989" height="982" key="CommitChangelistDialog2/0.27.1920.988@0.27.1920.988" timestamp="1586217192364" />
+    <state x="225" y="29" width="989" height="982" key="CommitChangelistDialog2/0.27.1920.988@0.27.1920.988" timestamp="1586392329025" />
     <state x="385" y="29" width="1535" height="982" key="CommitChangelistDialog2/0.27.3280.988@0.27.3280.988" timestamp="1584315935198" />
     <state x="879" y="29" width="792" height="982" key="CommitChangelistDialog2/2560.0.1920.1080/0.27.2560.988@0.27.2560.988" timestamp="1583619615635" />
     <state x="354" y="78" width="1124" height="820" maximized="true" key="DiffContextDialog" timestamp="1586387436339">
@@ -724,45 +715,45 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="738" y="263" width="495" height="513" key="FileChooserDialogImpl/0.27.1920.988@0.27.1920.988" timestamp="1585346777994" />
-    <state width="1874" height="292" key="GridCell.Tab.0.bottom" timestamp="1586392159950">
+    <state width="1874" height="292" key="GridCell.Tab.0.bottom" timestamp="1586468578513">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="292" key="GridCell.Tab.0.bottom/0.27.1920.988@0.27.1920.988" timestamp="1586392159950" />
+    <state width="1874" height="292" key="GridCell.Tab.0.bottom/0.27.1920.988@0.27.1920.988" timestamp="1586468578513" />
     <state width="1874" height="292" key="GridCell.Tab.0.bottom/0.27.3280.988@0.27.3280.988" timestamp="1584316431086" />
-    <state width="1874" height="292" key="GridCell.Tab.0.center" timestamp="1586392159950">
+    <state width="1874" height="292" key="GridCell.Tab.0.center" timestamp="1586468578512">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="292" key="GridCell.Tab.0.center/0.27.1920.988@0.27.1920.988" timestamp="1586392159950" />
+    <state width="1874" height="292" key="GridCell.Tab.0.center/0.27.1920.988@0.27.1920.988" timestamp="1586468578512" />
     <state width="1874" height="292" key="GridCell.Tab.0.center/0.27.3280.988@0.27.3280.988" timestamp="1584316431083" />
-    <state width="1874" height="292" key="GridCell.Tab.0.left" timestamp="1586392159949">
+    <state width="1874" height="292" key="GridCell.Tab.0.left" timestamp="1586468578511">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="292" key="GridCell.Tab.0.left/0.27.1920.988@0.27.1920.988" timestamp="1586392159949" />
+    <state width="1874" height="292" key="GridCell.Tab.0.left/0.27.1920.988@0.27.1920.988" timestamp="1586468578511" />
     <state width="1874" height="292" key="GridCell.Tab.0.left/0.27.3280.988@0.27.3280.988" timestamp="1584316431082" />
-    <state width="1874" height="292" key="GridCell.Tab.0.right" timestamp="1586392159950">
+    <state width="1874" height="292" key="GridCell.Tab.0.right" timestamp="1586468578513">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="292" key="GridCell.Tab.0.right/0.27.1920.988@0.27.1920.988" timestamp="1586392159950" />
+    <state width="1874" height="292" key="GridCell.Tab.0.right/0.27.1920.988@0.27.1920.988" timestamp="1586468578513" />
     <state width="1874" height="292" key="GridCell.Tab.0.right/0.27.3280.988@0.27.3280.988" timestamp="1584316431084" />
-    <state width="1874" height="292" key="GridCell.Tab.1.bottom" timestamp="1586392159950">
+    <state width="1874" height="292" key="GridCell.Tab.1.bottom" timestamp="1586468578516">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="292" key="GridCell.Tab.1.bottom/0.27.1920.988@0.27.1920.988" timestamp="1586392159950" />
+    <state width="1874" height="292" key="GridCell.Tab.1.bottom/0.27.1920.988@0.27.1920.988" timestamp="1586468578516" />
     <state width="1874" height="292" key="GridCell.Tab.1.bottom/0.27.3280.988@0.27.3280.988" timestamp="1584316431089" />
-    <state width="1874" height="292" key="GridCell.Tab.1.center" timestamp="1586392159950">
+    <state width="1874" height="292" key="GridCell.Tab.1.center" timestamp="1586468578515">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="292" key="GridCell.Tab.1.center/0.27.1920.988@0.27.1920.988" timestamp="1586392159950" />
+    <state width="1874" height="292" key="GridCell.Tab.1.center/0.27.1920.988@0.27.1920.988" timestamp="1586468578515" />
     <state width="1874" height="292" key="GridCell.Tab.1.center/0.27.3280.988@0.27.3280.988" timestamp="1584316431087" />
-    <state width="1874" height="292" key="GridCell.Tab.1.left" timestamp="1586392159950">
+    <state width="1874" height="292" key="GridCell.Tab.1.left" timestamp="1586468578514">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="292" key="GridCell.Tab.1.left/0.27.1920.988@0.27.1920.988" timestamp="1586392159950" />
+    <state width="1874" height="292" key="GridCell.Tab.1.left/0.27.1920.988@0.27.1920.988" timestamp="1586468578514" />
     <state width="1874" height="292" key="GridCell.Tab.1.left/0.27.3280.988@0.27.3280.988" timestamp="1584316431086" />
-    <state width="1874" height="292" key="GridCell.Tab.1.right" timestamp="1586392159950">
+    <state width="1874" height="292" key="GridCell.Tab.1.right" timestamp="1586468578515">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="292" key="GridCell.Tab.1.right/0.27.1920.988@0.27.1920.988" timestamp="1586392159950" />
+    <state width="1874" height="292" key="GridCell.Tab.1.right/0.27.1920.988@0.27.1920.988" timestamp="1586468578515" />
     <state width="1874" height="292" key="GridCell.Tab.1.right/0.27.3280.988@0.27.3280.988" timestamp="1584316431088" />
     <state x="740" y="228" width="628" height="584" key="MultipleFileMergeDialog" timestamp="1585264308952">
       <screen x="0" y="27" width="1920" height="988" />
@@ -789,10 +780,10 @@
     <state x="757" y="254" width="633" height="540" key="StructurePopup/0.27.1920.988@0.27.1920.988" timestamp="1586391106280" />
     <state x="1009" y="254" width="633" height="540" key="StructurePopup/0.27.2560.988/2560.0.1920.1080@0.27.2560.988" timestamp="1583694649173" />
     <state x="1293" y="254" width="1082" height="540" key="StructurePopup/0.27.3280.988@0.27.3280.988" timestamp="1584302674739" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1586392042444">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1586468452360">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.27.1920.988@0.27.1920.988" timestamp="1586392042444" />
+    <state width="498" height="446" key="SwitcherDM/0.27.1920.988@0.27.1920.988" timestamp="1586468452360" />
     <state width="498" height="446" key="SwitcherDM/0.27.2560.988/2560.0.1920.1080@0.27.2560.988" timestamp="1583694940835" />
     <state width="851" height="446" key="SwitcherDM/0.27.3280.988@0.27.3280.988" timestamp="1584314136899" />
     <state width="498" height="446" key="SwitcherDM/2560.0.1920.1080/0.27.2560.988@0.27.2560.988" timestamp="1583619418412" />
@@ -817,10 +808,10 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="100" y="125" width="1720" height="790" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.27.1920.988@0.27.1920.988" timestamp="1585264472318" />
-    <state x="614" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1586390792765">
+    <state x="614" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1586462398678">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="614" y="347" key="com.intellij.ide.util.TipDialog/0.27.1920.988@0.27.1920.988" timestamp="1586390792765" />
+    <state x="614" y="347" key="com.intellij.ide.util.TipDialog/0.27.1920.988@0.27.1920.988" timestamp="1586462398678" />
     <state x="660" y="368" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1584996216979" />
     <state x="714" y="410" width="538" height="236" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1585346828652">
       <screen x="0" y="27" width="1920" height="988" />
