@@ -42,7 +42,7 @@ public class LeituraController extends BaseModelController<LeituraModel> {
     public void lerTexto(MouseEvent mouseEvent) {
         String msg = this.getModel().getTextoEntrada();
         if (StringUtils.isNotEmpty(msg)) {
-            LeituraController.text = msg.split("\\W+");;
+            LeituraController.text = msg.split("\\W+");
             Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.5), new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
