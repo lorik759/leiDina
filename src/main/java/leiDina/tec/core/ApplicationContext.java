@@ -1,15 +1,12 @@
 package main.java.leiDina.tec.core;
 
 
-import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironment;
 import main.java.leiDina.tec.core.env.ConfigurableApplicationProvider;
 import main.java.leiDina.tec.core.model.SystemKey;
 import main.java.leiDina.tec.core.service.SystemService;
-import main.java.leiDina.tec.javafx.factory.ControllerFactory;
 
 /**
- * A root interface of an application context. This interface contains all base information of an {@link VApplication}, with the root {@link
- * ControllerFactory}.
+ * A root interface of an application context. This interface contains all base {@link SystemService} of an {@link VApplication}.
  *
  * @author vitor.alves
  */
@@ -21,11 +18,15 @@ public interface ApplicationContext {
     void init();
 
     /**
-     * Set the {@link ConfigurableApplicationEnvironment} of the application. This method is to be used only on application startup.
+     * Set the {@link ConfigurableApplicationProvider} of the application. This method is to be used only on application startup.
      *
-     * @param environment the {@link ConfigurableApplicationEnvironment} to be used by the application.
+     * @param environmentProvider the {@link ConfigurableApplicationProvider} to be used by the application.
      */
-    void setEnvironmentProvider(ConfigurableApplicationProvider environment);
+    void setEnvironmentProvider(ConfigurableApplicationProvider environmentProvider);
 
+    /**
+     * @param key a {@link SystemKey} that represents a {@link SystemService}.
+     * @return the {@link SystemService} of the specified {@link SystemKey}.
+     */
     SystemService getService(SystemKey key);
 }

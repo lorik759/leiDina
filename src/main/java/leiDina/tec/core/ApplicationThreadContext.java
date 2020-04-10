@@ -1,5 +1,8 @@
 package main.java.leiDina.tec.core;
 
+import main.java.leiDina.tec.core.model.SystemKey;
+import main.java.leiDina.tec.core.service.SystemService;
+
 /**
  * The context holder of the application for the thread.
  *
@@ -26,4 +29,14 @@ public class ApplicationThreadContext {
         return applicationContext;
     }
 
+    /**
+     * Gets the service of the specified {@link SystemKey} from the {@link ApplicationContext} of the thread.
+     *
+     * @param key the {@link SystemKey} of the service.
+     * @return a {@link SystemService}.
+     */
+    public static SystemService getService(SystemKey key) {
+        ApplicationContext applicationContext = getApplicationContext();
+        return applicationContext.getService(key);
+    }
 }

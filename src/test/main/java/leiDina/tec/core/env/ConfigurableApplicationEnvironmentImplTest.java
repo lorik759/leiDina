@@ -20,7 +20,8 @@ public class ConfigurableApplicationEnvironmentImplTest {
 
     @Test
     public void testLoadSystemServicesForType() {
-        ConfigurableApplicationEnvironment configurableApplicationEnvironment = new ConfigurableApplicationEnvironmentImpl(SYSTEM_SERVICE_TEST);
+        ConfigurableApplicationEnvironment configurableApplicationEnvironment = new ConfigurableApplicationEnvironmentImpl(SYSTEM_SERVICE_TEST,
+            null);
         SystemProperty<Class<?>> systemPropertiesForType = configurableApplicationEnvironment
             .loadSystemPropertiesFor(SystemProperty.class, new ClassPropertyResolver());
         Assertions.assertNotNull(systemPropertiesForType);
@@ -33,7 +34,8 @@ public class ConfigurableApplicationEnvironmentImplTest {
 
     @Test
     public void testLoadSystemServicesForName() {
-        ConfigurableApplicationEnvironment configurableApplicationEnvironment = new ConfigurableApplicationEnvironmentImpl(SYSTEM_SERVICE_TEST);
+        ConfigurableApplicationEnvironment configurableApplicationEnvironment = new ConfigurableApplicationEnvironmentImpl(SYSTEM_SERVICE_TEST,
+            null);
         SystemProperty<Class<?>> systemPropertiesForType = configurableApplicationEnvironment
             .loadSystemPropertiesFor(PROPERTY_NAME, new ClassPropertyResolver());
         Assertions.assertNotNull(systemPropertiesForType);

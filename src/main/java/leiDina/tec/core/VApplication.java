@@ -9,8 +9,8 @@ import main.java.leiDina.tec.core.env.ConfigurableApplicationProviderImpl;
 import main.java.leiDina.tec.core.model.ApplicationDefinitions;
 
 /**
- * A class that can bootstrap and launch a VApplication. The VApplication works as an additional structure for a simple fx application, in which a
- * VApplication adds a full integration with javafx controllers and models, for a full MVC structure.
+ * A class that can bootstrap and launch a VApplication. The VApplication works as service loader, in which it creates and initializes a {@link
+ * ApplicationContext}, with the {@link ConfigurableApplicationProvider} set in the VApplication.
  *
  * @author vitor.alves
  */
@@ -22,8 +22,8 @@ public class VApplication {
 
     private ConfigurableApplicationProvider environmentProvider;
 
-    public VApplication(Class<?> primeryClasses) {
-        this(new Class[]{primeryClasses});
+    public VApplication(Class<?> primeryClasse) {
+        this(new Class[]{primeryClasse});
     }
 
     public VApplication(Class<?>... primeryClasses) {
@@ -47,10 +47,21 @@ public class VApplication {
         return null;
     }
 
+    /**
+     * An auxiliary method for the start up of an VApplication, in which no instantiation of the VApplication will de required beforehand.
+     *
+     * @param primeryClasses the main class of the application.
+     * @return a {@link ApplicationContext}.
+     */
     public static ApplicationContext run(Class<?> primeryClasses) {
         return new VApplication(primeryClasses).run();
     }
 
+    /**
+     * The base starting method of an VApplication, in which the {@link ApplicationContext} is created and initialized.
+     *
+     * @return a {@link ApplicationContext}.
+     */
     public ApplicationContext run() {
         logger.info("Starting VApplication");
         ApplicationContext applicationContext = createApplicationContext();
@@ -61,6 +72,11 @@ public class VApplication {
         return applicationContext;
     }
 
+    /**
+     * If a {@link ConfigurableApplicationProvider} is not set, than a default implantation will be used.
+     *
+     * @return a {@link ConfigurableApplicationProvider}.
+     */
     protected ConfigurableApplicationProvider getOrCreateEnvironmentProvider() {
         if (this.environmentProvider == null) {
             this.environmentProvider = new ConfigurableApplicationProviderImpl();
@@ -68,10 +84,18 @@ public class VApplication {
         return this.environmentProvider;
     }
 
+    /**
+     * @return creates a {@link ApplicationContext}.
+     */
     protected ApplicationContext createApplicationContext() {
         return new ApplicationContextImpl(applicationDefinitions);
     }
 
+    /**
+     * Set a specific {@link ConfigurableApplicationProvider} fot the initialization of the {@link ApplicationContext}
+     *
+     * @param environmentProvider a {@link ConfigurableApplicationProvider}.
+     */
     public void setEnvironmentProvider(ConfigurableApplicationProvider environmentProvider) {
         this.environmentProvider = environmentProvider;
     }

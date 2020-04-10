@@ -54,7 +54,7 @@ public class ClassSystemProperty implements SystemProperty<Class<?>> {
     }
 
     @Override
-    public void addProperties(Collection<?> properties) {
+    public void addProperties(List<?> properties) {
         this.properties.addAll((Collection<? extends Class<?>>) properties);
     }
 }

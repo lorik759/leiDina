@@ -1,6 +1,5 @@
 package main.java.leiDina.tec.core.model;
 
-import java.util.Collection;
 import java.util.List;
 
 /**
@@ -37,5 +36,10 @@ public interface SystemProperty<T> {
      */
     void addProperty(T property);
 
-    void addProperties(Collection<?> properties);
+    /**
+     * Adds a list to the set of properties.
+     *
+     * @param properties a {@link List} of properties.
+     */
+    void addProperties(List<?> properties);
 }

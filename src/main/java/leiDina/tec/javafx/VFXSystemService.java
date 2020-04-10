@@ -1,6 +1,7 @@
 package main.java.leiDina.tec.javafx;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.List;
 import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironment;
 import main.java.leiDina.tec.core.model.SingleObjectProperty;
 import main.java.leiDina.tec.core.model.SystemKey;
@@ -18,18 +19,38 @@ import main.java.leiDina.tec.javafx.service.NodeAssociation;
 import main.java.leiDina.tec.javafx.service.VFXKey;
 
 /**
+ * The system service ah an VFXModule.
+ *
  * @author vitor.alves
  */
 public class VFXSystemService extends BaseSystemService {
 
+    private static final String SERVICE_NAME = "VFXSystemService";
+
     private static final String FX_SYSTEM_ENVIRONMENT = "fx-service-properties.xml";
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void init(ConfigurableApplicationEnvironment environment) {
         this.createModelSceneWireProperty(environment);
         this.createControllerFactoryProperty(environment);
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String getServiceName() {
+        return SERVICE_NAME;
+    }
+
+    /**
+     * Creates the {@link SystemProperty} of the {@link ControllerFactory}.
+     *
+     * @param environment the {@link ConfigurableApplicationEnvironment} of the VFXModule.
+     */
     private void createControllerFactoryProperty(ConfigurableApplicationEnvironment environment) {
         SystemProperty<Class<?>> controllerFactorySystemProperties = environment.loadSystemPropertiesFor(ControllerFactory.class, new ClassPropertyResolver());
         ControllerFactory controllerFactory = this.createControllerFactory(controllerFactorySystemProperties);
@@ -38,6 +59,11 @@ public class VFXSystemService extends BaseSystemService {
         this.add(controllerFactoryProperty);
     }
 
+    /**
+     * Creates and builds the {@link ControllerFactory} with the properties pass by the {@link ConfigurableApplicationEnvironment}
+     *
+     * @param controllerFactorySystemProperty A set of properties that will be used to set up the {@link ControllerFactory}.
+     */
     private ControllerFactory createControllerFactory(SystemProperty<Class<?>> controllerFactorySystemProperty) {
         ControllerFactory controllerFactory = new ControllerFactoryImpl();
         for (Class<?> clazz : controllerFactorySystemProperty.getProperties()) {
@@ -53,6 +79,11 @@ public class VFXSystemService extends BaseSystemService {
         return controllerFactory;
     }
 
+    /**
+     * Creates the {@link SystemProperty} of the {@link ModelSceneWire}.
+     *
+     * @param environment the {@link ConfigurableApplicationEnvironment} of the VFXModule.
+     */
     private void createModelSceneWireProperty(ConfigurableApplicationEnvironment environment) {
         SystemProperty<Class<?>> modelSceneWireProperties = environment.loadSystemPropertiesFor(ModelSceneWire.class, new ClassPropertyResolver());
         ModelSceneWire modelSceneWire = this.createModelSceneWire(modelSceneWireProperties);
@@ -81,11 +112,39 @@ public class VFXSystemService extends BaseSystemService {
         return modelSceneWire;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public SystemKey getKey() {
         return new VFXKey();
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public <T extends SystemProperty<?>> void addProperty(T property) {
+        Class<?> type = property.getType();
+        SystemProperty<?> propertyByType = this.getPropertyByType(type);
+        if (type.isAssignableFrom(ControllerFactory.class)) {
+            ControllerFactory controllerFactory = (ControllerFactory) propertyByType.getProperty();
+            List<ControllerBuilder<?>> properties = (List<ControllerBuilder<?>>) property.getProperties();
+            for (ControllerBuilder<?> propertyProperty : properties) {
+                controllerFactory.addControllerBuilder(propertyProperty);
+            }
+        } else if (type.isAssignableFrom(ModelSceneWire.class)) {
+            ModelSceneWire modelSceneWire = (ModelSceneWire) propertyByType.getProperty();
+            List<NodeAssociation<?, ?>> properties = (List<NodeAssociation<?, ?>>) property.getProperties();
+            for (NodeAssociation<?, ?> nodeAssociation : properties) {
+                modelSceneWire.addModelComponentAssociation(nodeAssociation.type(), nodeAssociation);
+            }
+        }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getEnvironmentName() {
         return FX_SYSTEM_ENVIRONMENT;

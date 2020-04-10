@@ -11,6 +11,11 @@ import main.java.leiDina.tec.core.service.SystemService;
 public class SecondSystemServiceMock implements SystemService {
 
     @Override
+    public String getServiceName() {
+        return "";
+    }
+
+    @Override
     public void init(ConfigurableApplicationEnvironment environment) {
 
     }

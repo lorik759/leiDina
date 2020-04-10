@@ -1,10 +1,11 @@
 package main.java.leiDina.tec.core.env;
 
+import main.java.leiDina.tec.core.model.ApplicationDefinitions;
 import main.java.leiDina.tec.core.model.SystemProperty;
 import main.java.leiDina.tec.core.service.PropertyResolver;
 
 /**
- * A root interface for the configuration of a {@link main.java.leiDina.tec.core.VApplication} thru configuration resources.
+ * A root interface for the configuration of a {@link main.java.leiDina.tec.core.service.SystemService} thru a configuration resources.
  *
  * @author vitor.alves
  */
@@ -26,5 +27,10 @@ public interface ConfigurableApplicationEnvironment {
      * @return a {@link SystemProperty}
      */
     <T> SystemProperty<T> loadSystemPropertiesFor(String key, PropertyResolver<?> resolver);
+
+    /**
+     * @return the {@link ApplicationDefinitions}.
+     */
+    ApplicationDefinitions getApplicationDefinitions();
 
 }

@@ -4,6 +4,7 @@ package main.java.leiDina.tec.core;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 import main.java.leiDina.tec.core.env.ConfigurableApplicationProvider;
 import main.java.leiDina.tec.core.env.SystemLoader;
 import main.java.leiDina.tec.core.model.ApplicationDefinitions;
@@ -22,10 +23,15 @@ public class ApplicationContextImpl implements ApplicationContext {
 
     private static final String SYSTEM_PROPERTIES = "system-properties.xml";
 
-    private ConfigurableApplicationProvider configurableApplicationProvider;
+    private ConfigurableApplicationProvider environmentProvider;
 
     private final Map<SystemKey, SystemService> systemServices = new HashMap<>();
 
+    /**
+     * The Constructor.
+     *
+     * @param applicationDefinitions {@link ApplicationDefinitions}
+     */
     public ApplicationContextImpl(ApplicationDefinitions applicationDefinitions) {
         this.applicationDefinitions = applicationDefinitions;
     }
@@ -35,11 +41,14 @@ public class ApplicationContextImpl implements ApplicationContext {
      */
     @Override
     public void init() {
-        SystemLoader systemLoader = configurableApplicationProvider.getSysetmLoaderFor(SYSTEM_PROPERTIES);
+        Logger logger = applicationDefinitions.getLogger();
+        SystemLoader systemLoader = environmentProvider.getSystemLoaderFor(SYSTEM_PROPERTIES);
+        logger.warning("Loading system services.");
         List<SystemService> systemServices = systemLoader.loadSystemServices();
         for (SystemService systemService : systemServices) {
+            logger.warning("Initializing system service: " + systemService.getServiceName());
+            systemService.init(environmentProvider.getEnvironmentFor(systemService.getEnvironmentName(), applicationDefinitions));
             this.systemServices.put(systemService.getKey(), systemService);
-            systemService.init(configurableApplicationProvider.getEnvironmentFor(systemService.getEnvironmentName()));
         }
     }
 
@@ -47,8 +56,8 @@ public class ApplicationContextImpl implements ApplicationContext {
      * {@inheritDoc}
      */
     @Override
-    public void setEnvironmentProvider(ConfigurableApplicationProvider environment) {
-        this.configurableApplicationProvider = environment;
+    public void setEnvironmentProvider(ConfigurableApplicationProvider environmentProvider) {
+        this.environmentProvider = environmentProvider;
     }
 
     @Override

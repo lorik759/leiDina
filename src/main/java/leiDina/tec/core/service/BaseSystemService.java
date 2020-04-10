@@ -5,6 +5,8 @@ import java.util.Map;
 import main.java.leiDina.tec.core.model.SystemProperty;
 
 /**
+ * A base implementation of the {@link SystemService} interface. Objects that extends this class has the default behavior of a System Service.
+ *
  * @author vitor.alves
  */
 public abstract class BaseSystemService implements SystemService {
@@ -26,25 +28,19 @@ public abstract class BaseSystemService implements SystemService {
         this.systemPropertyByName.put(name, systemProperty);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public <T extends SystemProperty<?>> T getPropertyByType(Class<?> type) {
         return (T) this.systemPropertyByType.get(type);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public <T extends SystemProperty<?>> T getPropertyByName(String name) {
         return (T) this.systemPropertyByName.get(name);
-    }
-
-    @Override
-    public <T extends SystemProperty<?>> void addProperty(T property) {
-        SystemProperty<?> systemProperty = this.systemPropertyByName.get(property.getName());
-        if (systemProperty != null) {
-            systemProperty.addProperties(property.getProperties());
-        }
-        systemProperty = this.systemPropertyByType.get(property.getType());
-        if (systemProperty != null) {
-            systemProperty.addProperties(property.getProperties());
-        }
     }
 }

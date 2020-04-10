@@ -1,6 +1,5 @@
 package main.java.leiDina.tec.core.model;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -43,6 +42,11 @@ public class SingleObjectProperty implements SystemProperty<Object> {
     }
 
     @Override
+    public void addProperties(List<?> properties) {
+        // Only holds a single property.
+    }
+
+    @Override
     public Class<?> getType() {
         return type != null ? type : singleProperty.getClass();
     }
@@ -50,10 +54,5 @@ public class SingleObjectProperty implements SystemProperty<Object> {
     @Override
     public String getName() {
         return this.name != null ? name : this.getType().getSimpleName();
-    }
-
-    @Override
-    public void addProperties(Collection<?> properties) {
-        // Only holds a single property.
     }
 }

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Enumeration;
 import java.util.Properties;
+import main.java.leiDina.tec.core.model.ApplicationDefinitions;
 import main.java.leiDina.tec.core.model.SystemProperty;
 import main.java.leiDina.tec.core.service.PropertyResolver;
 import main.java.leiDina.tec.core.utils.ClassUtils;
@@ -19,8 +20,12 @@ public class ConfigurableApplicationEnvironmentImpl implements ConfigurableAppli
 
     private final String environmentLocation;
 
-    public ConfigurableApplicationEnvironmentImpl(String environmentLocation) {
+    private final ApplicationDefinitions applicationDefinitions;
+
+    public ConfigurableApplicationEnvironmentImpl(String environmentLocation,
+        ApplicationDefinitions applicationDefinitions) {
         this.environmentLocation = environmentLocation;
+        this.applicationDefinitions = applicationDefinitions;
     }
 
     @Override
@@ -33,6 +38,11 @@ public class ConfigurableApplicationEnvironmentImpl implements ConfigurableAppli
     public <T> SystemProperty<T> loadSystemPropertiesFor(String key, PropertyResolver<?> resolver) {
         ClassLoader classLoader = ClassUtils.getClassLoader();
         return loadSystemPropertiesFor(classLoader, key, resolver);
+    }
+
+    @Override
+    public ApplicationDefinitions getApplicationDefinitions() {
+        return this.applicationDefinitions;
     }
 
     private <T> SystemProperty<T> loadSystemPropertiesFor(ClassLoader classLoader, String key, PropertyResolver<?> resolver) {
