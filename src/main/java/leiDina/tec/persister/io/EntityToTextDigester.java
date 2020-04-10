@@ -1,13 +1,13 @@
-package main.java.leiDina.tec.core.io;
+package main.java.leiDina.tec.persister.io;
 
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import main.java.leiDina.tec.core.annotations.Column;
-import main.java.leiDina.tec.core.exception.PersistenceException;
+import main.java.leiDina.tec.persister.annotations.Column;
+import main.java.leiDina.tec.persister.exception.PersistenceException;
 import main.java.leiDina.tec.core.messages.BaseSystemMessages;
-import main.java.leiDina.tec.core.persist.Persistable;
+import main.java.leiDina.tec.persister.Persistable;
 
 /**
  * @author vitor.alves

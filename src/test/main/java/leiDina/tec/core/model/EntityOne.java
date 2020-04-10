@@ -1,8 +1,8 @@
 package main.java.leiDina.tec.core.model;
 
-import main.java.leiDina.tec.core.annotations.Column;
-import main.java.leiDina.tec.core.annotations.Entity;
-import main.java.leiDina.tec.core.persist.Persistable;
+import main.java.leiDina.tec.persister.annotations.Column;
+import main.java.leiDina.tec.persister.annotations.Entity;
+import main.java.leiDina.tec.persister.Persistable;
 
 /**
  * @author vitor.alves

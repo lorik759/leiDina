@@ -1,4 +1,4 @@
-package main.java.leiDina.tec.core.io;
+package main.java.leiDina.tec.persister.io;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -10,10 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
-import main.java.leiDina.tec.core.exception.PersistenceException;
+import main.java.leiDina.tec.persister.exception.PersistenceException;
 import main.java.leiDina.tec.core.messages.BaseSystemMessages;
-import main.java.leiDina.tec.core.model.EntityDescriptor;
-import main.java.leiDina.tec.core.persist.Persistable;
+import main.java.leiDina.tec.persister.model.EntityDescriptor;
+import main.java.leiDina.tec.persister.Persistable;
 
 /**
  * An actor that knows how to write, read and edit a text file that represents a persistable entity.

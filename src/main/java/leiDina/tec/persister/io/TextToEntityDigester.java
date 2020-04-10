@@ -1,4 +1,4 @@
-package main.java.leiDina.tec.core.io;
+package main.java.leiDina.tec.persister.io;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,7 +1,7 @@
 package main.java.leiDina.biz.dao;
 
 import main.java.leiDina.biz.model.Configuracao;
-import main.java.leiDina.tec.core.dao.BaseDAO;
+import main.java.leiDina.tec.persister.dao.BaseDAO;
 
 /**
  * @author vitor.alves

@@ -1,6 +1,6 @@
 package main.java.leiDina.tec.core;
 
-import main.java.leiDina.tec.core.model.SystemKey;
+import main.java.leiDina.tec.core.model.SystemServiceKey;
 import main.java.leiDina.tec.core.service.SystemService;
 
 /**
@@ -30,12 +30,12 @@ public class ApplicationThreadContext {
     }
 
     /**
-     * Gets the service of the specified {@link SystemKey} from the {@link ApplicationContext} of the thread.
+     * Gets the service of the specified {@link SystemServiceKey} from the {@link ApplicationContext} of the thread.
      *
-     * @param key the {@link SystemKey} of the service.
+     * @param key the {@link SystemServiceKey} of the service.
      * @return a {@link SystemService}.
      */
-    public static SystemService getService(SystemKey key) {
+    public static SystemService getService(SystemServiceKey key) {
         ApplicationContext applicationContext = getApplicationContext();
         return applicationContext.getService(key);
     }

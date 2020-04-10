@@ -1,5 +1,6 @@
-package main.java.leiDina.tec.core.exception;
+package main.java.leiDina.tec.persister.exception;
 
+import main.java.leiDina.tec.core.exception.BaseException;
 import main.java.leiDina.tec.core.messages.MessageHolder;
 
 /**

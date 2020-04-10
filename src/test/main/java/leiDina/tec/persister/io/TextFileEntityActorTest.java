@@ -1,4 +1,4 @@
-package main.java.leiDina.tec.core.io;
+package main.java.leiDina.tec.persister.io;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.Scanner;
-import main.java.leiDina.tec.core.exception.PersistenceException;
+import main.java.leiDina.tec.persister.exception.PersistenceException;
 import main.java.leiDina.tec.core.model.Entity;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;

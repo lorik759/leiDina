@@ -1,7 +1,7 @@
-package main.java.leiDina.tec.core.io;
+package main.java.leiDina.tec.persister.io;
 
 import java.lang.reflect.InvocationTargetException;
-import main.java.leiDina.tec.core.exception.PersistenceException;
+import main.java.leiDina.tec.persister.exception.PersistenceException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import main.java.leiDina.tec.core.model.EntityOne;

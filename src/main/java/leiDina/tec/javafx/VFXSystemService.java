@@ -4,7 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironment;
 import main.java.leiDina.tec.core.model.SingleObjectProperty;
-import main.java.leiDina.tec.core.model.SystemKey;
+import main.java.leiDina.tec.core.model.SystemServiceKey;
 import main.java.leiDina.tec.core.model.SystemProperty;
 import main.java.leiDina.tec.core.service.BaseSystemService;
 import main.java.leiDina.tec.core.service.ClassPropertyResolver;
@@ -16,7 +16,7 @@ import main.java.leiDina.tec.javafx.factory.builder.ControllerBuilder;
 import main.java.leiDina.tec.javafx.messages.FXSystemMessages;
 import main.java.leiDina.tec.javafx.service.ModelSceneWire;
 import main.java.leiDina.tec.javafx.service.NodeAssociation;
-import main.java.leiDina.tec.javafx.service.VFXKey;
+import main.java.leiDina.tec.javafx.service.VFXServiceKey;
 
 /**
  * The system service ah an VFXModule.
@@ -116,8 +116,8 @@ public class VFXSystemService extends BaseSystemService {
      * {@inheritDoc}
      */
     @Override
-    public SystemKey getKey() {
-        return new VFXKey();
+    public SystemServiceKey getKey() {
+        return new VFXServiceKey();
     }
 
     /**

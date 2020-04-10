@@ -2,7 +2,7 @@ package main.java.leiDina.tec.javafx.factory.builder;
 
 import java.lang.reflect.Field;
 import javax.annotation.Resource;
-import main.java.leiDina.tec.core.persist.TextBasePersister;
+import main.java.leiDina.tec.persister.TextBasePersister;
 import main.java.leiDina.tec.core.utils.ReflectionUtils;
 import main.java.leiDina.tec.javafx.controller.EntityPersisterController;
 import main.java.leiDina.tec.javafx.exception.BuilderException;

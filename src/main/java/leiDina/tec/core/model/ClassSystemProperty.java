@@ -41,6 +41,9 @@ public class ClassSystemProperty implements SystemProperty<Class<?>> {
         return properties;
     }
 
+    /**
+     * A class system property dose not contain a single property, it holds a collection of classes that wil be used as properties.
+     */
     @Override
     public Class<?> getProperty() {
         return null;
@@ -53,6 +56,9 @@ public class ClassSystemProperty implements SystemProperty<Class<?>> {
         this.properties.add(classSystemProperties);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void addProperties(List<?> properties) {
         this.properties.addAll((Collection<? extends Class<?>>) properties);

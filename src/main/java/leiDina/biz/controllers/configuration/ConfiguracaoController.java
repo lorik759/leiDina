@@ -1,6 +1,6 @@
 package main.java.leiDina.biz.controllers.configuration;
 
-import main.java.leiDina.tec.core.persist.Persistable;
+import main.java.leiDina.tec.persister.Persistable;
 import main.java.leiDina.tec.javafx.controller.EntityPersisterController;
 
 /**

@@ -1,4 +1,4 @@
-package main.java.leiDina.tec.core.model;
+package main.java.leiDina.tec.persister.model;
 
 import java.beans.IntrospectionException;
 import java.beans.PropertyDescriptor;
@@ -6,10 +6,10 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
-import main.java.leiDina.tec.core.annotations.Column;
-import main.java.leiDina.tec.core.exception.EntityCreationException;
-import main.java.leiDina.tec.core.io.TextToEntityDigester;
-import main.java.leiDina.tec.core.persist.Persistable;
+import main.java.leiDina.tec.persister.annotations.Column;
+import main.java.leiDina.tec.persister.exception.EntityCreationException;
+import main.java.leiDina.tec.persister.io.TextToEntityDigester;
+import main.java.leiDina.tec.persister.Persistable;
 import main.java.leiDina.tec.core.utils.ReflectionUtils;
 
 /**

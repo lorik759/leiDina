@@ -1,9 +1,11 @@
 package main.java.leiDina.tec.core.model;
 
 /**
+ * A key that indacates a {@link main.java.leiDina.tec.core.service.SystemService}.
+ *
  * @author vitor.alves
  */
-public abstract class SystemKey {
+public abstract class SystemServiceKey {
 
     @Override
     public boolean equals(Object obj) {

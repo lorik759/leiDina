@@ -1,12 +1,12 @@
-package main.java.leiDina.tec.core.persist;
+package main.java.leiDina.tec.persister;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.List;
-import main.java.leiDina.tec.core.annotations.Entity;
-import main.java.leiDina.tec.core.exception.PersistenceException;
-import main.java.leiDina.tec.core.io.TextFileEntityActor;
+import main.java.leiDina.tec.persister.annotations.Entity;
+import main.java.leiDina.tec.persister.exception.PersistenceException;
+import main.java.leiDina.tec.persister.io.TextFileEntityActor;
 import main.java.leiDina.tec.core.messages.BaseSystemMessages;
 import main.java.leiDina.tec.core.utils.StringUtils;
 

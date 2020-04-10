@@ -1,8 +1,8 @@
-package main.java.leiDina.tec.core.dao;
+package main.java.leiDina.tec.persister.dao;
 
 import java.io.Serializable;
 import java.util.List;
-import main.java.leiDina.tec.core.exception.EntityNotFoundException;
+import main.java.leiDina.tec.persister.exception.EntityNotFoundException;
 
 /**
  * @author vitor.alves

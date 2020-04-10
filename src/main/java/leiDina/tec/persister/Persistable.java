@@ -1,4 +1,4 @@
-package main.java.leiDina.tec.core.persist;
+package main.java.leiDina.tec.persister;
 
 import java.io.Serializable;
 

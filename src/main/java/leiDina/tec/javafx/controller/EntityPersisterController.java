@@ -2,8 +2,8 @@ package main.java.leiDina.tec.javafx.controller;
 
 import javafx.fxml.FXML;
 import javax.annotation.Resource;
-import main.java.leiDina.tec.core.persist.Persistable;
-import main.java.leiDina.tec.core.persist.Persister;
+import main.java.leiDina.tec.persister.Persistable;
+import main.java.leiDina.tec.persister.Persister;
 
 /**
  * A base controller for persistable entities.

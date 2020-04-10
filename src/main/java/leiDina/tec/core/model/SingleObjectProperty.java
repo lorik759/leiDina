@@ -4,6 +4,8 @@ import java.util.Collections;
 import java.util.List;
 
 /**
+ * A {@link SystemProperty} that indicants a single object property holder.
+ *
  * @author vitor.alves
  */
 public class SingleObjectProperty implements SystemProperty<Object> {
@@ -26,31 +28,49 @@ public class SingleObjectProperty implements SystemProperty<Object> {
         this.name = name;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<Object> getProperties() {
         return Collections.singletonList(this.singleProperty);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Object getProperty() {
         return this.singleProperty;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void addProperty(Object property) {
         this.singleProperty = property;
     }
 
+    /**
+     * As a single object property, it dos not have multiple properties.
+     */
     @Override
     public void addProperties(List<?> properties) {
         // Only holds a single property.
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Class<?> getType() {
         return type != null ? type : singleProperty.getClass();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getName() {
         return this.name != null ? name : this.getType().getSimpleName();

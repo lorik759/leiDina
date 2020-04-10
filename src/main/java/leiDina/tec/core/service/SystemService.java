@@ -1,8 +1,7 @@
 package main.java.leiDina.tec.core.service;
 
 import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironment;
-import main.java.leiDina.tec.core.env.ConfigurableApplicationProvider;
-import main.java.leiDina.tec.core.model.SystemKey;
+import main.java.leiDina.tec.core.model.SystemServiceKey;
 import main.java.leiDina.tec.core.model.SystemProperty;
 
 /**
@@ -25,9 +24,9 @@ public interface SystemService {
     String getServiceName();
 
     /**
-     * @return {@link SystemKey} that represents the service.
+     * @return {@link SystemServiceKey} that represents the service.
      */
-    SystemKey getKey();
+    SystemServiceKey getKey();
 
     /**
      * @return {@link SystemProperty} by type.

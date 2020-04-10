@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 import main.java.leiDina.tec.core.env.ConfigurableApplicationProvider;
 import main.java.leiDina.tec.core.env.SystemLoader;
 import main.java.leiDina.tec.core.model.ApplicationDefinitions;
-import main.java.leiDina.tec.core.model.SystemKey;
+import main.java.leiDina.tec.core.model.SystemServiceKey;
 import main.java.leiDina.tec.core.service.SystemService;
 
 /**
@@ -25,7 +25,7 @@ public class ApplicationContextImpl implements ApplicationContext {
 
     private ConfigurableApplicationProvider environmentProvider;
 
-    private final Map<SystemKey, SystemService> systemServices = new HashMap<>();
+    private final Map<SystemServiceKey, SystemService> systemServices = new HashMap<>();
 
     /**
      * The Constructor.
@@ -61,7 +61,7 @@ public class ApplicationContextImpl implements ApplicationContext {
     }
 
     @Override
-    public SystemService getService(SystemKey key) {
+    public SystemService getService(SystemServiceKey key) {
         return this.systemServices.get(key);
     }
 }

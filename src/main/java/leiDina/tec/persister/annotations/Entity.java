@@ -1,4 +1,4 @@
-package main.java.leiDina.tec.core.annotations;
+package main.java.leiDina.tec.persister.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -8,9 +8,10 @@ import java.lang.annotation.Target;
 /**
  * @author vitor.alves
  */
-@Target(ElementType.METHOD)
+@Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Column {
+public @interface Entity {
 
-    String name();
+    String name() default "";
+
 }

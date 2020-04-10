@@ -2,7 +2,7 @@ package main.java.leiDina.tec.core;
 
 
 import main.java.leiDina.tec.core.env.ConfigurableApplicationProvider;
-import main.java.leiDina.tec.core.model.SystemKey;
+import main.java.leiDina.tec.core.model.SystemServiceKey;
 import main.java.leiDina.tec.core.service.SystemService;
 
 /**
@@ -25,8 +25,8 @@ public interface ApplicationContext {
     void setEnvironmentProvider(ConfigurableApplicationProvider environmentProvider);
 
     /**
-     * @param key a {@link SystemKey} that represents a {@link SystemService}.
-     * @return the {@link SystemService} of the specified {@link SystemKey}.
+     * @param key a {@link SystemServiceKey} that represents a {@link SystemService}.
+     * @return the {@link SystemService} of the specified {@link SystemServiceKey}.
      */
-    SystemService getService(SystemKey key);
+    SystemService getService(SystemServiceKey key);
 }

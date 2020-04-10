@@ -1,12 +1,12 @@
-package main.java.leiDina.tec.core.dao;
+package main.java.leiDina.tec.persister.dao;
 
 import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
-import main.java.leiDina.tec.core.exception.EntityCreationException;
-import main.java.leiDina.tec.core.exception.EntityNotFoundException;
-import main.java.leiDina.tec.core.persist.Persistable;
-import main.java.leiDina.tec.core.persist.Persister;
+import main.java.leiDina.tec.persister.exception.EntityCreationException;
+import main.java.leiDina.tec.persister.exception.EntityNotFoundException;
+import main.java.leiDina.tec.persister.Persistable;
+import main.java.leiDina.tec.persister.Persister;
 import main.java.leiDina.tec.core.utils.ReflectionUtils;
 
 /**
