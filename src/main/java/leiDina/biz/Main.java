@@ -1,4 +1,4 @@
-package main.java.leiDina.tec;
+package main.java.leiDina.biz;
 
 import javafx.application.Application;
 import javafx.scene.Parent;
