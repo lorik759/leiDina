@@ -5,10 +5,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
+import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironment;
 import main.java.leiDina.tec.core.env.ConfigurableApplicationProvider;
 import main.java.leiDina.tec.core.env.SystemLoader;
 import main.java.leiDina.tec.core.model.ApplicationDefinitions;
 import main.java.leiDina.tec.core.model.SystemServiceKey;
+import main.java.leiDina.tec.core.service.IntegrationSystemService;
 import main.java.leiDina.tec.core.service.SystemService;
 
 /**
@@ -30,7 +32,7 @@ public class ApplicationContextImpl implements ApplicationContext {
     /**
      * The Constructor.
      *
-     * @param applicationDefinitions {@link ApplicationDefinitions}
+     * @param applicationDefinitions {@link ApplicationDefinitions}.
      */
     public ApplicationContextImpl(ApplicationDefinitions applicationDefinitions) {
         this.applicationDefinitions = applicationDefinitions;
@@ -50,6 +52,12 @@ public class ApplicationContextImpl implements ApplicationContext {
             systemService.init(environmentProvider.getEnvironmentFor(systemService.getEnvironmentName(), applicationDefinitions));
             this.systemServices.put(systemService.getKey(), systemService);
         }
+        List<IntegrationSystemService> integrationSystemServices = systemLoader.loadIntegrationSystemServices();
+        for (IntegrationSystemService integrationSystemService : integrationSystemServices) {
+            ConfigurableApplicationEnvironment environment = environmentProvider
+                .getEnvironmentFor(integrationSystemService.getEnvironmentName(), applicationDefinitions);
+            integrationSystemService.init(environment, this);
+        }
     }
 
     /**
@@ -60,6 +68,9 @@ public class ApplicationContextImpl implements ApplicationContext {
         this.environmentProvider = environmentProvider;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public SystemService getService(SystemServiceKey key) {
         return this.systemServices.get(key);

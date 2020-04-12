@@ -13,7 +13,7 @@ import main.java.leiDina.tec.core.service.SystemService;
 public interface ApplicationContext {
 
     /**
-     * A base method to initialize the application context with a reference to the starter class.
+     * A base method to initialize the application context.
      */
     void init();
 

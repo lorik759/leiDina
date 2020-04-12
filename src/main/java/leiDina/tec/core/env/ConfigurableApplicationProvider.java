@@ -19,5 +19,11 @@ public interface ConfigurableApplicationProvider {
      */
     ConfigurableApplicationEnvironment getEnvironmentFor(String environmentName, ApplicationDefinitions applicationDefinitions);
 
+    /**
+     * Provides the {@link SystemLoader} for the {@param systemName}.
+     *
+     * @param systemName the name of the system.
+     * @return A {@link SystemLoader}.
+     */
     SystemLoader getSystemLoaderFor(String systemName);
 }

@@ -24,11 +24,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Adding constructor to ConfiguracaoDAO.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/service/IntegrationSystemService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/SystemLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/SystemLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/SystemLoaderImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/SystemLoaderImpl.java" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Adding IntegrationSystemService to application.">
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/ApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/ApplicationContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/ApplicationContextImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/ApplicationContextImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/ConfigurableApplicationProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/ConfigurableApplicationProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/ConfigurableApplicationProviderImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/ConfigurableApplicationProviderImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/model/SingleObjectProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/model/SingleObjectProperty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/service/IntegrationSystemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/service/IntegrationSystemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/service/SingleObjectPropertyResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/service/SingleObjectPropertyResolver.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -437,7 +440,7 @@
       <workItem from="1586480282724" duration="33000" />
       <workItem from="1586480329815" duration="8564000" />
       <workItem from="1586712007327" duration="603000" />
-      <workItem from="1586712680426" duration="7284000" />
+      <workItem from="1586712680426" duration="8530000" />
     </task>
     <task id="LOCAL-00001" summary="Base implantation of a ControllerFactory and a simple exception creator.">
       <created>1583601470898</created>
@@ -677,7 +680,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586719393414</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Adding IntegrationSystemService to application.">
+      <created>1586720627613</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1586720627613</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -698,7 +708,6 @@
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-    <MESSAGE value="Correcting order." />
     <MESSAGE value="Correcting bugs." />
     <MESSAGE value="Unit tests!!! And correcting bugs!!" />
     <MESSAGE value="Grammar and removing unused classes. Created entity controller and a builder for the controller." />
@@ -723,7 +732,8 @@
     <MESSAGE value="Removing Main from tec." />
     <MESSAGE value="Created PersisterSystemService." />
     <MESSAGE value="Adding constructor to ConfiguracaoDAO." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding constructor to ConfiguracaoDAO." />
+    <MESSAGE value="Adding IntegrationSystemService to application." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding IntegrationSystemService to application." />
   </component>
   <component name="WindowStateProjectService">
     <state x="325" y="181" width="800" height="677" key="#Inspections" timestamp="1585222473143">
@@ -792,10 +802,10 @@
     </state>
     <state x="705" y="173" width="903" height="765" key="#xdebugger.evaluate/0.27.1920.988@0.27.1920.988" timestamp="1586718363542" />
     <state x="840" y="144" width="922" height="765" key="#xdebugger.evaluate/0.27.3280.988@0.27.3280.988" timestamp="1584314102380" />
-    <state x="225" y="29" width="989" height="982" key="CommitChangelistDialog2" timestamp="1586719393357">
+    <state x="225" y="29" width="989" height="982" key="CommitChangelistDialog2" timestamp="1586720627190">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="225" y="29" width="989" height="982" key="CommitChangelistDialog2/0.27.1920.988@0.27.1920.988" timestamp="1586719393357" />
+    <state x="225" y="29" width="989" height="982" key="CommitChangelistDialog2/0.27.1920.988@0.27.1920.988" timestamp="1586720627190" />
     <state x="385" y="29" width="1535" height="982" key="CommitChangelistDialog2/0.27.3280.988@0.27.3280.988" timestamp="1584315935198" />
     <state x="879" y="29" width="792" height="982" key="CommitChangelistDialog2/2560.0.1920.1080/0.27.2560.988@0.27.2560.988" timestamp="1583619615635" />
     <state x="354" y="78" width="1124" height="820" maximized="true" key="DiffContextDialog" timestamp="1586387436339">
@@ -872,10 +882,10 @@
     <state x="757" y="254" width="633" height="540" key="StructurePopup/0.27.1920.988@0.27.1920.988" timestamp="1586391106280" />
     <state x="1009" y="254" width="633" height="540" key="StructurePopup/0.27.2560.988/2560.0.1920.1080@0.27.2560.988" timestamp="1583694649173" />
     <state x="1293" y="254" width="1082" height="540" key="StructurePopup/0.27.3280.988@0.27.3280.988" timestamp="1584302674739" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1586720200663">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1586721661676">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.27.1920.988@0.27.1920.988" timestamp="1586720200663" />
+    <state width="498" height="446" key="SwitcherDM/0.27.1920.988@0.27.1920.988" timestamp="1586721661676" />
     <state width="498" height="446" key="SwitcherDM/0.27.2560.988/2560.0.1920.1080@0.27.2560.988" timestamp="1583694940835" />
     <state width="851" height="446" key="SwitcherDM/0.27.3280.988@0.27.3280.988" timestamp="1584314136899" />
     <state width="498" height="446" key="SwitcherDM/2560.0.1920.1080/0.27.2560.988@0.27.2560.988" timestamp="1583619418412" />
@@ -954,27 +964,15 @@
       <screen x="0" y="27" width="3280" height="988" />
     </state>
     <state x="550" y="182" width="800" height="677" key="scopes/0.27.3280.988@0.27.3280.988" timestamp="1584306954523" />
-    <state x="707" y="241" width="672" height="678" key="search.everywhere.popup" timestamp="1586719370125">
+    <state x="707" y="241" width="672" height="678" key="search.everywhere.popup" timestamp="1586720798682">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="707" y="241" width="672" height="678" key="search.everywhere.popup/0.27.1920.988@0.27.1920.988" timestamp="1586719370125" />
+    <state x="707" y="241" width="672" height="678" key="search.everywhere.popup/0.27.1920.988@0.27.1920.988" timestamp="1586720798682" />
     <state x="1208" y="241" width="861" height="678" key="search.everywhere.popup/0.27.3280.988@0.27.3280.988" timestamp="1584300936069" />
     <state x="943" y="241" width="672" height="678" key="search.everywhere.popup/2560.0.1920.1080/0.27.2560.988@0.27.2560.988" timestamp="1583619949739" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/leiDina/tec/core/ApplicationContextImpl.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/leiDina/tec/core/ApplicationContextImpl.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-defaults>
         <breakpoint suspend="THREAD" type="java-line" />
       </breakpoints-defaults>

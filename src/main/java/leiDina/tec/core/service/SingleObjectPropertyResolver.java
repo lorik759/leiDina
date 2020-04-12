@@ -7,10 +7,20 @@ import main.java.leiDina.tec.core.utils.ReflectionUtils;
 import main.java.leiDina.tec.core.utils.StringUtils;
 
 /**
+ * A {@link PropertyResolver} that knows to resolve a property for a single object. If the property contains mor3 than one object as a value, an
+ * exception is thrown.
+ *
  * @author vitor.alves
  */
 public class SingleObjectPropertyResolver implements PropertyResolver<SingleObjectProperty> {
 
+    /**
+     * Resolves the value of a property of a single object.
+     *
+     * @param key the key of the property.
+     * @param values the values of the property.
+     * @return a {@link SingleObjectProperty}.
+     */
     @Override
     public SingleObjectProperty resolve(String key, String values) {
         try {

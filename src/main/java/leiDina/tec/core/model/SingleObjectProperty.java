@@ -45,7 +45,9 @@ public class SingleObjectProperty implements SystemProperty<Object> {
     }
 
     /**
-     * {@inheritDoc}
+     * Overrides the current property object.
+     *
+     * @param property a property object thar will overwrite the current property.
      */
     @Override
     public void addProperty(Object property) {
