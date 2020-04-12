@@ -12,6 +12,7 @@ import java.util.Map;
 import java.util.Scanner;
 import main.java.leiDina.tec.persister.exception.PersistenceException;
 import main.java.leiDina.tec.core.messages.BaseSystemMessages;
+import main.java.leiDina.tec.persister.messages.PersisterSystemMessages;
 import main.java.leiDina.tec.persister.model.EntityDescriptor;
 import main.java.leiDina.tec.persister.Persistable;
 
@@ -112,12 +113,12 @@ public class TextFileEntityActor {
             } else if (!sameId) {
                 stringBuffer.append(line);
             } else {
-                throw new PersistenceException(BaseSystemMessages.TOO_MANY_ENTITY_FOUND.create(entity.getClass(), entity.getId()));
+                throw new PersistenceException(PersisterSystemMessages.TOO_MANY_ENTITY_FOUND.create(entity.getClass(), entity.getId()));
             }
             stringBuffer.append(System.lineSeparator());
         }
         if (!found) {
-            throw new PersistenceException(BaseSystemMessages.ENTITY_NOT_FOUND.create(entity.getClass(), entity.getId()));
+            throw new PersistenceException(PersisterSystemMessages.ENTITY_NOT_FOUND.create(entity.getClass(), entity.getId()));
         }
         this.closeToRead();
         this.writeToFile(stringBuffer);
@@ -136,7 +137,7 @@ public class TextFileEntityActor {
         StringBuffer stringBuffer = new StringBuffer();
         Long maxId = this.findMaxId();
         if (this.entityWithIdExists(entity.getId())) {
-            throw new PersistenceException(BaseSystemMessages.ENTITY_ALREADY_EXISTS.create(entity.getClass(), entity.getId()));
+            throw new PersistenceException(PersisterSystemMessages.ENTITY_ALREADY_EXISTS.create(entity.getClass(), entity.getId()));
         }
         entity.setId(maxId + 1);
         String entityLine = entityToTextDigester.digest(entity);
@@ -193,11 +194,11 @@ public class TextFileEntityActor {
                     stringBuffer.append(System.lineSeparator());
                 }
             } else {
-                throw new PersistenceException(BaseSystemMessages.TOO_MANY_ENTITY_FOUND.create(entity.getClass(), entity.getId()));
+                throw new PersistenceException(PersisterSystemMessages.TOO_MANY_ENTITY_FOUND.create(entity.getClass(), entity.getId()));
             }
         }
         if (!found) {
-            throw new PersistenceException(BaseSystemMessages.ENTITY_NOT_FOUND.create(entity.getClass(), entity.getId()));
+            throw new PersistenceException(PersisterSystemMessages.ENTITY_NOT_FOUND.create(entity.getClass(), entity.getId()));
         }
         this.closeToRead();
         this.writeToFile(stringBuffer);
@@ -235,7 +236,7 @@ public class TextFileEntityActor {
                 return (T) new EntityDescriptor(type).createInstanceFromLine(line);
             }
         }
-        throw new PersistenceException(BaseSystemMessages.ENTITY_NOT_FOUND.create(type, id));
+        throw new PersistenceException(PersisterSystemMessages.ENTITY_NOT_FOUND.create(type, id));
     }
 
     /**

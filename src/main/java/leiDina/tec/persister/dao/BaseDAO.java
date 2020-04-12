@@ -18,6 +18,10 @@ public abstract class BaseDAO<T extends Persistable> implements DAO<T> {
 
     protected abstract Class<T> getPersistableType();
 
+    public BaseDAO(Persister persister) {
+        this.persister = persister;
+    }
+
     @Override
     public T createEntity() {
         Class<T> entityClass = getPersistableType();

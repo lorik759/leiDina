@@ -5,19 +5,9 @@ package main.java.leiDina.tec.core.messages;
  */
 public enum BaseSystemMessages implements MessageCreator {
 
-    OBJECT_NOT_ENTITY("object.not.entity", 1),
+    SINGLE_OBJECT_RESOLVER_ERROR("single.object.resolver.error", 1),
 
-    UNABLE_TO_SAVE_ENTITY("unable.to.save.entity", 1),
-
-    NO_GETTER_METHOD("no.getter.method", 2),
-
-    ENTITY_NOT_FOUND("entity.not.found", 2),
-
-    TOO_MANY_ENTITY_FOUND("to.many.entity.found", 2),
-
-    ENTITY_ALREADY_EXISTS("entity.already.exists", 2),
-
-    UNABLE_TO_REMOVE_ENTITY("unable.to.remove.entity", 1);
+    FAILED_TO_CREATE_SYSTEM_SERVICE("failed.to.create.system.service", 1);
 
     private MessageDelegate delagate;
 

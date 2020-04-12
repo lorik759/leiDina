@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 import java.util.Properties;
+import main.java.leiDina.tec.core.exception.BaseException;
+import main.java.leiDina.tec.core.exception.VApplicationException;
+import main.java.leiDina.tec.core.messages.BaseSystemMessages;
 import main.java.leiDina.tec.core.service.SystemService;
 import main.java.leiDina.tec.core.utils.ClassUtils;
 import main.java.leiDina.tec.core.utils.ReflectionUtils;
@@ -46,8 +49,8 @@ public class SystemLoaderImpl implements SystemLoader {
                         SystemService systemService = null;
                         try {
                             systemService = (SystemService) ReflectionUtils.newInstance(aClass);
-                        } catch (NoSuchMethodException | IllegalAccessException | InstantiationException | InvocationTargetException e) {
-                            e.printStackTrace();
+                        } catch (ReflectiveOperationException e) {
+                            throw new VApplicationException(BaseSystemMessages.FAILED_TO_CREATE_SYSTEM_SERVICE.create(aClass));
                         }
                         systemServices.add(systemService);
                     }

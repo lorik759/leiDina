@@ -8,6 +8,7 @@ import main.java.leiDina.tec.persister.annotations.Column;
 import main.java.leiDina.tec.persister.exception.PersistenceException;
 import main.java.leiDina.tec.core.messages.BaseSystemMessages;
 import main.java.leiDina.tec.persister.Persistable;
+import main.java.leiDina.tec.persister.messages.PersisterSystemMessages;
 
 /**
  * @author vitor.alves
@@ -31,7 +32,7 @@ public class EntityToTextDigester {
                 if (column != null) {
                     Method readMethod = propertyDescriptor.getReadMethod();
                     if (readMethod == null) {
-                        throw new PersistenceException(BaseSystemMessages.NO_GETTER_METHOD.create(entity.getClass(), propertyDescriptor.getName()));
+                        throw new PersistenceException(PersisterSystemMessages.NO_GETTER_METHOD.create(entity.getClass(), propertyDescriptor.getName()));
                     }
                     Object value = readMethod.invoke(entity);
                     entityLine.append(";").append(column.name()).append(":").append(value);

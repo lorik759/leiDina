@@ -9,6 +9,7 @@ import main.java.leiDina.tec.persister.exception.PersistenceException;
 import main.java.leiDina.tec.persister.io.TextFileEntityActor;
 import main.java.leiDina.tec.core.messages.BaseSystemMessages;
 import main.java.leiDina.tec.core.utils.StringUtils;
+import main.java.leiDina.tec.persister.messages.PersisterSystemMessages;
 
 /**
  * @author vitor.alves
@@ -26,7 +27,7 @@ public class TextBasePersister implements Persister {
                 textFileEntityActor.saveNew(entity);
             }
         } catch (Exception e) {
-            throw new PersistenceException(BaseSystemMessages.UNABLE_TO_SAVE_ENTITY.create(entity.getClass()), e);
+            throw new PersistenceException(PersisterSystemMessages.UNABLE_TO_SAVE_ENTITY.create(entity.getClass()), e);
         }
     }
 
@@ -35,11 +36,11 @@ public class TextBasePersister implements Persister {
         TextFileEntityActor textFileEntityActor = getActor(entity);
         try {
             if (!textFileEntityActor.entityWithIdExists(entity.getId())) {
-                throw new PersistenceException(BaseSystemMessages.ENTITY_NOT_FOUND.create(entity.getClass(), entity.getId()));
+                throw new PersistenceException(PersisterSystemMessages.ENTITY_NOT_FOUND.create(entity.getClass(), entity.getId()));
             }
             textFileEntityActor.removeEntity(entity);
         } catch (IOException e) {
-            throw new PersistenceException(BaseSystemMessages.UNABLE_TO_REMOVE_ENTITY.create(entity.getClass()), e);
+            throw new PersistenceException(PersisterSystemMessages.UNABLE_TO_REMOVE_ENTITY.create(entity.getClass()), e);
         }
     }
 
@@ -50,7 +51,7 @@ public class TextBasePersister implements Persister {
             if (actor.entityWithIdExists(id)) {
                 return actor.get(id, type);
             } else {
-                throw new PersistenceException(BaseSystemMessages.ENTITY_NOT_FOUND.create(type, id));
+                throw new PersistenceException(PersisterSystemMessages.ENTITY_NOT_FOUND.create(type, id));
             }
         } catch (IOException e) {
             throw new PersistenceException(e);
@@ -73,7 +74,7 @@ public class TextBasePersister implements Persister {
     private TextFileEntityActor getActor(Class<? extends Persistable> aClass) {
         Entity entityAnnotation = aClass.getAnnotation(Entity.class);
         if (entityAnnotation == null) {
-            throw new PersistenceException(BaseSystemMessages.OBJECT_NOT_ENTITY.create(aClass));
+            throw new PersistenceException(PersisterSystemMessages.OBJECT_NOT_ENTITY.create(aClass));
         }
         String name = entityAnnotation.name();
         if (StringUtils.isEmpty(name)) {

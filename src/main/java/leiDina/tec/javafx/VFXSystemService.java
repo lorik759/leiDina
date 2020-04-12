@@ -19,7 +19,7 @@ import main.java.leiDina.tec.javafx.service.NodeAssociation;
 import main.java.leiDina.tec.javafx.service.VFXServiceKey;
 
 /**
- * The system service ah an VFXModule.
+ * The system service for the VFXModule.
  *
  * @author vitor.alves
  */
