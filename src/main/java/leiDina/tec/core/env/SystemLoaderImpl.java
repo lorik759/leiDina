@@ -10,6 +10,7 @@ import java.util.Properties;
 import main.java.leiDina.tec.core.exception.BaseException;
 import main.java.leiDina.tec.core.exception.VApplicationException;
 import main.java.leiDina.tec.core.messages.BaseSystemMessages;
+import main.java.leiDina.tec.core.service.IntegrationSystemService;
 import main.java.leiDina.tec.core.service.SystemService;
 import main.java.leiDina.tec.core.utils.ClassUtils;
 import main.java.leiDina.tec.core.utils.ReflectionUtils;
@@ -23,6 +24,8 @@ public class SystemLoaderImpl implements SystemLoader {
 
     private static final String SERVICES = "Services";
 
+    private static final String INTEGRATION_SERVICES = "IntegrationServices";
+
     private final String systemProperties;
 
     public SystemLoaderImpl(String systemProperties) {
@@ -33,6 +36,12 @@ public class SystemLoaderImpl implements SystemLoader {
     public List<SystemService> loadSystemServices() {
         ClassLoader classLoader = ClassUtils.getClassLoader();
         return loadSystemServices(classLoader);
+    }
+
+    @Override
+    public List<IntegrationSystemService> loadIntegrationSystemServices() {
+        ClassLoader classLoader = ClassUtils.getClassLoader();
+        return loadIntegrationSystemServices(classLoader);
     }
 
     private List<SystemService> loadSystemServices(ClassLoader classLoader) {
@@ -60,5 +69,32 @@ public class SystemLoaderImpl implements SystemLoader {
             throw new IllegalArgumentException("Unable to load properteis from: " + systemProperties, e);
         }
         return systemServices;
+    }
+
+    public List<IntegrationSystemService> loadIntegrationSystemServices(ClassLoader classLoader) {
+        List<IntegrationSystemService> integrationSystemServices = new ArrayList<>();
+        try {
+            Enumeration<URL> resources = classLoader.getResources(systemProperties);
+            while (resources.hasMoreElements()) {
+                URL url = resources.nextElement();
+                Properties properties = ResourceUtils.getXMLPropertiesFromURL(url);
+                String values = (String) properties.get(INTEGRATION_SERVICES);
+                for (String classes : StringUtils.replaceNewLineAndSplitComma(values)) {
+                    if (StringUtils.isNotEmpty(classes)) {
+                        Class<?> aClass = Class.forName(StringUtils.removeSpaces(classes));
+                        IntegrationSystemService integrationSystemService = null;
+                        try {
+                            integrationSystemService = (IntegrationSystemService) ReflectionUtils.newInstance(aClass);
+                        } catch (ReflectiveOperationException e) {
+                            throw new VApplicationException(BaseSystemMessages.FAILED_TO_CREATE_SYSTEM_SERVICE.create(aClass));
+                        }
+                        integrationSystemServices.add(integrationSystemService);
+                    }
+                }
+            }
+        } catch (IOException | ClassNotFoundException e) {
+            throw new IllegalArgumentException("Unable to load properteis from: " + systemProperties, e);
+        }
+        return integrationSystemServices;
     }
 }
