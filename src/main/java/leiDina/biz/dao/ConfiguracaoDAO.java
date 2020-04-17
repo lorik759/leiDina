@@ -9,10 +9,6 @@ import main.java.leiDina.tec.persister.dao.BaseDAO;
  */
 public class ConfiguracaoDAO extends BaseDAO<Configuracao> {
 
-    public ConfiguracaoDAO(Persister persister) {
-        super(persister);
-    }
-
     @Override
     protected Class<Configuracao> getPersistableType() {
         return Configuracao.class;

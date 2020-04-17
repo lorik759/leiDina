@@ -11,6 +11,4 @@ public interface SystemLoader {
 
     List<SystemService> loadSystemServices();
 
-    List<IntegrationSystemService> loadIntegrationSystemServices();
-
 }

@@ -3,6 +3,7 @@ package main.java.leiDina.tec.persister.dao;
 import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
+import javax.annotation.Resource;
 import main.java.leiDina.tec.persister.exception.EntityCreationException;
 import main.java.leiDina.tec.persister.exception.EntityNotFoundException;
 import main.java.leiDina.tec.persister.Persistable;
@@ -14,13 +15,10 @@ import main.java.leiDina.tec.core.utils.ReflectionUtils;
  */
 public abstract class BaseDAO<T extends Persistable> implements DAO<T> {
 
+    @Resource(name = "persister")
     private Persister persister;
 
     protected abstract Class<T> getPersistableType();
-
-    public BaseDAO(Persister persister) {
-        this.persister = persister;
-    }
 
     @Override
     public T createEntity() {

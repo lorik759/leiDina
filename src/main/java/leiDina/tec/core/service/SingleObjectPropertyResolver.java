@@ -7,7 +7,7 @@ import main.java.leiDina.tec.core.utils.ReflectionUtils;
 import main.java.leiDina.tec.core.utils.StringUtils;
 
 /**
- * A {@link PropertyResolver} that knows to resolve a property for a single object. If the property contains mor3 than one object as a value, an
+ * A {@link PropertyResolver} that knows to resolve a property for a single object. If the property contains more than one object as a value, an
  * exception is thrown.
  *
  * @author vitor.alves

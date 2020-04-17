@@ -52,12 +52,6 @@ public class ApplicationContextImpl implements ApplicationContext {
             systemService.init(environmentProvider.getEnvironmentFor(systemService.getEnvironmentName(), applicationDefinitions));
             this.systemServices.put(systemService.getKey(), systemService);
         }
-        List<IntegrationSystemService> integrationSystemServices = systemLoader.loadIntegrationSystemServices();
-        for (IntegrationSystemService integrationSystemService : integrationSystemServices) {
-            ConfigurableApplicationEnvironment environment = environmentProvider
-                .getEnvironmentFor(integrationSystemService.getEnvironmentName(), applicationDefinitions);
-            integrationSystemService.init(environment, this);
-        }
     }
 
     /**
