@@ -1,5 +1,6 @@
 package main.java.leiDina.tec.javafx.service;
 
+import java.beans.PropertyDescriptor;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import javafx.scene.Node;
@@ -17,10 +18,10 @@ public interface NodeAssociation<A extends Annotation, N extends Node> {
      *
      * @param model the model of the controller.
      * @param declaredAnnotation The annotation that specifies the type of the component.
-     * @param method the seter method of the field from the model.
+     * @param propertyDescriptor the {@link PropertyDescriptor} of the field from the model.
      * @param node the node that represents the parameter of the model.
      */
-    void associate(final Object model, final A declaredAnnotation, final Method method, final N node);
+    void associate(final Object model, final A declaredAnnotation, final PropertyDescriptor propertyDescriptor, final N node);
 
     /**
      * @return the annotation class that represents the component in which the to associate the model with.

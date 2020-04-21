@@ -3,9 +3,11 @@
 <properties>
     <entry key="ControllerFactory">
         main.java.leiDina.tec.javafx.factory.builder.GenericControllerBuilder,
-        main.java.leiDina.tec.javafx.factory.builder.TextEntityPersisterControllerBuilder
+        main.java.leiDina.tec.fxpersister.builder.TextEntityPersisterControllerBuilder,
+        main.java.leiDina.tec.fxpersister.builder.DAOFactoryWireControllerBuilder
     </entry>
     <entry key="ModelSceneWire">
-        main.java.leiDina.tec.javafx.service.TextInputNodeAssociation
+        main.java.leiDina.tec.javafx.service.TextInputNodeAssociation,
+        main.java.leiDina.tec.javafx.service.NumberInputNodeAssociation
     </entry>
 </properties>

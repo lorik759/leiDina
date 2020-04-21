@@ -38,7 +38,7 @@ public class ModelSceneWire implements Wire<BaseModelController<?>> {
                         if (node == null) {
                             throw new VFXException(FXSystemMessages.NO_COMPONENT_OF_ID.create(name));
                         }
-                        nodeAssociation.associate(model, declaredAnnotation, writeMethod, node);
+                        nodeAssociation.associate(model, declaredAnnotation, propertyDescriptor, node);
                     }
                 }
             }

@@ -1,5 +1,6 @@
 package main.java.leiDina.biz.scene;
 
+import java.net.URL;
 import main.java.leiDina.tec.javafx.scene.Scenes;
 
 /**
@@ -17,6 +18,13 @@ public enum LeiDinamicaScenes {
         @Override
         public Scenes getScene() {
             return new LeituraScene();
+        }
+    },
+
+    CONFIGURACAO {
+        @Override
+        public Scenes getScene() {
+            return new ConfiguracaoScene();
         }
     };
 

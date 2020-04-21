@@ -1,8 +1,8 @@
 package main.java.leiDina.tec.core.mock;
 
 import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironment;
-import main.java.leiDina.tec.core.model.SystemServiceKey;
 import main.java.leiDina.tec.core.model.SystemProperty;
+import main.java.leiDina.tec.core.model.SystemServiceKey;
 import main.java.leiDina.tec.core.service.SystemService;
 
 /**
@@ -33,11 +33,6 @@ public class SecondSystemServiceMock implements SystemService {
     @Override
     public <T extends SystemProperty<?>> T getPropertyByName(String name) {
         return null;
-    }
-
-    @Override
-    public <T extends SystemProperty<?>> void addProperty(T property) {
-
     }
 
     @Override

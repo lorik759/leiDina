@@ -14,12 +14,16 @@ public class TextBaseDAOPersisterWire implements Wire<BaseDAO> {
 
     @Override
     public void wire(BaseDAO dao) throws Exception {
-        Field[] declaredFields = dao.getClass().getDeclaredFields();
-        for (Field declaredField : declaredFields) {
-            Resource resource = declaredField.getAnnotation(Resource.class);
-            if (resource != null && resource.name().equals("persister")) {
-                ReflectionUtils.set(declaredField, dao, new TextBasePersister());
+        Class<? extends BaseDAO> aClass = dao.getClass();
+        while (aClass != null) {
+            Field[] declaredFields = aClass.getDeclaredFields();
+            for (Field declaredField : declaredFields) {
+                Resource resource = declaredField.getAnnotation(Resource.class);
+                if (resource != null && resource.name().equals("persister")) {
+                    ReflectionUtils.set(declaredField, dao, new TextBasePersister());
+                }
             }
+            aClass = (Class<? extends BaseDAO>) aClass.getSuperclass();
         }
     }
 }

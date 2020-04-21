@@ -6,11 +6,11 @@ import main.java.leiDina.tec.javafx.scene.Scenes;
 /**
  * @author vitor.alves
  */
-public class LeituraScene implements Scenes {
+public class ConfiguracaoScene implements Scenes {
 
-    private final String LOCATION = "/main/java/leiDina/biz/view/LeituraView.fxml";
+    private final String LOCATION = "/main/java/leiDina/biz/view/ConfiguracaoView.fxml";
 
-    private final String TITLE = "Leitura";
+    private final String TITLE = "Configuracao";
 
     @Override
     public URL getLocation() {

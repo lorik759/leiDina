@@ -24,7 +24,7 @@ public class TextBaseDAOFactory implements DAOFactory {
         }
         try {
             dao = ReflectionUtils.newInstance(daoClass);
-            if (daoClass.isAssignableFrom(BaseDAO.class)) {
+            if (BaseDAO.class.isAssignableFrom(daoClass)) {
                 new TextBaseDAOPersisterWire().wire((BaseDAO) dao);
             }
         } catch (Exception e) {

@@ -25,7 +25,7 @@ public abstract class BaseDAO<T extends Persistable> implements DAO<T> {
         Class<T> entityClass = getPersistableType();
         try {
             return ReflectionUtils.newInstance(entityClass);
-        } catch (NoSuchMethodException | IllegalAccessException | InstantiationException | InvocationTargetException e) {
+        } catch (ReflectiveOperationException e) {
             throw new EntityCreationException(e);
         }
     }

@@ -84,8 +84,8 @@ public class ReflectionUtils {
      * @throws InvocationTargetException {@link InvocationTargetException}.
      * @throws IllegalAccessException {@link IllegalAccessException}.
      */
-    public static <T> void invoke(Method method, T object, Object... args) throws InvocationTargetException, IllegalAccessException {
-        makeAccessible(method).invoke(object, args);
+    public static <T> Object invoke(Method method, T object, Object... args) throws InvocationTargetException, IllegalAccessException {
+        return makeAccessible(method).invoke(object, args);
     }
 
     /**

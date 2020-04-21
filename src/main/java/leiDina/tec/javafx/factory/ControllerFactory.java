@@ -1,6 +1,5 @@
 package main.java.leiDina.tec.javafx.factory;
 
-import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironment;
 import main.java.leiDina.tec.javafx.factory.builder.ControllerBuilder;
 
 /**
@@ -18,5 +17,11 @@ public interface ControllerFactory {
      */
     Object getController(Class<?> controllerClass);
 
+    /**
+     * Adds a {@link ControllerBuilder} to the controller factory.
+     *
+     * @param builder a {@link ControllerBuilder}.
+     * @param <T> the type of the controller that the builder will create.
+     */
     <T> void addControllerBuilder(ControllerBuilder<T> builder);
 }

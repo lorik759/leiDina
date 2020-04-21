@@ -48,14 +48,6 @@ public class PersisterSystemService extends BaseSystemService {
      * {@inheritDoc}
      */
     @Override
-    public <T extends SystemProperty<?>> void addProperty(T property) {
-        // no property to be add.
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
     public String getEnvironmentName() {
         return PERSISTER_SYSTEM_ENVIRONMENT;
     }

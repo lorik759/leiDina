@@ -36,11 +36,6 @@ public class SystemServiceMock implements SystemService {
     }
 
     @Override
-    public <T extends SystemProperty<?>> void addProperty(T property) {
-
-    }
-
-    @Override
     public String getEnvironmentName() {
         return null;
     }

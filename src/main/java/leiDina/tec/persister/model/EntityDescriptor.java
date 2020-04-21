@@ -58,21 +58,23 @@ public class EntityDescriptor<T extends Persistable> {
             Map<String, String> entityProperties = new TextToEntityDigester().digest(entityLine);
             for (String key : columnProperty.keySet()) {
                 String stringValue = entityProperties.get(key);
-                PropertyDescriptor propertyDescriptor = columnProperty.get(key);
-                Class<?> returnType = propertyDescriptor.getReadMethod().getReturnType();
-                Method writeMethod = propertyDescriptor.getWriteMethod();
-                if (returnType.isAssignableFrom(String.class)) {
-                    ReflectionUtils.invoke(writeMethod, entity, stringValue);
-                } else if (returnType.isAssignableFrom(Boolean.class)) {
-                    ReflectionUtils.invoke(writeMethod, entity, Boolean.valueOf(stringValue));
-                } else if (returnType.isAssignableFrom(Integer.class)) {
-                    ReflectionUtils.invoke(writeMethod, entity, Integer.valueOf(stringValue));
-                } else if (returnType.isAssignableFrom(Long.class)) {
-                    ReflectionUtils.invoke(writeMethod, entity, Long.valueOf(stringValue));
-                } else if (returnType.isAssignableFrom(Double.class)) {
-                    ReflectionUtils.invoke(writeMethod, entity, Double.valueOf(stringValue));
+                if (!stringValue.equals("null")) {
+                    PropertyDescriptor propertyDescriptor = columnProperty.get(key);
+                    Class<?> returnType = propertyDescriptor.getReadMethod().getReturnType();
+                    Method writeMethod = propertyDescriptor.getWriteMethod();
+                    if (returnType.isAssignableFrom(String.class)) {
+                        ReflectionUtils.invoke(writeMethod, entity, stringValue);
+                    } else if (returnType.isAssignableFrom(Boolean.class)) {
+                        ReflectionUtils.invoke(writeMethod, entity, Boolean.valueOf(stringValue));
+                    } else if (returnType.isAssignableFrom(Integer.class)) {
+                        ReflectionUtils.invoke(writeMethod, entity, Integer.valueOf(stringValue));
+                    } else if (returnType.isAssignableFrom(Long.class)) {
+                        ReflectionUtils.invoke(writeMethod, entity, Long.valueOf(stringValue));
+                    } else if (returnType.isAssignableFrom(Double.class)) {
+                        ReflectionUtils.invoke(writeMethod, entity, Double.valueOf(stringValue));
+                    }
+                    // TODO: Add so that its possible to convert entity as well and not just primitive types.
                 }
-                // TODO: Add so that its possible to convert entity as well and not just primitive types.
             }
             return entity;
         } catch (ReflectiveOperationException e) {

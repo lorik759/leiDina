@@ -32,6 +32,9 @@ public class ControllerFactoryImpl implements ControllerFactory {
         return builder.build(controllerClass);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public <T> void addControllerBuilder(ControllerBuilder<T> builder) {
         buiders.put(builder.getType(), builder);
     }

@@ -39,13 +39,6 @@ public interface SystemService {
     <T extends SystemProperty<?>> T getPropertyByName(String name);
 
     /**
-     * Adds a property to the set of properties.
-     *
-     * @param property a property.
-     */
-    <T extends SystemProperty<?>> void addProperty(T property);
-
-    /**
      * @return the name of the environment. The name indicates the name of the .xml file that contains the properties of the service.
      */
     String getEnvironmentName();

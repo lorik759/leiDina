@@ -27,6 +27,14 @@
                         <Insets bottom="10.0" right="10.0" top="10.0"/>
                     </VBox.margin>
                 </SceneButton>
+                <SceneButton fx:id="configuracao" alignment="CENTER" contentDisplay="CENTER"
+                    mnemonicParsing="false" onMouseClicked="#setScene" prefHeight="35.0" prefWidth="155.0"
+                    styleClass="sidebar-btn" text="Configuracao"
+                    textAlignment="CENTER" scenes="main.java.leiDina.biz.scene.ConfiguracaoScene">
+                    <VBox.margin>
+                        <Insets bottom="10.0" right="10.0" top="10.0"/>
+                    </VBox.margin>
+                </SceneButton>
             </children>
         </VBox>
     </left>

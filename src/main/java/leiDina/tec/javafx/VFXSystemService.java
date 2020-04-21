@@ -3,11 +3,13 @@ package main.java.leiDina.tec.javafx;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironment;
+import main.java.leiDina.tec.core.model.MultiObjectSystemProperty;
 import main.java.leiDina.tec.core.model.SingleObjectProperty;
 import main.java.leiDina.tec.core.model.SystemServiceKey;
 import main.java.leiDina.tec.core.model.SystemProperty;
 import main.java.leiDina.tec.core.service.BaseSystemService;
 import main.java.leiDina.tec.core.service.ClassPropertyResolver;
+import main.java.leiDina.tec.core.service.Wire;
 import main.java.leiDina.tec.core.utils.ReflectionUtils;
 import main.java.leiDina.tec.javafx.exception.ControllerException;
 import main.java.leiDina.tec.javafx.factory.ControllerFactory;
@@ -118,28 +120,6 @@ public class VFXSystemService extends BaseSystemService {
     @Override
     public SystemServiceKey getKey() {
         return new VFXServiceKey();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public <T extends SystemProperty<?>> void addProperty(T property) {
-        Class<?> type = property.getType();
-        SystemProperty<?> propertyByType = this.getPropertyByType(type);
-        if (type.isAssignableFrom(ControllerFactory.class)) {
-            ControllerFactory controllerFactory = (ControllerFactory) propertyByType.getProperty();
-            List<ControllerBuilder<?>> properties = (List<ControllerBuilder<?>>) property.getProperties();
-            for (ControllerBuilder<?> propertyProperty : properties) {
-                controllerFactory.addControllerBuilder(propertyProperty);
-            }
-        } else if (type.isAssignableFrom(ModelSceneWire.class)) {
-            ModelSceneWire modelSceneWire = (ModelSceneWire) propertyByType.getProperty();
-            List<NodeAssociation<?, ?>> properties = (List<NodeAssociation<?, ?>>) property.getProperties();
-            for (NodeAssociation<?, ?> nodeAssociation : properties) {
-                modelSceneWire.addModelComponentAssociation(nodeAssociation.type(), nodeAssociation);
-            }
-        }
     }
 
     /**
