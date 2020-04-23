@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="JavaFXApp" />
+      <artifact name="leiDina:jar" />
     </artifacts-to-build>
   </component>
   <component name="BranchesTreeState">
@@ -25,39 +25,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Removing IntegrationSystemService and refactoring dao structer.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/biz/scene/ConfiguracaoScene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/biz/view/LeituraView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/model/MultiObjectSystemProperty.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/fxpersister/builder/DAOFactoryWireControllerBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/annotation/NumberInput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/service/NumberInputNodeAssociation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/leiDina_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/biz/controllers/configuration/ConfiguracaoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/biz/controllers/configuration/ConfiguracaoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/biz/controllers/configuration/ConfiguracaoModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/biz/controllers/configuration/ConfiguracaoModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/biz/controllers/leitura/LeituraController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/biz/controllers/leitura/LeituraController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/biz/model/Configuracao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/biz/model/Configuracao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/biz/scene/LeiDinamicaScenes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/biz/scene/LeiDinamicaScenes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/biz/scene/LeituraScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/biz/scene/LeituraScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/biz/view/Leitura.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/biz/view/ConfiguracaoView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/biz/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/biz/view/MainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/service/SystemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/service/SystemService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/utils/ReflectionUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/utils/ReflectionUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/VFXSystemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/VFXSystemService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/controller/EntityPersisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/fxpersister/controller/EntityPersisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/ControllerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/ControllerFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/ControllerFactoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/ControllerFactoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/builder/TextEntityPersisterControllerBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/fxpersister/builder/TextEntityPersisterControllerBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/service/ModelSceneWire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/service/ModelSceneWire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/service/NodeAssociation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/service/NodeAssociation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/service/TextInputNodeAssociation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/service/TextInputNodeAssociation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/persister/PersisterSystemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/persister/PersisterSystemService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/persister/dao/BaseDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/persister/dao/BaseDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/persister/factory/TextBaseDAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/persister/factory/TextBaseDAOFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/persister/model/EntityDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/persister/model/EntityDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/persister/service/TextBaseDAOPersisterWire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/persister/service/TextBaseDAOPersisterWire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resource/fx-service-properties.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resource/fx-service-properties.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/main/java/leiDina/tec/core/mock/SecondSystemServiceMock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/main/java/leiDina/tec/core/mock/SecondSystemServiceMock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/main/java/leiDina/tec/core/mock/SystemServiceMock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/main/java/leiDina/tec/core/mock/SystemServiceMock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/persister/TextBasePersister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/persister/TextBasePersister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/persister/messages/PersisterSystemMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/persister/messages/PersisterSystemMessages.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,22 +146,19 @@
     <property name="last.edited.regexp" value="45dsadsa54545" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/java" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resource" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="main.java.leiDina.tec.javafx.annotation" />
-      <recent name="main.java.leiDina.tec.core.mock" />
-      <recent name="main.java.leiDina.tec.javafx" />
-      <recent name="main.java.leiDina.tec.core.annotations" />
-      <recent name="main.java.leiDina.tec.core.io" />
-    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="main.java.leiDina.tec.core.persist" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/leiDina/view" />
+      <recent name="$PROJECT_DIR$/src/main/java/leiDina/tec" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -212,9 +181,12 @@
       <recent name="test.java.leiDina.tec.javafx.factory" />
       <recent name="main.java.leiDina.tec.javafx" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/java/leiDina/view" />
-      <recent name="$PROJECT_DIR$/src/main/java/leiDina/tec" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="main.java.leiDina.tec.javafx.annotation" />
+      <recent name="main.java.leiDina.tec.core.mock" />
+      <recent name="main.java.leiDina.tec.javafx" />
+      <recent name="main.java.leiDina.tec.core.annotations" />
+      <recent name="main.java.leiDina.tec.core.io" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -813,6 +785,10 @@
     <state x="816" y="239" width="346" height="562" key="#com.intellij.ide.util.MemberChooser/0.27.1920.988@0.27.1920.988" timestamp="1587494466525" />
     <state x="1088" y="239" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/0.27.2560.988/2560.0.1920.1080@0.27.2560.988" timestamp="1583693908435" />
     <state x="1328" y="239" width="374" height="642" key="#com.intellij.ide.util.MemberChooser/0.27.3280.988@0.27.3280.988" timestamp="1584312622876" />
+    <state x="677" y="311" width="525" height="416" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1587677319212">
+      <screen x="0" y="27" width="1920" height="988" />
+    </state>
+    <state x="677" y="311" width="525" height="416" key="#com.intellij.ide.util.TreeClassChooserDialog/0.27.1920.988@0.27.1920.988" timestamp="1587677319212" />
     <state x="804" y="412" width="302" height="216" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1585066933401">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
@@ -843,10 +819,10 @@
     </state>
     <state x="693" y="269" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1920.988@0.27.1920.988" timestamp="1586541897996" />
     <state x="1024" y="269" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.3280.988@0.27.3280.988" timestamp="1584313473856" />
-    <state x="705" y="173" width="903" height="765" key="#xdebugger.evaluate" timestamp="1587495441661">
+    <state x="1013" y="188" width="903" height="765" key="#xdebugger.evaluate" timestamp="1587677916565">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="705" y="173" width="903" height="765" key="#xdebugger.evaluate/0.27.1920.988@0.27.1920.988" timestamp="1587495441661" />
+    <state x="1013" y="188" width="903" height="765" key="#xdebugger.evaluate/0.27.1920.988@0.27.1920.988" timestamp="1587677916565" />
     <state x="840" y="144" width="922" height="765" key="#xdebugger.evaluate/0.27.3280.988@0.27.3280.988" timestamp="1584314102380" />
     <state x="225" y="29" width="989" height="982" key="CommitChangelistDialog2" timestamp="1587149020582">
       <screen x="0" y="27" width="1920" height="988" />
@@ -863,45 +839,45 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="738" y="263" width="495" height="513" key="FileChooserDialogImpl/0.27.1920.988@0.27.1920.988" timestamp="1586472817357" />
-    <state width="1874" height="305" key="GridCell.Tab.0.bottom" timestamp="1587495548208">
+    <state width="1874" height="305" key="GridCell.Tab.0.bottom" timestamp="1587678157873">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="305" key="GridCell.Tab.0.bottom/0.27.1920.988@0.27.1920.988" timestamp="1587495548208" />
+    <state width="1874" height="305" key="GridCell.Tab.0.bottom/0.27.1920.988@0.27.1920.988" timestamp="1587678157873" />
     <state width="1874" height="292" key="GridCell.Tab.0.bottom/0.27.3280.988@0.27.3280.988" timestamp="1584316431086" />
-    <state width="1874" height="305" key="GridCell.Tab.0.center" timestamp="1587495548207">
+    <state width="1874" height="305" key="GridCell.Tab.0.center" timestamp="1587678157873">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="305" key="GridCell.Tab.0.center/0.27.1920.988@0.27.1920.988" timestamp="1587495548207" />
+    <state width="1874" height="305" key="GridCell.Tab.0.center/0.27.1920.988@0.27.1920.988" timestamp="1587678157873" />
     <state width="1874" height="292" key="GridCell.Tab.0.center/0.27.3280.988@0.27.3280.988" timestamp="1584316431083" />
-    <state width="1874" height="305" key="GridCell.Tab.0.left" timestamp="1587495548207">
+    <state width="1874" height="305" key="GridCell.Tab.0.left" timestamp="1587678157872">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="305" key="GridCell.Tab.0.left/0.27.1920.988@0.27.1920.988" timestamp="1587495548207" />
+    <state width="1874" height="305" key="GridCell.Tab.0.left/0.27.1920.988@0.27.1920.988" timestamp="1587678157872" />
     <state width="1874" height="292" key="GridCell.Tab.0.left/0.27.3280.988@0.27.3280.988" timestamp="1584316431082" />
-    <state width="1874" height="305" key="GridCell.Tab.0.right" timestamp="1587495548208">
+    <state width="1874" height="305" key="GridCell.Tab.0.right" timestamp="1587678157873">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="305" key="GridCell.Tab.0.right/0.27.1920.988@0.27.1920.988" timestamp="1587495548208" />
+    <state width="1874" height="305" key="GridCell.Tab.0.right/0.27.1920.988@0.27.1920.988" timestamp="1587678157873" />
     <state width="1874" height="292" key="GridCell.Tab.0.right/0.27.3280.988@0.27.3280.988" timestamp="1584316431084" />
-    <state width="1874" height="305" key="GridCell.Tab.1.bottom" timestamp="1587495548005">
+    <state width="1874" height="305" key="GridCell.Tab.1.bottom" timestamp="1587678157874">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="305" key="GridCell.Tab.1.bottom/0.27.1920.988@0.27.1920.988" timestamp="1587495548005" />
+    <state width="1874" height="305" key="GridCell.Tab.1.bottom/0.27.1920.988@0.27.1920.988" timestamp="1587678157874" />
     <state width="1874" height="292" key="GridCell.Tab.1.bottom/0.27.3280.988@0.27.3280.988" timestamp="1584316431089" />
-    <state width="1874" height="305" key="GridCell.Tab.1.center" timestamp="1587495548004">
+    <state width="1874" height="305" key="GridCell.Tab.1.center" timestamp="1587678157874">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="305" key="GridCell.Tab.1.center/0.27.1920.988@0.27.1920.988" timestamp="1587495548004" />
+    <state width="1874" height="305" key="GridCell.Tab.1.center/0.27.1920.988@0.27.1920.988" timestamp="1587678157874" />
     <state width="1874" height="292" key="GridCell.Tab.1.center/0.27.3280.988@0.27.3280.988" timestamp="1584316431087" />
-    <state width="1874" height="305" key="GridCell.Tab.1.left" timestamp="1587495548004">
+    <state width="1874" height="305" key="GridCell.Tab.1.left" timestamp="1587678157874">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="305" key="GridCell.Tab.1.left/0.27.1920.988@0.27.1920.988" timestamp="1587495548004" />
+    <state width="1874" height="305" key="GridCell.Tab.1.left/0.27.1920.988@0.27.1920.988" timestamp="1587678157874" />
     <state width="1874" height="292" key="GridCell.Tab.1.left/0.27.3280.988@0.27.3280.988" timestamp="1584316431086" />
-    <state width="1874" height="305" key="GridCell.Tab.1.right" timestamp="1587495548005">
+    <state width="1874" height="305" key="GridCell.Tab.1.right" timestamp="1587678157874">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="305" key="GridCell.Tab.1.right/0.27.1920.988@0.27.1920.988" timestamp="1587495548005" />
+    <state width="1874" height="305" key="GridCell.Tab.1.right/0.27.1920.988@0.27.1920.988" timestamp="1587678157874" />
     <state width="1874" height="292" key="GridCell.Tab.1.right/0.27.3280.988@0.27.3280.988" timestamp="1584316431088" />
     <state x="740" y="228" width="628" height="584" key="MultipleFileMergeDialog" timestamp="1585264308952">
       <screen x="0" y="27" width="1920" height="988" />
@@ -916,10 +892,10 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="774" y="148" width="361" height="744" key="RollbackChangesDialog/0.27.1920.988@0.27.1920.988" timestamp="1586215284400" />
-    <state x="259" y="97" width="1370" height="845" key="SettingsEditor" timestamp="1586532499145">
+    <state x="526" y="135" width="1370" height="845" key="SettingsEditor" timestamp="1587677346078">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="259" y="97" width="1370" height="845" key="SettingsEditor/0.27.1920.988@0.27.1920.988" timestamp="1586532499145" />
+    <state x="526" y="135" width="1370" height="845" key="SettingsEditor/0.27.1920.988@0.27.1920.988" timestamp="1587677346078" />
     <state x="443" y="97" width="1024" height="845" key="SettingsEditor/0.27.3280.988@0.27.3280.988" timestamp="1584307986404" />
     <state x="317" y="102" width="900" height="901" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1584980743995" />
     <state x="757" y="254" width="633" height="540" key="StructurePopup" timestamp="1587328776025">

@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.List;
 import main.java.leiDina.tec.persister.annotations.Entity;
+import main.java.leiDina.tec.persister.exception.EntityNotFoundException;
 import main.java.leiDina.tec.persister.exception.PersistenceException;
 import main.java.leiDina.tec.persister.io.TextFileEntityActor;
 import main.java.leiDina.tec.core.messages.BaseSystemMessages;
@@ -36,11 +37,11 @@ public class TextBasePersister implements Persister {
         TextFileEntityActor textFileEntityActor = getActor(entity);
         try {
             if (!textFileEntityActor.entityWithIdExists(entity.getId())) {
-                throw new PersistenceException(PersisterSystemMessages.ENTITY_NOT_FOUND.create(entity.getClass(), entity.getId()));
+                throw new EntityNotFoundException(PersisterSystemMessages.ENTITY_NOT_FOUND.create(entity.getClass(), entity.getId()));
             }
             textFileEntityActor.removeEntity(entity);
         } catch (IOException e) {
-            throw new PersistenceException(PersisterSystemMessages.UNABLE_TO_REMOVE_ENTITY.create(entity.getClass()), e);
+            throw new EntityNotFoundException(PersisterSystemMessages.UNABLE_TO_REMOVE_ENTITY.create(entity.getClass()), e);
         }
     }
 
@@ -51,10 +52,10 @@ public class TextBasePersister implements Persister {
             if (actor.entityWithIdExists(id)) {
                 return actor.get(id, type);
             } else {
-                throw new PersistenceException(PersisterSystemMessages.ENTITY_NOT_FOUND.create(type, id));
+                throw new EntityNotFoundException(PersisterSystemMessages.ENTITY_NOT_FOUND.create(type, id));
             }
         } catch (IOException e) {
-            throw new PersistenceException(e);
+            throw new EntityNotFoundException(e);
         }
     }
 
@@ -63,7 +64,7 @@ public class TextBasePersister implements Persister {
         try {
             return getActor(type).getAll(type);
         } catch (FileNotFoundException e) {
-            throw new PersistenceException(e);
+            throw new EntityNotFoundException(e);
         }
     }
 
@@ -74,7 +75,7 @@ public class TextBasePersister implements Persister {
     private TextFileEntityActor getActor(Class<? extends Persistable> aClass) {
         Entity entityAnnotation = aClass.getAnnotation(Entity.class);
         if (entityAnnotation == null) {
-            throw new PersistenceException(PersisterSystemMessages.OBJECT_NOT_ENTITY.create(aClass));
+            throw new EntityNotFoundException(PersisterSystemMessages.OBJECT_NOT_ENTITY.create(aClass));
         }
         String name = entityAnnotation.name();
         if (StringUtils.isEmpty(name)) {

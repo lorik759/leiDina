@@ -27,7 +27,7 @@ public enum PersisterSystemMessages implements MessageCreator {
 
     private MessageDelegate delagate;
 
-    private final String bundle = "persester-system-messages-holder";
+    private final String bundle = "persister-system-messages-holder";
 
     private final String key;
 
