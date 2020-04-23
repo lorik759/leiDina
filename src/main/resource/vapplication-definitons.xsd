@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.vaplication.com/definition"
+    xmlns:vad="http://www.vaplication.com/definition" elementFormDefault="qualified">
+    <element name="Definition" type="vad:definition"/>
+
+    <complexType name="definition">
+        <sequence>
+            <element name="Packages" maxOccurs="unbounded" minOccurs="0" type="vad:packages"/>
+            <element name="Beans" type="vad:beansType"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="packages">
+        <sequence>
+            <element name="package" maxOccurs="unbounded" type="string"/>
+        </sequence>
+    </complexType>
+
+
+    <complexType name="beansType">
+        <sequence>
+            <element name="bean" maxOccurs="unbounded" type="vad:beanDefinitionType"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="beanDefinitionType">
+        <sequence>
+            <element name="property" minOccurs="0" maxOccurs="unbounded" type="vad:propertyType"/>
+        </sequence>
+        <attribute name="id" type="string" use="required"/>
+        <attribute name="class" type="string" use="required"/>
+    </complexType>
+
+    <complexType name="propertyType">
+    </complexType>
+</schema>

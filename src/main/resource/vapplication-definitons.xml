@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<vad:Definition xmlns:vad="http://www.vaplication.com/definition" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.vaplication.com/definition vapplication-definitons.xsd ">
+    <vad:Packages>
+        <vad:package></vad:package>
+    </vad:Packages>
+
+    <vad:Beans>
+        <vad:bean id="teste" class="main.java.leiDina.tec.core.utils.ReflectionUtils">
+            <vad:property/>
+        </vad:bean>
+    </vad:Beans>
+</vad:Definition>
