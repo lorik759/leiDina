@@ -32,5 +32,15 @@
     </complexType>
 
     <complexType name="propertyType">
+        <sequence>
+            <element name="value" type="string"/>
+        </sequence>
+        <attribute name="type" type="vad:propertyValueType"/>
+    </complexType>
+
+    <complexType  name="propertyValueType">
+        <choice>
+            <element name="type"></element>
+        </choice>
     </complexType>
 </schema>
