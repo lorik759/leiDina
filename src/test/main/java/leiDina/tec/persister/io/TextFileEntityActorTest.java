@@ -8,7 +8,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.Scanner;
 import main.java.leiDina.tec.persister.exception.PersistenceException;
-import main.java.leiDina.tec.core.model.Entity;
+import main.java.leiDina.tec.core.xml.Entity;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;

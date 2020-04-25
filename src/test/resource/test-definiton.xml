@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <vad:Definition xmlns:vad="http://www.vaplication.com/definition" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.vaplication.com/definition vapplication-definitons.xsd ">
-    <vad:Packages>
-        <vad:packageName>second package</vad:packageName>
-    </vad:Packages>
-    <vad:Beans>
-        <vad:bean id="basicBeanTest" class="main.java.leiDina.tec.core.model.Entity"/>
+    <vad:package>second package</vad:package>
+    <vad:beans>
+        <vad:bean id="basicBeanTest" class="main.java.leiDina.tec.core.xml.Entity"/>
 
-        <vad:bean id="beanRefTest" class="main.java.leiDina.tec.core.model.EntityOne">
+        <vad:bean id="beanRefTest" class="main.java.leiDina.tec.core.xml.EntityOne">
             <vad:property propertyName="beanProperty">
                 <vad:beanProperty ref="basicBeanTest"/>
             </vad:property>
         </vad:bean>
-    </vad:Beans>
+    </vad:beans>
 </vad:Definition>

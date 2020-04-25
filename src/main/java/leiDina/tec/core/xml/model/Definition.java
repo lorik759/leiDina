@@ -1,6 +1,8 @@
 package main.java.leiDina.tec.core.xml.model;
 
+import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import main.java.leiDina.tec.core.xml.model.bean.Beans;
@@ -13,16 +15,16 @@ import main.java.leiDina.tec.core.xml.model.packages.Packages;
 @XmlType(propOrder = {"packages", "beans"})
 public class Definition {
 
-    private Packages packages;
+    private List<String> packages;
 
     private Beans beans;
 
-    public Packages getPackages() {
+    public List<String> getPackages() {
         return packages;
     }
 
-    @XmlElement(name = "Packages", namespace = "http://www.vaplication.com/definition")
-    public void setPackages(Packages packages) {
+    @XmlElement(name = "package", namespace = "http://www.vaplication.com/definition")
+    public void setPackages(List<String> packages) {
         this.packages = packages;
     }
 
@@ -30,7 +32,7 @@ public class Definition {
         return beans;
     }
 
-    @XmlElement(name = "Beans", namespace = "http://www.vaplication.com/definition")
+    @XmlElement(name = "beans", namespace = "http://www.vaplication.com/definition")
     public void setBeans(Beans beans) {
         this.beans = beans;
     }

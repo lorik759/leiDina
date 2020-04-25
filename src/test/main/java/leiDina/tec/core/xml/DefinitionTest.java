@@ -5,13 +5,10 @@ import java.util.Enumeration;
 import java.util.List;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
-import main.java.leiDina.tec.core.model.Entity;
-import main.java.leiDina.tec.core.model.EntityOne;
 import main.java.leiDina.tec.core.utils.ClassUtils;
 import main.java.leiDina.tec.core.xml.model.Definition;
 import main.java.leiDina.tec.core.xml.model.bean.Bean;
 import main.java.leiDina.tec.core.xml.model.bean.Beans;
-import main.java.leiDina.tec.core.xml.model.packages.Packages;
 import main.java.leiDina.tec.core.xml.model.property.BeanProperty;
 import main.java.leiDina.tec.core.xml.model.property.Property;
 import org.junit.jupiter.api.Assertions;
@@ -41,7 +38,7 @@ public class DefinitionTest {
 
     @Test
     public void testDefinition() {
-        Packages packages = definition.getPackages();
+        List<String> packages = definition.getPackages();
         Beans beans = definition.getBeans();
         this.testPackages(packages);
         this.testBeans(beans);
@@ -66,8 +63,8 @@ public class DefinitionTest {
         Assertions.assertEquals("basicBeanTest", beanProperty.getRef());
     }
 
-    private void testPackages(Packages packages) {
-        List<String> packageName = packages.getPackageName();
+    private void testPackages(List<String> packages) {
+        List<String> packageName = packages;
         Assertions.assertNotNull(packageName);
         Assertions.assertEquals(1, packageName.size());
         String aPackage = packageName.get(0);

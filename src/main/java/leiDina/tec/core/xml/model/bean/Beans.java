@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 /**
  * @author vitor.alves
  */
-@XmlRootElement(name = "Beans")
+@XmlRootElement(name = "beans")
 public class Beans {
 
     private List<Bean> beans;

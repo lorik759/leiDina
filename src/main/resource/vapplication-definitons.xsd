@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.vaplication.com/definition"
     xmlns:vad="http://www.vaplication.com/definition" elementFormDefault="qualified">
-    <element name="Definition" type="vad:definition"/>
+    <element name="Definition" type="vad:definitionType"/>
 
-    <complexType name="definition">
+    <complexType name="definitionType">
         <sequence>
-            <element name="Packages" maxOccurs="unbounded" minOccurs="0" type="vad:packages"/>
-            <element name="Beans" type="vad:beansType" minOccurs="0"/>
-        </sequence>
-    </complexType>
-
-    <complexType name="packages">
-        <sequence>
-            <element name="packageName" maxOccurs="unbounded" type="string"/>
+            <element name="package" maxOccurs="unbounded" minOccurs="0" type="string"/>
+            <element name="beans" type="vad:beansType" minOccurs="0" maxOccurs="1"/>
         </sequence>
     </complexType>
 
