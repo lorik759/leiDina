@@ -164,6 +164,13 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="main.java.leiDina.tec.core.xml.property" />
+      <recent name="main.java.leiDina.tec.core.xml" />
+      <recent name="main.java.leiDina.tec.javafx.annotation" />
+      <recent name="main.java.leiDina.tec.core.mock" />
+      <recent name="main.java.leiDina.tec.javafx" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="main.java.leiDina.tec.core.persist" />
     </key>
@@ -171,15 +178,11 @@
       <recent name="" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="main.java.leiDina.tec.core.xml" />
       <recent name="main.java.leiDina.tec.core" />
       <recent name="main.java.leiDina.tec.core.messages" />
       <recent name="main.java.leiDina.tec.persister" />
       <recent name="main.java.leiDina.tec.core.model" />
-      <recent name="main.java.leiDina.tec.core.env" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/java/leiDina/view" />
-      <recent name="$PROJECT_DIR$/src/main/java/leiDina/tec" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resource" />
@@ -192,12 +195,9 @@
       <recent name="test.java.leiDina.tec.javafx.factory" />
       <recent name="main.java.leiDina.tec.javafx" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="main.java.leiDina.tec.core.xml.property" />
-      <recent name="main.java.leiDina.tec.core.xml" />
-      <recent name="main.java.leiDina.tec.javafx.annotation" />
-      <recent name="main.java.leiDina.tec.core.mock" />
-      <recent name="main.java.leiDina.tec.javafx" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/leiDina/view" />
+      <recent name="$PROJECT_DIR$/src/main/java/leiDina/tec" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.DefinitionTest">
