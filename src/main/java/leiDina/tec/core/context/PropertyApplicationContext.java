@@ -1,16 +1,14 @@
-package main.java.leiDina.tec.core;
+package main.java.leiDina.tec.core.context;
 
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
-import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironment;
 import main.java.leiDina.tec.core.env.ConfigurableApplicationProvider;
 import main.java.leiDina.tec.core.env.SystemLoader;
 import main.java.leiDina.tec.core.model.ApplicationDefinitions;
 import main.java.leiDina.tec.core.model.SystemServiceKey;
-import main.java.leiDina.tec.core.service.IntegrationSystemService;
 import main.java.leiDina.tec.core.service.SystemService;
 
 /**
@@ -19,7 +17,8 @@ import main.java.leiDina.tec.core.service.SystemService;
  *
  * @author vitor.alves
  */
-public class ApplicationContextImpl implements ApplicationContext {
+@Deprecated
+public class PropertyApplicationContext implements ApplicationContext {
 
     private final ApplicationDefinitions applicationDefinitions;
 
@@ -34,7 +33,7 @@ public class ApplicationContextImpl implements ApplicationContext {
      *
      * @param applicationDefinitions {@link ApplicationDefinitions}.
      */
-    public ApplicationContextImpl(ApplicationDefinitions applicationDefinitions) {
+    public PropertyApplicationContext(ApplicationDefinitions applicationDefinitions) {
         this.applicationDefinitions = applicationDefinitions;
     }
 

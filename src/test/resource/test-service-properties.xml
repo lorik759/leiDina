@@ -2,10 +2,10 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
     <entry key="SystemProperty">
-        main.java.leiDina.tec.core.model.EntityTwo
+        main.java.leiDina.tec.core.xml.EntityTwo
     </entry>
     <entry key="TestName">
-        main.java.leiDina.tec.core.model.EntityOne,
-        main.java.leiDina.tec.core.model.Entity
+        main.java.leiDina.tec.core.xml.EntityOne,
+        main.java.leiDina.tec.core.xml.Entity
     </entry>
 </properties>

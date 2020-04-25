@@ -1,4 +1,4 @@
-package main.java.leiDina.tec.core.model;
+package main.java.leiDina.tec.core.xml;
 
 import main.java.leiDina.tec.persister.annotations.Column;
 import main.java.leiDina.tec.persister.Persistable;

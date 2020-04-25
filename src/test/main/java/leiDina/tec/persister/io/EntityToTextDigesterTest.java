@@ -4,8 +4,8 @@ import java.lang.reflect.InvocationTargetException;
 import main.java.leiDina.tec.persister.exception.PersistenceException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import main.java.leiDina.tec.core.model.EntityOne;
-import main.java.leiDina.tec.core.model.EntityTwo;
+import main.java.leiDina.tec.core.xml.EntityOne;
+import main.java.leiDina.tec.core.xml.EntityTwo;
 
 /**
  * @author vitor.alves

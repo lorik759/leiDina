@@ -9,6 +9,7 @@ import java.util.List;
  *
  * @author vitor.alves
  */
+@Deprecated
 public class ClassSystemProperty implements SystemProperty<Class<?>> {
 
     private String name;

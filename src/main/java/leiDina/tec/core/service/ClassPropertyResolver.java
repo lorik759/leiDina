@@ -6,6 +6,7 @@ import main.java.leiDina.tec.core.utils.StringUtils;
 /**
  * @author vitor.alves
  */
+@Deprecated
 public class ClassPropertyResolver implements PropertyResolver<ClassSystemProperty> {
 
     @Override

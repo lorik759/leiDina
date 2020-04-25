@@ -9,6 +9,7 @@ import main.java.leiDina.tec.core.model.SystemProperty;
  *
  * @author vitor.alves
  */
+@Deprecated
 public interface SystemService {
 
     /**

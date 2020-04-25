@@ -1,5 +1,6 @@
-package main.java.leiDina.tec.core;
+package main.java.leiDina.tec.core.context;
 
+import main.java.leiDina.tec.core.context.ApplicationContext;
 import main.java.leiDina.tec.core.model.SystemServiceKey;
 import main.java.leiDina.tec.core.service.SystemService;
 

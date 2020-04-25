@@ -1,6 +1,7 @@
-package main.java.leiDina.tec.core;
+package main.java.leiDina.tec.core.context;
 
 
+import main.java.leiDina.tec.core.VApplication;
 import main.java.leiDina.tec.core.env.ConfigurableApplicationProvider;
 import main.java.leiDina.tec.core.model.SystemServiceKey;
 import main.java.leiDina.tec.core.service.SystemService;
@@ -28,5 +29,6 @@ public interface ApplicationContext {
      * @param key a {@link SystemServiceKey} that represents a {@link SystemService}.
      * @return the {@link SystemService} of the specified {@link SystemServiceKey}.
      */
+    @Deprecated
     SystemService getService(SystemServiceKey key);
 }

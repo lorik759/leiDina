@@ -2,7 +2,7 @@ package main.java.leiDina.tec.fxpersister.builder;
 
 import java.lang.reflect.Field;
 import javax.annotation.Resource;
-import main.java.leiDina.tec.core.ApplicationThreadContext;
+import main.java.leiDina.tec.core.context.ApplicationThreadContext;
 import main.java.leiDina.tec.core.service.SystemService;
 import main.java.leiDina.tec.core.utils.ReflectionUtils;
 import main.java.leiDina.tec.javafx.controller.BaseModelController;

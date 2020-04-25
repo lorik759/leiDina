@@ -3,19 +3,20 @@ package main.java.leiDina.tec.core.env;
 import main.java.leiDina.tec.core.model.ApplicationDefinitions;
 
 /**
- * A base implantation of the {@link ConfigurableApplicationProvider} that utilizes the base implementation of a {@link
- * ConfigurableApplicationEnvironment} and {@link SystemLoader}.
+ * An implantation of the {@link ConfigurableApplicationProvider} that utilizes the implementation {@link PropertyConfigurableApplicationProvider} of a {@link
+ * ConfigurableApplicationEnvironment} and a base implementation {@link SystemLoader}.
  *
  * @author vitor.alves
  */
-public class ConfigurableApplicationProviderImpl implements ConfigurableApplicationProvider {
+@Deprecated
+public class PropertyConfigurableApplicationProvider implements ConfigurableApplicationProvider {
 
     /**
      * {@inheritDoc}
      */
     @Override
     public ConfigurableApplicationEnvironment getEnvironmentFor(String environmentName, ApplicationDefinitions applicationDefinitions) {
-        return new ConfigurableApplicationEnvironmentImpl(environmentName, applicationDefinitions);
+        return new PropertyConfigurableApplicationEnvironment(environmentName, applicationDefinitions);
     }
 
     /**
