@@ -1,11 +1,11 @@
 package main.java.leiDina.tec.core.env;
 
 import java.util.List;
-import main.java.leiDina.tec.core.xml.Entity;
-import main.java.leiDina.tec.core.xml.EntityOne;
-import main.java.leiDina.tec.core.xml.EntityTwo;
 import main.java.leiDina.tec.core.model.SystemProperty;
 import main.java.leiDina.tec.core.service.ClassPropertyResolver;
+import main.java.leiDina.tec.persister.model.Entity;
+import main.java.leiDina.tec.persister.model.EntityOne;
+import main.java.leiDina.tec.persister.model.EntityTwo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -20,10 +20,10 @@ public class PropertyConfigurableApplicationEnvironmentTest {
 
     @Test
     public void testLoadSystemServicesForType() {
-        ConfigurableApplicationEnvironment configurableApplicationEnvironment = new PropertyConfigurableApplicationEnvironment(SYSTEM_SERVICE_TEST,
-            null);
+        ConfigurableApplicationEnvironment configurableApplicationEnvironment = new PropertyConfigurableApplicationEnvironment(SYSTEM_SERVICE_TEST);
+        ((PropertyConfigurableApplicationEnvironment) configurableApplicationEnvironment).setResolver(new ClassPropertyResolver());
         SystemProperty<Class<?>> systemPropertiesForType = configurableApplicationEnvironment
-            .loadSystemPropertiesFor(SystemProperty.class, new ClassPropertyResolver());
+            .loadSystemPropertiesFor(SystemProperty.class.getSimpleName());
         Assertions.assertNotNull(systemPropertiesForType);
         Assertions.assertEquals(Class.class, systemPropertiesForType.getType());
         List<Class<?>> properties = systemPropertiesForType.getProperties();
@@ -34,10 +34,10 @@ public class PropertyConfigurableApplicationEnvironmentTest {
 
     @Test
     public void testLoadSystemServicesForName() {
-        ConfigurableApplicationEnvironment configurableApplicationEnvironment = new PropertyConfigurableApplicationEnvironment(SYSTEM_SERVICE_TEST,
-            null);
+        ConfigurableApplicationEnvironment configurableApplicationEnvironment = new PropertyConfigurableApplicationEnvironment(SYSTEM_SERVICE_TEST);
+        ((PropertyConfigurableApplicationEnvironment) configurableApplicationEnvironment).setResolver(new ClassPropertyResolver());
         SystemProperty<Class<?>> systemPropertiesForType = configurableApplicationEnvironment
-            .loadSystemPropertiesFor(PROPERTY_NAME, new ClassPropertyResolver());
+            .loadSystemPropertiesFor(PROPERTY_NAME);
         Assertions.assertNotNull(systemPropertiesForType);
         Assertions.assertEquals(Class.class, systemPropertiesForType.getType());
         List<Class<?>> properties = systemPropertiesForType.getProperties();

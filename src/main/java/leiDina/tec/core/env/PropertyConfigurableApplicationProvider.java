@@ -15,8 +15,8 @@ public class PropertyConfigurableApplicationProvider implements ConfigurableAppl
      * {@inheritDoc}
      */
     @Override
-    public ConfigurableApplicationEnvironment getEnvironmentFor(String environmentName, ApplicationDefinitions applicationDefinitions) {
-        return new PropertyConfigurableApplicationEnvironment(environmentName, applicationDefinitions);
+    public ConfigurableApplicationEnvironment getEnvironmentFor(String environmentName) {
+        return new PropertyConfigurableApplicationEnvironment(environmentName);
     }
 
     /**

@@ -1,9 +1,11 @@
 package main.java.leiDina.tec.persister;
 
 import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironment;
+import main.java.leiDina.tec.core.env.PropertyConfigurableApplicationEnvironment;
 import main.java.leiDina.tec.core.model.SystemProperty;
 import main.java.leiDina.tec.core.model.SystemServiceKey;
 import main.java.leiDina.tec.core.service.BaseSystemService;
+import main.java.leiDina.tec.core.service.ClassPropertyResolver;
 import main.java.leiDina.tec.core.service.SingleObjectPropertyResolver;
 import main.java.leiDina.tec.persister.factory.DAOFactory;
 import main.java.leiDina.tec.persister.service.PersisterSystemKey;
@@ -24,7 +26,8 @@ public class PersisterSystemService extends BaseSystemService {
      */
     @Override
     public void init(ConfigurableApplicationEnvironment environment) {
-        SystemProperty<Object> daoFactoryProperty = environment.loadSystemPropertiesFor(DAOFactory.class, new SingleObjectPropertyResolver());
+        ((PropertyConfigurableApplicationEnvironment) environment).setResolver(new SingleObjectPropertyResolver());
+        SystemProperty<Object> daoFactoryProperty = environment.loadSystemPropertiesFor(DAOFactory.class.getSimpleName());
         this.add(daoFactoryProperty);
     }
 

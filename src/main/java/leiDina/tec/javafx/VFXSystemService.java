@@ -3,6 +3,8 @@ package main.java.leiDina.tec.javafx;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironment;
+import main.java.leiDina.tec.core.env.PropertyConfigurableApplicationEnvironment;
+import main.java.leiDina.tec.core.env.PropertyConfigurableApplicationProvider;
 import main.java.leiDina.tec.core.model.MultiObjectSystemProperty;
 import main.java.leiDina.tec.core.model.SingleObjectProperty;
 import main.java.leiDina.tec.core.model.SystemServiceKey;
@@ -54,7 +56,8 @@ public class VFXSystemService extends BaseSystemService {
      * @param environment the {@link ConfigurableApplicationEnvironment} of the VFXModule.
      */
     private void createControllerFactoryProperty(ConfigurableApplicationEnvironment environment) {
-        SystemProperty<Class<?>> controllerFactorySystemProperties = environment.loadSystemPropertiesFor(ControllerFactory.class, new ClassPropertyResolver());
+        ((PropertyConfigurableApplicationEnvironment) environment).setResolver(new ClassPropertyResolver());
+        SystemProperty<Class<?>> controllerFactorySystemProperties = environment.loadSystemPropertiesFor(ControllerFactory.class.getSimpleName());
         ControllerFactory controllerFactory = this.createControllerFactory(controllerFactorySystemProperties);
         SingleObjectProperty controllerFactoryProperty = new SingleObjectProperty(ControllerFactory.class.getSimpleName(), ControllerFactory.class);
         controllerFactoryProperty.addProperty(controllerFactory);
@@ -87,7 +90,8 @@ public class VFXSystemService extends BaseSystemService {
      * @param environment the {@link ConfigurableApplicationEnvironment} of the VFXModule.
      */
     private void createModelSceneWireProperty(ConfigurableApplicationEnvironment environment) {
-        SystemProperty<Class<?>> modelSceneWireProperties = environment.loadSystemPropertiesFor(ModelSceneWire.class, new ClassPropertyResolver());
+        ((PropertyConfigurableApplicationEnvironment) environment).setResolver(new ClassPropertyResolver());
+        SystemProperty<Class<?>> modelSceneWireProperties = environment.loadSystemPropertiesFor(ModelSceneWire.class.getSimpleName());
         ModelSceneWire modelSceneWire = this.createModelSceneWire(modelSceneWireProperties);
         SingleObjectProperty modelSceneWireProperty = new SingleObjectProperty();
         modelSceneWireProperty.addProperty(modelSceneWire);

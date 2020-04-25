@@ -2,6 +2,7 @@ package main.java.leiDina.tec.core.model;
 
 import java.util.Set;
 import java.util.logging.Logger;
+import main.java.leiDina.tec.core.env.ConfigurableApplicationProvider;
 
 /**
  * A model for the base definitions for a VApplication. This contains all information for the startup of the application.
@@ -16,10 +17,20 @@ public class ApplicationDefinitions {
 
     private final Set<Class<?>> primeryClasses;
 
+    private ConfigurableApplicationProvider configurableApplicationProvider;
+
     public ApplicationDefinitions(Logger logger, Class<?> starterClass, Set<Class<?>> primeryClasses) {
         this.logger = logger;
         this.starterClass = starterClass;
         this.primeryClasses = primeryClasses;
+    }
+
+    public ApplicationDefinitions(Logger logger, Class<?> starterClass, Set<Class<?>> primeryClasses,
+        ConfigurableApplicationProvider configurableApplicationProvider) {
+        this.logger = logger;
+        this.starterClass = starterClass;
+        this.primeryClasses = primeryClasses;
+        this.configurableApplicationProvider = configurableApplicationProvider;
     }
 
     /**
@@ -42,5 +53,13 @@ public class ApplicationDefinitions {
      */
     public Set<Class<?>> getPrimeryClasses() {
         return primeryClasses;
+    }
+
+    public ConfigurableApplicationProvider getConfigurableApplicationProvider() {
+        return configurableApplicationProvider;
+    }
+
+    public void setConfigurableApplicationProvider(ConfigurableApplicationProvider configurableApplicationProvider) {
+        this.configurableApplicationProvider = configurableApplicationProvider;
     }
 }

@@ -2,7 +2,6 @@ package main.java.leiDina.tec.core;
 
 import main.java.leiDina.tec.core.context.ApplicationContext;
 import main.java.leiDina.tec.core.context.PropertyApplicationContext;
-import main.java.leiDina.tec.core.env.PropertyConfigurableApplicationProvider;
 import main.java.leiDina.tec.core.mock.MockSecondServiceServiceKey;
 import main.java.leiDina.tec.core.mock.MockServiceServiceKey;
 import main.java.leiDina.tec.core.service.SystemService;
@@ -16,8 +15,8 @@ public class PropertyApplicationContextTest {
 
     @Test
     public void testApplicationContextInit() {
-        ApplicationContext applicationContext = new PropertyApplicationContext(null);
-        applicationContext.setEnvironmentProvider(new PropertyConfigurableApplicationProvider());
+        ApplicationContext applicationContext = new PropertyApplicationContext();
+        applicationContext.setApplicationDefinitions(null);
         applicationContext.init();
         SystemService service = applicationContext.getService(new MockServiceServiceKey());
         Assertions.assertNotNull(service);

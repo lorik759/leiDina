@@ -1,4 +1,4 @@
-package main.java.leiDina.tec.core.xml;
+package main.java.leiDina.tec.vinjection.xml;
 
 import java.net.URL;
 import java.util.Enumeration;
@@ -6,11 +6,13 @@ import java.util.List;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
 import main.java.leiDina.tec.core.utils.ClassUtils;
-import main.java.leiDina.tec.core.xml.model.Definition;
-import main.java.leiDina.tec.core.xml.model.bean.Bean;
-import main.java.leiDina.tec.core.xml.model.bean.Beans;
-import main.java.leiDina.tec.core.xml.model.property.BeanProperty;
-import main.java.leiDina.tec.core.xml.model.property.Property;
+import main.java.leiDina.tec.persister.model.Entity;
+import main.java.leiDina.tec.persister.model.EntityOne;
+import main.java.leiDina.tec.vinjection.xml.model.Definition;
+import main.java.leiDina.tec.vinjection.xml.model.bean.Bean;
+import main.java.leiDina.tec.vinjection.xml.model.bean.Beans;
+import main.java.leiDina.tec.vinjection.xml.model.property.types.BeanProperty;
+import main.java.leiDina.tec.vinjection.xml.model.property.Property;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;

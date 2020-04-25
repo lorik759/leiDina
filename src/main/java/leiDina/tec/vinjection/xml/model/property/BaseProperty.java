@@ -1,31 +1,20 @@
-package main.java.leiDina.tec.core.xml.model.property;
+package main.java.leiDina.tec.vinjection.xml.model.property;
 
-import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+import main.java.leiDina.tec.vinjection.xml.model.property.types.BeanProperty;
+import main.java.leiDina.tec.vinjection.xml.model.property.types.ListProperty;
+import main.java.leiDina.tec.vinjection.xml.model.property.types.MapProperty;
 
 /**
  * @author vitor.alves
  */
-@XmlRootElement(name = "property", namespace = "http://www.vaplication.com/definition")
-public class Property {
-
-    private String propertyName;
+public abstract class BaseProperty {
 
     private BeanProperty beanProperty;
 
     private ListProperty listProperty;
 
     private MapProperty mapProperty;
-
-    public String getPropertyName() {
-        return propertyName;
-    }
-
-    @XmlAttribute(name = "propertyName")
-    public void setPropertyName(String propertyName) {
-        this.propertyName = propertyName;
-    }
 
     public BeanProperty getBeanProperty() {
         return beanProperty;
@@ -53,4 +42,16 @@ public class Property {
     public void setMapProperty(MapProperty mapProperty) {
         this.mapProperty = mapProperty;
     }
+
+    public XmlProperty getProperty() {
+        if (beanProperty != null) {
+            return beanProperty;
+        } else if (listProperty != null) {
+            return listProperty;
+        } else if (mapProperty != null) {
+            return mapProperty;
+        }
+        return null;
+    }
+
 }

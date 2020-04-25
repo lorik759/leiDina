@@ -20,45 +20,32 @@ import main.java.leiDina.tec.core.service.SystemService;
 @Deprecated
 public class PropertyApplicationContext implements ApplicationContext {
 
-    private final ApplicationDefinitions applicationDefinitions;
-
     private static final String SYSTEM_PROPERTIES = "system-properties.xml";
 
-    private ConfigurableApplicationProvider environmentProvider;
+    private ApplicationDefinitions applicationDefinitions;
 
     private final Map<SystemServiceKey, SystemService> systemServices = new HashMap<>();
-
-    /**
-     * The Constructor.
-     *
-     * @param applicationDefinitions {@link ApplicationDefinitions}.
-     */
-    public PropertyApplicationContext(ApplicationDefinitions applicationDefinitions) {
-        this.applicationDefinitions = applicationDefinitions;
-    }
 
     /**
      * {@inheritDoc}
      */
     @Override
     public void init() {
+        ConfigurableApplicationProvider environmentProvider = applicationDefinitions.getConfigurableApplicationProvider();
         Logger logger = applicationDefinitions.getLogger();
         SystemLoader systemLoader = environmentProvider.getSystemLoaderFor(SYSTEM_PROPERTIES);
         logger.warning("Loading system services.");
         List<SystemService> systemServices = systemLoader.loadSystemServices();
         for (SystemService systemService : systemServices) {
             logger.warning("Initializing system service: " + systemService.getServiceName());
-            systemService.init(environmentProvider.getEnvironmentFor(systemService.getEnvironmentName(), applicationDefinitions));
+            systemService.init(environmentProvider.getEnvironmentFor(systemService.getEnvironmentName()));
             this.systemServices.put(systemService.getKey(), systemService);
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
-    public void setEnvironmentProvider(ConfigurableApplicationProvider environmentProvider) {
-        this.environmentProvider = environmentProvider;
+    public void setApplicationDefinitions(ApplicationDefinitions applicationDefinitions) {
+        this.applicationDefinitions = applicationDefinitions;
     }
 
     /**

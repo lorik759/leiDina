@@ -1,5 +1,6 @@
 package main.java.leiDina.tec.core.service;
 
+import java.util.Properties;
 import main.java.leiDina.tec.core.model.ClassSystemProperty;
 import main.java.leiDina.tec.core.utils.StringUtils;
 

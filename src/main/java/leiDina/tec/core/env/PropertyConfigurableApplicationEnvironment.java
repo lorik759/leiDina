@@ -21,32 +21,19 @@ public class PropertyConfigurableApplicationEnvironment implements ConfigurableA
 
     private final String environmentLocation;
 
-    private final ApplicationDefinitions applicationDefinitions;
+    private PropertyResolver<?> resolver;
 
-    public PropertyConfigurableApplicationEnvironment(String environmentLocation,
-        ApplicationDefinitions applicationDefinitions) {
+    public PropertyConfigurableApplicationEnvironment(String environmentLocation) {
         this.environmentLocation = environmentLocation;
-        this.applicationDefinitions = applicationDefinitions;
     }
 
     @Override
-    public <T> SystemProperty<T> loadSystemPropertiesFor(Class<?> type, PropertyResolver<?> resolver) {
+    public <T> SystemProperty<T> loadSystemPropertiesFor(String key) {
         ClassLoader classLoader = ClassUtils.getClassLoader();
-        return loadSystemPropertiesFor(classLoader, type.getSimpleName(), resolver);
+        return loadSystemPropertiesFor(classLoader, key);
     }
 
-    @Override
-    public <T> SystemProperty<T> loadSystemPropertiesFor(String key, PropertyResolver<?> resolver) {
-        ClassLoader classLoader = ClassUtils.getClassLoader();
-        return loadSystemPropertiesFor(classLoader, key, resolver);
-    }
-
-    @Override
-    public ApplicationDefinitions getApplicationDefinitions() {
-        return this.applicationDefinitions;
-    }
-
-    private <T> SystemProperty<T> loadSystemPropertiesFor(ClassLoader classLoader, String key, PropertyResolver<?> resolver) {
+    private <T> SystemProperty<T> loadSystemPropertiesFor(ClassLoader classLoader, String key) {
         SystemProperty<T> systemProperty = null;
         try {
             Enumeration<URL> resources = classLoader.getResources(environmentLocation);
@@ -65,5 +52,9 @@ public class PropertyConfigurableApplicationEnvironment implements ConfigurableA
             throw new IllegalArgumentException("Unable to load properteis from: " + environmentLocation, e);
         }
         return systemProperty;
+    }
+
+    public void setResolver(PropertyResolver<?> resolver) {
+        this.resolver = resolver;
     }
 }

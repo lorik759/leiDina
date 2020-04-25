@@ -1,4 +1,4 @@
-package main.java.leiDina.tec.core.xml.model.property;
+package main.java.leiDina.tec.vinjection.xml.model.property.types;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;

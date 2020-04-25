@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <vad:Definition xmlns:vad="http://www.vaplication.com/definition" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.vaplication.com/definition vapplication-definitons.xsd ">
-
+    <vad:package>fx-service-definiton.xml</vad:package>
 </vad:Definition>

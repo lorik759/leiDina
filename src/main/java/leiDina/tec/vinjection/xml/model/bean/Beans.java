@@ -1,4 +1,4 @@
-package main.java.leiDina.tec.core.xml.model.bean;
+package main.java.leiDina.tec.vinjection.xml.model.bean;
 
 import java.util.List;
 import javax.xml.bind.annotation.XmlElement;

@@ -14,10 +14,9 @@ public interface ConfigurableApplicationProvider {
      * Provides an {@link ConfigurableApplicationEnvironment} for the {@param environmentName} and {@link ApplicationDefinitions}.
      *
      * @param environmentName the name of the environment.
-     * @param applicationDefinitions the {@link ApplicationDefinitions} of the application.
      * @return A {@link ConfigurableApplicationEnvironment}.
      */
-    ConfigurableApplicationEnvironment getEnvironmentFor(String environmentName, ApplicationDefinitions applicationDefinitions);
+    ConfigurableApplicationEnvironment getEnvironmentFor(String environmentName);
 
     /**
      * Provides the {@link SystemLoader} for the {@param systemName}.

@@ -10,6 +10,8 @@ import main.java.leiDina.tec.core.context.ApplicationThreadContext;
 import main.java.leiDina.tec.core.env.ConfigurableApplicationProvider;
 import main.java.leiDina.tec.core.env.PropertyConfigurableApplicationProvider;
 import main.java.leiDina.tec.core.model.ApplicationDefinitions;
+import main.java.leiDina.tec.vinjection.XmlInjectableApplicationContext;
+import main.java.leiDina.tec.vinjection.env.XmlConfigurableApplicationProvider;
 
 /**
  * A class that can bootstrap and launch a VApplication. The VApplication works as service loader, in which it creates and initializes a {@link
@@ -68,8 +70,7 @@ public class VApplication {
     public ApplicationContext run() {
         logger.info("Starting VApplication");
         ApplicationContext applicationContext = createApplicationContext();
-        ConfigurableApplicationProvider applicationEnvironmentProvider = getOrCreateEnvironmentProvider();
-        applicationContext.setEnvironmentProvider(applicationEnvironmentProvider);
+        applicationContext.setApplicationDefinitions(this.getAplicationDefinitions());
         applicationContext.init();
         ApplicationThreadContext.init(applicationContext);
         return applicationContext;
@@ -82,16 +83,22 @@ public class VApplication {
      */
     protected ConfigurableApplicationProvider getOrCreateEnvironmentProvider() {
         if (this.environmentProvider == null) {
-            this.environmentProvider = new PropertyConfigurableApplicationProvider();
+            this.environmentProvider = new XmlConfigurableApplicationProvider();
         }
         return this.environmentProvider;
+    }
+
+    private ApplicationDefinitions getAplicationDefinitions() {
+        ConfigurableApplicationProvider provider = this.getOrCreateEnvironmentProvider();
+        this.applicationDefinitions.setConfigurableApplicationProvider(provider);
+        return this.applicationDefinitions;
     }
 
     /**
      * @return creates a {@link ApplicationContext}.
      */
     protected ApplicationContext createApplicationContext() {
-        return new PropertyApplicationContext(applicationDefinitions);
+        return new XmlInjectableApplicationContext();
     }
 
     /**

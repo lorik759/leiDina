@@ -3,6 +3,7 @@ package main.java.leiDina.tec.core.context;
 
 import main.java.leiDina.tec.core.VApplication;
 import main.java.leiDina.tec.core.env.ConfigurableApplicationProvider;
+import main.java.leiDina.tec.core.model.ApplicationDefinitions;
 import main.java.leiDina.tec.core.model.SystemServiceKey;
 import main.java.leiDina.tec.core.service.SystemService;
 
@@ -19,11 +20,11 @@ public interface ApplicationContext {
     void init();
 
     /**
-     * Set the {@link ConfigurableApplicationProvider} of the application. This method is to be used only on application startup.
+     * Set the {@link ApplicationDefinitions} of the application. This method is to be used only on application startup.
      *
-     * @param environmentProvider the {@link ConfigurableApplicationProvider} to be used by the application.
+     * @param applicationDefinitions the {@link ApplicationDefinitions} to be used by the application.
      */
-    void setEnvironmentProvider(ConfigurableApplicationProvider environmentProvider);
+    void setApplicationDefinitions(ApplicationDefinitions applicationDefinitions);
 
     /**
      * @param key a {@link SystemServiceKey} that represents a {@link SystemService}.
