@@ -4,8 +4,11 @@ import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.logging.Logger;
+import main.java.leiDina.tec.core.context.ApplicationContext;
+import main.java.leiDina.tec.core.context.PropertyApplicationContext;
+import main.java.leiDina.tec.core.context.ApplicationThreadContext;
 import main.java.leiDina.tec.core.env.ConfigurableApplicationProvider;
-import main.java.leiDina.tec.core.env.ConfigurableApplicationProviderImpl;
+import main.java.leiDina.tec.core.env.PropertyConfigurableApplicationProvider;
 import main.java.leiDina.tec.core.model.ApplicationDefinitions;
 
 /**
@@ -79,7 +82,7 @@ public class VApplication {
      */
     protected ConfigurableApplicationProvider getOrCreateEnvironmentProvider() {
         if (this.environmentProvider == null) {
-            this.environmentProvider = new ConfigurableApplicationProviderImpl();
+            this.environmentProvider = new PropertyConfigurableApplicationProvider();
         }
         return this.environmentProvider;
     }
@@ -88,7 +91,7 @@ public class VApplication {
      * @return creates a {@link ApplicationContext}.
      */
     protected ApplicationContext createApplicationContext() {
-        return new ApplicationContextImpl(applicationDefinitions);
+        return new PropertyApplicationContext(applicationDefinitions);
     }
 
     /**

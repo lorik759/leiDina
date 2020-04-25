@@ -7,6 +7,7 @@ import java.util.List;
 /**
  * @author vitor.alves
  */
+@Deprecated
 public class MultiObjectSystemProperty<T> implements SystemProperty<T> {
 
     private String name;

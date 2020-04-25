@@ -16,13 +16,14 @@ import main.java.leiDina.tec.core.utils.ResourceUtils;
  *
  * @author vitor.alves
  */
-public class ConfigurableApplicationEnvironmentImpl implements ConfigurableApplicationEnvironment {
+@Deprecated
+public class PropertyConfigurableApplicationEnvironment implements ConfigurableApplicationEnvironment {
 
     private final String environmentLocation;
 
     private final ApplicationDefinitions applicationDefinitions;
 
-    public ConfigurableApplicationEnvironmentImpl(String environmentLocation,
+    public PropertyConfigurableApplicationEnvironment(String environmentLocation,
         ApplicationDefinitions applicationDefinitions) {
         this.environmentLocation = environmentLocation;
         this.applicationDefinitions = applicationDefinitions;

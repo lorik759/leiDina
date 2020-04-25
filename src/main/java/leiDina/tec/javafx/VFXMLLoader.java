@@ -4,7 +4,7 @@ package main.java.leiDina.tec.javafx;
 import java.io.IOException;
 import java.net.URL;
 import javafx.fxml.FXMLLoader;
-import main.java.leiDina.tec.core.ApplicationThreadContext;
+import main.java.leiDina.tec.core.context.ApplicationThreadContext;
 import main.java.leiDina.tec.core.model.SystemProperty;
 import main.java.leiDina.tec.core.service.SystemService;
 import main.java.leiDina.tec.javafx.controller.BaseModelController;

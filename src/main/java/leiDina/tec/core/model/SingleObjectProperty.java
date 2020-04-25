@@ -8,6 +8,7 @@ import java.util.List;
  *
  * @author vitor.alves
  */
+@Deprecated
 public class SingleObjectProperty implements SystemProperty<Object> {
 
     private Object singleProperty;

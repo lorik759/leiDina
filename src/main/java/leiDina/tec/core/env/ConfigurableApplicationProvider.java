@@ -25,5 +25,6 @@ public interface ConfigurableApplicationProvider {
      * @param systemName the name of the system.
      * @return A {@link SystemLoader}.
      */
+    @Deprecated
     SystemLoader getSystemLoaderFor(String systemName);
 }

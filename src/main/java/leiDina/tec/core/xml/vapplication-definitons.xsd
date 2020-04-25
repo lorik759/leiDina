@@ -6,13 +6,13 @@
     <complexType name="definition">
         <sequence>
             <element name="Packages" maxOccurs="unbounded" minOccurs="0" type="vad:packages"/>
-            <element name="Beans" type="vad:beansType" minOccurs="0"/>
+            <element name="Beans" type="vad:beansType"/>
         </sequence>
     </complexType>
 
     <complexType name="packages">
         <sequence>
-            <element name="packageName" maxOccurs="unbounded" type="string"/>
+            <element name="package" maxOccurs="unbounded" type="string"/>
         </sequence>
     </complexType>
 
@@ -29,44 +29,25 @@
         </sequence>
         <attribute name="id" type="string" use="required"/>
         <attribute name="class" type="string" use="required"/>
-        <attribute name="parent" type="string"/>
     </complexType>
 
     <complexType name="propertyType">
         <sequence>
-            <group ref="vad:propertyElements"/>
+            <element name="value" type="vad:valueType"/>
         </sequence>
         <attribute name="propertyName" type="string" use="required"/>
+        <attribute name="type" type="vad:propertyValueType" use="required" default="bean"/>
     </complexType>
 
-    <group name="propertyElements">
-        <choice>
-            <element name="beanProperty" type="vad:beanType"/>
-            <element name="listProperty" type="vad:listType"/>
-            <element name="mapProperty" type="vad:mapType"/>
-        </choice>
-    </group>
+    <simpleType name="propertyValueType">
+        <restriction base="string">
+            <enumeration value="bean"/>
+            <enumeration value="list"/>
+            <enumeration value="map"/>
+        </restriction>
+    </simpleType>
 
-    <complexType name="beanType">
-        <attribute name="ref" type="string"/>
-    </complexType>
-
-    <complexType name="listType">
-        <sequence>
-            <element name="value" type="string" minOccurs="1" maxOccurs="unbounded"/>
-        </sequence>
-    </complexType>
-
-    <complexType name="mapType">
-        <sequence maxOccurs="unbounded" minOccurs="1">
-            <element name="entry" type="vad:keyType"/>
-        </sequence>
-    </complexType>
-
-    <complexType name="keyType">
-        <sequence>
-            <group ref="vad:propertyElements" maxOccurs="1"/>
-        </sequence>
-        <attribute name="key" type="string" use="required"/>
+    <complexType name="valueType">
+        <attribute name="id" type="string"/>
     </complexType>
 </schema>

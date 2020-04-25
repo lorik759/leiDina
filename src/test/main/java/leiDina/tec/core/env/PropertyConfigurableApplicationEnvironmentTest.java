@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 /**
  * @author vitor.alves
  */
-public class ConfigurableApplicationEnvironmentImplTest {
+public class PropertyConfigurableApplicationEnvironmentTest {
 
     private static final String SYSTEM_SERVICE_TEST = "test-service-properties.xml";
 
@@ -20,7 +20,7 @@ public class ConfigurableApplicationEnvironmentImplTest {
 
     @Test
     public void testLoadSystemServicesForType() {
-        ConfigurableApplicationEnvironment configurableApplicationEnvironment = new ConfigurableApplicationEnvironmentImpl(SYSTEM_SERVICE_TEST,
+        ConfigurableApplicationEnvironment configurableApplicationEnvironment = new PropertyConfigurableApplicationEnvironment(SYSTEM_SERVICE_TEST,
             null);
         SystemProperty<Class<?>> systemPropertiesForType = configurableApplicationEnvironment
             .loadSystemPropertiesFor(SystemProperty.class, new ClassPropertyResolver());
@@ -34,7 +34,7 @@ public class ConfigurableApplicationEnvironmentImplTest {
 
     @Test
     public void testLoadSystemServicesForName() {
-        ConfigurableApplicationEnvironment configurableApplicationEnvironment = new ConfigurableApplicationEnvironmentImpl(SYSTEM_SERVICE_TEST,
+        ConfigurableApplicationEnvironment configurableApplicationEnvironment = new PropertyConfigurableApplicationEnvironment(SYSTEM_SERVICE_TEST,
             null);
         SystemProperty<Class<?>> systemPropertiesForType = configurableApplicationEnvironment
             .loadSystemPropertiesFor(PROPERTY_NAME, new ClassPropertyResolver());

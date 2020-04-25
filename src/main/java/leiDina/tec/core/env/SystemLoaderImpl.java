@@ -1,16 +1,13 @@
 package main.java.leiDina.tec.core.env;
 
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 import java.util.Properties;
-import main.java.leiDina.tec.core.exception.BaseException;
 import main.java.leiDina.tec.core.exception.VApplicationException;
 import main.java.leiDina.tec.core.messages.BaseSystemMessages;
-import main.java.leiDina.tec.core.service.IntegrationSystemService;
 import main.java.leiDina.tec.core.service.SystemService;
 import main.java.leiDina.tec.core.utils.ClassUtils;
 import main.java.leiDina.tec.core.utils.ReflectionUtils;
@@ -20,6 +17,7 @@ import main.java.leiDina.tec.core.utils.StringUtils;
 /**
  * @author vitor.alves
  */
+@Deprecated
 public class SystemLoaderImpl implements SystemLoader {
 
     private static final String SERVICES = "Services";

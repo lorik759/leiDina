@@ -5,6 +5,7 @@ package main.java.leiDina.tec.core.model;
  *
  * @author vitor.alves
  */
+@Deprecated
 public abstract class SystemServiceKey {
 
     @Override
