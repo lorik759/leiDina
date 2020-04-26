@@ -6,7 +6,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import main.java.leiDina.biz.scene.LeiDinamicaScenes;
 import main.java.leiDina.tec.core.VApplication;
+import main.java.leiDina.tec.core.context.ApplicationContext;
 import main.java.leiDina.tec.javafx.VFXMLLoader;
+import main.java.leiDina.tec.vinjection.InjectableApplicationContext;
 
 public class Main extends Application {
 

@@ -7,4 +7,11 @@ public enum PropertyType {
 
     BEAN, MAP, LIST;
 
+    public boolean isBean() {
+        return this.equals(BEAN);
+    }
+
+    public boolean isMap() {
+        return this.equals(MAP);
+    }
 }

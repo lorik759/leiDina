@@ -10,7 +10,19 @@ import main.java.leiDina.tec.core.messages.MessageHolder;
 public enum VInjectionSystemMessages implements MessageCreator {
     UNABLE_TO_RESOLVE_PROPERTY("unable.to.resolve.property", 2),
 
-    UNABLE_TO_PARSE_XML("unable.to.parse.xml", 1);
+    UNABLE_TO_PARSE_XML("unable.to.parse.xml", 1),
+
+    FAILED_TO_RESOLVE_KEY_OF_TYPE("failed.to.resolve.key.of.type", 2),
+
+    REFERENCE_TO_BEAN_IS_NULL("ref.to.bean.is.null", 0),
+
+    FAILED_TO_CREATE_BEAN_INSTANCE("failed.to.create.bean.instance", 1),
+
+    NO_SETTER_METHOD_FOR_PROPERTY("no.setter.method.for.property", 2),
+
+    FAILED_TO_WRITE_VALUE_TO_PROPERTY("failed.to.write.value.to.property", 3),
+
+    CIRCULAR_DEPENDENCY("circular.dependency", 2);
 
     private MessageDelegate delagate;
 

@@ -1,6 +1,7 @@
 package main.java.leiDina.tec.vinjection;
 
 import java.util.List;
+import java.util.Set;
 import main.java.leiDina.tec.core.model.ApplicationDefinitions;
 import main.java.leiDina.tec.core.model.SystemServiceKey;
 import main.java.leiDina.tec.core.service.SystemService;
@@ -24,12 +25,12 @@ public class XmlInjectableApplicationContext implements InjectableApplicationCon
 
     @Override
     public void init() {
-        List<String> packages = this.loadAllPackages(SYSTEM_DEFINITION);
+        Set<String> packages = this.loadAllPackages(SYSTEM_DEFINITION);
         this.beanFactory = new XmlBeanFactory(packages, applicationDefinitions);
         this.beanFactory.init();
     }
 
-    private List<String> loadAllPackages(String packageName) {
+    private Set<String> loadAllPackages(String packageName) {
         return new PackageLoader(this.applicationDefinitions).loadAllPackages(packageName);
     }
 

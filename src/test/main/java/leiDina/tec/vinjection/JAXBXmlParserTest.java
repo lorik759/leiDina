@@ -1,18 +1,14 @@
-package main.java.leiDina.tec.vinjection.xml;
+package main.java.leiDina.tec.vinjection;
 
-import java.net.URL;
-import java.util.Enumeration;
 import java.util.List;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.Unmarshaller;
-import main.java.leiDina.tec.core.utils.ClassUtils;
-import main.java.leiDina.tec.persister.model.Entity;
-import main.java.leiDina.tec.persister.model.EntityOne;
+import main.java.leiDina.tec.persister.Entity;
+import main.java.leiDina.tec.persister.EntityOne;
 import main.java.leiDina.tec.vinjection.xml.model.Definition;
 import main.java.leiDina.tec.vinjection.xml.model.bean.Bean;
 import main.java.leiDina.tec.vinjection.xml.model.bean.Beans;
-import main.java.leiDina.tec.vinjection.xml.model.property.types.BeanProperty;
 import main.java.leiDina.tec.vinjection.xml.model.property.Property;
+import main.java.leiDina.tec.vinjection.xml.model.property.types.BeanProperty;
+import main.java.leiDina.tec.vinjection.xml.service.JAXBXmlParser;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -20,26 +16,21 @@ import org.junit.jupiter.api.Test;
 /**
  * @author vitor.alves
  */
-public class DefinitionTest {
+public class JAXBXmlParserTest {
 
-    private static final String RESOURCE_FILE = "test-definiton.xml";
+    public static final String RESOURCE_FILE = "test-definiton.xml";
 
-    private static Definition definition;
+    private static List<Definition> definitions;
 
     @BeforeAll
     protected static void setUp() throws Exception {
-        Enumeration<URL> resources = null;
-        resources = ClassUtils.getClassLoader().getResources(RESOURCE_FILE);
-        while (resources.hasMoreElements()) {
-            URL url = resources.nextElement();
-            JAXBContext jaxbContext = JAXBContext.newInstance(Definition.class);
-            Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-            definition = (Definition) unmarshaller.unmarshal(url);
-        }
+        JAXBXmlParser jaxbXmlParser = new JAXBXmlParser();
+        definitions = jaxbXmlParser.parse(RESOURCE_FILE);
     }
 
     @Test
     public void testDefinition() {
+        Definition definition = definitions.get(0);
         List<String> packages = definition.getPackages();
         Beans beans = definition.getBeans();
         this.testPackages(packages);

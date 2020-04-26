@@ -55,6 +55,7 @@
         <sequence maxOccurs="unbounded" minOccurs="1">
             <element name="entry" type="vad:keyType"/>
         </sequence>
+        <attribute name="keyType" type="vad:mapPropertyValues" use="required"/>
     </complexType>
 
     <complexType name="keyType">
@@ -63,4 +64,10 @@
         </sequence>
         <attribute name="key" type="string" use="required"/>
     </complexType>
+    <simpleType name="mapPropertyValues">
+        <restriction base="string">
+            <enumeration value="class"/>
+            <enumeration value="string"/>
+        </restriction>
+    </simpleType>
 </schema>

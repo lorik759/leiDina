@@ -6,7 +6,7 @@
 
         <vad:bean id="controllerFactory" class="main.java.leiDina.tec.javafx.factory.ControllerFactoryImpl">
             <vad:property propertyName="buiders">
-                <vad:mapProperty>
+                <vad:mapProperty keyType="class">
                     <vad:entry key="java.lang.Object">
                         <vad:beanProperty ref="genericControllerBuilder"/>
                     </vad:entry>
@@ -19,7 +19,7 @@
 
         <vad:bean id="modelSceneWire" class="main.java.leiDina.tec.javafx.service.ModelSceneWire">
             <vad:property propertyName="associationMap">
-                <vad:mapProperty>
+                <vad:mapProperty keyType="class">
                     <vad:entry key="main.java.leiDina.tec.javafx.annotation.TextInput">
                         <vad:beanProperty ref="textInputNodeAssociation"/>
                     </vad:entry>

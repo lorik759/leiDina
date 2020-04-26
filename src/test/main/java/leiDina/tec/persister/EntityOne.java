@@ -1,6 +1,5 @@
-package main.java.leiDina.tec.persister.model;
+package main.java.leiDina.tec.persister;
 
-import main.java.leiDina.tec.persister.Persistable;
 import main.java.leiDina.tec.persister.annotations.Column;
 import main.java.leiDina.tec.persister.annotations.Entity;
 
@@ -17,6 +16,8 @@ public class EntityOne  implements Persistable {
     private String string;
 
     private Boolean aBoolean;
+
+    private main.java.leiDina.tec.persister.Entity beanProperty;
 
     @Override
     public Long getId() {
@@ -55,4 +56,19 @@ public class EntityOne  implements Persistable {
         this.aBoolean = aBoolean;
     }
 
+    public Boolean getaBoolean() {
+        return aBoolean;
+    }
+
+    public void setaBoolean(Boolean aBoolean) {
+        this.aBoolean = aBoolean;
+    }
+
+    public main.java.leiDina.tec.persister.Entity getBeanProperty() {
+        return beanProperty;
+    }
+
+    public void setBeanProperty(main.java.leiDina.tec.persister.Entity beanProperty) {
+        this.beanProperty = beanProperty;
+    }
 }

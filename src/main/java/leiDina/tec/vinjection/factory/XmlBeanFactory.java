@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import main.java.leiDina.tec.core.model.ApplicationDefinitions;
 import main.java.leiDina.tec.vinjection.model.BeanDefinition;
 import main.java.leiDina.tec.vinjection.service.BeanLoader;
+import main.java.leiDina.tec.vinjection.service.ObjectInstantiationService;
+import main.java.leiDina.tec.vinjection.service.ObjectInstantiationServiceImp;
 import main.java.leiDina.tec.vinjection.service.XmlBeanLoader;
 
 /**
@@ -18,11 +21,13 @@ public class XmlBeanFactory implements BeanFactory {
 
     private Map<Class<?>, BeanDefinition> beanDefinitionByType = new HashMap<>();
 
-    private final List<String> packages;
+    private final Set<String> packages;
 
     private final ApplicationDefinitions applicationDefinitions;
 
-    public XmlBeanFactory(List<String> packages, ApplicationDefinitions applicationDefinitions) {
+    private ObjectInstantiationService objectInstantiationService;
+
+    public XmlBeanFactory(Set<String> packages, ApplicationDefinitions applicationDefinitions) {
         this.packages = packages;
         this.applicationDefinitions = applicationDefinitions;
     }
@@ -35,6 +40,7 @@ public class XmlBeanFactory implements BeanFactory {
             beanDefinitions.addAll(xmlBeanLoader.loadBeanDefinitionFrom(aPackage));
         }
         this.createMapsOfBeanDefinitions(beanDefinitions);
+        this.objectInstantiationService = new ObjectInstantiationServiceImp(this.beanDefinitionById);
     }
 
     private void createMapsOfBeanDefinitions(List<BeanDefinition> beanDefinitions) {
@@ -46,11 +52,23 @@ public class XmlBeanFactory implements BeanFactory {
 
     @Override
     public BeanDefinition getBeanByType(Class<?> type) {
-        return this.beanDefinitionByType.get(type);
+        BeanDefinition beanDefinition = this.beanDefinitionByType.get(type);
+        Object instance = beanDefinition.getInstance();
+        if (instance == null) {
+            instance = objectInstantiationService.createFor(beanDefinition);
+            beanDefinition.setInstance(instance);
+        }
+        return beanDefinition;
     }
 
     @Override
     public BeanDefinition getBeanById(String id) {
-        return this.beanDefinitionById.get(id);
+        BeanDefinition beanDefinition = this.beanDefinitionById.get(id);
+        Object instance = beanDefinition.getInstance();
+        if (instance == null) {
+            instance = this.objectInstantiationService.createFor(beanDefinition);
+            beanDefinition.setInstance(instance);
+        }
+        return beanDefinition;
     }
 }
