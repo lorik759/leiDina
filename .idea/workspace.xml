@@ -274,12 +274,12 @@
       <module name="leiDina" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="main.java.leiDina.tec.vinjection.*" />
+          <option name="PATTERN" value="main.java.leiDina.tec.vinjection.xml.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="main.java.leiDina.tec.vinjection" />
-      <option name="MAIN_CLASS_NAME" value="main.java.leiDina.tec.vinjection.PackageLoaderTest" />
+      <option name="PACKAGE_NAME" value="main.java.leiDina.tec.vinjection.service" />
+      <option name="MAIN_CLASS_NAME" value="main.java.leiDina.tec.vinjection.service.PackageLoaderTest" />
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
@@ -293,12 +293,12 @@
       <module name="leiDina" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="main.java.leiDina.tec.vinjection.*" />
+          <option name="PATTERN" value="main.java.leiDina.tec.vinjection.xml.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="main.java.leiDina.tec.vinjection" />
-      <option name="MAIN_CLASS_NAME" value="main.java.leiDina.tec.vinjection.PackageLoaderTest" />
+      <option name="PACKAGE_NAME" value="main.java.leiDina.tec.vinjection.service" />
+      <option name="MAIN_CLASS_NAME" value="main.java.leiDina.tec.vinjection.service.PackageLoaderTest" />
       <option name="METHOD_NAME" value="testDefinition" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -352,12 +352,12 @@
       <module name="leiDina" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="main.java.leiDina.tec.vinjection.*" />
+          <option name="PATTERN" value="main.java.leiDina.tec.vinjection.xml.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="main.java.leiDina.tec.vinjection" />
-      <option name="MAIN_CLASS_NAME" value="main.java.leiDina.tec.vinjection.XmlBeanLoaderTest" />
+      <option name="PACKAGE_NAME" value="main.java.leiDina.tec.vinjection.xml" />
+      <option name="MAIN_CLASS_NAME" value="main.java.leiDina.tec.vinjection.xml.XmlBeanLoaderTest" />
       <option name="METHOD_NAME" value="testDefinition" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />

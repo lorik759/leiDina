@@ -1,8 +1,8 @@
-package main.java.leiDina.tec.vinjection;
+package main.java.leiDina.tec.vinjection.xml;
 
 import java.util.List;
-import main.java.leiDina.tec.persister.Entity;
-import main.java.leiDina.tec.persister.EntityOne;
+import main.java.leiDina.tec.persister.model.Entity;
+import main.java.leiDina.tec.persister.model.EntityOne;
 import main.java.leiDina.tec.vinjection.xml.model.Definition;
 import main.java.leiDina.tec.vinjection.xml.model.bean.Bean;
 import main.java.leiDina.tec.vinjection.xml.model.bean.Beans;

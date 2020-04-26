@@ -3,9 +3,9 @@
     xsi:schemaLocation="http://www.vaplication.com/definition vapplication-definitons.xsd ">
     <vad:package>test-second-definiton.xml</vad:package>
     <vad:beans>
-        <vad:bean id="basicBeanTest" class="main.java.leiDina.tec.persister.Entity"/>
+        <vad:bean id="basicBeanTest" class="main.java.leiDina.tec.persister.model.Entity"/>
 
-        <vad:bean id="beanRefTest" class="main.java.leiDina.tec.persister.EntityOne">
+        <vad:bean id="beanRefTest" class="main.java.leiDina.tec.persister.model.EntityOne">
             <vad:property propertyName="beanProperty">
                 <vad:beanProperty ref="basicBeanTest"/>
             </vad:property>

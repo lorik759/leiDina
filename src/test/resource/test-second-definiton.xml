@@ -2,15 +2,15 @@
 <vad:Definition xmlns:vad="http://www.vaplication.com/definition" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.vaplication.com/definition vapplication-definitons.xsd ">
     <vad:beans>
-        <vad:bean id="seconBasicBeanTest" class="main.java.leiDina.tec.persister.Entity"/>
+        <vad:bean id="seconBasicBeanTest" class="main.java.leiDina.tec.persister.model.Entity"/>
 
-        <vad:bean id="secondBeanRefTest" class="main.java.leiDina.tec.persister.EntityOne">
+        <vad:bean id="secondBeanRefTest" class="main.java.leiDina.tec.persister.model.EntityOne">
             <vad:property propertyName="beanProperty">
                 <vad:mapProperty keyType="class">
-                    <vad:entry key="main.java.leiDina.tec.persister.EntityOne">
+                    <vad:entry key="main.java.leiDina.tec.persister.model.EntityOne">
                         <vad:beanProperty ref="test"/>
                     </vad:entry>
-                    <vad:entry key="main.java.leiDina.tec.persister.EntityOne">
+                    <vad:entry key="main.java.leiDina.tec.persister.model.EntityOne">
                         <vad:beanProperty ref="teste"/>
                     </vad:entry>
                 </vad:mapProperty>

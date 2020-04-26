@@ -1,9 +1,8 @@
-package main.java.leiDina.tec.vinjection;
+package main.java.leiDina.tec.core;
 
 import static java.util.Collections.emptySet;
 
 import java.util.logging.Logger;
-import main.java.leiDina.tec.core.VApplication;
 import main.java.leiDina.tec.core.env.ConfigurableApplicationProvider;
 import main.java.leiDina.tec.core.model.ApplicationDefinitions;
 

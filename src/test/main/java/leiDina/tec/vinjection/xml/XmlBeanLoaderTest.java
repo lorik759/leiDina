@@ -1,11 +1,12 @@
-package main.java.leiDina.tec.vinjection;
+package main.java.leiDina.tec.vinjection.xml;
 
-import static main.java.leiDina.tec.vinjection.PackageLoaderTest.getPackageLoader;
-import static main.java.leiDina.tec.vinjection.JAXBXmlParserTest.RESOURCE_FILE;
+import static main.java.leiDina.tec.vinjection.service.PackageLoaderTest.getPackageLoader;
+import static main.java.leiDina.tec.vinjection.xml.JAXBXmlParserTest.RESOURCE_FILE;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import main.java.leiDina.tec.core.ApplicationDefinitionUtils;
 import main.java.leiDina.tec.vinjection.env.XmlConfigurableApplicationProvider;
 import main.java.leiDina.tec.vinjection.model.BeanDefinition;
 import main.java.leiDina.tec.vinjection.service.PackageLoader;

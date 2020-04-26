@@ -1,6 +1,6 @@
-package main.java.leiDina.tec.vinjection;
+package main.java.leiDina.tec.vinjection.service;
 
-import static main.java.leiDina.tec.vinjection.JAXBXmlParserTest.RESOURCE_FILE;
+import static main.java.leiDina.tec.vinjection.xml.JAXBXmlParserTest.RESOURCE_FILE;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -9,8 +9,8 @@ import java.util.Set;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 import main.java.leiDina.tec.core.context.ApplicationContext;
+import main.java.leiDina.tec.core.ApplicationDefinitionUtils;
 import main.java.leiDina.tec.vinjection.env.XmlConfigurableApplicationProvider;
-import main.java.leiDina.tec.vinjection.service.PackageLoader;
 import main.java.leiDina.tec.vinjection.xml.model.Definition;
 import main.java.leiDina.tec.vinjection.xml.model.bean.Bean;
 import main.java.leiDina.tec.vinjection.xml.model.bean.Beans;

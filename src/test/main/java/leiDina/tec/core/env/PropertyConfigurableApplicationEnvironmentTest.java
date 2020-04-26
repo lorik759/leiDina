@@ -3,9 +3,9 @@ package main.java.leiDina.tec.core.env;
 import java.util.List;
 import main.java.leiDina.tec.core.model.SystemProperty;
 import main.java.leiDina.tec.core.service.ClassPropertyResolver;
-import main.java.leiDina.tec.persister.Entity;
-import main.java.leiDina.tec.persister.EntityOne;
-import main.java.leiDina.tec.persister.EntityTwo;
+import main.java.leiDina.tec.persister.model.Entity;
+import main.java.leiDina.tec.persister.model.EntityOne;
+import main.java.leiDina.tec.persister.model.EntityTwo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
