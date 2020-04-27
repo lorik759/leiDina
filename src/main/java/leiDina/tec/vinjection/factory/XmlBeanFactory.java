@@ -6,8 +6,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import main.java.leiDina.tec.core.model.ApplicationDefinitions;
+import main.java.leiDina.tec.vinjection.BeanWireThreadContext;
+import main.java.leiDina.tec.vinjection.exception.VijectionException;
+import main.java.leiDina.tec.vinjection.messages.VInjectionSystemMessages;
 import main.java.leiDina.tec.vinjection.model.BeanDefinition;
 import main.java.leiDina.tec.vinjection.service.BeanLoader;
+import main.java.leiDina.tec.vinjection.service.BeanWire;
 import main.java.leiDina.tec.vinjection.service.ObjectInstantiationService;
 import main.java.leiDina.tec.vinjection.service.ObjectInstantiationServiceImp;
 import main.java.leiDina.tec.vinjection.service.XmlBeanLoader;
@@ -41,6 +45,7 @@ public class XmlBeanFactory implements BeanFactory {
         }
         this.createMapsOfBeanDefinitions(beanDefinitions);
         this.objectInstantiationService = new ObjectInstantiationServiceImp(this.beanDefinitionById);
+        BeanWireThreadContext.init(new BeanWire(this));
     }
 
     private void createMapsOfBeanDefinitions(List<BeanDefinition> beanDefinitions) {
@@ -53,6 +58,9 @@ public class XmlBeanFactory implements BeanFactory {
     @Override
     public BeanDefinition getBeanByType(Class<?> type) {
         BeanDefinition beanDefinition = this.beanDefinitionByType.get(type);
+        if (beanDefinition == null) {
+            throw new VijectionException(VInjectionSystemMessages.BEAN_NOT_FOUND.create(type));
+        }
         Object instance = beanDefinition.getInstance();
         if (instance == null) {
             instance = objectInstantiationService.createFor(beanDefinition);
@@ -64,6 +72,9 @@ public class XmlBeanFactory implements BeanFactory {
     @Override
     public BeanDefinition getBeanById(String id) {
         BeanDefinition beanDefinition = this.beanDefinitionById.get(id);
+        if (beanDefinition == null) {
+            throw new VijectionException(VInjectionSystemMessages.BEAN_NOT_FOUND.create(id));
+        }
         Object instance = beanDefinition.getInstance();
         if (instance == null) {
             instance = this.objectInstantiationService.createFor(beanDefinition);

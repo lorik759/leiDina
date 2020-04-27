@@ -22,7 +22,9 @@ public enum VInjectionSystemMessages implements MessageCreator {
 
     FAILED_TO_WRITE_VALUE_TO_PROPERTY("failed.to.write.value.to.property", 3),
 
-    CIRCULAR_DEPENDENCY("circular.dependency", 2);
+    CIRCULAR_DEPENDENCY("circular.dependency", 2),
+
+    BEAN_NOT_FOUND("bean.not.found", 1);
 
     private MessageDelegate delagate;
 

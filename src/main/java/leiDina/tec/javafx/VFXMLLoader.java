@@ -4,14 +4,20 @@ package main.java.leiDina.tec.javafx;
 import java.io.IOException;
 import java.net.URL;
 import javafx.fxml.FXMLLoader;
+import javax.annotation.Resource;
 import main.java.leiDina.tec.core.context.ApplicationThreadContext;
 import main.java.leiDina.tec.core.model.SystemProperty;
 import main.java.leiDina.tec.core.service.SystemService;
 import main.java.leiDina.tec.javafx.controller.BaseModelController;
+import main.java.leiDina.tec.javafx.exception.VFXException;
 import main.java.leiDina.tec.javafx.factory.ControllerFactory;
+import main.java.leiDina.tec.javafx.messages.FXSystemMessages;
 import main.java.leiDina.tec.javafx.scene.Scenes;
 import main.java.leiDina.tec.javafx.service.ModelSceneWire;
 import main.java.leiDina.tec.javafx.service.VFXServiceKey;
+import main.java.leiDina.tec.vinjection.BeanWireThreadContext;
+import main.java.leiDina.tec.vinjection.annotations.Injected;
+import main.java.leiDina.tec.vinjection.service.BeanWire;
 
 /**
  * @author vitor.alves
@@ -20,15 +26,20 @@ public class VFXMLLoader {
 
     private FXMLLoader fxmlLoader;
 
+    @Injected
     private ModelSceneWire modelWire;
+
+    @Resource(name = "controllerFactory")
+    private ControllerFactory controllerFactory;
 
     public VFXMLLoader(URL scene) {
         this.fxmlLoader = new FXMLLoader(scene);
-        SystemService fxService = ApplicationThreadContext.getService(new VFXServiceKey());
-        SystemProperty<ModelSceneWire> modelSceneWire = fxService.getPropertyByType(ModelSceneWire.class);
-        SystemProperty<ControllerFactory> controllerFactoryService = fxService.getPropertyByType(ControllerFactory.class);
-        this.modelWire = modelSceneWire.getProperty();
-        ControllerFactory controllerFactory = controllerFactoryService.getProperty();
+        BeanWire beanWire = BeanWireThreadContext.getBeanWire();
+        try {
+            beanWire.wire(this);
+        } catch (Exception e) {
+            throw new VFXException(FXSystemMessages.FAILED_TO_INITIALIZE_LOADER.create());
+        }
         this.fxmlLoader.setControllerFactory(controllerFactory::getController);
         this.modelWire.setFxmlLoader(this.fxmlLoader);
     }

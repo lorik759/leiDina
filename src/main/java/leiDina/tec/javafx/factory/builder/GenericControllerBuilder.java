@@ -1,5 +1,10 @@
 package main.java.leiDina.tec.javafx.factory.builder;
 
+import main.java.leiDina.tec.javafx.exception.BuilderException;
+import main.java.leiDina.tec.javafx.messages.FXSystemMessages;
+import main.java.leiDina.tec.vinjection.BeanWireThreadContext;
+import main.java.leiDina.tec.vinjection.service.BeanWire;
+
 /**
  * A generic builder for a controller. Instantiates a simple object with no new functionality.
  *
@@ -20,6 +25,11 @@ public class GenericControllerBuilder extends AbstractControllerBuilder<Object> 
      */
     @Override
     protected void doSpecificStuff(Object instance) {
-        // it does nothing
+        BeanWire beanWire = BeanWireThreadContext.getBeanWire();
+        try {
+            beanWire.wire(instance);
+        } catch (Exception e) {
+            throw new BuilderException(FXSystemMessages.INSTANTIATING_CONTROLLER_EXCEPTION.create(instance.getClass()), e);
+        }
     }
 }

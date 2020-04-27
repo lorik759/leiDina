@@ -1,8 +1,8 @@
 package main.java.leiDina.tec.core.env;
 
 import java.util.List;
-import main.java.leiDina.tec.core.mock.SecondSystemServiceMock;
-import main.java.leiDina.tec.core.mock.SystemServiceMock;
+import main.java.leiDina.tec.core.SecondSystemServiceMock;
+import main.java.leiDina.tec.core.SystemServiceMock;
 import main.java.leiDina.tec.core.service.SystemService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

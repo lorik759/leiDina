@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <vad:Definition xmlns:vad="http://www.vaplication.com/definition" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.vaplication.com/definition vapplication-definitons.xsd ">
-    <vad:package>fx-service-definiton.xml</vad:package>
-    <vad:package>persister-service-definiton.xml</vad:package>
+    <vad:beans>
+        <vad:bean id="daoFactory" class="main.java.leiDina.tec.persister.factory.TextBaseDAOFactory"/>
+        <vad:bean id="persister" class="main.java.leiDina.tec.persister.TextBasePersister"/>
+    </vad:beans>
 </vad:Definition>

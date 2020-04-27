@@ -1,4 +1,4 @@
-package main.java.leiDina.tec.core.mock;
+package main.java.leiDina.tec.core;
 
 import main.java.leiDina.tec.core.model.SystemServiceKey;
 

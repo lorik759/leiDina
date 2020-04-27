@@ -2,7 +2,7 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
     <entry key="Services">
-        main.java.leiDina.tec.core.mock.SystemServiceMock,
-        main.java.leiDina.tec.core.mock.SecondSystemServiceMock
+        main.java.leiDina.tec.core.SystemServiceMock,
+        main.java.leiDina.tec.core.SecondSystemServiceMock
     </entry>
 </properties>

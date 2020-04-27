@@ -1,14 +1,14 @@
-package main.java.leiDina.tec.core.mock;
+package main.java.leiDina.tec.core;
 
 import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironment;
-import main.java.leiDina.tec.core.model.SystemProperty;
 import main.java.leiDina.tec.core.model.SystemServiceKey;
+import main.java.leiDina.tec.core.model.SystemProperty;
 import main.java.leiDina.tec.core.service.SystemService;
 
 /**
  * @author vitor.alves
  */
-public class SecondSystemServiceMock implements SystemService {
+public class SystemServiceMock implements SystemService {
 
     @Override
     public String getServiceName() {
@@ -22,7 +22,7 @@ public class SecondSystemServiceMock implements SystemService {
 
     @Override
     public SystemServiceKey getKey() {
-        return new MockSecondServiceServiceKey();
+        return new MockServiceServiceKey();
     }
 
     @Override

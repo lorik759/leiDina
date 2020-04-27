@@ -8,6 +8,8 @@ import main.java.leiDina.tec.persister.dao.DAO;
 import main.java.leiDina.tec.persister.exception.PersistenceException;
 import main.java.leiDina.tec.persister.messages.PersisterSystemMessages;
 import main.java.leiDina.tec.persister.service.TextBaseDAOPersisterWire;
+import main.java.leiDina.tec.vinjection.BeanWireThreadContext;
+import main.java.leiDina.tec.vinjection.service.BeanWire;
 
 /**
  * @author vitor.alves
@@ -24,9 +26,8 @@ public class TextBaseDAOFactory implements DAOFactory {
         }
         try {
             dao = ReflectionUtils.newInstance(daoClass);
-            if (BaseDAO.class.isAssignableFrom(daoClass)) {
-                new TextBaseDAOPersisterWire().wire((BaseDAO) dao);
-            }
+            BeanWire beanWire = BeanWireThreadContext.getBeanWire();
+            beanWire.wire(dao);
         } catch (Exception e) {
             throw new PersistenceException(PersisterSystemMessages.FAILED_TO_CREATE_DAD.create(daoClass), e);
         }

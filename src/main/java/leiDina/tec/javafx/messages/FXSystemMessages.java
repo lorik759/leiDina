@@ -21,7 +21,9 @@ public enum FXSystemMessages implements MessageCreator {
 
     SCENE_LOADING_EXCEPTION("scene.loading.exception", 1),
 
-    FAILED_TO_BUILD_CONTROLLER("failed.to.build.controller", 1);
+    FAILED_TO_BUILD_CONTROLLER("failed.to.build.controller", 1),
+
+    FAILED_TO_INITIALIZE_LOADER("failed.to.initialize.loader", 0);
 
     private MessageDelegate delagate;
 
