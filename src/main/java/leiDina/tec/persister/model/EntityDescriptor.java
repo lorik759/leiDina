@@ -3,6 +3,7 @@ package main.java.leiDina.tec.persister.model;
 import java.beans.IntrospectionException;
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
@@ -63,15 +64,15 @@ public class EntityDescriptor<T extends Persistable> {
                     Class<?> returnType = propertyDescriptor.getReadMethod().getReturnType();
                     Method writeMethod = propertyDescriptor.getWriteMethod();
                     if (returnType.isAssignableFrom(String.class)) {
-                        ReflectionUtils.invoke(writeMethod, entity, stringValue);
+                        invoke(entity, stringValue, writeMethod);
                     } else if (returnType.isAssignableFrom(Boolean.class)) {
-                        ReflectionUtils.invoke(writeMethod, entity, Boolean.valueOf(stringValue));
+                        invoke(entity, Boolean.valueOf(stringValue), writeMethod);
                     } else if (returnType.isAssignableFrom(Integer.class)) {
-                        ReflectionUtils.invoke(writeMethod, entity, Integer.valueOf(stringValue));
+                        invoke(entity, Integer.valueOf(stringValue), writeMethod);
                     } else if (returnType.isAssignableFrom(Long.class)) {
-                        ReflectionUtils.invoke(writeMethod, entity, Long.valueOf(stringValue));
+                        invoke(entity, Long.valueOf(stringValue), writeMethod);
                     } else if (returnType.isAssignableFrom(Double.class)) {
-                        ReflectionUtils.invoke(writeMethod, entity, Double.valueOf(stringValue));
+                        invoke(entity, Double.valueOf(stringValue), writeMethod);
                     }
                     // TODO: Add so that its possible to convert entity as well and not just primitive types.
                 }
@@ -80,5 +81,9 @@ public class EntityDescriptor<T extends Persistable> {
         } catch (ReflectiveOperationException e) {
             throw new EntityCreationException(e);
         }
+    }
+
+    private void invoke(T entity, Object value, Method writeMethod) throws InvocationTargetException, IllegalAccessException {
+        ReflectionUtils.invoke(writeMethod, entity, value);
     }
 }

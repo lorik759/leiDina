@@ -15,6 +15,7 @@ import main.java.leiDina.tec.persister.service.PersisterSystemKey;
  *
  * @author vitor.alves
  */
+@Deprecated
 public class PersisterSystemService extends BaseSystemService {
 
     private static final String SERVICE_NAME = "PersisterSystemService";
