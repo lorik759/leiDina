@@ -10,10 +10,15 @@ import main.java.leiDina.tec.core.utils.ClassUtils;
 import main.java.leiDina.tec.vinjection.xml.model.Definition;
 
 /**
+ * An implementation of {@link XmlParser} that uses the {@link JAXBContext}
+ *
  * @author vitor.alves
  */
 public class JAXBXmlParser implements XmlParser {
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<Definition> parse(String resourceName) throws Exception {
         List<Definition> definitions = new ArrayList<>();

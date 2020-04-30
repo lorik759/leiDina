@@ -3,6 +3,8 @@ package main.java.leiDina.tec.vinjection;
 import main.java.leiDina.tec.vinjection.service.BeanWire;
 
 /**
+ * The context holder of the bean wire for the thread.
+ *
  * @author vitor.alves
  */
 public class BeanWireThreadContext {

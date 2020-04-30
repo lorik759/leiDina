@@ -27,6 +27,7 @@ import main.java.leiDina.tec.javafx.service.VFXServiceKey;
  *
  * @author vitor.alves
  */
+@Deprecated
 public class VFXSystemService extends BaseSystemService {
 
     private static final String SERVICE_NAME = "VFXSystemService";

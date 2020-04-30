@@ -18,6 +18,7 @@ import main.java.leiDina.tec.persister.service.PersisterSystemKey;
  *
  * @author vitor.alves
  */
+@Deprecated
 public class TextEntityPersisterControllerBuilder extends AbstractControllerBuilder<EntityPersisterController> {
 
     /**

@@ -24,10 +24,24 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Vinject - Moving project to use xml beans.">
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/persister/PersisterSystemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/persister/PersisterSystemService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/persister/model/EntityDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/persister/model/EntityDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/persister/service/PersisterSystemKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/persister/service/PersisterSystemKey.java" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Vinject - Deprecating classes and refactoring EntityDescriptor.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/fxpersister/builder/DAOFactoryWireControllerBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/fxpersister/builder/DAOFactoryWireControllerBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/fxpersister/builder/TextEntityPersisterControllerBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/fxpersister/builder/TextEntityPersisterControllerBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/VFXSystemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/VFXSystemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/ControllerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/ControllerFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/ControllerFactoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/ControllerFactoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/BeanWireThreadContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/BeanWireThreadContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/InjectableApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/InjectableApplicationContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/XmlInjectableApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/XmlInjectableApplicationContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/model/BeanPropertyValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/model/BeanPropertyValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/model/PropertyDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/model/PropertyDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/model/PropertyDefinitionImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/model/PropertyDefinitionImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/service/ObjectInstantiationServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/service/ObjectInstantiationServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/xml/service/JAXBXmlParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/xml/service/JAXBXmlParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/xml/service/XmlParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/xml/service/XmlParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/fx-service-definiton.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resource/fx-service-definiton.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/persister-service-properties.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,9 +98,9 @@
         <option value="JUnit5 Test Class" />
         <option value="Tag Library Descriptor" />
         <option value="Enum" />
-        <option value="Interface" />
         <option value="AnnotationType" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -467,6 +481,11 @@
       <workItem from="1587489106530" duration="25000" />
       <workItem from="1587489152859" duration="4122000" />
       <workItem from="1587915715335" duration="14520000" />
+      <workItem from="1588012470349" duration="1691000" />
+      <workItem from="1588174556157" duration="477000" />
+      <workItem from="1588266303526" duration="2062000" />
+      <workItem from="1588274974992" duration="116000" />
+      <workItem from="1588276238103" duration="1286000" />
     </task>
     <task id="LOCAL-00001" summary="Base implantation of a ControllerFactory and a simple exception creator.">
       <created>1583601470898</created>
@@ -741,7 +760,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588003660664</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Vinject - Deprecating classes and refactoring EntityDescriptor.">
+      <created>1588003896960</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1588003896960</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -762,7 +788,6 @@
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-    <MESSAGE value="Regex to remove leading and trailing spaces." />
     <MESSAGE value="Moving regex to StringUtils." />
     <MESSAGE value="Adding remove functionality and Java Doc to TextFileEntityActor and creating unit test for the remove functionality. Moving classes to better packages." />
     <MESSAGE value="Get method created for TextFileEntityActor." />
@@ -787,7 +812,8 @@
     <MESSAGE value="Removing IntegrationSystemService and refactoring dao structer." />
     <MESSAGE value="Vinject - Creating xml bean application context." />
     <MESSAGE value="Vinject - Moving project to use xml beans." />
-    <option name="LAST_COMMIT_MESSAGE" value="Vinject - Moving project to use xml beans." />
+    <MESSAGE value="Vinject - Deprecating classes and refactoring EntityDescriptor." />
+    <option name="LAST_COMMIT_MESSAGE" value="Vinject - Deprecating classes and refactoring EntityDescriptor." />
   </component>
   <component name="WindowStateProjectService">
     <state x="325" y="181" width="800" height="677" key="#Inspections" timestamp="1587837120370">
@@ -815,10 +841,10 @@
       <screen x="0" y="27" width="3280" height="988" />
     </state>
     <state x="653" y="312" width="651" height="416" key="#com.intellij.fileTypes.FileTypeChooser/0.27.3280.988@0.27.3280.988" timestamp="1584305264807" />
-    <state x="816" y="239" width="374" height="642" key="#com.intellij.ide.util.MemberChooser" timestamp="1587999391931">
+    <state x="816" y="239" width="374" height="642" key="#com.intellij.ide.util.MemberChooser" timestamp="1588276974509">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="816" y="239" width="346" height="562" key="#com.intellij.ide.util.MemberChooser/0.27.1920.988@0.27.1920.988" timestamp="1587999391931" />
+    <state x="816" y="239" width="346" height="562" key="#com.intellij.ide.util.MemberChooser/0.27.1920.988@0.27.1920.988" timestamp="1588276974509" />
     <state x="1088" y="239" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/0.27.2560.988/2560.0.1920.1080@0.27.2560.988" timestamp="1583693908435" />
     <state x="1328" y="239" width="374" height="642" key="#com.intellij.ide.util.MemberChooser/0.27.3280.988@0.27.3280.988" timestamp="1584312622876" />
     <state x="677" y="311" width="525" height="416" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1587677319212">
@@ -854,20 +880,20 @@
     </state>
     <state x="377" y="27" width="636" height="988" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1920.988@0.27.1920.988" timestamp="1587851991252" />
     <state x="644" y="27" width="622" height="988" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.3280.988@0.27.3280.988" timestamp="1584312596543" />
-    <state x="693" y="269" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588002698399">
+    <state x="693" y="269" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588003917610">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="693" y="269" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1920.988@0.27.1920.988" timestamp="1588002698399" />
+    <state x="693" y="269" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1920.988@0.27.1920.988" timestamp="1588003917610" />
     <state x="1024" y="269" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.3280.988@0.27.3280.988" timestamp="1584313473856" />
-    <state x="694" y="135" width="903" height="765" key="#xdebugger.evaluate" timestamp="1588003554873">
+    <state x="694" y="135" width="903" height="765" key="#xdebugger.evaluate" timestamp="1588267797132">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="694" y="135" width="903" height="765" key="#xdebugger.evaluate/0.27.1920.988@0.27.1920.988" timestamp="1588003554873" />
+    <state x="694" y="135" width="903" height="765" key="#xdebugger.evaluate/0.27.1920.988@0.27.1920.988" timestamp="1588267797132" />
     <state x="840" y="144" width="922" height="765" key="#xdebugger.evaluate/0.27.3280.988@0.27.3280.988" timestamp="1584314102380" />
-    <state x="225" y="29" width="989" height="982" key="CommitChangelistDialog2" timestamp="1588003660482">
+    <state x="225" y="29" width="989" height="982" key="CommitChangelistDialog2" timestamp="1588003896920">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="225" y="29" width="989" height="982" key="CommitChangelistDialog2/0.27.1920.988@0.27.1920.988" timestamp="1588003660482" />
+    <state x="225" y="29" width="989" height="982" key="CommitChangelistDialog2/0.27.1920.988@0.27.1920.988" timestamp="1588003896920" />
     <state x="385" y="29" width="1535" height="982" key="CommitChangelistDialog2/0.27.3280.988@0.27.3280.988" timestamp="1584315935198" />
     <state x="879" y="29" width="792" height="982" key="CommitChangelistDialog2/2560.0.1920.1080/0.27.2560.988@0.27.2560.988" timestamp="1583619615635" />
     <state x="354" y="78" width="1124" height="820" maximized="true" key="DiffContextDialog" timestamp="1586799112487">
@@ -879,55 +905,55 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="738" y="263" width="495" height="513" key="FileChooserDialogImpl/0.27.1920.988@0.27.1920.988" timestamp="1587852052553" />
-    <state width="1874" height="426" key="GridCell.Tab.0.bottom" timestamp="1588003600202">
+    <state width="1874" height="426" key="GridCell.Tab.0.bottom" timestamp="1588272998037">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="426" key="GridCell.Tab.0.bottom/0.27.1920.988@0.27.1920.988" timestamp="1588003600202" />
+    <state width="1874" height="426" key="GridCell.Tab.0.bottom/0.27.1920.988@0.27.1920.988" timestamp="1588272998037" />
     <state width="1874" height="292" key="GridCell.Tab.0.bottom/0.27.3280.988@0.27.3280.988" timestamp="1584316431086" />
-    <state width="1874" height="426" key="GridCell.Tab.0.center" timestamp="1588003600201">
+    <state width="1874" height="426" key="GridCell.Tab.0.center" timestamp="1588272998035">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="426" key="GridCell.Tab.0.center/0.27.1920.988@0.27.1920.988" timestamp="1588003600201" />
+    <state width="1874" height="426" key="GridCell.Tab.0.center/0.27.1920.988@0.27.1920.988" timestamp="1588272998035" />
     <state width="1874" height="292" key="GridCell.Tab.0.center/0.27.3280.988@0.27.3280.988" timestamp="1584316431083" />
-    <state width="1874" height="426" key="GridCell.Tab.0.left" timestamp="1588003600201">
+    <state width="1874" height="426" key="GridCell.Tab.0.left" timestamp="1588272998034">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="426" key="GridCell.Tab.0.left/0.27.1920.988@0.27.1920.988" timestamp="1588003600201" />
+    <state width="1874" height="426" key="GridCell.Tab.0.left/0.27.1920.988@0.27.1920.988" timestamp="1588272998034" />
     <state width="1874" height="292" key="GridCell.Tab.0.left/0.27.3280.988@0.27.3280.988" timestamp="1584316431082" />
-    <state width="1874" height="426" key="GridCell.Tab.0.right" timestamp="1588003600201">
+    <state width="1874" height="426" key="GridCell.Tab.0.right" timestamp="1588272998036">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="426" key="GridCell.Tab.0.right/0.27.1920.988@0.27.1920.988" timestamp="1588003600201" />
+    <state width="1874" height="426" key="GridCell.Tab.0.right/0.27.1920.988@0.27.1920.988" timestamp="1588272998036" />
     <state width="1874" height="292" key="GridCell.Tab.0.right/0.27.3280.988@0.27.3280.988" timestamp="1584316431084" />
-    <state width="1874" height="426" key="GridCell.Tab.1.bottom" timestamp="1588003600202">
+    <state width="1874" height="426" key="GridCell.Tab.1.bottom" timestamp="1588272998040">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="426" key="GridCell.Tab.1.bottom/0.27.1920.988@0.27.1920.988" timestamp="1588003600202" />
+    <state width="1874" height="426" key="GridCell.Tab.1.bottom/0.27.1920.988@0.27.1920.988" timestamp="1588272998040" />
     <state width="1874" height="292" key="GridCell.Tab.1.bottom/0.27.3280.988@0.27.3280.988" timestamp="1584316431089" />
-    <state width="1874" height="426" key="GridCell.Tab.1.center" timestamp="1588003600202">
+    <state width="1874" height="426" key="GridCell.Tab.1.center" timestamp="1588272998039">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="426" key="GridCell.Tab.1.center/0.27.1920.988@0.27.1920.988" timestamp="1588003600202" />
+    <state width="1874" height="426" key="GridCell.Tab.1.center/0.27.1920.988@0.27.1920.988" timestamp="1588272998039" />
     <state width="1874" height="292" key="GridCell.Tab.1.center/0.27.3280.988@0.27.3280.988" timestamp="1584316431087" />
-    <state width="1874" height="426" key="GridCell.Tab.1.left" timestamp="1588003600202">
+    <state width="1874" height="426" key="GridCell.Tab.1.left" timestamp="1588272998038">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="426" key="GridCell.Tab.1.left/0.27.1920.988@0.27.1920.988" timestamp="1588003600202" />
+    <state width="1874" height="426" key="GridCell.Tab.1.left/0.27.1920.988@0.27.1920.988" timestamp="1588272998038" />
     <state width="1874" height="292" key="GridCell.Tab.1.left/0.27.3280.988@0.27.3280.988" timestamp="1584316431086" />
-    <state width="1874" height="426" key="GridCell.Tab.1.right" timestamp="1588003600202">
+    <state width="1874" height="426" key="GridCell.Tab.1.right" timestamp="1588272998039">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="426" key="GridCell.Tab.1.right/0.27.1920.988@0.27.1920.988" timestamp="1588003600202" />
+    <state width="1874" height="426" key="GridCell.Tab.1.right/0.27.1920.988@0.27.1920.988" timestamp="1588272998039" />
     <state width="1874" height="292" key="GridCell.Tab.1.right/0.27.3280.988@0.27.3280.988" timestamp="1584316431088" />
     <state x="740" y="228" width="628" height="584" key="MultipleFileMergeDialog" timestamp="1585264308952">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="740" y="228" width="628" height="584" key="MultipleFileMergeDialog/0.27.1920.988@0.27.1920.988" timestamp="1585264308952" />
     <state x="986" y="228" width="578" height="584" key="MultipleFileMergeDialog/2560.0.1920.1080/0.27.2560.988@0.27.2560.988" timestamp="1583620627724" />
-    <state x="766" y="457" width="377" height="126" key="ReplaceDuplicatesPrompt" timestamp="1585326212164">
+    <state x="766" y="457" width="377" height="126" key="ReplaceDuplicatesPrompt" timestamp="1588267915676">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="766" y="457" width="377" height="126" key="ReplaceDuplicatesPrompt/0.27.1920.988@0.27.1920.988" timestamp="1585326212164" />
+    <state x="766" y="457" width="377" height="126" key="ReplaceDuplicatesPrompt/0.27.1920.988@0.27.1920.988" timestamp="1588267915676" />
     <state x="774" y="148" width="361" height="744" key="RollbackChangesDialog" timestamp="1586215284400">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
@@ -944,10 +970,10 @@
     <state x="757" y="254" width="633" height="540" key="StructurePopup/0.27.1920.988@0.27.1920.988" timestamp="1587927356106" />
     <state x="1009" y="254" width="633" height="540" key="StructurePopup/0.27.2560.988/2560.0.1920.1080@0.27.2560.988" timestamp="1583694649173" />
     <state x="1293" y="254" width="1082" height="540" key="StructurePopup/0.27.3280.988@0.27.3280.988" timestamp="1584302674739" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1588003415490">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1588277015157">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.27.1920.988@0.27.1920.988" timestamp="1588003415490" />
+    <state width="498" height="446" key="SwitcherDM/0.27.1920.988@0.27.1920.988" timestamp="1588277015157" />
     <state width="498" height="446" key="SwitcherDM/0.27.2560.988/2560.0.1920.1080@0.27.2560.988" timestamp="1583694940835" />
     <state width="851" height="446" key="SwitcherDM/0.27.3280.988@0.27.3280.988" timestamp="1584314136899" />
     <state width="498" height="446" key="SwitcherDM/2560.0.1920.1080/0.27.2560.988@0.27.2560.988" timestamp="1583619418412" />
@@ -998,10 +1024,10 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="100" y="125" width="1720" height="790" key="dock-window-1/0.27.1920.988@0.27.1920.988" timestamp="1587853710321" />
-    <state x="968" y="254" width="568" height="539" key="extract.method.dialog" timestamp="1588003728070">
+    <state x="968" y="254" width="568" height="539" key="extract.method.dialog" timestamp="1588267913177">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="968" y="254" width="568" height="539" key="extract.method.dialog/0.27.1920.988@0.27.1920.988" timestamp="1588003728070" />
+    <state x="968" y="254" width="568" height="539" key="extract.method.dialog/0.27.1920.988@0.27.1920.988" timestamp="1588267913177" />
     <state x="623" y="250" width="664" height="539" key="extract.method.dialog/0.27.3280.988@0.27.3280.988" timestamp="1584310892634" />
     <state x="596" y="104" width="728" height="831" key="find.popup" timestamp="1587918837321">
       <screen x="0" y="27" width="1920" height="988" />
@@ -1034,15 +1060,22 @@
       <screen x="0" y="27" width="3280" height="988" />
     </state>
     <state x="550" y="182" width="800" height="677" key="scopes/0.27.3280.988@0.27.3280.988" timestamp="1584306954523" />
-    <state x="707" y="241" width="672" height="678" key="search.everywhere.popup" timestamp="1588003259364">
+    <state x="707" y="241" width="672" height="678" key="search.everywhere.popup" timestamp="1588267824319">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="707" y="241" width="672" height="678" key="search.everywhere.popup/0.27.1920.988@0.27.1920.988" timestamp="1588003259364" />
+    <state x="707" y="241" width="672" height="678" key="search.everywhere.popup/0.27.1920.988@0.27.1920.988" timestamp="1588267824319" />
     <state x="1208" y="241" width="861" height="678" key="search.everywhere.popup/0.27.3280.988@0.27.3280.988" timestamp="1584300936069" />
     <state x="943" y="241" width="672" height="678" key="search.everywhere.popup/2560.0.1920.1080/0.27.2560.988@0.27.2560.988" timestamp="1583619949739" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/service/ObjectInstantiationServiceImp.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-defaults>
         <breakpoint suspend="THREAD" type="java-line" />
       </breakpoints-defaults>

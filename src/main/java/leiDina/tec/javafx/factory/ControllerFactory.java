@@ -23,5 +23,6 @@ public interface ControllerFactory {
      * @param builder a {@link ControllerBuilder}.
      * @param <T> the type of the controller that the builder will create.
      */
+    @Deprecated
     <T> void addControllerBuilder(ControllerBuilder<T> builder);
 }

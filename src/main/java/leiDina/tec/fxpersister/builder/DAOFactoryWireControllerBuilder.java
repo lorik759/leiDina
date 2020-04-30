@@ -15,6 +15,7 @@ import main.java.leiDina.tec.persister.service.PersisterSystemKey;
 /**
  * @author vitor.alves
  */
+@Deprecated
 public class DAOFactoryWireControllerBuilder extends AbstractControllerBuilder<BaseModelController> {
 
     @Override

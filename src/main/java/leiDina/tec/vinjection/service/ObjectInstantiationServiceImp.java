@@ -9,8 +9,10 @@ import main.java.leiDina.tec.core.utils.ReflectionUtils;
 import main.java.leiDina.tec.vinjection.exception.VijectionException;
 import main.java.leiDina.tec.vinjection.messages.VInjectionSystemMessages;
 import main.java.leiDina.tec.vinjection.model.BeanDefinition;
+import main.java.leiDina.tec.vinjection.model.BeanPropertyValue;
 import main.java.leiDina.tec.vinjection.model.PropertyDefinition;
 import main.java.leiDina.tec.vinjection.model.PropertyType;
+import main.java.leiDina.tec.vinjection.model.PropertyValue;
 
 /**
  * @author vitor.alves
@@ -33,20 +35,17 @@ public class ObjectInstantiationServiceImp implements ObjectInstantiationService
         Collection<PropertyDefinition> propertyDefinitions = beanDefinition.getPropertyDefinitions();
         for (PropertyDefinition propertyDefinition : propertyDefinitions) {
             PropertyType propertyType = propertyDefinition.getType();
-            Object propertyValue = null;
+            Object propertyObjectValue = null;
+            PropertyValue propertyValue = propertyDefinition.getPropertyValue();
             if (propertyType.isBean()) {
-                BeanDefinition beanRefrence = beanDefinitionById.get(propertyDefinition.getPropertyValue().getValue());
-                if (beanDefinitionsAlreadyResolving.contains(beanDefinition)) {
+                BeanPropertyValue beanPropertyValue = (BeanPropertyValue) propertyValue;
+                BeanDefinition beanRefrence = beanDefinitionById.get(beanPropertyValue.getRef());
+                if (beanDefinitionsAlreadyResolving.contains(beanRefrence)) {
                     throw new VijectionException(VInjectionSystemMessages.CIRCULAR_DEPENDENCY.create(type, beanRefrence.getType()));
                 }
-                propertyValue = beanRefrence.getInstance();
-                if (propertyValue == null) {
-                    propertyValue = this.createFor(beanRefrence);
-                }
-            } else if (propertyType.isMap()) {
-                propertyValue = propertyDefinition.getPropertyValue().getValue();
             }
-            this.setValueToProperty(type, instance, propertyDefinition, propertyValue);
+            propertyObjectValue = propertyValue.getValue();
+            this.setValueToProperty(type, instance, propertyDefinition, propertyObjectValue);
         }
         beanDefinitionsAlreadyResolving.remove(beanDefinition);
         return instance;

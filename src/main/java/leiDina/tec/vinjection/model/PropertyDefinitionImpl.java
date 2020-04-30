@@ -22,6 +22,8 @@ public class PropertyDefinitionImpl implements PropertyDefinition {
 
     private PropertyValue value;
 
+    private Class<?> propertyClass;
+
     public PropertyDefinitionImpl(Class<?> beanClass, Property property) {
         this.name = property.getPropertyName();
         this.type = property.getProperty().getType();
@@ -31,6 +33,7 @@ public class PropertyDefinitionImpl implements PropertyDefinition {
         } catch (IntrospectionException e) {
             throw new VijectionException(VInjectionSystemMessages.UNABLE_TO_RESOLVE_PROPERTY.create(this.name, beanClass), e);
         }
+        this.propertyClass = this.propertyDescriptor.getPropertyType();
     }
 
     @Override
@@ -41,6 +44,11 @@ public class PropertyDefinitionImpl implements PropertyDefinition {
     @Override
     public PropertyType getType() {
         return this.type;
+    }
+
+    @Override
+    public Class<?> getPropertyClass() {
+        return this.propertyClass;
     }
 
     @Override

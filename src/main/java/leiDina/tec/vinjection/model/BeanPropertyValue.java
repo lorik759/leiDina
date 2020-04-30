@@ -1,6 +1,5 @@
 package main.java.leiDina.tec.vinjection.model;
 
-import main.java.leiDina.tec.core.context.ApplicationContext;
 import main.java.leiDina.tec.core.context.ApplicationThreadContext;
 import main.java.leiDina.tec.core.utils.StringUtils;
 import main.java.leiDina.tec.vinjection.InjectableApplicationContext;
@@ -28,5 +27,9 @@ public class BeanPropertyValue implements PropertyValue {
         }
         InjectableApplicationContext applicationContext = (InjectableApplicationContext) ApplicationThreadContext.getApplicationContext();
         return applicationContext.getBeanById(ref);
+    }
+
+    public String getRef() {
+        return this.beanProperty.getRef();
     }
 }

@@ -13,6 +13,8 @@ public interface PropertyDefinition {
 
     PropertyType getType();
 
+    Class<?> getPropertyClass();
+
     String getPropertyName();
 
     PropertyDescriptor getPropertyDescriptor();
