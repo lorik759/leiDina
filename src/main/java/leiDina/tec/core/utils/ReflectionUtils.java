@@ -12,7 +12,7 @@ import java.util.Arrays;
  *
  * @author vitor.alves
  */
-public class ReflectionUtils {
+public abstract class ReflectionUtils {
 
     /**
      * Instantiates a new instance of the specified class, using the gaven arguments as parameters.
@@ -99,5 +99,19 @@ public class ReflectionUtils {
      */
     public static <T> void set(Field field, T object, Object value) throws IllegalAccessException {
         makeAccessible(field).set(object, value);
+    }
+
+    /**
+     * Find the setter method for the parameter name.
+     *
+     * @param clazz the class that contains the setter method.
+     * @param name the name of the field.
+     * @return the setter method for the field.
+     * @throws NoSuchMethodException a {@link NoSuchMethodException}
+     * @throws NoSuchFieldException a {@link NoSuchFieldException}
+     */
+    public static Method getWriteMethodFor(Class<?> clazz, String name) throws NoSuchMethodException, NoSuchFieldException {
+        String writeMethodName = "set" + name.substring(0, 1).toUpperCase() + name.substring(1);
+        return clazz.getDeclaredMethod(writeMethodName, clazz.getDeclaredField(name).getType());
     }
 }

@@ -11,7 +11,7 @@ import java.util.Properties;
  *
  * @author vitor.alves
  */
-public class ResourceUtils {
+public abstract class ResourceUtils {
 
     /**
      * Gets a {@link Properties} through the {@link URL} of an .xml file.

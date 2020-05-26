@@ -24,24 +24,173 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Vinject - Deprecating classes and refactoring EntityDescriptor.">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Vinject - Javadoc and correcting bug in ObjectInstantiationServiceImp.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/ApplicationContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/DefaultApplicationContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/exception/BeanCreationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/exception/BeanDefinitionException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/exception/BeanException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/exception/BeanWireException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/factory/BaseBeanDefinitionFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/factory/BeanDefinitionFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/factory/BeanFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/factory/BootableBeanFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/factory/DefaultBeanFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/factory/PropertyValueFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/model/BaseBeanDefinition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/model/BaseBeanDefinitionBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/model/BeanDefinition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/model/BeanDefinitionHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/model/BeanRefPropertyValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/model/DefaultBeanDefinitionHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/model/MapPropertyValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/model/PropertyValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/service/BeanPopulateService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/service/BeanPropertyWire.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/service/BeanResourceLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/service/BeanWire.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/service/BeanWireImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/service/ObjectInstantiationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/service/PropertyValueResolver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/ApplicationProperty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/DefaultApplicationProperty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/DefaultConfigurableApplicationEnvironment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/service/Builder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/service/ClassValueResolver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/service/StringValueResolver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/service/ValueResolver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/xml/application-properties.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/xml/beans.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/xml/model/AppDefinitionType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/xml/model/BeanDefinitionType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/xml/model/BeanRefType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/xml/model/BeanType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/xml/model/BeanTypeBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/xml/model/MapType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/xml/model/MapValueType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/xml/model/PropertyType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/xml/model/PropertyTypeBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/xml/model/ValueTypes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/xml/service/JAXBXmlParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resource/application-properties.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resource/fx-beans.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resource/persister-beans.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/org_mockito_mockito_core_3_3_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/org_mockito_mockito_core_3_3_3.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/fxpersister/builder/DAOFactoryWireControllerBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/fxpersister/builder/DAOFactoryWireControllerBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/fxpersister/builder/TextEntityPersisterControllerBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/fxpersister/builder/TextEntityPersisterControllerBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/VFXSystemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/VFXSystemService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/ControllerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/ControllerFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/biz/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/biz/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/biz/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/biz/controllers/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/biz/controllers/configuration/ConfiguracaoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/biz/controllers/configuration/ConfiguracaoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/biz/scene/LeiDinamicaScenes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/biz/scene/LeiDinamicaScenes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/VApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/VApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/context/ApplicationContext.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/context/ApplicationThreadContext.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/context/PropertyApplicationContext.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/ConfigurableApplicationEnvironment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/ConfigurableApplicationEnvironment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/ConfigurableApplicationProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/PropertyConfigurableApplicationEnvironment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/PropertyConfigurableApplicationProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/SystemLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/SystemLoaderImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/exception/ResolverException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/exception/VApplicationException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/messages/BaseSystemMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/messages/BaseSystemMessages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/model/ApplicationDefinitions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/model/ClassSystemProperty.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/model/MultiObjectSystemProperty.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/model/SingleObjectProperty.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/model/SystemProperty.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/model/SystemServiceKey.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/service/BaseSystemService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/service/ClassPropertyResolver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/service/PropertyResolver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/service/SingleObjectPropertyResolver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/service/SystemService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/service/Wire.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/utils/ClassUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/utils/ClassUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/utils/ReflectionUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/utils/ReflectionUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/utils/ResourceUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/utils/ResourceUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/utils/StringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/utils/StringUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/fxpersister/builder/DAOFactoryWireControllerBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/fxpersister/builder/TextEntityPersisterControllerBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/fxpersister/controller/EntityPersisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/controller/EntityPersisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/VFXMLLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/VFXMLLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/VFXSystemService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/ControllerFactoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/ControllerFactoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/BeanWireThreadContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/BeanWireThreadContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/InjectableApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/InjectableApplicationContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/XmlInjectableApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/XmlInjectableApplicationContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/model/BeanPropertyValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/model/BeanPropertyValue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/model/PropertyDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/model/PropertyDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/model/PropertyDefinitionImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/model/PropertyDefinitionImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/service/ObjectInstantiationServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/service/ObjectInstantiationServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/xml/service/JAXBXmlParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/xml/service/JAXBXmlParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/xml/service/XmlParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/xml/service/XmlParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resource/fx-service-definiton.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resource/fx-service-definiton.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resource/persister-service-properties.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/builder/AbstractControllerBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/builder/AbstractControllerBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/builder/GenericControllerBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/factory/builder/GenericControllerBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/service/ModelSceneWire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/service/ModelSceneWire.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/service/VFXServiceKey.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/persister/PersisterSystemService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/persister/factory/TextBaseDAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/persister/factory/TextBaseDAOFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/persister/service/PersisterSystemKey.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/persister/service/TextBaseDAOPersisterWire.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/BeanWireThreadContext.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/InjectableApplicationContext.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/XmlInjectableApplicationContext.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/annotations/Injected.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/enums/DefinitionProperty.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/env/XmlConfigurableApplicationEnvironment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/env/XmlConfigurableApplicationProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/exception/PropertyException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/exception/VijectionException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/factory/BeanFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/factory/XmlBeanFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/messages/VInjectionSystemMessages.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/model/BeanDefinition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/model/BeanDefinitionImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/model/BeanPropertyValue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/model/BeanSystemProperty.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/model/MapPropertyValue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/model/PackageSystemProperty.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/model/PropertyDefinition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/model/PropertyDefinitionImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/model/PropertyType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/model/PropertyValue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/service/BeanCreationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/service/BeanCreationServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/service/BeanLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/service/BeanWire.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/service/ObjectInstantiationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/service/ObjectInstantiationServiceImp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/service/PackageLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/service/PropertyValueFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/service/XmlBeanLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/xml/model/Definition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/xml/model/bean/Bean.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/xml/model/bean/Beans.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/xml/model/property/BaseProperty.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/xml/model/property/Property.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/xml/model/property/XmlProperty.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/xml/model/property/types/BeanProperty.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/xml/model/property/types/KeyType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/xml/model/property/types/ListProperty.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/xml/model/property/types/MapProperty.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/xml/model/property/types/MapValue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/xml/service/JAXBXmlParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/xml/service/XmlParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/fx-service-definiton.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/persister-service-definiton.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/system-messages-holder.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resource/system-messages-holder.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/vapplication-definitons.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/vapplication-definitons.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/vinjection-system-messages-holder.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/main/java/leiDina/tec/core/ApplicationDefinitionUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/main/java/leiDina/tec/core/MockSecondServiceServiceKey.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/main/java/leiDina/tec/core/MockServiceServiceKey.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/main/java/leiDina/tec/core/PropertyApplicationContextTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/main/java/leiDina/tec/core/SecondSystemServiceMock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/main/java/leiDina/tec/core/SystemServiceMock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/main/java/leiDina/tec/core/env/PropertyConfigurableApplicationEnvironmentTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/main/java/leiDina/tec/core/env/SystemLoderImplTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/main/java/leiDina/tec/core/messages/MessageDelegateTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/main/java/leiDina/tec/core/messages/MessagesEnumTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/main/java/leiDina/tec/vinjection/service/PackageLoaderTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/main/java/leiDina/tec/vinjection/xml/JAXBXmlParserTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/main/java/leiDina/tec/vinjection/xml/XmlBeanLoaderTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resource/system-properties-test.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resource/test-definiton.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resource/test-second-definiton.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resource/test-service-properties.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,9 +247,9 @@
         <option value="JUnit5 Test Class" />
         <option value="Tag Library Descriptor" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="AnnotationType" />
         <option value="Class" />
-        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -185,21 +334,21 @@
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resource" />
+      <recent name="$PROJECT_DIR$/src/main/java/leiDina/tec/core" />
       <recent name="$PROJECT_DIR$/src/test/resource" />
       <recent name="$PROJECT_DIR$/src/main/java/leiDina/biz/view" />
       <recent name="$PROJECT_DIR$/src/main/java/leiDina/tec/persister" />
-      <recent name="$PROJECT_DIR$/src/main/java/leiDina/tec" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="test.java.leiDina.tec.javafx.factory" />
       <recent name="main.java.leiDina.tec.javafx" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="main.java.leiDina.tec.core.beans.annotation" />
       <recent name="main.java.leiDina.tec.vinjection.model" />
       <recent name="main.java.leiDina.tec.vinjection.service" />
       <recent name="main.java.leiDina.tec.javafx.annotation" />
       <recent name="main.java.leiDina.tec.core.mock" />
-      <recent name="main.java.leiDina.tec.javafx" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -485,7 +634,24 @@
       <workItem from="1588174556157" duration="477000" />
       <workItem from="1588266303526" duration="2062000" />
       <workItem from="1588274974992" duration="116000" />
-      <workItem from="1588276238103" duration="1286000" />
+      <workItem from="1588276238103" duration="2585000" />
+      <workItem from="1588283070696" duration="108000" />
+      <workItem from="1588362733349" duration="911000" />
+      <workItem from="1588465581754" duration="79000" />
+      <workItem from="1588541658570" duration="836000" />
+      <workItem from="1588552359172" duration="1678000" />
+      <workItem from="1588601764647" duration="2792000" />
+      <workItem from="1588609999376" duration="104000" />
+      <workItem from="1588610250250" duration="1824000" />
+      <workItem from="1588616810520" duration="4000" />
+      <workItem from="1588696591278" duration="5200000" />
+      <workItem from="1588783232306" duration="3896000" />
+      <workItem from="1589575665135" duration="701000" />
+      <workItem from="1589638608628" duration="2045000" />
+      <workItem from="1589669401021" duration="1261000" />
+      <workItem from="1589822782067" duration="613000" />
+      <workItem from="1589991394809" duration="1589000" />
+      <workItem from="1590528870486" duration="6140000" />
     </task>
     <task id="LOCAL-00001" summary="Base implantation of a ControllerFactory and a simple exception creator.">
       <created>1583601470898</created>
@@ -767,7 +933,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588003896960</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Vinject - Javadoc and correcting bug in ObjectInstantiationServiceImp.">
+      <created>1588277764888</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1588277764888</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -788,7 +961,6 @@
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-    <MESSAGE value="Moving regex to StringUtils." />
     <MESSAGE value="Adding remove functionality and Java Doc to TextFileEntityActor and creating unit test for the remove functionality. Moving classes to better packages." />
     <MESSAGE value="Get method created for TextFileEntityActor." />
     <MESSAGE value="Unit test for get function in TextFileEntityActor." />
@@ -813,7 +985,8 @@
     <MESSAGE value="Vinject - Creating xml bean application context." />
     <MESSAGE value="Vinject - Moving project to use xml beans." />
     <MESSAGE value="Vinject - Deprecating classes and refactoring EntityDescriptor." />
-    <option name="LAST_COMMIT_MESSAGE" value="Vinject - Deprecating classes and refactoring EntityDescriptor." />
+    <MESSAGE value="Vinject - Javadoc and correcting bug in ObjectInstantiationServiceImp." />
+    <option name="LAST_COMMIT_MESSAGE" value="Vinject - Javadoc and correcting bug in ObjectInstantiationServiceImp." />
   </component>
   <component name="WindowStateProjectService">
     <state x="325" y="181" width="800" height="677" key="#Inspections" timestamp="1587837120370">
@@ -841,10 +1014,10 @@
       <screen x="0" y="27" width="3280" height="988" />
     </state>
     <state x="653" y="312" width="651" height="416" key="#com.intellij.fileTypes.FileTypeChooser/0.27.3280.988@0.27.3280.988" timestamp="1584305264807" />
-    <state x="816" y="239" width="374" height="642" key="#com.intellij.ide.util.MemberChooser" timestamp="1588276974509">
+    <state x="816" y="239" width="374" height="642" key="#com.intellij.ide.util.MemberChooser" timestamp="1590534732262">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="816" y="239" width="346" height="562" key="#com.intellij.ide.util.MemberChooser/0.27.1920.988@0.27.1920.988" timestamp="1588276974509" />
+    <state x="816" y="239" width="346" height="562" key="#com.intellij.ide.util.MemberChooser/0.27.1920.988@0.27.1920.988" timestamp="1590534732262" />
     <state x="1088" y="239" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/0.27.2560.988/2560.0.1920.1080@0.27.2560.988" timestamp="1583693908435" />
     <state x="1328" y="239" width="374" height="642" key="#com.intellij.ide.util.MemberChooser/0.27.3280.988@0.27.3280.988" timestamp="1584312622876" />
     <state x="677" y="311" width="525" height="416" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1587677319212">
@@ -880,70 +1053,70 @@
     </state>
     <state x="377" y="27" width="636" height="988" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1920.988@0.27.1920.988" timestamp="1587851991252" />
     <state x="644" y="27" width="622" height="988" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.3280.988@0.27.3280.988" timestamp="1584312596543" />
-    <state x="693" y="269" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588003917610">
+    <state x="693" y="269" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590532417248">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="693" y="269" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1920.988@0.27.1920.988" timestamp="1588003917610" />
+    <state x="693" y="269" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1920.988@0.27.1920.988" timestamp="1590532417248" />
     <state x="1024" y="269" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.3280.988@0.27.3280.988" timestamp="1584313473856" />
-    <state x="694" y="135" width="903" height="765" key="#xdebugger.evaluate" timestamp="1588267797132">
+    <state x="694" y="135" width="903" height="765" key="#xdebugger.evaluate" timestamp="1590532695656">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="694" y="135" width="903" height="765" key="#xdebugger.evaluate/0.27.1920.988@0.27.1920.988" timestamp="1588267797132" />
+    <state x="694" y="135" width="903" height="765" key="#xdebugger.evaluate/0.27.1920.988@0.27.1920.988" timestamp="1590532695656" />
     <state x="840" y="144" width="922" height="765" key="#xdebugger.evaluate/0.27.3280.988@0.27.3280.988" timestamp="1584314102380" />
-    <state x="225" y="29" width="989" height="982" key="CommitChangelistDialog2" timestamp="1588003896920">
+    <state x="225" y="29" width="989" height="982" key="CommitChangelistDialog2" timestamp="1588277764619">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="225" y="29" width="989" height="982" key="CommitChangelistDialog2/0.27.1920.988@0.27.1920.988" timestamp="1588003896920" />
+    <state x="225" y="29" width="989" height="982" key="CommitChangelistDialog2/0.27.1920.988@0.27.1920.988" timestamp="1588277764619" />
     <state x="385" y="29" width="1535" height="982" key="CommitChangelistDialog2/0.27.3280.988@0.27.3280.988" timestamp="1584315935198" />
     <state x="879" y="29" width="792" height="982" key="CommitChangelistDialog2/2560.0.1920.1080/0.27.2560.988@0.27.2560.988" timestamp="1583619615635" />
-    <state x="354" y="78" width="1124" height="820" maximized="true" key="DiffContextDialog" timestamp="1586799112487">
+    <state x="354" y="78" width="1124" height="820" maximized="true" key="DiffContextDialog" timestamp="1588277661969">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="354" y="78" width="1124" height="820" maximized="true" key="DiffContextDialog/0.27.1920.988@0.27.1920.988" timestamp="1586799112487" />
+    <state x="354" y="78" width="1124" height="820" maximized="true" key="DiffContextDialog/0.27.1920.988@0.27.1920.988" timestamp="1588277661969" />
     <state x="0" y="110" width="1920" height="820" key="DiffContextDialog/0.27.3280.988@0.27.3280.988" timestamp="1584315916845" />
-    <state x="738" y="263" width="495" height="513" key="FileChooserDialogImpl" timestamp="1587852052553">
+    <state x="738" y="263" width="495" height="513" key="FileChooserDialogImpl" timestamp="1588541764521">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="738" y="263" width="495" height="513" key="FileChooserDialogImpl/0.27.1920.988@0.27.1920.988" timestamp="1587852052553" />
-    <state width="1874" height="426" key="GridCell.Tab.0.bottom" timestamp="1588272998037">
+    <state x="738" y="263" width="495" height="513" key="FileChooserDialogImpl/0.27.1920.988@0.27.1920.988" timestamp="1588541764521" />
+    <state width="1874" height="248" key="GridCell.Tab.0.bottom" timestamp="1590534994232">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="426" key="GridCell.Tab.0.bottom/0.27.1920.988@0.27.1920.988" timestamp="1588272998037" />
+    <state width="1874" height="248" key="GridCell.Tab.0.bottom/0.27.1920.988@0.27.1920.988" timestamp="1590534994232" />
     <state width="1874" height="292" key="GridCell.Tab.0.bottom/0.27.3280.988@0.27.3280.988" timestamp="1584316431086" />
-    <state width="1874" height="426" key="GridCell.Tab.0.center" timestamp="1588272998035">
+    <state width="1874" height="248" key="GridCell.Tab.0.center" timestamp="1590534994230">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="426" key="GridCell.Tab.0.center/0.27.1920.988@0.27.1920.988" timestamp="1588272998035" />
+    <state width="1874" height="248" key="GridCell.Tab.0.center/0.27.1920.988@0.27.1920.988" timestamp="1590534994230" />
     <state width="1874" height="292" key="GridCell.Tab.0.center/0.27.3280.988@0.27.3280.988" timestamp="1584316431083" />
-    <state width="1874" height="426" key="GridCell.Tab.0.left" timestamp="1588272998034">
+    <state width="1874" height="248" key="GridCell.Tab.0.left" timestamp="1590534994229">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="426" key="GridCell.Tab.0.left/0.27.1920.988@0.27.1920.988" timestamp="1588272998034" />
+    <state width="1874" height="248" key="GridCell.Tab.0.left/0.27.1920.988@0.27.1920.988" timestamp="1590534994229" />
     <state width="1874" height="292" key="GridCell.Tab.0.left/0.27.3280.988@0.27.3280.988" timestamp="1584316431082" />
-    <state width="1874" height="426" key="GridCell.Tab.0.right" timestamp="1588272998036">
+    <state width="1874" height="248" key="GridCell.Tab.0.right" timestamp="1590534994231">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="426" key="GridCell.Tab.0.right/0.27.1920.988@0.27.1920.988" timestamp="1588272998036" />
+    <state width="1874" height="248" key="GridCell.Tab.0.right/0.27.1920.988@0.27.1920.988" timestamp="1590534994231" />
     <state width="1874" height="292" key="GridCell.Tab.0.right/0.27.3280.988@0.27.3280.988" timestamp="1584316431084" />
-    <state width="1874" height="426" key="GridCell.Tab.1.bottom" timestamp="1588272998040">
+    <state width="1874" height="248" key="GridCell.Tab.1.bottom" timestamp="1590534990665">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="426" key="GridCell.Tab.1.bottom/0.27.1920.988@0.27.1920.988" timestamp="1588272998040" />
+    <state width="1874" height="248" key="GridCell.Tab.1.bottom/0.27.1920.988@0.27.1920.988" timestamp="1590534990665" />
     <state width="1874" height="292" key="GridCell.Tab.1.bottom/0.27.3280.988@0.27.3280.988" timestamp="1584316431089" />
-    <state width="1874" height="426" key="GridCell.Tab.1.center" timestamp="1588272998039">
+    <state width="1874" height="248" key="GridCell.Tab.1.center" timestamp="1590534990665">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="426" key="GridCell.Tab.1.center/0.27.1920.988@0.27.1920.988" timestamp="1588272998039" />
+    <state width="1874" height="248" key="GridCell.Tab.1.center/0.27.1920.988@0.27.1920.988" timestamp="1590534990665" />
     <state width="1874" height="292" key="GridCell.Tab.1.center/0.27.3280.988@0.27.3280.988" timestamp="1584316431087" />
-    <state width="1874" height="426" key="GridCell.Tab.1.left" timestamp="1588272998038">
+    <state width="1874" height="248" key="GridCell.Tab.1.left" timestamp="1590534990665">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="426" key="GridCell.Tab.1.left/0.27.1920.988@0.27.1920.988" timestamp="1588272998038" />
+    <state width="1874" height="248" key="GridCell.Tab.1.left/0.27.1920.988@0.27.1920.988" timestamp="1590534990665" />
     <state width="1874" height="292" key="GridCell.Tab.1.left/0.27.3280.988@0.27.3280.988" timestamp="1584316431086" />
-    <state width="1874" height="426" key="GridCell.Tab.1.right" timestamp="1588272998039">
+    <state width="1874" height="248" key="GridCell.Tab.1.right" timestamp="1590534990665">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="426" key="GridCell.Tab.1.right/0.27.1920.988@0.27.1920.988" timestamp="1588272998039" />
+    <state width="1874" height="248" key="GridCell.Tab.1.right/0.27.1920.988@0.27.1920.988" timestamp="1590534990665" />
     <state width="1874" height="292" key="GridCell.Tab.1.right/0.27.3280.988@0.27.3280.988" timestamp="1584316431088" />
     <state x="740" y="228" width="628" height="584" key="MultipleFileMergeDialog" timestamp="1585264308952">
       <screen x="0" y="27" width="1920" height="988" />
@@ -954,26 +1127,26 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="766" y="457" width="377" height="126" key="ReplaceDuplicatesPrompt/0.27.1920.988@0.27.1920.988" timestamp="1588267915676" />
-    <state x="774" y="148" width="361" height="744" key="RollbackChangesDialog" timestamp="1586215284400">
+    <state x="774" y="148" width="361" height="744" key="RollbackChangesDialog" timestamp="1590531833426">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="774" y="148" width="361" height="744" key="RollbackChangesDialog/0.27.1920.988@0.27.1920.988" timestamp="1586215284400" />
+    <state x="774" y="148" width="361" height="744" key="RollbackChangesDialog/0.27.1920.988@0.27.1920.988" timestamp="1590531833426" />
     <state x="526" y="135" width="1370" height="845" key="SettingsEditor" timestamp="1587677346078">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="526" y="135" width="1370" height="845" key="SettingsEditor/0.27.1920.988@0.27.1920.988" timestamp="1587677346078" />
     <state x="443" y="97" width="1024" height="845" key="SettingsEditor/0.27.3280.988@0.27.3280.988" timestamp="1584307986404" />
     <state x="317" y="102" width="900" height="901" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1584980743995" />
-    <state x="757" y="254" width="633" height="540" key="StructurePopup" timestamp="1587927356106">
+    <state x="757" y="254" width="633" height="540" key="StructurePopup" timestamp="1590530473786">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="757" y="254" width="633" height="540" key="StructurePopup/0.27.1920.988@0.27.1920.988" timestamp="1587927356106" />
+    <state x="757" y="254" width="633" height="540" key="StructurePopup/0.27.1920.988@0.27.1920.988" timestamp="1590530473786" />
     <state x="1009" y="254" width="633" height="540" key="StructurePopup/0.27.2560.988/2560.0.1920.1080@0.27.2560.988" timestamp="1583694649173" />
     <state x="1293" y="254" width="1082" height="540" key="StructurePopup/0.27.3280.988@0.27.3280.988" timestamp="1584302674739" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1588277015157">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1590534776502">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.27.1920.988@0.27.1920.988" timestamp="1588277015157" />
+    <state width="498" height="446" key="SwitcherDM/0.27.1920.988@0.27.1920.988" timestamp="1590534776502" />
     <state width="498" height="446" key="SwitcherDM/0.27.2560.988/2560.0.1920.1080@0.27.2560.988" timestamp="1583694940835" />
     <state width="851" height="446" key="SwitcherDM/0.27.3280.988@0.27.3280.988" timestamp="1584314136899" />
     <state width="498" height="446" key="SwitcherDM/2560.0.1920.1080/0.27.2560.988@0.27.2560.988" timestamp="1583619418412" />
@@ -1012,10 +1185,10 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="726" y="435" width="457" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1920.988@0.27.1920.988" timestamp="1585066996912" />
-    <state x="678" y="209" width="554" height="621" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1585347247319">
+    <state x="678" y="209" width="709" height="621" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1588603517575">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="678" y="209" width="554" height="621" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.27.1920.988@0.27.1920.988" timestamp="1585347247319" />
+    <state x="678" y="209" width="709" height="621" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.27.1920.988@0.27.1920.988" timestamp="1588603517575" />
     <state x="492" y="177" width="926" height="686" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1586216883010">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
@@ -1029,10 +1202,10 @@
     </state>
     <state x="968" y="254" width="568" height="539" key="extract.method.dialog/0.27.1920.988@0.27.1920.988" timestamp="1588267913177" />
     <state x="623" y="250" width="664" height="539" key="extract.method.dialog/0.27.3280.988@0.27.3280.988" timestamp="1584310892634" />
-    <state x="596" y="104" width="728" height="831" key="find.popup" timestamp="1587918837321">
+    <state x="596" y="104" width="728" height="831" key="find.popup" timestamp="1588605263613">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="596" y="104" width="728" height="831" key="find.popup/0.27.1920.988@0.27.1920.988" timestamp="1587918837321" />
+    <state x="596" y="104" width="728" height="831" key="find.popup/0.27.1920.988@0.27.1920.988" timestamp="1588605263613" />
     <state x="780" y="157" width="349" height="726" key="git4idea.branch.GitBranchIsNotFullyMergedDialog" timestamp="1587494373475">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
@@ -1060,10 +1233,10 @@
       <screen x="0" y="27" width="3280" height="988" />
     </state>
     <state x="550" y="182" width="800" height="677" key="scopes/0.27.3280.988@0.27.3280.988" timestamp="1584306954523" />
-    <state x="707" y="241" width="672" height="678" key="search.everywhere.popup" timestamp="1588267824319">
+    <state x="707" y="241" width="672" height="678" key="search.everywhere.popup" timestamp="1590532547931">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="707" y="241" width="672" height="678" key="search.everywhere.popup/0.27.1920.988@0.27.1920.988" timestamp="1588267824319" />
+    <state x="707" y="241" width="672" height="678" key="search.everywhere.popup/0.27.1920.988@0.27.1920.988" timestamp="1590532547931" />
     <state x="1208" y="241" width="861" height="678" key="search.everywhere.popup/0.27.3280.988@0.27.3280.988" timestamp="1584300936069" />
     <state x="943" y="241" width="672" height="678" key="search.everywhere.popup/2560.0.1920.1080/0.27.2560.988@0.27.2560.988" timestamp="1583619949739" />
   </component>
@@ -1071,9 +1244,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/leiDina/tec/vinjection/service/ObjectInstantiationServiceImp.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/leiDina/biz/Main.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leiDina/biz/controllers/MainController.java</url>
           <line>40</line>
-          <option name="timeStamp" value="6" />
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-defaults>

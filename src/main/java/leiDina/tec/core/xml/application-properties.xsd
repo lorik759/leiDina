@@ -1,0 +1,9 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.vaplication.com/definition"
+    xmlns:vad="http://www.vaplication.com/definition" elementFormDefault="qualified">
+    <element name="definition" type="vad:definitionType"/>
+    <complexType name="definitionType">
+        <sequence>
+            <element name="import" type="string" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+</schema>

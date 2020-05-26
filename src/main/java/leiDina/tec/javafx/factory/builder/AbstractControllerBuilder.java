@@ -25,12 +25,12 @@ public abstract class AbstractControllerBuilder<T> implements ControllerBuilder<
     /**
      * Do specific stuff to the instance.
      *
-     * @param instance A instance of type T.
+     * @param instance An instance of type T.
      */
     protected abstract void doSpecificStuff(T instance);
 
     /**
-     * Creates a instance of the specified class.
+     * Creates an instance of the specified class.
      *
      * @param clazz a {@link Class}
      * @return the intense of the specified class.

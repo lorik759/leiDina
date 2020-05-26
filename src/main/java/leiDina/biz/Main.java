@@ -5,18 +5,17 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import main.java.leiDina.biz.scene.LeiDinamicaScenes;
+import main.java.leiDina.tec.core.ApplicationContext;
 import main.java.leiDina.tec.core.VApplication;
-import main.java.leiDina.tec.core.context.ApplicationContext;
 import main.java.leiDina.tec.javafx.VFXMLLoader;
-import main.java.leiDina.tec.vinjection.InjectableApplicationContext;
 
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        VApplication.run(Main.class);
-        VFXMLLoader vfxmlLoader = new VFXMLLoader(LeiDinamicaScenes.MAIN.getScene());
-        Parent root = vfxmlLoader.load();
+        ApplicationContext applicationContext = VApplication.start();
+        VFXMLLoader vfxmlLoader = applicationContext.getBean(VFXMLLoader.class);
+        Parent root = vfxmlLoader.load(LeiDinamicaScenes.MAIN.getScenes());
         primaryStage.setTitle("Leitura Dinamica");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();

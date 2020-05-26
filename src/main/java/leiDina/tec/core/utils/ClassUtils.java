@@ -5,7 +5,7 @@ package main.java.leiDina.tec.core.utils;
  *
  * @author vitor.alves
  */
-public class ClassUtils {
+public abstract class ClassUtils {
 
     public static ClassLoader getClassLoader() {
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();

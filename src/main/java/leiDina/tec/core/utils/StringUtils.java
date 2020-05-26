@@ -5,7 +5,7 @@ package main.java.leiDina.tec.core.utils;
  *
  * @author vitor.alves
  */
-public class StringUtils {
+public abstract class StringUtils {
 
     /**
      * A method that replaces a <>\n</> with commas and splits the string at the commas.

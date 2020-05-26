@@ -4,7 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import main.java.leiDina.biz.dao.ConfiguracaoDAO;
 import main.java.leiDina.biz.model.Configuracao;
-import main.java.leiDina.tec.fxpersister.controller.EntityPersisterController;
+import main.java.leiDina.tec.javafx.controller.EntityPersisterController;
 import main.java.leiDina.tec.persister.Persistable;
 import main.java.leiDina.tec.persister.exception.EntityNotFoundException;
 

@@ -14,7 +14,7 @@ import main.java.leiDina.tec.javafx.factory.builder.GenericControllerBuilder;
  */
 public class ControllerFactoryImpl implements ControllerFactory {
 
-    private Map<Class<?>, ControllerBuilder<?>> buiders = new HashMap<>();
+    private Map<Class<?>, ControllerBuilder<?>> builders = new HashMap<>();
 
     /**
      * {@inheritDoc}
@@ -24,7 +24,7 @@ public class ControllerFactoryImpl implements ControllerFactory {
         ControllerBuilder<?> builder = null;
         Class<?> clazz = controllerClass;
         while (clazz != null && builder == null) {
-            builder = buiders.get(clazz);
+            builder = builders.get(clazz);
             if (builder == null) {
                 clazz = clazz.getSuperclass();
             }
@@ -36,14 +36,14 @@ public class ControllerFactoryImpl implements ControllerFactory {
      * {@inheritDoc}
      */
     public <T> void addControllerBuilder(ControllerBuilder<T> builder) {
-        buiders.put(builder.getType(), builder);
+        builders.put(builder.getType(), builder);
     }
 
-    public Map<Class<?>, ControllerBuilder<?>> getBuiders() {
-        return buiders;
+    public Map<Class<?>, ControllerBuilder<?>> getBuilders() {
+        return builders;
     }
 
-    public void setBuiders(Map<Class<?>, ControllerBuilder<?>> buiders) {
-        this.buiders = buiders;
+    public void setBuilders(Map<Class<?>, ControllerBuilder<?>> builders) {
+        this.builders = builders;
     }
 }

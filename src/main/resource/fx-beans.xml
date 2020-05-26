@@ -1,0 +1,42 @@
+<beans xmlns="http://www.vaplication.com/beans">
+    <bean id="genericControllerBuilder" class="main.java.leiDina.tec.javafx.factory.builder.GenericControllerBuilder">
+        <property name="beanWire">
+            <bean ref="beanWire"/>
+        </property>
+    </bean>
+
+    <bean id="controllerFactory" class="main.java.leiDina.tec.javafx.factory.ControllerFactoryImpl">
+        <property name="builders">
+            <map key-type="class">
+                <value key="java.lang.Object">
+                    <bean ref="genericControllerBuilder"/>
+                </value>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="textInputNodeAssociation" class="main.java.leiDina.tec.javafx.service.TextInputNodeAssociation"/>
+    <bean id="numberInputNodeAssociation" class="main.java.leiDina.tec.javafx.service.NumberInputNodeAssociation"/>
+
+    <bean id="modelSceneWire" class="main.java.leiDina.tec.javafx.service.ModelSceneWire">
+        <property name="associationMap">
+            <map key-type="class">
+                <value key="main.java.leiDina.tec.javafx.annotation.TextInput">
+                    <bean ref="textInputNodeAssociation"/>
+                </value>
+                <value key="main.java.leiDina.tec.javafx.annotation.NumberInput">
+                    <bean ref="numberInputNodeAssociation"/>
+                </value>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="vfxmlLoader" class="main.java.leiDina.tec.javafx.VFXMLLoader">
+        <property name="modelWire">
+            <bean ref="modelSceneWire"/>
+        </property>
+        <property name="controllerFactory">
+            <bean ref="controllerFactory"/>
+        </property>
+    </bean>
+</beans>

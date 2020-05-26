@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
+import javax.annotation.Resource;
 import main.java.leiDina.biz.scene.LeiDinamicaScenes;
 import main.java.leiDina.tec.javafx.VFXMLLoader;
 import main.java.leiDina.tec.javafx.control.SceneButton;
@@ -18,12 +19,15 @@ import main.java.leiDina.tec.javafx.scene.Scenes;
  */
 public class MainController implements Initializable {
 
+    @Resource(name = "vfxmlLoader")
+    private VFXMLLoader vfxmlLoader;
+
     @FXML
     private BorderPane borderPane;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        this.setScene(LeiDinamicaScenes.LEITURA.getScene());
+        this.setScene(LeiDinamicaScenes.LEITURA.getScenes());
     }
 
     @FXML
@@ -34,8 +38,7 @@ public class MainController implements Initializable {
 
     private void setScene(Scenes scene) {
         try {
-            VFXMLLoader vfxmlLoader = new VFXMLLoader(scene);
-            borderPane.setCenter(vfxmlLoader.load());
+            borderPane.setCenter(vfxmlLoader.load(scene));
         } catch (Exception e) {
             throw new VFXException(FXSystemMessages.SCENE_LOADING_EXCEPTION.create(scene.getTitle()), e);
         }

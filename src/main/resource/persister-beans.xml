@@ -1,0 +1,9 @@
+<beans xmlns="http://www.vaplication.com/beans">
+    <bean id="daoFactory" class="main.java.leiDina.tec.persister.factory.TextBaseDAOFactory">
+        <property name="beanWire">
+            <bean ref="beanWire"/>
+        </property>
+    </bean>
+
+    <bean id="persister" class="main.java.leiDina.tec.persister.TextBasePersister"/>
+</beans>

@@ -8,7 +8,6 @@ import java.util.HashMap;
 import java.util.Map;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import main.java.leiDina.tec.core.service.Wire;
 import main.java.leiDina.tec.javafx.controller.BaseModelController;
 import main.java.leiDina.tec.javafx.exception.VFXException;
 import main.java.leiDina.tec.javafx.messages.FXSystemMessages;
@@ -16,13 +15,12 @@ import main.java.leiDina.tec.javafx.messages.FXSystemMessages;
 /**
  * @author vitor.alves
  */
-public class ModelSceneWire implements Wire<BaseModelController<?>> {
+public class ModelSceneWire {
 
     private Map<Class<? extends Annotation>, NodeAssociation> associationMap = new HashMap<>();
 
     private FXMLLoader fxmlLoader;
 
-    @Override
     public void wire(BaseModelController<?> controller) throws Exception {
         Object model = controller.getModel();
         Field[] fields = model.getClass().getDeclaredFields();
@@ -49,16 +47,7 @@ public class ModelSceneWire implements Wire<BaseModelController<?>> {
         this.fxmlLoader = fxmlLoader;
     }
 
-    public void addModelComponentAssociation(Class<? extends Annotation> clazz, NodeAssociation<?, ?> nodeAssociation) {
-        this.associationMap.put(clazz, nodeAssociation);
-    }
-
-    public Map<Class<? extends Annotation>, NodeAssociation> getAssociationMap() {
-        return associationMap;
-    }
-
-    public void setAssociationMap(
-        Map<Class<? extends Annotation>, NodeAssociation> associationMap) {
+    public void setAssociationMap(Map<Class<? extends Annotation>, NodeAssociation> associationMap) {
         this.associationMap = associationMap;
     }
 }

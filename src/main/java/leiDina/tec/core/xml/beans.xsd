@@ -1,0 +1,50 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.vaplication.com/beans"
+    xmlns:vad="http://www.vaplication.com/beans" elementFormDefault="qualified">
+    <element name="beans" type="vad:definitionType"/>
+    <complexType name="definitionType">
+        <sequence>
+            <element name="bean" type="vad:beanType" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+
+    <complexType name="beanType">
+        <sequence>
+            <element name="property" type="vad:propertyType" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="id" type="string" use="required" />
+        <attribute name="class" type="string" use="required" />
+        <attribute name="parent" type="string" />
+    </complexType>
+
+    <complexType name="propertyType">
+        <choice>
+            <element name="bean" type="vad:beanRefType" />
+            <element name="map" type="vad:mapType" />
+        </choice>
+        <attribute name="name" type="string" use="required" />
+    </complexType>
+
+    <complexType name="beanRefType">
+        <attribute name="ref" type="string" use="required" />
+    </complexType>
+
+    <complexType name="mapType">
+        <sequence>
+            <element name="value" type="vad:mapValueType" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="key-type" type="vad:valueTypes" default="class" />
+    </complexType>
+    <complexType name="mapValueType">
+        <choice>
+            <element name="bean" type="vad:beanRefType" />
+        </choice>
+        <attribute name="key" type="string" use="required"/>
+    </complexType>
+
+    <simpleType name="valueTypes">
+        <restriction base="string">
+            <enumeration value="class"/>
+            <enumeration value="string"/>
+        </restriction>
+    </simpleType>
+</schema>
