@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<definition xmlns="http://www.vaplication.com/definition" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.vaplication.com/definition main/java/leiDina/tec/core/xml/application-properties.xsd ">
-    <import>fx-beans.xml</import>
-    <import>persister-beans.xml</import>
-</definition>

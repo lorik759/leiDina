@@ -39,9 +39,4 @@ public class NumberInputNodeAssociation implements NodeAssociation<NumberInput, 
             throw new VFXException(FXSystemMessages.MODEL_SCENE_ASSOCIATION.create(node.getId(), model.getClass()), e);
         }
     }
-
-    @Override
-    public Class<NumberInput> type() {
-        return NumberInput.class;
-    }
 }

@@ -23,9 +23,4 @@ public interface NodeAssociation<A extends Annotation, N extends Node> {
      */
     void associate(final Object model, final A declaredAnnotation, final PropertyDescriptor propertyDescriptor, final N node);
 
-    /**
-     * @return the annotation class that represents the component in which the to associate the model with.
-     */
-    Class<A> type();
-
 }

@@ -25,12 +25,17 @@ public class VFXMLLoader {
      * @throws IOException if unable to load scene.
      */
     public <T> T load(Scenes scenes) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(scenes.getLocation());
-        fxmlLoader.setControllerFactory(controllerFactory::getController);
-        this.modelWire.setFxmlLoader(fxmlLoader);
+        FXMLLoader fxmlLoader = this.creatFXMLLoader(scenes);
         T load = fxmlLoader.load();
         this.wireControllerToModelIfNeed(fxmlLoader);
         return load;
+    }
+
+    private FXMLLoader creatFXMLLoader(Scenes scenes) {
+        FXMLLoader fxmlLoader = new FXMLLoader(scenes.getLocation());
+        fxmlLoader.setControllerFactory(controllerFactory::getController);
+        this.modelWire.setFxmlLoader(fxmlLoader);
+        return fxmlLoader;
     }
 
     /**

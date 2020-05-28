@@ -13,22 +13,16 @@ import main.java.leiDina.tec.persister.factory.DAOFactory;
  *
  * @author vitor.alves
  */
-public abstract class EntityPersisterController<M> extends BaseModelController<M> {
+public abstract class EntityPersisterController<M, E extends Persistable> extends BaseModelController<M> {
 
     @Resource(name = "persister")
     private Persister persister;
 
-    @Resource(name = "daoFactory")
-    private DAOFactory daoFactory;
-
-    protected abstract <E extends Persistable> E getEntityFromModel();
+    protected abstract E getEntityFromModel();
 
     @FXML
     public void save() {
         persister.save(this.getEntityFromModel());
     }
 
-    public DAOFactory getDAOFactory() {
-        return daoFactory;
-    }
 }

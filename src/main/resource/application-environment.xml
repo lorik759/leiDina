@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definition xmlns="http://www.vaplication.com/definition">
+    <import>fx-beans.xml</import>
+    <import>persister-beans.xml</import>
+    <import>leitura-beans.xml</import>
+</definition>

@@ -6,7 +6,7 @@ import main.java.leiDina.tec.javafx.scene.Scenes;
  * @author vitor.alves
  */
 public enum LeiDinamicaScenes {
-    MAIN(new MainScene()), LEITURA(new LeituraScene()), CONFIGURACAO(null);
+    MAIN(new MainScene()), LEITURA(new LeituraScene()), CONFIGURACAO(new ConfiguracaoScene());
 
     private Scenes scenes;
 

@@ -41,12 +41,4 @@ public class TextInputNodeAssociation implements NodeAssociation<TextInput, Text
             throw new VFXException(FXSystemMessages.MODEL_SCENE_ASSOCIATION.create(node.getId(), model.getClass()), e);
         }
     }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public Class<TextInput> type() {
-        return TextInput.class;
-    }
 }
