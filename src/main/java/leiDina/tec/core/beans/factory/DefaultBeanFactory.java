@@ -162,12 +162,20 @@ public class DefaultBeanFactory extends DefaultBeanDefinitionHolder implements B
 
     @Override
     public void instantiateSingletons() {
-        this.createBeanWire();
+        this.instantiateFactoryBeans();
+        this.instantiateMappedBeans();
+    }
+
+    private void instantiateMappedBeans() {
         for (String beanName : this.getAllBeanNames()) {
             if (!this.beanExists(beanName)) {
                 this.getBean(beanName);
             }
         }
+    }
+
+    private void instantiateFactoryBeans() {
+        this.createBeanWire();
     }
 
     private void createBeanWire() {

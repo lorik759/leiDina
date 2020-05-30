@@ -1,5 +1,5 @@
 <beans xmlns="http://www.vaplication.com/beans">
-    <bean id="daoFactory" class="main.java.leiDina.tec.persister.factory.TextBaseDAOFactory">
+    <bean id="daoFactory" class="main.java.leiDina.tec.persister.factory.DAOFactoryImp">
         <property name="beanWire">
             <bean ref="beanWire"/>
         </property>

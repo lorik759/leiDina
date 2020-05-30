@@ -11,7 +11,7 @@ import main.java.leiDina.tec.persister.messages.PersisterSystemMessages;
 /**
  * @author vitor.alves
  */
-public class TextBaseDAOFactory implements DAOFactory {
+public class DAOFactoryImp implements DAOFactory {
 
     private final Map<Class<? extends DAO>, DAO> cache = new HashMap<>();
 
@@ -20,16 +20,29 @@ public class TextBaseDAOFactory implements DAOFactory {
     @Override
     public <T extends DAO> T getDAOByClass(Class<T> daoClass) {
         DAO dao = cache.get(daoClass);
-        if (dao != null) {
-            return (T) dao;
+        if (dao == null) {
+            dao = createDAO(daoClass);
+            this.addToCach(daoClass, dao);
         }
+        return (T) dao;
+    }
+
+    private <T extends DAO> void addToCach(Class<T> daoClass, DAO dao) {
+        this.cache.put(daoClass, dao);
+    }
+
+    private <T extends DAO> DAO createDAO(Class<T> daoClass) {
+        DAO dao = createInstance(daoClass);
+        beanWire.wire(dao);
+        return dao;
+    }
+
+    private <T extends DAO> T createInstance(Class<T> daoClass) throws PersistenceException{
         try {
-            dao = ReflectionUtils.newInstance(daoClass);
-            beanWire.wire(dao);
+            return ReflectionUtils.newInstance(daoClass);
         } catch (Exception e) {
             throw new PersistenceException(PersisterSystemMessages.FAILED_TO_CREATE_DAD.create(daoClass), e);
         }
-        return (T) dao;
     }
 
     public void setBeanWire(BeanWire beanWire) {

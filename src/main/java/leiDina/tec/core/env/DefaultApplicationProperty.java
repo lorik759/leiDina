@@ -9,7 +9,7 @@ import main.java.leiDina.tec.core.beans.service.BeanResourceLoader;
 /**
  * This is the default implementation of a {@link ApplicationProperty}, that represents a xml file that contais beans mapped within. This class loads
  * the mapped beans and converts them to a {@link BeanDefinition} which will than be added to an {@link BeanDefinitionHolder}. An example of a xml
- * file that contais mapped beans:
+ * file that contais mapped beans is:
  *
  * <code>
  *     <beans xmlns="http://www.vaplication.com/beans">

@@ -78,7 +78,7 @@ public class VApplication {
     /**
      * Creates the {@link ApplicationContext}. By default, a {@link DefaultApplicationContext} is instantiated and used by the application.
      *
-     * @return a {@link DefaultApplicationContext}
+     * @return a {@link ApplicationContext}
      */
     private ApplicationContext creatContext() {
         return new DefaultApplicationContext();

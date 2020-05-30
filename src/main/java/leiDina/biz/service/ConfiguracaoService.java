@@ -2,7 +2,7 @@ package main.java.leiDina.biz.service;
 
 import main.java.leiDina.biz.controllers.configuration.ConfiguracaoModel;
 import main.java.leiDina.biz.dao.ConfiguracaoDAO;
-import main.java.leiDina.biz.model.Configuracao;
+import main.java.leiDina.biz.domain.Configuracao;
 import main.java.leiDina.tec.persister.exception.EntityNotFoundException;
 import main.java.leiDina.tec.persister.factory.DAOFactory;
 

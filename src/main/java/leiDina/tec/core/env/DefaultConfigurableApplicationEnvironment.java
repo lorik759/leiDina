@@ -26,20 +26,36 @@ import main.java.leiDina.tec.core.xml.service.JAXBXmlParser;
  */
 public class DefaultConfigurableApplicationEnvironment implements ConfigurableApplicationEnvironment {
 
-    private static final String APPLICATION_PROPERTIES = "application-environment.xml";
+    private static final String APPLICATION_ENVIRONMENT_XML = "application-environment.xml";
 
+    /**
+     * Loads all "application-environment.xml", and creates a {@link DefaultApplicationProperty} for each individual import.
+     *
+     * @return a list of {@link DefaultApplicationProperty}.
+     */
     @Override
     public List<ApplicationProperty> loadApplicationProperties() {
         List<String> imports = this.findAllImports();
         return this.creatApplicationPropertyFor(imports);
     }
 
+    /**
+     * Creates a {@link DefaultApplicationProperty} for each individual imported file.
+     *
+     * @param imports a list of imported files.
+     * @return a list of {@link DefaultApplicationProperty}.
+     */
     private List<ApplicationProperty> creatApplicationPropertyFor(List<String> imports) {
         final List<ApplicationProperty> applicationProperties = new ArrayList<>();
         imports.forEach(aImport -> applicationProperties.add(new DefaultApplicationProperty(aImport)));
         return applicationProperties;
     }
 
+    /**
+     * Finds all imported files inside all "application-environment.xml".
+     *
+     * @return a list of all imported files that are contained inside the "application-environment.xml"
+     */
     private List<String> findAllImports() {
         List<String> imports = new ArrayList<>();
         List<AppDefinitionType> appDefinitions = this.getAppDefinitions();
@@ -51,10 +67,15 @@ public class DefaultConfigurableApplicationEnvironment implements ConfigurableAp
         return imports;
     }
 
+    /**
+     * Reads and converts the "application-environment.xml" to {@link AppDefinitionType}.
+     *
+     * @return a list of {@link AppDefinitionType}.
+     */
     private List<AppDefinitionType> getAppDefinitions() {
         JAXBXmlParser<AppDefinitionType> xmlParser = new JAXBXmlParser<>();
         try {
-            return xmlParser.parse(APPLICATION_PROPERTIES, AppDefinitionType.class);
+            return xmlParser.parse(APPLICATION_ENVIRONMENT_XML, AppDefinitionType.class);
         } catch (Exception e) {
             return new ArrayList<>();
         }

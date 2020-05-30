@@ -3,11 +3,9 @@ package main.java.leiDina.biz.controllers.configuration;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javax.annotation.Resource;
-import main.java.leiDina.biz.dao.ConfiguracaoDAO;
-import main.java.leiDina.biz.model.Configuracao;
+import main.java.leiDina.biz.domain.Configuracao;
 import main.java.leiDina.biz.service.ConfiguracaoService;
 import main.java.leiDina.tec.javafx.controller.EntityPersisterController;
-import main.java.leiDina.tec.persister.Persistable;
 import main.java.leiDina.tec.persister.exception.EntityNotFoundException;
 
 /**

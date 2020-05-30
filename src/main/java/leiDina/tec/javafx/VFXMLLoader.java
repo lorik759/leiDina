@@ -31,6 +31,12 @@ public class VFXMLLoader {
         return load;
     }
 
+    /**
+     * Creates a {@link FXMLLoader} for the specified {@link Scenes}.
+     *
+     * @param scenes the {@link Scenes} of the {@link FXMLLoader}.
+     * @return a {@link FXMLLoader}.
+     */
     private FXMLLoader creatFXMLLoader(Scenes scenes) {
         FXMLLoader fxmlLoader = new FXMLLoader(scenes.getLocation());
         fxmlLoader.setControllerFactory(controllerFactory::getController);

@@ -1,17 +1,8 @@
 <beans xmlns="http://www.vaplication.com/beans">
-    <bean id="genericControllerBuilder" class="main.java.leiDina.tec.javafx.factory.builder.GenericControllerBuilder">
+
+    <bean id="controllerFactory" class="main.java.leiDina.tec.javafx.factory.InjectableControllerFactory">
         <property name="beanWire">
             <bean ref="beanWire"/>
-        </property>
-    </bean>
-
-    <bean id="controllerFactory" class="main.java.leiDina.tec.javafx.factory.ControllerFactoryImpl">
-        <property name="builders">
-            <map key-type="class">
-                <value key="java.lang.Object">
-                    <bean ref="genericControllerBuilder"/>
-                </value>
-            </map>
         </property>
     </bean>
 

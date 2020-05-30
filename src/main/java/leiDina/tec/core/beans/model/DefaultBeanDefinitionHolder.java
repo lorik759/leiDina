@@ -10,6 +10,9 @@ import main.java.leiDina.tec.core.messages.BaseSystemMessages;
 import main.java.leiDina.tec.core.utils.StringUtils;
 
 /**
+ * This is the default implementation af the {@link BeanDefinitionHolder} interface. This class contains and organizes the bean definitions of the
+ * context.
+ *
  * @author vitor.alves
  */
 public class DefaultBeanDefinitionHolder implements BeanDefinitionHolder {
@@ -24,6 +27,13 @@ public class DefaultBeanDefinitionHolder implements BeanDefinitionHolder {
 
     private boolean allowOverwrite = false;
 
+    /**
+     * Adds the {@link BeanDefinition} to this context, validating: 1) If it already doesn't exist. 2) If the bean name is already in use. If this
+     * {@link BeanDefinitionHolder} is set to overwrite, it will remove the old {@link BeanDefinition}, and add the new {@link BeanDefinition}.
+     * Otherwise, it will throw a {@link BeanDefinitionException}.
+     *
+     * @param beanDefinition the {@link BeanDefinition} to be added.
+     */
     @Override
     public void addBeanDefinition(BeanDefinition beanDefinition) throws BeanException {
         this.validateBeanDefinition(beanDefinition);
@@ -33,6 +43,12 @@ public class DefaultBeanDefinitionHolder implements BeanDefinitionHolder {
         this.doAddBeanDefinition(beanDefinition);
     }
 
+    /**
+     * Validates the {@link BeanDefinition} and checking if: 1) If it already doesn't exist. 2) If the bean name is already in use. If any of this
+     * criterias are meet, and this {@link BeanDefinitionHolder is not set to overwrite, than an {@link BeanDefinitionException} is thrown.
+     *
+     * @param beanDefinition the {@link BeanDefinition} to Validate.
+     */
     private void validateBeanDefinition(BeanDefinition beanDefinition) {
         String name = beanDefinition.getName();
         if (this.existsBeanDefinition(beanDefinition) && this.isNotAllowOverwriteBeanDefinition()) {

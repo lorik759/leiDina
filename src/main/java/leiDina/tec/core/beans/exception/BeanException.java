@@ -5,7 +5,7 @@ import main.java.leiDina.tec.core.exception.BaseException;
 import main.java.leiDina.tec.core.messages.MessageHolder;
 
 /**
- * A base exception for all bean exception. This represents an error when dealing with a bean.
+ * The base exception for all bean exception. This represents an error when dealing with a {@link main.java.leiDina.tec.core.beans.factory.BeanFactory}.
  *
  * @author vitor.alves
  */

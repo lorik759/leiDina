@@ -3,7 +3,7 @@ package main.java.leiDina.biz.service;
 import java.util.ArrayList;
 import java.util.List;
 import main.java.leiDina.biz.controllers.leitura.LeituraModel;
-import main.java.leiDina.biz.model.Configuracao;
+import main.java.leiDina.biz.domain.Configuracao;
 import main.java.leiDina.tec.core.utils.StringUtils;
 
 /**

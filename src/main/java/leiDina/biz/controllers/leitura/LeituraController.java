@@ -31,7 +31,6 @@ public class LeituraController extends BaseModelController<LeituraModel> {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         super.initialize(location, resources);
-        textoSaida.setEditable(false);
     }
 
     @FXML

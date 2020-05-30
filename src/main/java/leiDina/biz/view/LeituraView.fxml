@@ -6,26 +6,26 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-
-<BorderPane stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.leiDina.biz.controllers.leitura.LeituraController">
-   <bottom>
-      <TextArea fx:id="textoEntrada" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
-   </bottom>
-   <top>
-      <VBox prefHeight="45.0" prefWidth="800.0" BorderPane.alignment="CENTER">
-         <children>
-            <Button mnemonicParsing="false" text="Ler" onMouseClicked="#lerTexto">
-               <font>
-                  <Font size="15.0" />
-               </font>
-               <VBox.margin>
-                  <Insets bottom="5.0" left="25.0" top="15.0" />
-               </VBox.margin>
-            </Button>
-         </children>
-      </VBox>
-   </top>
-   <center>
-      <TextArea fx:id="textoSaida" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" onMouseClicked="#lerTexto"/>
-   </center>
+<BorderPane stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="main.java.leiDina.biz.controllers.leitura.LeituraController">
+    <bottom>
+        <TextArea fx:id="textoEntrada" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER"/>
+    </bottom>
+    <top>
+        <VBox prefHeight="45.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button mnemonicParsing="false" text="Ler" onMouseClicked="#lerTexto">
+                    <font>
+                        <Font size="15.0"/>
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="5.0" left="25.0" top="15.0"/>
+                    </VBox.margin>
+                </Button>
+            </children>
+        </VBox>
+    </top>
+    <center>
+        <TextArea fx:id="textoSaida" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" editable="false"/>
+    </center>
 </BorderPane>

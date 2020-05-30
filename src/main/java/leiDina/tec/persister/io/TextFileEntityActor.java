@@ -21,7 +21,6 @@ import main.java.leiDina.tec.persister.Persistable;
  *
  * @author vitor.alves
  */
-//TODO: Refactor this entire class... Its to long and complicated.
 public class TextFileEntityActor {
 
     private File file;
