@@ -71,6 +71,12 @@ public class DefaultBeanDefinitionHolder implements BeanDefinitionHolder {
         this.beanDefinitionByName.put(name, beanDefinition);
     }
 
+    /**
+     * Checks to see if the specified {@link BeanDefinition} exists. If it dose, than it is removed from this Holder. Otherwise, an {@link BeanDefinitionException}} is thrown.
+     *
+     * @param beanDefinition the {@link BeanDefinition} to be removed.
+     * @throws BeanException a {@link BeanDefinitionException} if the specified {@link BeanDefinition} dose not existe.
+     */
     @Override
     public void removeBeanDefinition(BeanDefinition beanDefinition) throws BeanException {
         if (!this.existsBeanDefinition(beanDefinition)) {
@@ -88,26 +94,41 @@ public class DefaultBeanDefinitionHolder implements BeanDefinitionHolder {
         this.beanDefinitionNameByType.remove(beanDefinitionToRemove.getBeanClass());
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean existsBeanDefinition(BeanDefinition beanDefinition) {
         return this.allBeanDefinitions.contains(beanDefinition);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean isBeanDefinitionNameInUse(String beanName) {
         return this.beanDefinitionNames.contains(beanName);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean isAllowOverwriteBeanDefinition() {
         return this.allowOverwrite;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void allowOverwriteBeanDefinition(boolean allowOverwrite) {
         this.allowOverwrite = allowOverwrite;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public BeanDefinition getBeanDefinitionForName(String name) throws BeanException {
         BeanDefinition beanDefinition = this.beanDefinitionByName.get(name);
@@ -117,6 +138,9 @@ public class DefaultBeanDefinitionHolder implements BeanDefinitionHolder {
         return beanDefinition;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public BeanDefinition getBeanDefinitionForType(Class<?> beanClass) throws BeanException {
         String name = this.beanDefinitionNameByType.get(beanClass);
@@ -126,6 +150,9 @@ public class DefaultBeanDefinitionHolder implements BeanDefinitionHolder {
         return this.getBeanDefinitionForName(name);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getBeanName(Class<?> type) {
         return this.beanDefinitionNameByType.get(type);

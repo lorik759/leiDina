@@ -1,10 +1,7 @@
 package main.java.leiDina.biz.service;
 
-import java.util.ArrayList;
 import java.util.List;
 import main.java.leiDina.biz.controllers.leitura.LeituraModel;
-import main.java.leiDina.biz.domain.Configuracao;
-import main.java.leiDina.tec.core.utils.StringUtils;
 
 /**
  * @author vitor.alves
@@ -17,48 +14,19 @@ public class LeituraService {
 
     private List<String> texts;
 
-    public String getNextString() {
-        if (texts != null && next < texts.size()) {
-            String nextText = texts.get(next);
-            next++;
-            return nextText;
-        }
-        return "";
-    }
+    private StringBuilder stringBuilder;
 
-    public void startReading(LeituraModel model) {
-        this.texts = new ArrayList<>();
-        String msg = model.getTextoEntrada();
-        this.next = 0;
-        if (StringUtils.isNotEmpty(msg)) {
-            this.createTexts(msg.split("\\W+"));
-        }
-    }
-
-    private void createTexts(String[] split) {
-        StringBuilder lastString = new StringBuilder();
-        int nextWord = 0;
-        int length = split.length;
-        int numeroDePalavras = this.getNumeroDePalavras();
-        int numberOfTimesToSeparate = (length + numeroDePalavras - 1) / numeroDePalavras;
-        for (int j = 0; j < numberOfTimesToSeparate; j++) {
-            for (int i = 0; i < numeroDePalavras; i++) {
-                if (nextWord < length) {
-                    String string = split[nextWord];
-                    nextWord++;
-                    lastString.append(" ").append(string);
-                }
-            }
-            this.texts.add(lastString.toString());
-        }
+    public void iniciarLeitura(LeituraModel model) {
+        this.texts = this.getText(model);
+        next = 0;
+        this.stringBuilder = new StringBuilder();
     }
 
     private int getNumeroDePalavras() {
-        Configuracao configuracao = configuracaoService.findOrCreatConfiguracaoPadrao();
-        return configuracao.getNumeroPalavras();
+        return configuracaoService.findOrCreatConfiguracaoPadrao().getNumeroPalavras();
     }
 
-    public int getNumberOfTimesToRead() {
+    public int getNumeroDeVezParaLer() {
         return this.texts.size();
     }
 
@@ -66,11 +34,25 @@ public class LeituraService {
         return configuracaoService.findOrCreatConfiguracaoPadrao().getSeconds();
     }
 
-    public boolean isTharSomethingToRead() {
+    public boolean temAlgumaCoisaALer() {
         return texts != null && texts.size() > 0;
     }
 
     public void setConfiguracaoService(ConfiguracaoService configuracaoService) {
         this.configuracaoService = configuracaoService;
+    }
+
+    public List<String> getText(LeituraModel model) {
+        return new LeituraDinamicaParser(model.getTextoEntrada(), this.getNumeroDePalavras()).parse();
+    }
+
+    public String getProximaString() {
+        if (next < texts.size()) {
+            stringBuilder.append(texts.get(next));
+            next++;
+            return stringBuilder.toString();
+        } else {
+            return "";
+        }
     }
 }

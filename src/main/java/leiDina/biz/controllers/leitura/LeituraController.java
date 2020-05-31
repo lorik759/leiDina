@@ -35,12 +35,11 @@ public class LeituraController extends BaseModelController<LeituraModel> {
 
     @FXML
     public void lerTexto(MouseEvent mouseEvent) {
-        leituraService.startReading(this.getModel());
-        if (leituraService.isTharSomethingToRead()) {
-            Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(leituraService.getSegundos()), event -> {
-                textoSaida.setText(leituraService.getNextString());
-            }));
-            timeline.setCycleCount(leituraService.getNumberOfTimesToRead());
+        leituraService.iniciarLeitura(this.getModel());
+        if (leituraService.temAlgumaCoisaALer()) {
+            Timeline timeline = new Timeline(
+                new KeyFrame(Duration.seconds(leituraService.getSegundos()), event -> textoSaida.setText(leituraService.getProximaString())));
+            timeline.setCycleCount(leituraService.getNumeroDeVezParaLer());
             timeline.play();
         }
     }
