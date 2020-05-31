@@ -23,50 +23,53 @@ public class LeituraDinamicaParser {
     }
 
     private List<String> agrupar(List<String> everyWord) {
-        int numeroDePalavarsAgrupadas = 0;
-        StringBuilder stringBuilder = new StringBuilder();
+        int inicio = 0;
         List<String> groupWords = new ArrayList<>();
-        for (String word : everyWord) {
-            if (numeroDePalavrasParaAgrupar == numeroDePalavarsAgrupadas) {
-                groupWords.add(stringBuilder.toString());
-                stringBuilder = new StringBuilder();
-                numeroDePalavarsAgrupadas = 0;
-            } else if (isUltimaPalavra(word, everyWord)) {
-                stringBuilder.append(word);
-                groupWords.add(stringBuilder.toString());
-            } else {
-                stringBuilder.append(word);
-                numeroDePalavarsAgrupadas++;
-            }
+        int numeroDeBlocosParaDividir = (everyWord.size() + numeroDePalavrasParaAgrupar - 1) / numeroDePalavrasParaAgrupar;
+        for (int i = 0; i < numeroDeBlocosParaDividir; i++) {
+            int fim = inicio + numeroDePalavrasParaAgrupar;
+            groupWords.add(getPalavarsAgrupadasAte(inicio, fim, everyWord));
+            inicio = fim;
         }
         return groupWords;
     }
 
-    private boolean isUltimaPalavra(String word, List<String> everyWord) {
-        return everyWord.get(everyWord.size() - 1).equals(word);
+    private String getPalavarsAgrupadasAte(int inicio, int fim, List<String> everyWord) {
+        StringBuilder stringBuilder = new StringBuilder();
+        int posicao = inicio;
+        int pontoDeParada = Math.min(everyWord.size(), fim);
+        for (; posicao < pontoDeParada; posicao++) {
+            stringBuilder.append(everyWord.get(posicao));
+        }
+        return stringBuilder.toString();
     }
 
     private List<String> getSeparadoPorPalavraComQuebraDeLinha() {
         List<String> strings = new ArrayList<>();
         StringBuilder stringBuilder = new StringBuilder();
-        for (int i = 0; i < textoNaoFormatado.length(); i++) {
-            if (textoNaoFormatado.charAt(i) == ' ') {
+        char[] chars = textoNaoFormatado.toCharArray();
+        for (char proximaLetra : chars) {
+            if (proximaLetra == ' ') {
                 strings.add(stringBuilder.append(" ").toString());
                 stringBuilder = new StringBuilder();
-            } else if (isCharInicioDeQuebraDeLinha(i)) {
-                stringBuilder.append(System.lineSeparator());
-                strings.add(stringBuilder.toString());
+            } else if (isCharInicioDeQuebraDeLinha(proximaLetra)) {
+                stringBuilder.append("\n");
+                String toString = stringBuilder.toString();
+                strings.add(toString);
                 stringBuilder = new StringBuilder();
-            } else if (i == textoNaoFormatado.length() - 1) {
-                strings.add(stringBuilder.toString());
             } else {
-                stringBuilder.append(textoNaoFormatado.charAt(i));
+                stringBuilder.append(proximaLetra);
             }
         }
+        addUltimaPalavra(strings, stringBuilder);
         return strings;
     }
 
-    private boolean isCharInicioDeQuebraDeLinha(int i) {
-        return textoNaoFormatado.length() >= i + 1 && textoNaoFormatado.substring(i, i + 1).equals(System.lineSeparator());
+    private void addUltimaPalavra(List<String> strings, StringBuilder stringBuilder) {
+        strings.add(stringBuilder.toString());
+    }
+
+    private boolean isCharInicioDeQuebraDeLinha(char letra) {
+        return letra == '\n';
     }
 }
