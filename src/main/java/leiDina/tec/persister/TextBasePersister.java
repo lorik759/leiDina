@@ -46,7 +46,7 @@ public class TextBasePersister implements Persister {
     }
 
     @Override
-    public <T extends Persistable> T get(Serializable id, Class<T> type) {
+    public <T extends Persistable> T findBy(Serializable id, Class<T> type) {
         TextFileEntityActor actor = getActor(type);
         try {
             if (actor.entityWithIdExists(id)) {

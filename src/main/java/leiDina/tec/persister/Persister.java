@@ -12,7 +12,7 @@ public interface Persister {
 
     void remove(Persistable entity);
 
-    <T extends Persistable> T get(Serializable id, Class<T> type);
+    <T extends Persistable> T findBy(Serializable id, Class<T> type);
 
     <T extends Persistable> List<T> getAll(Class<T> type);
 }

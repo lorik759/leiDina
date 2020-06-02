@@ -5,8 +5,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import main.java.leiDina.tec.core.beans.factory.BaseBeanDefinitionFactory;
-import main.java.leiDina.tec.core.beans.factory.BeanDefinitionFactory;
-import main.java.leiDina.tec.core.beans.model.BaseBeanDefinition;
 import main.java.leiDina.tec.core.beans.model.BeanDefinition;
 import main.java.leiDina.tec.core.xml.model.BeanDefinitionType;
 import main.java.leiDina.tec.core.xml.model.BeanType;
@@ -18,7 +16,7 @@ import main.java.leiDina.tec.core.xml.service.JAXBXmlParser;
  */
 public class BeanResourceLoader {
 
-    private final BeanDefinitionFactory<BaseBeanDefinition, BeanType> beanDefinitionFactory = new BaseBeanDefinitionFactory();
+    private final BaseBeanDefinitionFactory beanDefinitionFactory = new BaseBeanDefinitionFactory();
 
     private final String resource;
 
@@ -39,11 +37,15 @@ public class BeanResourceLoader {
     private List<BeanType> loadBeanTypesFromResource() {
         List<BeanType> beanTypes = new ArrayList<>();
         for (BeanDefinitionType beanDefinitionType : getBeanDefinitionTypes()) {
-            if (beanDefinitionType.getBean() != null) {
+            if (isBeansNotEmpty(beanDefinitionType)) {
                 beanTypes.addAll(beanDefinitionType.getBean());
             }
         }
         return beanTypes;
+    }
+
+    private boolean isBeansNotEmpty(BeanDefinitionType beanDefinitionType) {
+        return beanDefinitionType.getBean() != null && !beanDefinitionType.getBean().isEmpty();
     }
 
     private List<BeanDefinitionType> getBeanDefinitionTypes() {

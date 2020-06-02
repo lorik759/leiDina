@@ -35,8 +35,7 @@ public class DefaultConfigurableApplicationEnvironment implements ConfigurableAp
      */
     @Override
     public List<ApplicationProperty> loadApplicationProperties() {
-        List<String> imports = this.findAllImports();
-        return this.creatApplicationPropertyFor(imports);
+        return this.creatApplicationPropertyFor(this.findAllImports());
     }
 
     /**
@@ -60,11 +59,15 @@ public class DefaultConfigurableApplicationEnvironment implements ConfigurableAp
         List<String> imports = new ArrayList<>();
         List<AppDefinitionType> appDefinitions = this.getAppDefinitions();
         for (AppDefinitionType appDefinition : appDefinitions) {
-            if (appDefinition.getImport() != null) {
+            if (isImportsNotEmpty(appDefinition)) {
                 imports.addAll(appDefinition.getImport());
             }
         }
         return imports;
+    }
+
+    private boolean isImportsNotEmpty(AppDefinitionType appDefinition) {
+        return appDefinition.getImport() != null && !appDefinition.getImport().isEmpty();
     }
 
     /**

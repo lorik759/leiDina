@@ -19,19 +19,23 @@ public class LeituraDinamicaParser {
 
 
     public List<String> parse() {
-        return this.agrupar(getSeparadoPorPalavraComQuebraDeLinha());
+        return this.agrupar(getTextoSeparadoPorPalavraComQuebraDeLinha());
     }
 
     private List<String> agrupar(List<String> everyWord) {
         int inicio = 0;
         List<String> groupWords = new ArrayList<>();
-        int numeroDeBlocosParaDividir = (everyWord.size() + numeroDePalavrasParaAgrupar - 1) / numeroDePalavrasParaAgrupar;
+        int numeroDeBlocosParaDividir = getNumeroDeBlocosParaDividirTexto(everyWord);
         for (int i = 0; i < numeroDeBlocosParaDividir; i++) {
             int fim = inicio + numeroDePalavrasParaAgrupar;
             groupWords.add(getPalavarsAgrupadasAte(inicio, fim, everyWord));
             inicio = fim;
         }
         return groupWords;
+    }
+
+    private int getNumeroDeBlocosParaDividirTexto(List<String> everyWord) {
+        return (everyWord.size() + numeroDePalavrasParaAgrupar - 1) / numeroDePalavrasParaAgrupar;
     }
 
     private String getPalavarsAgrupadasAte(int inicio, int fim, List<String> everyWord) {
@@ -44,11 +48,10 @@ public class LeituraDinamicaParser {
         return stringBuilder.toString();
     }
 
-    private List<String> getSeparadoPorPalavraComQuebraDeLinha() {
+    private List<String> getTextoSeparadoPorPalavraComQuebraDeLinha() {
         List<String> strings = new ArrayList<>();
         StringBuilder stringBuilder = new StringBuilder();
-        char[] chars = textoNaoFormatado.toCharArray();
-        for (char proximaLetra : chars) {
+        for (char proximaLetra : textoNaoFormatado.toCharArray()) {
             if (proximaLetra == ' ') {
                 strings.add(stringBuilder.append(" ").toString());
                 stringBuilder = new StringBuilder();

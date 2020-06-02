@@ -9,18 +9,16 @@ import main.java.leiDina.tec.core.xml.model.BeanType;
 /**
  * @author vitor.alves
  */
-public class BaseBeanDefinitionFactory implements BeanDefinitionFactory<BaseBeanDefinition, BeanType> {
+public class BaseBeanDefinitionFactory {
 
     private final PropertyValueFactory propertyValueFactory = new PropertyValueFactory();
 
-    @Override
     public BaseBeanDefinition createFor(BeanType info, String location) throws BeanException {
         BaseBeanDefinition beanDefinition = this.createFor(info);
         beanDefinition.setLocationName(location);
         return beanDefinition;
     }
 
-    @Override
     public BaseBeanDefinition createFor(BeanType info) throws BeanException {
         final BaseBeanDefinition baseBeanDefinition = new BaseBeanDefinition(info.getId(), getBeanClass(info.getClazz()));
         if (StringUtils.isNotEmpty(info.getParent())) {

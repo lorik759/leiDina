@@ -1,7 +1,6 @@
 package main.java.leiDina.tec.persister.dao;
 
 import java.io.Serializable;
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import javax.annotation.Resource;
 import main.java.leiDina.tec.persister.exception.EntityCreationException;
@@ -32,7 +31,7 @@ public abstract class BaseDAO<T extends Persistable> implements DAO<T> {
 
     @Override
     public T findById(Serializable id) throws EntityNotFoundException {
-        return persister.get(id, getPersistableType());
+        return persister.findBy(id, getPersistableType());
     }
 
     @Override
