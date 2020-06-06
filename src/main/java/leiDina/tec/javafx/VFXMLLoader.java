@@ -9,6 +9,8 @@ import main.java.leiDina.tec.javafx.scene.Scenes;
 import main.java.leiDina.tec.javafx.service.ModelSceneWire;
 
 /**
+ * The base loader of a {@link Scenes}, that is abel to associate wire a controller model toa java fx scene.
+ *
  * @author vitor.alves
  */
 public class VFXMLLoader {

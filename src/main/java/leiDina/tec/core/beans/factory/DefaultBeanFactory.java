@@ -7,8 +7,8 @@ import java.util.Map;
 import main.java.leiDina.tec.core.beans.exception.BeanCreationException;
 import main.java.leiDina.tec.core.beans.exception.BeanException;
 import main.java.leiDina.tec.core.beans.model.BaseBeanDefinition;
-import main.java.leiDina.tec.core.beans.model.DefaultBeanDefinitionHolder;
 import main.java.leiDina.tec.core.beans.model.BeanDefinition;
+import main.java.leiDina.tec.core.beans.model.DefaultBeanDefinitionHolder;
 import main.java.leiDina.tec.core.beans.model.PropertyValue;
 import main.java.leiDina.tec.core.beans.service.BeanPopulateService;
 import main.java.leiDina.tec.core.beans.service.BeanWire;
@@ -18,11 +18,14 @@ import main.java.leiDina.tec.core.beans.service.PropertyValueResolver;
 import main.java.leiDina.tec.core.messages.BaseSystemMessages;
 
 /**
+ * The default implementation of the {@link BootableBeanFactory}. This bean factory creates eagerly singleton instantiations for all {@link
+ * BeanDefinition} register tho this object.
+ *
  * @author vitor.alves
  */
 public class DefaultBeanFactory extends DefaultBeanDefinitionHolder implements BootableBeanFactory {
 
-    private static  final String BEAN_WIRE = "beanWire";
+    private static final String BEAN_WIRE = "beanWire";
 
     private final Map<String, Object> beansByName = new HashMap<>();
 
@@ -30,20 +33,47 @@ public class DefaultBeanFactory extends DefaultBeanDefinitionHolder implements B
 
     private final List<String> beanNamesBeingResolved = new ArrayList<>();
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public <T> T getBean(String beanName) throws BeanException {
+        return (T) getOrCreateBean(beanName);
+    }
+
+    /**
+     * gets or creates a bean instance for the specified bean name.
+     *
+     * @param beanName the name of the required bean.
+     * @return the instance of the bean.
+     */
+    private Object getOrCreateBean(String beanName) {
         Object bean = this.getCachedBean(beanName);
         if (bean == null) {
             bean = this.createInstanceFor(beanName);
             this.addBeanToCache(beanName, bean);
         }
-        return (T) bean;
+        return bean;
     }
 
+    /**
+     * Adds the bean instance to this factory cache.
+     *
+     * @param beanName the name of the bean.
+     * @param bean the instance of the bean.
+     */
     private void addBeanToCache(String beanName, Object bean) {
         this.beansByName.put(beanName, bean);
     }
 
+    /**
+     * Creates the instance of the specified bean name, based on a {@link BeanDefinition} with the same name. To create the instance, it must first
+     * check if the bean is already being resolved, if not the name of the bean is added to the list of beans being resolved, and an instance is
+     * created for it.
+     *
+     * @param beanName the name of the bean.
+     * @return the instance of the bean with the specified name.
+     */
     private Object createInstanceFor(String beanName) throws BeanException {
         this.checkIfAlreadyBeingResolved(beanName);
         this.addBeanToBeingResolved(beanName);
@@ -73,6 +103,12 @@ public class DefaultBeanFactory extends DefaultBeanDefinitionHolder implements B
         }
     }
 
+    /**
+     * Populates the bean instance with its dependencies mapped in the {@link BeanDefinition}.
+     *
+     * @param beanDefinition the {@link BeanDefinition} with all the dependencies of the bean instance.
+     * @param beanInstance the instance of the mapped bean in the specified {@link BeanDefinition}.
+     */
     private void populateBean(BeanDefinition beanDefinition, Object beanInstance) {
         this.doPopulateBean(beanDefinition, beanInstance, this.getResolvedPropertyValues(beanDefinition));
     }
@@ -87,6 +123,12 @@ public class DefaultBeanFactory extends DefaultBeanDefinitionHolder implements B
         }
     }
 
+    /**
+     * Gets the resolved values of the {@link PropertyValue} from the {@link BeanDefinition}.
+     *
+     * @param beanDefinition the {@link BeanDefinition} with the unresolved {@link PropertyValue}.
+     * @return a list of the resolved {@link PropertyValue} from within the {@link BeanDefinition}.
+     */
     private List<PropertyValue> getResolvedPropertyValues(BeanDefinition beanDefinition) {
         final List<PropertyValue> resolvedPropertyValues = new ArrayList<>();
         beanDefinition.getPropertyValues().forEach(propertyValue -> resolvedPropertyValues.add(this.getResolvedValue(propertyValue)));
@@ -110,16 +152,25 @@ public class DefaultBeanFactory extends DefaultBeanDefinitionHolder implements B
         return (T) this.beansByName.get(beanName);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public <T> T getBean(Class<?> type) {
         return this.getBean(this.getBeanName(type));
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean beanExists(String name) {
         return beansByName.get(name) != null;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public <T> Map<String, T> getBeansOfTypes(Class<T> type) {
         Map<String, T> candidateBeans = this.getCachedBeans(type);
@@ -130,6 +181,12 @@ public class DefaultBeanFactory extends DefaultBeanDefinitionHolder implements B
         return candidateBeans;
     }
 
+    /**
+     * finds all beans of the specifide type and creates a map the bean insentience by the bean name.
+     *
+     * @param type the type of the specified beans.
+     * @return a map of the bean instance by bean name.
+     */
     private <T> Map<String, T> findBeansFor(Class<T> type) {
         final Map<String, T> candidateBeans = new HashMap<>();
         this.findCandidatesFor(type).forEach(candidateName -> candidateBeans.put(candidateName, this.getBean(candidateName)));
@@ -140,6 +197,12 @@ public class DefaultBeanFactory extends DefaultBeanDefinitionHolder implements B
         this.beansByType.put(type, beans);
     }
 
+    /**
+     * Finds all bean names that are of the specified type.
+     *
+     * @param type the type of the searched beans.
+     * @return a list of all bean names that are of the specified type.
+     */
     private <T> List<String> findCandidatesFor(Class<T> type) {
         List<String> possibleBeanNamesCandidates = new ArrayList<>();
         for (String beanName : this.getAllBeanNames()) {
@@ -155,17 +218,26 @@ public class DefaultBeanFactory extends DefaultBeanDefinitionHolder implements B
         return (Map<String, T>) this.beansByType.get(type);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Class<?> getBeanType(String name) throws BeanException {
         return this.getBeanDefinitionForName(name).getBeanClass();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void instantiateSingletons() {
         this.instantiateFactoryBeans();
         this.instantiateMappedBeans();
     }
 
+    /**
+     * Instantiate all beans that where mapped by the {@link BeanDefinition} and registered to this bean factory.
+     */
     private void instantiateMappedBeans() {
         for (String beanName : this.getAllBeanNames()) {
             if (!this.beanExists(beanName)) {
@@ -174,6 +246,9 @@ public class DefaultBeanFactory extends DefaultBeanDefinitionHolder implements B
         }
     }
 
+    /**
+     * Instantiates factory beans. This ar bean that a provided by default, by the bean factory.
+     */
     private void instantiateFactoryBeans() {
         this.createBeanWire();
     }

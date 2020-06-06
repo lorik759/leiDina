@@ -43,11 +43,19 @@ public class DefaultApplicationProperty implements ApplicationProperty {
         this.resource = resource;
     }
 
+    /**
+     * Registers the beans from the specified xml file to the {@link BeanDefinitionHolder}.
+     *
+     * @param beanDefinitionHolder the {@link BeanDefinitionHolder} in which the beans of the xml file will be registered to.
+     */
     @Override
     public void registerBeansTo(final BeanDefinitionHolder beanDefinitionHolder) {
         this.getBeanDefinitionFromResource().forEach(beanDefinitionHolder::addBeanDefinition);
     }
 
+    /**
+     * @return a set of {@link BeanDefinition} from the xml file.
+     */
     private Set<BeanDefinition> getBeanDefinitionFromResource() {
         return new BeanResourceLoader(resource).load();
     }

@@ -24,16 +24,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Corregindo LeituraDinamicaParser">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Removendo classes nao utilizadas e melhorando a escrita de algumas classes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/biz/service/LeituraDinamicaParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/biz/service/LeituraDinamicaParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/factory/BaseBeanDefinitionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/factory/BaseBeanDefinitionFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/factory/BeanDefinitionFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/service/BeanResourceLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/service/BeanResourceLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/DefaultConfigurableApplicationEnvironment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/DefaultConfigurableApplicationEnvironment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/persister/Persister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/persister/Persister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/persister/TextBasePersister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/persister/TextBasePersister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/persister/dao/BaseDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/persister/dao/BaseDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/ApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/ApplicationContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/DefaultApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/DefaultApplicationContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/factory/DefaultBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/factory/DefaultBeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/ApplicationProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/ApplicationProperty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/DefaultApplicationProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/env/DefaultApplicationProperty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/xml/service/JAXBXmlParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/xml/service/JAXBXmlParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/VFXMLLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/javafx/VFXMLLoader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +148,7 @@
     <property name="extract.method.default.visibility" value="private" />
     <property name="last.edited.regexp" value="&#10;" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/java" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../T3RV" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -512,7 +511,9 @@
       <workItem from="1590855534045" duration="8321000" />
       <workItem from="1590874520497" duration="7249000" />
       <workItem from="1590964105304" duration="761000" />
-      <workItem from="1591108197348" duration="1083000" />
+      <workItem from="1591108197348" duration="3510000" />
+      <workItem from="1591283609137" duration="8148000" />
+      <workItem from="1591474172041" duration="1899000" />
     </task>
     <task id="LOCAL-00001" summary="Base implantation of a ControllerFactory and a simple exception creator.">
       <created>1583601470898</created>
@@ -829,7 +830,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590962691331</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Removendo classes nao utilizadas e melhorando a escrita de algumas classes">
+      <created>1591109533999</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1591109533999</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -850,7 +858,6 @@
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-    <MESSAGE value="Method getAll and unit test implemented. Plus, java doc!" />
     <MESSAGE value="Refactoring EntityPersisterController." />
     <MESSAGE value="Refactoring NodeAssociation and adding java doc. Cleaning code and java doc from different classes." />
     <MESSAGE value="Logic for dynamic reading implemented." />
@@ -875,7 +882,8 @@
     <MESSAGE value="Vinject - Adding javadoc and creating service for scenes." />
     <MESSAGE value="Vinject - Adding javadoc." />
     <MESSAGE value="Corregindo LeituraDinamicaParser" />
-    <option name="LAST_COMMIT_MESSAGE" value="Corregindo LeituraDinamicaParser" />
+    <MESSAGE value="Removendo classes nao utilizadas e melhorando a escrita de algumas classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removendo classes nao utilizadas e melhorando a escrita de algumas classes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="325" y="181" width="800" height="677" key="#Inspections" timestamp="1587837120370">
@@ -922,10 +930,10 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="538" y="178" width="824" height="684" key="#com.intellij.openapi.projectRoots.ui.ProjectJdksEditor/0.27.1920.988@0.27.1920.988" timestamp="1585066931253" />
-    <state x="643" y="257" width="624" height="544" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1586477185310">
+    <state x="643" y="257" width="624" height="544" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1591474013181">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="643" y="257" width="624" height="544" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.27.1920.988@0.27.1920.988" timestamp="1586477185310" />
+    <state x="643" y="257" width="624" height="544" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.27.1920.988@0.27.1920.988" timestamp="1591474013181" />
     <state x="546" y="438" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1587915799787">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
@@ -953,10 +961,10 @@
     </state>
     <state x="110" y="103" width="903" height="765" key="#xdebugger.evaluate/0.27.1920.988@0.27.1920.988" timestamp="1590962132573" />
     <state x="840" y="144" width="922" height="765" key="#xdebugger.evaluate/0.27.3280.988@0.27.3280.988" timestamp="1584314102380" />
-    <state x="225" y="29" width="989" height="982" key="CommitChangelistDialog2" timestamp="1590962691285">
+    <state x="225" y="29" width="989" height="982" key="CommitChangelistDialog2" timestamp="1591109533828">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="225" y="29" width="989" height="982" key="CommitChangelistDialog2/0.27.1920.988@0.27.1920.988" timestamp="1590962691285" />
+    <state x="225" y="29" width="989" height="982" key="CommitChangelistDialog2/0.27.1920.988@0.27.1920.988" timestamp="1591109533828" />
     <state x="385" y="29" width="1535" height="982" key="CommitChangelistDialog2/0.27.3280.988@0.27.3280.988" timestamp="1584315935198" />
     <state x="879" y="29" width="792" height="982" key="CommitChangelistDialog2/2560.0.1920.1080/0.27.2560.988@0.27.2560.988" timestamp="1583619615635" />
     <state x="354" y="78" width="1104" height="820" maximized="true" key="DiffContextDialog" timestamp="1590962669546">
@@ -964,10 +972,10 @@
     </state>
     <state x="354" y="78" width="1104" height="820" maximized="true" key="DiffContextDialog/0.27.1920.988@0.27.1920.988" timestamp="1590962669546" />
     <state x="0" y="110" width="1920" height="820" key="DiffContextDialog/0.27.3280.988@0.27.3280.988" timestamp="1584315916845" />
-    <state x="738" y="263" width="495" height="513" key="FileChooserDialogImpl" timestamp="1590963032870">
+    <state x="738" y="263" width="495" height="513" key="FileChooserDialogImpl" timestamp="1591111777845">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="738" y="263" width="495" height="513" key="FileChooserDialogImpl/0.27.1920.988@0.27.1920.988" timestamp="1590963032870" />
+    <state x="738" y="263" width="495" height="513" key="FileChooserDialogImpl/0.27.1920.988@0.27.1920.988" timestamp="1591111777845" />
     <state width="1874" height="247" key="GridCell.Tab.0.bottom" timestamp="1590963035489">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
@@ -1033,10 +1041,10 @@
     <state x="757" y="254" width="633" height="540" key="StructurePopup/0.27.1920.988@0.27.1920.988" timestamp="1590940533738" />
     <state x="1009" y="254" width="633" height="540" key="StructurePopup/0.27.2560.988/2560.0.1920.1080@0.27.2560.988" timestamp="1583694649173" />
     <state x="1293" y="254" width="1082" height="540" key="StructurePopup/0.27.3280.988@0.27.3280.988" timestamp="1584302674739" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1591109187995">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1591472402345">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.27.1920.988@0.27.1920.988" timestamp="1591109187995" />
+    <state width="498" height="446" key="SwitcherDM/0.27.1920.988@0.27.1920.988" timestamp="1591472402345" />
     <state width="498" height="446" key="SwitcherDM/0.27.2560.988/2560.0.1920.1080@0.27.2560.988" timestamp="1583694940835" />
     <state width="851" height="446" key="SwitcherDM/0.27.3280.988@0.27.3280.988" timestamp="1584314136899" />
     <state width="498" height="446" key="SwitcherDM/2560.0.1920.1080/0.27.2560.988@0.27.2560.988" timestamp="1583619418412" />
@@ -1087,10 +1095,10 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="100" y="125" width="1720" height="790" key="dock-window-1/0.27.1920.988@0.27.1920.988" timestamp="1587853710321" />
-    <state x="968" y="254" width="568" height="539" key="extract.method.dialog" timestamp="1591109131395">
+    <state x="968" y="254" width="568" height="539" key="extract.method.dialog" timestamp="1591461697813">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="968" y="254" width="568" height="539" key="extract.method.dialog/0.27.1920.988@0.27.1920.988" timestamp="1591109131395" />
+    <state x="968" y="254" width="568" height="539" key="extract.method.dialog/0.27.1920.988@0.27.1920.988" timestamp="1591461697813" />
     <state x="623" y="250" width="664" height="539" key="extract.method.dialog/0.27.3280.988@0.27.3280.988" timestamp="1584310892634" />
     <state x="596" y="104" width="728" height="831" key="find.popup" timestamp="1588605263613">
       <screen x="0" y="27" width="1920" height="988" />
@@ -1105,10 +1113,10 @@
     </state>
     <state x="755" y="152" width="456" height="736" key="git4idea.branch.GitSmartOperationDialog/0.27.1920.988@0.27.1920.988" timestamp="1587998767288" />
     <state x="1006" y="152" width="537" height="736" key="git4idea.branch.GitSmartOperationDialog/2560.0.1920.1080/0.27.2560.988@0.27.2560.988" timestamp="1583620619907" />
-    <state x="269" y="220" width="1372" height="600" key="new project wizard" timestamp="1584647902067">
+    <state x="269" y="220" width="1372" height="600" key="new project wizard" timestamp="1591369173314">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="269" y="220" width="1372" height="600" key="new project wizard/0.27.1920.988@0.27.1920.988" timestamp="1584647902067" />
+    <state x="269" y="220" width="1372" height="600" key="new project wizard/0.27.1920.988@0.27.1920.988" timestamp="1591369173314" />
     <state x="413" y="130" width="495" height="779" key="refactoring.ChangeSignatureDialog" timestamp="1586536425146">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
