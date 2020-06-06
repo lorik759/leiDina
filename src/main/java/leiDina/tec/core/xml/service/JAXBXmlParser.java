@@ -9,7 +9,7 @@ import javax.xml.bind.Unmarshaller;
 import main.java.leiDina.tec.core.utils.ClassUtils;
 
 /**
- * A simple xml parser that uses {@link JAXBContext} to convert the cml to a java object.
+ * A simple xml parser that uses {@link JAXBContext} to convert a xml to a java object.
  *
  * @author vitor.alves
  */
