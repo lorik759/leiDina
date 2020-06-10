@@ -15,7 +15,7 @@ public class ObjectInstantiationService {
         this.beanDefinition = beanDefinition;
     }
 
-    public Object createInstance() throws ReflectiveOperationException {
+    public Object newInstance() throws ReflectiveOperationException {
         return ReflectionUtils.newInstance(beanDefinition.getBeanClass());
     }
 }

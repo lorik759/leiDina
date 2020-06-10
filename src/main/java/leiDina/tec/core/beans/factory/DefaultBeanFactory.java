@@ -50,7 +50,7 @@ public class DefaultBeanFactory extends DefaultBeanDefinitionHolder implements B
     private Object getOrCreateBean(String beanName) {
         Object bean = this.getCachedBean(beanName);
         if (bean == null) {
-            bean = this.createInstanceFor(beanName);
+            bean = this.getNewBeanInstance(beanName);
             this.addBeanToCache(beanName, bean);
         }
         return bean;
@@ -74,8 +74,15 @@ public class DefaultBeanFactory extends DefaultBeanDefinitionHolder implements B
      * @param beanName the name of the bean.
      * @return the instance of the bean with the specified name.
      */
-    private Object createInstanceFor(String beanName) throws BeanException {
-        this.checkIfAlreadyBeingResolved(beanName);
+    private Object getNewBeanInstance(String beanName) throws BeanException {
+        if (this.isBeanAlreadyBeingResolved(beanName)) {
+            throw new BeanCreationException(BaseSystemMessages.CIRCULAR_BEAN_DEPENDENCY.create(beanName));
+        } else {
+            return this.createInstanceFor(beanName);
+        }
+    }
+
+    private Object createInstanceFor(String beanName) {
         this.addBeanToBeingResolved(beanName);
         Object beanInstance = this.doCreateInstanceFor(beanName);
         this.removeBeanNameFromBeingResolved(beanName);
@@ -88,7 +95,7 @@ public class DefaultBeanFactory extends DefaultBeanDefinitionHolder implements B
 
     private Object doCreateInstanceFor(String beanName) {
         BeanDefinition beanDefinition = this.getBeanDefinitionForName(beanName);
-        Object beanInstance = this.createInstanceFor(beanDefinition);
+        Object beanInstance = this.getNewBeanInstance(beanDefinition);
         this.populateBean(beanDefinition, beanInstance);
         return beanInstance;
     }
@@ -97,10 +104,8 @@ public class DefaultBeanFactory extends DefaultBeanDefinitionHolder implements B
         this.beanNamesBeingResolved.remove(beanName);
     }
 
-    private void checkIfAlreadyBeingResolved(String beanName) {
-        if (this.beanNamesBeingResolved.contains(beanName)) {
-            throw new BeanCreationException(BaseSystemMessages.CIRCULAR_BEAN_DEPENDENCY.create(beanName));
-        }
+    private boolean isBeanAlreadyBeingResolved(String beanName) {
+        return this.beanNamesBeingResolved.contains(beanName);
     }
 
     /**
@@ -139,9 +144,9 @@ public class DefaultBeanFactory extends DefaultBeanDefinitionHolder implements B
         return new PropertyValueResolver(this, propertyValue).resolve();
     }
 
-    private Object createInstanceFor(BeanDefinition beanDefinition) throws BeanCreationException {
+    private Object getNewBeanInstance(BeanDefinition beanDefinition) throws BeanCreationException {
         try {
-            return new ObjectInstantiationService(beanDefinition).createInstance();
+            return new ObjectInstantiationService(beanDefinition).newInstance();
         } catch (ReflectiveOperationException e) {
             throw new BeanCreationException(BaseSystemMessages.FAILED_TO_INSTANTIATE_BEAN
                 .create(beanDefinition.getName(), beanDefinition.getBeanClass(), beanDefinition.getLocationName()));
