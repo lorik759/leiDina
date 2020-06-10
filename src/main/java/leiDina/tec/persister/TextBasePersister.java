@@ -4,12 +4,11 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.List;
-import main.java.leiDina.tec.persister.annotations.Entity;
+import main.java.leiDina.tec.core.utils.StringUtils;
+import main.java.leiDina.tec.persister.annotations.Table;
 import main.java.leiDina.tec.persister.exception.EntityNotFoundException;
 import main.java.leiDina.tec.persister.exception.PersistenceException;
 import main.java.leiDina.tec.persister.io.TextFileEntityActor;
-import main.java.leiDina.tec.core.messages.BaseSystemMessages;
-import main.java.leiDina.tec.core.utils.StringUtils;
 import main.java.leiDina.tec.persister.messages.PersisterSystemMessages;
 
 /**
@@ -73,11 +72,11 @@ public class TextBasePersister implements Persister {
     }
 
     private TextFileEntityActor getActor(Class<? extends Persistable> aClass) {
-        Entity entityAnnotation = aClass.getAnnotation(Entity.class);
-        if (entityAnnotation == null) {
+        Table tableAnnotation = aClass.getAnnotation(Table.class);
+        if (tableAnnotation == null) {
             throw new EntityNotFoundException(PersisterSystemMessages.OBJECT_NOT_ENTITY.create(aClass));
         }
-        String name = entityAnnotation.name();
+        String name = tableAnnotation.name();
         if (StringUtils.isEmpty(name)) {
             name = aClass.getSimpleName();
         }
