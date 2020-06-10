@@ -1,13 +1,13 @@
 package main.java.leiDina.biz.domain;
 
+import main.java.leiDina.tec.persister.Persistable;
 import main.java.leiDina.tec.persister.annotations.Column;
 import main.java.leiDina.tec.persister.annotations.Table;
-import main.java.leiDina.tec.persister.Persistable;
 
 /**
  * @author vitor.alves
  */
-@Table
+@Table(name = "Configuracao")
 public class Configuracao implements Persistable {
 
     private Long id;
