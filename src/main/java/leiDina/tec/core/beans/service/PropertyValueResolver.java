@@ -10,6 +10,8 @@ import main.java.leiDina.tec.core.beans.model.PropertyValue;
 
 
 /**
+ * This objects knows how to resolve the value of a {@link PropertyValue}, and convert it to a usable value.
+ *
  * @author vitor.alves
  */
 public class PropertyValueResolver {
@@ -23,11 +25,20 @@ public class PropertyValueResolver {
         this.propertyValue = propertyValue;
     }
 
+    /**
+     * Resolves the {@link PropertyValue} and creates a new PropertyValue with the resolved value.
+     *
+     * @return a {@link PropertyValue} with the resolved value.
+     */
     public PropertyValue resolve() {
         Object resolvedValue = this.resolveValueIfNecessary(propertyValue.getValue());
         return new PropertyValue(propertyValue.getName(), resolvedValue);
     }
 
+    /**
+     * Checks to see if the value is of type {@link MapPropertyValue} or {@link BeanRefPropertyValue}, and resolves the value. If not, returns teh
+     * default value.
+     */
     private Object resolveValueIfNecessary(Object value) {
         if (value instanceof MapPropertyValue) {
             return this.resolveMapValue((MapPropertyValue) value);
@@ -38,10 +49,16 @@ public class PropertyValueResolver {
         return value;
     }
 
+    /**
+     * Resolves a {@link BeanRefPropertyValue}.
+     */
     private Object resolveBeanReferenceType(BeanRefPropertyValue value) {
         return this.beanFactory.getBean(value.getBeanName());
     }
 
+    /**
+     * Resolves a {@link MapPropertyValue}.
+     */
     private Map resolveMapValue(MapPropertyValue value) {
         Map map = new HashMap();
         for (Entry<?, ?> entry : value.getMapValue().entrySet()) {
