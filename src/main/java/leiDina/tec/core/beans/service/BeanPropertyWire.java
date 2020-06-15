@@ -3,12 +3,13 @@ package main.java.leiDina.tec.core.beans.service;
 import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 import javax.annotation.Resource;
+import main.java.leiDina.tec.core.beans.annotations.Injected;
 import main.java.leiDina.tec.core.beans.exception.BeanWireException;
 import main.java.leiDina.tec.core.beans.factory.BeanFactory;
 import main.java.leiDina.tec.core.messages.BaseSystemMessages;
 import main.java.leiDina.tec.core.utils.ReflectionUtils;
+import main.java.leiDina.tec.core.utils.StringUtils;
 
 /**
  * @author vitor.alves
@@ -28,13 +29,13 @@ public class BeanPropertyWire<T> {
     }
 
     public void wire() {
-        Map<Field, String> fields = getAllFieldsToWire();
+        Map<Field, Object> fields = getAllFieldsToWire();
         this.wire(fields);
     }
 
-    private void wire(Map<Field, String> fields) {
+    private void wire(Map<Field, Object> fields) {
         for (Field field : fields.keySet()) {
-            this.setValueTo(field, beanFactory.getBean(fields.get(field)));
+            this.setValueTo(field, fields.get(field));
         }
     }
 
@@ -46,26 +47,38 @@ public class BeanPropertyWire<T> {
         }
     }
 
-    private Map<Field, String> getAllFieldsToWire() {
-        Map<Field, String> fields = new HashMap<>();
+    private Map<Field, Object> getAllFieldsToWire() {
+        Map<Field, Object> fields = new HashMap<>();
         this.addFieldsToWireFor(this.beanType, fields);
         return fields;
     }
 
-    private void addFieldsToWireFor(Class<?> beanType, Map<Field, String> fields) {
+    private void addFieldsToWireFor(Class<?> beanType, Map<Field, Object> fields) {
         if (beanType != null) {
             fields.putAll(this.filterForAnnotatedFields(beanType.getDeclaredFields()));
             this.addFieldsToWireFor(beanType.getSuperclass(), fields);
         }
     }
 
-    private Map<Field, String> filterForAnnotatedFields(Field[] declaredFields) {
-        Map<Field, String> fields = new HashMap<>();
+    private Map<Field, Object> filterForAnnotatedFields(Field[] declaredFields) {
+        Map<Field, Object> fields = new HashMap<>();
         for (Field declaredField : declaredFields) {
-            if (declaredField.isAnnotationPresent(Resource.class)) {
-                fields.put(declaredField, declaredField.getDeclaredAnnotation(Resource.class).name());
+            if (isFieldAnnotated(declaredField)) {
+                fields.put(declaredField, getFieldValue(declaredField));
             }
         }
         return fields;
+    }
+
+    private Object getFieldValue(Field declaredField) {
+        Resource resource = declaredField.getDeclaredAnnotation(Resource.class);
+        if (resource != null && StringUtils.isNotEmpty(resource.name())) {
+            return beanFactory.getBean(resource.name());
+        }
+        return beanFactory.getBean(declaredField.getType());
+    }
+
+    private boolean isFieldAnnotated(Field declaredField) {
+        return declaredField.isAnnotationPresent(Resource.class) || declaredField.isAnnotationPresent(Injected.class);
     }
 }

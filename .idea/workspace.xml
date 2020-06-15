@@ -24,12 +24,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Refactoring for better method names">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Javadoc">
+      <change afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/annotations/Injected.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/biz/service/LeituraDinamicaParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/biz/service/LeituraDinamicaParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/service/BeanWireImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/service/BeanWireImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/service/ObjectInstantiationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/service/ObjectInstantiationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/service/PropertyValueResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/service/PropertyValueResolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/biz/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/biz/controllers/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/biz/controllers/configuration/ConfiguracaoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/biz/controllers/configuration/ConfiguracaoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/biz/controllers/leitura/LeituraController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/biz/controllers/leitura/LeituraController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/factory/DefaultBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/factory/DefaultBeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/service/BeanPropertyWire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leiDina/tec/core/beans/service/BeanPropertyWire.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,8 +89,8 @@
         <option value="Tag Library Descriptor" />
         <option value="Enum" />
         <option value="Interface" />
-        <option value="AnnotationType" />
         <option value="Class" />
+        <option value="AnnotationType" />
       </list>
     </option>
   </component>
@@ -154,13 +156,6 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="main.java.leiDina.biz.service" />
-      <recent name="main.java.leiDina.tec.core.beans.annotation" />
-      <recent name="main.java.leiDina.tec.vinjection.model" />
-      <recent name="main.java.leiDina.tec.vinjection.service" />
-      <recent name="main.java.leiDina.tec.javafx.annotation" />
-    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="main.java.leiDina.tec.core.persist" />
     </key>
@@ -174,6 +169,11 @@
       <recent name="main.java.leiDina.tec.vinjection" />
       <recent name="main.java.leiDina.tec.persister.model" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resource" />
+      <recent name="$PROJECT_DIR$/src/main/java/leiDina/view" />
+      <recent name="$PROJECT_DIR$/src/main/java/leiDina/tec" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resource" />
       <recent name="$PROJECT_DIR$/src/main/java/leiDina/tec/core" />
@@ -185,10 +185,12 @@
       <recent name="test.java.leiDina.tec.javafx.factory" />
       <recent name="main.java.leiDina.tec.javafx" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resource" />
-      <recent name="$PROJECT_DIR$/src/main/java/leiDina/view" />
-      <recent name="$PROJECT_DIR$/src/main/java/leiDina/tec" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="main.java.leiDina.tec.core.beans.annotations" />
+      <recent name="main.java.leiDina.biz.service" />
+      <recent name="main.java.leiDina.tec.core.beans.annotation" />
+      <recent name="main.java.leiDina.tec.vinjection.model" />
+      <recent name="main.java.leiDina.tec.vinjection.service" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -516,14 +518,11 @@
       <workItem from="1591715888546" duration="780000" />
       <workItem from="1591745168593" duration="6281000" />
       <workItem from="1591809652547" duration="3500000" />
-      <workItem from="1591886356013" duration="5590000" />
-    </task>
-    <task id="LOCAL-00003" summary="Refactoring and redesigning application structure.">
-      <created>1584315935719</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1584315935719</updated>
+      <workItem from="1591886356013" duration="7079000" />
+      <workItem from="1592088377737" duration="191000" />
+      <workItem from="1592163988956" duration="7000" />
+      <workItem from="1592224413371" duration="3531000" />
+      <workItem from="1592247796462" duration="1003000" />
     </task>
     <task id="LOCAL-00004" summary="Adding java doc and restructuring the base idea of the application.">
       <created>1584896410407</created>
@@ -861,7 +860,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591830707846</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Javadoc">
+      <created>1591997765951</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1591997765952</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -902,12 +908,12 @@
     <MESSAGE value="Vinject - Adding javadoc." />
     <MESSAGE value="Corregindo LeituraDinamicaParser" />
     <MESSAGE value="Removendo classes nao utilizadas e melhorando a escrita de algumas classes" />
-    <MESSAGE value="Javadoc" />
     <MESSAGE value="Correcting grammar" />
     <MESSAGE value="Renaming classes" />
     <MESSAGE value="Adding table name" />
     <MESSAGE value="Refactoring for better method names" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring for better method names" />
+    <MESSAGE value="Javadoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Javadoc" />
   </component>
   <component name="WindowStateProjectService">
     <state x="325" y="181" width="800" height="677" key="#Inspections" timestamp="1587837120370">
@@ -975,20 +981,20 @@
     </state>
     <state x="377" y="27" width="636" height="988" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1920.988@0.27.1920.988" timestamp="1591830633698" />
     <state x="644" y="27" width="622" height="988" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.3280.988@0.27.3280.988" timestamp="1584312596543" />
-    <state x="693" y="269" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590532417248">
+    <state x="693" y="269" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1592225248843">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="693" y="269" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1920.988@0.27.1920.988" timestamp="1590532417248" />
+    <state x="693" y="269" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1920.988@0.27.1920.988" timestamp="1592225248843" />
     <state x="1024" y="269" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.3280.988@0.27.3280.988" timestamp="1584313473856" />
     <state x="110" y="103" width="903" height="765" key="#xdebugger.evaluate" timestamp="1590962132573">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="110" y="103" width="903" height="765" key="#xdebugger.evaluate/0.27.1920.988@0.27.1920.988" timestamp="1590962132573" />
     <state x="840" y="144" width="922" height="765" key="#xdebugger.evaluate/0.27.3280.988@0.27.3280.988" timestamp="1584314102380" />
-    <state x="225" y="29" width="989" height="982" key="CommitChangelistDialog2" timestamp="1591830707345">
+    <state x="225" y="29" width="989" height="982" key="CommitChangelistDialog2" timestamp="1592248501395">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="225" y="29" width="989" height="982" key="CommitChangelistDialog2/0.27.1920.988@0.27.1920.988" timestamp="1591830707345" />
+    <state x="225" y="29" width="989" height="982" key="CommitChangelistDialog2/0.27.1920.988@0.27.1920.988" timestamp="1592248501395" />
     <state x="385" y="29" width="1535" height="982" key="CommitChangelistDialog2/0.27.3280.988@0.27.3280.988" timestamp="1584315935198" />
     <state x="879" y="29" width="792" height="982" key="CommitChangelistDialog2/2560.0.1920.1080/0.27.2560.988@0.27.2560.988" timestamp="1583619615635" />
     <state x="354" y="78" width="1104" height="820" maximized="true" key="DiffContextDialog" timestamp="1591830681382">
@@ -1000,45 +1006,45 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="738" y="263" width="495" height="513" key="FileChooserDialogImpl/0.27.1920.988@0.27.1920.988" timestamp="1591996457931" />
-    <state width="1874" height="247" key="GridCell.Tab.0.bottom" timestamp="1591996374910">
+    <state width="1874" height="247" key="GridCell.Tab.0.bottom" timestamp="1592227287852">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="247" key="GridCell.Tab.0.bottom/0.27.1920.988@0.27.1920.988" timestamp="1591996374910" />
+    <state width="1874" height="247" key="GridCell.Tab.0.bottom/0.27.1920.988@0.27.1920.988" timestamp="1592227287852" />
     <state width="1874" height="292" key="GridCell.Tab.0.bottom/0.27.3280.988@0.27.3280.988" timestamp="1584316431086" />
-    <state width="1874" height="247" key="GridCell.Tab.0.center" timestamp="1591996374908">
+    <state width="1874" height="247" key="GridCell.Tab.0.center" timestamp="1592227287851">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="247" key="GridCell.Tab.0.center/0.27.1920.988@0.27.1920.988" timestamp="1591996374908" />
+    <state width="1874" height="247" key="GridCell.Tab.0.center/0.27.1920.988@0.27.1920.988" timestamp="1592227287851" />
     <state width="1874" height="292" key="GridCell.Tab.0.center/0.27.3280.988@0.27.3280.988" timestamp="1584316431083" />
-    <state width="1874" height="247" key="GridCell.Tab.0.left" timestamp="1591996374907">
+    <state width="1874" height="247" key="GridCell.Tab.0.left" timestamp="1592227287850">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="247" key="GridCell.Tab.0.left/0.27.1920.988@0.27.1920.988" timestamp="1591996374907" />
+    <state width="1874" height="247" key="GridCell.Tab.0.left/0.27.1920.988@0.27.1920.988" timestamp="1592227287850" />
     <state width="1874" height="292" key="GridCell.Tab.0.left/0.27.3280.988@0.27.3280.988" timestamp="1584316431082" />
-    <state width="1874" height="247" key="GridCell.Tab.0.right" timestamp="1591996374909">
+    <state width="1874" height="247" key="GridCell.Tab.0.right" timestamp="1592227287852">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="247" key="GridCell.Tab.0.right/0.27.1920.988@0.27.1920.988" timestamp="1591996374909" />
+    <state width="1874" height="247" key="GridCell.Tab.0.right/0.27.1920.988@0.27.1920.988" timestamp="1592227287852" />
     <state width="1874" height="292" key="GridCell.Tab.0.right/0.27.3280.988@0.27.3280.988" timestamp="1584316431084" />
-    <state width="1874" height="247" key="GridCell.Tab.1.bottom" timestamp="1591996374912">
+    <state width="1874" height="247" key="GridCell.Tab.1.bottom" timestamp="1592227287855">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="247" key="GridCell.Tab.1.bottom/0.27.1920.988@0.27.1920.988" timestamp="1591996374912" />
+    <state width="1874" height="247" key="GridCell.Tab.1.bottom/0.27.1920.988@0.27.1920.988" timestamp="1592227287855" />
     <state width="1874" height="292" key="GridCell.Tab.1.bottom/0.27.3280.988@0.27.3280.988" timestamp="1584316431089" />
-    <state width="1874" height="247" key="GridCell.Tab.1.center" timestamp="1591996374911">
+    <state width="1874" height="247" key="GridCell.Tab.1.center" timestamp="1592227287854">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="247" key="GridCell.Tab.1.center/0.27.1920.988@0.27.1920.988" timestamp="1591996374911" />
+    <state width="1874" height="247" key="GridCell.Tab.1.center/0.27.1920.988@0.27.1920.988" timestamp="1592227287854" />
     <state width="1874" height="292" key="GridCell.Tab.1.center/0.27.3280.988@0.27.3280.988" timestamp="1584316431087" />
-    <state width="1874" height="247" key="GridCell.Tab.1.left" timestamp="1591996374911">
+    <state width="1874" height="247" key="GridCell.Tab.1.left" timestamp="1592227287853">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="247" key="GridCell.Tab.1.left/0.27.1920.988@0.27.1920.988" timestamp="1591996374911" />
+    <state width="1874" height="247" key="GridCell.Tab.1.left/0.27.1920.988@0.27.1920.988" timestamp="1592227287853" />
     <state width="1874" height="292" key="GridCell.Tab.1.left/0.27.3280.988@0.27.3280.988" timestamp="1584316431086" />
-    <state width="1874" height="247" key="GridCell.Tab.1.right" timestamp="1591996374911">
+    <state width="1874" height="247" key="GridCell.Tab.1.right" timestamp="1592227287854">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="247" key="GridCell.Tab.1.right/0.27.1920.988@0.27.1920.988" timestamp="1591996374911" />
+    <state width="1874" height="247" key="GridCell.Tab.1.right/0.27.1920.988@0.27.1920.988" timestamp="1592227287854" />
     <state width="1874" height="292" key="GridCell.Tab.1.right/0.27.3280.988@0.27.3280.988" timestamp="1584316431088" />
     <state x="740" y="228" width="628" height="584" key="MultipleFileMergeDialog" timestamp="1585264308952">
       <screen x="0" y="27" width="1920" height="988" />
@@ -1059,10 +1065,10 @@
     <state x="526" y="135" width="1370" height="845" key="SettingsEditor/0.27.1920.988@0.27.1920.988" timestamp="1591872302016" />
     <state x="443" y="97" width="1024" height="845" key="SettingsEditor/0.27.3280.988@0.27.3280.988" timestamp="1584307986404" />
     <state x="317" y="102" width="900" height="901" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1584980743995" />
-    <state x="757" y="254" width="633" height="540" key="StructurePopup" timestamp="1590940533738">
+    <state x="757" y="254" width="633" height="540" key="StructurePopup" timestamp="1592248150293">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="757" y="254" width="633" height="540" key="StructurePopup/0.27.1920.988@0.27.1920.988" timestamp="1590940533738" />
+    <state x="757" y="254" width="633" height="540" key="StructurePopup/0.27.1920.988@0.27.1920.988" timestamp="1592248150293" />
     <state x="1009" y="254" width="633" height="540" key="StructurePopup/0.27.2560.988/2560.0.1920.1080@0.27.2560.988" timestamp="1583694649173" />
     <state x="1293" y="254" width="1082" height="540" key="StructurePopup/0.27.3280.988@0.27.3280.988" timestamp="1584302674739" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1591830029120">
@@ -1119,10 +1125,10 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="100" y="125" width="1720" height="790" key="dock-window-1/0.27.1920.988@0.27.1920.988" timestamp="1587853710321" />
-    <state x="968" y="254" width="568" height="539" key="extract.method.dialog" timestamp="1591830281503">
+    <state x="968" y="254" width="568" height="539" key="extract.method.dialog" timestamp="1592225418504">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="968" y="254" width="568" height="539" key="extract.method.dialog/0.27.1920.988@0.27.1920.988" timestamp="1591830281503" />
+    <state x="968" y="254" width="568" height="539" key="extract.method.dialog/0.27.1920.988@0.27.1920.988" timestamp="1592225418504" />
     <state x="623" y="250" width="664" height="539" key="extract.method.dialog/0.27.3280.988@0.27.3280.988" timestamp="1584310892634" />
     <state x="596" y="104" width="728" height="831" key="find.popup" timestamp="1588605263613">
       <screen x="0" y="27" width="1920" height="988" />

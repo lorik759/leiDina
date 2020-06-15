@@ -8,8 +8,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
-import javax.annotation.Resource;
 import main.java.leiDina.biz.service.LeituraService;
+import main.java.leiDina.tec.core.beans.annotations.Injected;
 import main.java.leiDina.tec.javafx.controller.BaseModelController;
 
 /**
@@ -17,7 +17,7 @@ import main.java.leiDina.tec.javafx.controller.BaseModelController;
  */
 public class LeituraController extends BaseModelController<LeituraModel> {
 
-    @Resource(name = "leituraService")
+    @Injected
     private LeituraService leituraService;
 
     @FXML

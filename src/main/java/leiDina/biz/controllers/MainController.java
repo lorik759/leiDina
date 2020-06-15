@@ -6,8 +6,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
-import javax.annotation.Resource;
 import main.java.leiDina.biz.scene.LeiDinamicaScenes;
+import main.java.leiDina.tec.core.beans.annotations.Injected;
 import main.java.leiDina.tec.javafx.VFXMLLoader;
 import main.java.leiDina.tec.javafx.control.SceneButton;
 import main.java.leiDina.tec.javafx.exception.VFXException;
@@ -19,7 +19,7 @@ import main.java.leiDina.tec.javafx.scene.Scenes;
  */
 public class MainController implements Initializable {
 
-    @Resource(name = "vfxmlLoader")
+    @Injected
     private VFXMLLoader vfxmlLoader;
 
     @FXML

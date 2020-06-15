@@ -95,7 +95,7 @@ public class DefaultBeanFactory extends DefaultBeanDefinitionHolder implements B
 
     private Object doCreateInstanceFor(String beanName) {
         BeanDefinition beanDefinition = this.getBeanDefinitionForName(beanName);
-        Object beanInstance = this.getNewBeanInstance(beanDefinition);
+        Object beanInstance = this.createNewBeanInstance(beanDefinition);
         this.populateBean(beanDefinition, beanInstance);
         return beanInstance;
     }
@@ -144,7 +144,7 @@ public class DefaultBeanFactory extends DefaultBeanDefinitionHolder implements B
         return new PropertyValueResolver(this, propertyValue).resolve();
     }
 
-    private Object getNewBeanInstance(BeanDefinition beanDefinition) throws BeanCreationException {
+    private Object createNewBeanInstance(BeanDefinition beanDefinition) throws BeanCreationException {
         try {
             return new ObjectInstantiationService(beanDefinition).newInstance();
         } catch (ReflectiveOperationException e) {
