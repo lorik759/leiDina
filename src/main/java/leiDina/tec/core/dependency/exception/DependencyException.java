@@ -6,7 +6,7 @@ import main.java.leiDina.tec.core.exception.BaseException;
 import main.java.leiDina.tec.core.messages.MessageHolder;
 
 /**
- * The base exception for all bean exception. This represents an error when dealing with a {@link DependencyContainer}.
+ * The base exception for all dependency exception. This represents an error when dealing with a {@link DependencyContainer}.
  *
  * @author vitor.alves
  */

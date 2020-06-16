@@ -20,7 +20,7 @@ public class MapValueType {
     protected String key;
 
     /**
-     * Obtém o valor da propriedade bean.
+     * Obtém o valor da propriedade object.
      * 
      * @return
      *     possible object is
@@ -32,7 +32,7 @@ public class MapValueType {
     }
 
     /**
-     * Define o valor da propriedade bean.
+     * Define o valor da propriedade object.
      * 
      * @param value
      *     allowed object is

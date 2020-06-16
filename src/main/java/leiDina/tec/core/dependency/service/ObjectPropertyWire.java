@@ -53,10 +53,10 @@ public class ObjectPropertyWire<T> {
         return fields;
     }
 
-    private void addFieldsToWireFor(Class<?> beanType, Map<Field, Object> fields) {
-        if (beanType != null) {
-            fields.putAll(this.filterForAnnotatedFields(beanType.getDeclaredFields()));
-            this.addFieldsToWireFor(beanType.getSuperclass(), fields);
+    private void addFieldsToWireFor(Class<?> objectType, Map<Field, Object> fields) {
+        if (objectType != null) {
+            fields.putAll(this.filterForAnnotatedFields(objectType.getDeclaredFields()));
+            this.addFieldsToWireFor(objectType.getSuperclass(), fields);
         }
     }
 

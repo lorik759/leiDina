@@ -7,14 +7,14 @@ import java.util.Objects;
  */
 public class ObjectRefPropertyValue {
 
-    private final String beanName;
+    private final String objectName;
 
-    public ObjectRefPropertyValue(String beanName) {
-        this.beanName = beanName;
+    public ObjectRefPropertyValue(String objectName) {
+        this.objectName = objectName;
     }
 
     public String getObjectName() {
-        return beanName;
+        return objectName;
     }
 
     @Override
