@@ -1,20 +1,21 @@
 package main.java.leiDina.tec.core.env;
 
 
-import main.java.leiDina.tec.core.beans.model.BeanDefinitionHolder;
+import main.java.leiDina.tec.core.dependency.model.ObjectDefinitionHolder;
+import main.java.leiDina.tec.core.dependency.model.ObjectDefinition;
 
 /**
- * The root interface of an application property. Its through this interface that the {@link main.java.leiDina.tec.core.beans.model.BeanDefinition}
- * are registered to the {@link BeanDefinitionHolder}.
+ * The root interface of an application property. Its through this interface that the {@link ObjectDefinition}
+ * are registered to the {@link ObjectDefinitionHolder}.
  *
  * @author vitor.alves
  */
 public interface ApplicationProperty {
 
     /**
-     * Register the {@link main.java.leiDina.tec.core.beans.model.BeanDefinition} to the specified {@link BeanDefinitionHolder}.
+     * Register the {@link ObjectDefinition} to the specified {@link ObjectDefinitionHolder}.
      *
-     * @param beanDefinitionHolder the {@link BeanDefinitionHolder} in which the beans of this {@link ApplicationProperty} contains.
+     * @param objectDefinitionHolder the {@link ObjectDefinitionHolder} in which the objects of this {@link ApplicationProperty} contains.
      */
-    void registerBeansTo(final BeanDefinitionHolder beanDefinitionHolder);
+    void registerObjectsTo(final ObjectDefinitionHolder objectDefinitionHolder);
 }

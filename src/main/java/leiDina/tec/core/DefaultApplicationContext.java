@@ -1,28 +1,29 @@
 package main.java.leiDina.tec.core;
 
 import java.util.Map;
-import main.java.leiDina.tec.core.beans.exception.BeanException;
-import main.java.leiDina.tec.core.beans.factory.BootableBeanFactory;
-import main.java.leiDina.tec.core.beans.factory.DefaultBeanFactory;
+import main.java.leiDina.tec.core.dependency.exception.DependencyException;
+import main.java.leiDina.tec.core.dependency.factory.BootableDependencyContainer;
+import main.java.leiDina.tec.core.dependency.factory.DefaultDependencyContainer;
+import main.java.leiDina.tec.core.dependency.model.ObjectDefinition;
 import main.java.leiDina.tec.core.env.ApplicationProperty;
 import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironment;
 
 
 /**
  * This is the default implementation of the interface {@link ApplicationContext}. This context initializes all default properties of the
- * VApplication. This uses the {@link DefaultBeanFactory} for the instantiation and management af all bean instance. This also initializes and
- * configurers the bean factory.
+ * VApplication. This uses the {@link DefaultDependencyContainer} for the instantiation and management af all object instance. This also initializes and
+ * configurers the object factory.
  *
  * @author vitor.alves
  */
 public class DefaultApplicationContext implements ApplicationContext {
 
-    private final BootableBeanFactory beanFactory;
+    private final BootableDependencyContainer dependencyContainer;
 
     private ConfigurableApplicationEnvironment configurableApplicationEnvironment;
 
     public DefaultApplicationContext() {
-        this.beanFactory = new DefaultBeanFactory();
+        this.dependencyContainer = new DefaultDependencyContainer();
     }
 
     /**
@@ -34,22 +35,22 @@ public class DefaultApplicationContext implements ApplicationContext {
     }
 
     /**
-     * This method loads the {@link main.java.leiDina.tec.core.beans.model.BeanDefinition} to the {@link DefaultBeanFactory} and starts the bean
+     * This method loads the {@link ObjectDefinition} to the {@link DefaultDependencyContainer} and starts the object
      * factory.
      */
     @Override
     public void initialize() {
-        this.loadBeanDefinitions();
-        this.startBeanFactory();
+        this.loadObjectDefinitions();
+        this.startDependencyContainer();
     }
 
-    private void startBeanFactory() {
-        this.beanFactory.instantiateSingletons();
+    private void startDependencyContainer() {
+        this.dependencyContainer.instantiateSingletons();
     }
 
-    private void loadBeanDefinitions() {
+    private void loadObjectDefinitions() {
         for (ApplicationProperty loadApplicationProperty : configurableApplicationEnvironment.loadApplicationProperties()) {
-            loadApplicationProperty.registerBeansTo(this.beanFactory);
+            loadApplicationProperty.registerObjectsTo(this.dependencyContainer);
         }
     }
 
@@ -57,39 +58,39 @@ public class DefaultApplicationContext implements ApplicationContext {
      * {@inheritDoc}
      */
     @Override
-    public <T> T getBean(String beanName) throws BeanException {
-        return this.beanFactory.getBean(beanName);
+    public <T> T getObject(String objectName) throws DependencyException {
+        return this.dependencyContainer.getObject(objectName);
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public <T> T getBean(Class<?> type) throws BeanException {
-        return this.beanFactory.getBean(type);
+    public <T> T getObject(Class<?> type) throws DependencyException {
+        return this.dependencyContainer.getObject(type);
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public boolean beanExists(String name) {
-        return this.beanFactory.beanExists(name);
+    public boolean objectExists(String name) {
+        return this.dependencyContainer.objectExists(name);
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public <T> Map<String, T> getBeansOfTypes(Class<T> type) throws BeanException {
-        return this.beanFactory.getBeansOfTypes(type);
+    public <T> Map<String, T> getObjectsOfTypes(Class<T> type) throws DependencyException {
+        return this.dependencyContainer.getObjectsOfTypes(type);
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public Class<?> getBeanType(String name) throws BeanException {
-        return this.beanFactory.getBeanType(name);
+    public Class<?> getObjectType(String name) throws DependencyException {
+        return this.dependencyContainer.getObjectType(name);
     }
 }

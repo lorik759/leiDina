@@ -2,7 +2,7 @@ package main.java.leiDina.tec.persister.factory;
 
 import java.util.HashMap;
 import java.util.Map;
-import main.java.leiDina.tec.core.beans.service.BeanWire;
+import main.java.leiDina.tec.core.dependency.service.DependencyWire;
 import main.java.leiDina.tec.core.utils.ReflectionUtils;
 import main.java.leiDina.tec.persister.dao.DAO;
 import main.java.leiDina.tec.persister.exception.PersistenceException;
@@ -15,7 +15,7 @@ public class DAOFactoryImp implements DAOFactory {
 
     private final Map<Class<? extends DAO>, DAO> cache = new HashMap<>();
 
-    private BeanWire beanWire;
+    private DependencyWire dependencyWire;
 
     @Override
     public <T extends DAO> T getDAOByClass(Class<T> daoClass) {
@@ -33,7 +33,7 @@ public class DAOFactoryImp implements DAOFactory {
 
     private <T extends DAO> DAO createDAO(Class<T> daoClass) {
         DAO dao = createInstance(daoClass);
-        beanWire.wire(dao);
+        dependencyWire.wire(dao);
         return dao;
     }
 
@@ -45,7 +45,7 @@ public class DAOFactoryImp implements DAOFactory {
         }
     }
 
-    public void setBeanWire(BeanWire beanWire) {
-        this.beanWire = beanWire;
+    public void setDependencyWire(DependencyWire dependencyWire) {
+        this.dependencyWire = dependencyWire;
     }
 }

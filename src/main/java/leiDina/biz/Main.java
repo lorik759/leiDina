@@ -14,7 +14,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         ApplicationContext applicationContext = VApplication.start();
-        VFXMLLoader vfxmlLoader = applicationContext.getBean(VFXMLLoader.class);
+        VFXMLLoader vfxmlLoader = applicationContext.getObject(VFXMLLoader.class);
         Parent root = vfxmlLoader.load(LeiDinamicaScenes.MAIN.getScenes());
         primaryStage.setTitle("Leitura Dinamica");
         primaryStage.setScene(new Scene(root));

@@ -1,13 +1,13 @@
-<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.vaplication.com/beans"
-    xmlns:vad="http://www.vaplication.com/beans" elementFormDefault="qualified">
-    <element name="beans" type="vad:definitionType"/>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.vaplication.com/objects"
+    xmlns:vad="http://www.vaplication.com/objects" elementFormDefault="qualified">
+    <element name="objects" type="vad:definitionType"/>
     <complexType name="definitionType">
         <sequence>
-            <element name="bean" type="vad:beanType" minOccurs="0" maxOccurs="unbounded" />
+            <element name="object" type="vad:objectType" minOccurs="0" maxOccurs="unbounded" />
         </sequence>
     </complexType>
 
-    <complexType name="beanType">
+    <complexType name="objectType">
         <sequence>
             <element name="property" type="vad:propertyType" minOccurs="0" maxOccurs="unbounded"/>
         </sequence>
@@ -18,13 +18,13 @@
 
     <complexType name="propertyType">
         <choice>
-            <element name="bean" type="vad:beanRefType" />
+            <element name="object" type="vad:objectRefType" />
             <element name="map" type="vad:mapType" />
         </choice>
         <attribute name="name" type="string" use="required" />
     </complexType>
 
-    <complexType name="beanRefType">
+    <complexType name="objectRefType">
         <attribute name="ref" type="string" use="required" />
     </complexType>
 
@@ -36,7 +36,7 @@
     </complexType>
     <complexType name="mapValueType">
         <choice>
-            <element name="bean" type="vad:beanRefType" />
+            <element name="object" type="vad:objectRefType" />
         </choice>
         <attribute name="key" type="string" use="required"/>
     </complexType>

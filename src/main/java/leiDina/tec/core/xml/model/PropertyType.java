@@ -9,63 +9,42 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
-/**
- * <p>Classe Java de propertyType complex type.
- * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
- * 
- * <pre>
- * &lt;complexType name="propertyType">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;choice>
- *         &lt;element name="bean" type="{http://www.vaplication.com/beans}beanRefType"/>
- *         &lt;element name="map" type="{http://www.vaplication.com/beans}mapType"/>
- *       &lt;/choice>
- *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "propertyType", namespace = "http://www.vaplication.com/beans", propOrder = {
-    "bean",
+@XmlType(name = "propertyType", namespace = "http://www.vaplication.com/objects", propOrder = {
+    "object",
     "map"
 })
 public class PropertyType {
 
-    @XmlElement(namespace = "http://www.vaplication.com/beans")
-    protected BeanRefType bean;
-    @XmlElement(namespace = "http://www.vaplication.com/beans")
+    @XmlElement(namespace = "http://www.vaplication.com/objects")
+    protected ObjectRefType object;
+    @XmlElement(namespace = "http://www.vaplication.com/objects")
     protected MapType map;
     @XmlAttribute(name = "name", required = true)
     protected String name;
 
     /**
-     * Obtém o valor da propriedade bean.
+     * Obtém o valor da propriedade object.
      * 
      * @return
      *     possible object is
-     *     {@link BeanRefType }
+     *     {@link ObjectRefType }
      *     
      */
-    public BeanRefType getBean() {
-        return bean;
+    public ObjectRefType getObject() {
+        return object;
     }
 
     /**
-     * Define o valor da propriedade bean.
+     * Define o valor da propriedade object.
      * 
      * @param value
      *     allowed object is
-     *     {@link BeanRefType }
+     *     {@link ObjectRefType }
      *     
      */
-    public void setBean(BeanRefType value) {
-        this.bean = value;
+    public void setObject(ObjectRefType value) {
+        this.object = value;
     }
 
     /**
@@ -118,8 +97,8 @@ public class PropertyType {
 
 
     public Object getPropertyValue() {
-        if (this.bean != null) {
-            return this.bean;
+        if (this.object != null) {
+            return this.object;
         }else {
             return this.map;
         }
@@ -134,13 +113,13 @@ public class PropertyType {
             return false;
         }
         PropertyType that = (PropertyType) o;
-        return Objects.equals(getBean(), that.getBean()) &&
+        return Objects.equals(getObject(), that.getObject()) &&
             Objects.equals(getMap(), that.getMap()) &&
             Objects.equals(getName(), that.getName());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getBean(), getMap(), getName());
+        return Objects.hash(getObject(), getMap(), getName());
     }
 }

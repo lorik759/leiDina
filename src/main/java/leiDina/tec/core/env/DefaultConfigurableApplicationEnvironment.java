@@ -8,19 +8,19 @@ import main.java.leiDina.tec.core.xml.service.JAXBXmlParser;
 
 /**
  * This default implementation of {@link ConfigurableApplicationEnvironment} that represents an "application-environment.xml" that is used to import
- * other xml files, where bean are mapped. An example of an "application-environment.xml" is:
+ * other xml files, where object are mapped. An example of an "application-environment.xml" is:
  *
  * <code>
  * <definition xmlns="http://www.vaplication.com/definition">
- * <import>fx-beans.xml</import>
- * <import>persister-beans.xml</import>
+ * <import>fx-objects.xml</import>
+ * <import>persister-objects.xml</import>
  * ...
  * </definition>
  * </code>
  *
- * This permits that each individual module can have their own bean definition xml. The default environment also looks for any xml file named
+ * This permits that each individual module can have their own object definition xml. The default environment also looks for any xml file named
  * "application-environment.xml", this means that each individual module can also have their own application-environment.xml file. For how to map
- * beans in a xml file look at {@link main.java.leiDina.tec.core.env.DefaultApplicationProperty} for an example.
+ * objects in a xml file look at {@link main.java.leiDina.tec.core.env.DefaultApplicationProperty} for an example.
  *
  * @author vitor.alves
  */

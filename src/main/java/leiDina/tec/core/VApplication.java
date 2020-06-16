@@ -6,7 +6,7 @@ import main.java.leiDina.tec.core.env.DefaultConfigurableApplicationEnvironment;
 
 /**
  * A class that can bootstrap and launch a VApplication. A VApplication is a simple dependency injection framework that creates a dependency container
- * as an {@link ApplicationContext} for eager, singleton beans, based on a {@link ConfigurableApplicationEnvironment}. The application can be
+ * as an {@link ApplicationContext} for eager, singleton objects, based on a {@link ConfigurableApplicationEnvironment}. The application can be
  * bootstrap through the main method on application startup:
  *
  * <code>

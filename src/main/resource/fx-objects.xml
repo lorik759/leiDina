@@ -1,0 +1,33 @@
+<objects xmlns="http://www.vaplication.com/objects">
+
+    <object id="controllerFactory" class="main.java.leiDina.tec.javafx.factory.InjectableControllerFactory">
+        <property name="dependencyWire">
+            <object ref="dependencyWire"/>
+        </property>
+    </object>
+
+    <object id="textInputNodeAssociation" class="main.java.leiDina.tec.javafx.service.TextInputNodeAssociation"/>
+    <object id="numberInputNodeAssociation" class="main.java.leiDina.tec.javafx.service.NumberInputNodeAssociation"/>
+
+    <object id="modelSceneWire" class="main.java.leiDina.tec.javafx.service.ModelSceneWire">
+        <property name="associationMap">
+            <map key-type="class">
+                <value key="main.java.leiDina.tec.javafx.annotation.TextInput">
+                    <object ref="textInputNodeAssociation"/>
+                </value>
+                <value key="main.java.leiDina.tec.javafx.annotation.NumberInput">
+                    <object ref="numberInputNodeAssociation"/>
+                </value>
+            </map>
+        </property>
+    </object>
+
+    <object id="vfxmlLoader" class="main.java.leiDina.tec.javafx.VFXMLLoader">
+        <property name="modelWire">
+            <object ref="modelSceneWire"/>
+        </property>
+        <property name="controllerFactory">
+            <object ref="controllerFactory"/>
+        </property>
+    </object>
+</objects>

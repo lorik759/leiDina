@@ -9,22 +9,7 @@ import main.java.leiDina.tec.core.service.StringValueResolver;
 import main.java.leiDina.tec.core.service.ValueResolver;
 
 
-/**
- * <p>Classe Java de valueTypes.
- * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
- * <p>
- * <pre>
- * &lt;simpleType name="valueTypes">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="class"/>
- *     &lt;enumeration value="string"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
- */
-@XmlType(name = "valueTypes", namespace = "http://www.vaplication.com/beans")
+@XmlType(name = "valueTypes", namespace = "http://www.vaplication.com/objects")
 @XmlEnum
 public enum ValueTypes {
 

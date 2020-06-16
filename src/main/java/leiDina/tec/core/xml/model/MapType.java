@@ -10,34 +10,13 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
-/**
- * <p>Classe Java de mapType complex type.
- * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
- * 
- * <pre>
- * &lt;complexType name="mapType">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="value" type="{http://www.vaplication.com/beans}mapValueType" maxOccurs="unbounded"/>
- *       &lt;/sequence>
- *       &lt;attribute name="key-type" type="{http://www.vaplication.com/beans}valueTypes" default="class" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "mapType", namespace = "http://www.vaplication.com/beans", propOrder = {
+@XmlType(name = "mapType", namespace = "http://www.vaplication.com/objects", propOrder = {
     "value"
 })
 public class MapType {
 
-    @XmlElement(namespace = "http://www.vaplication.com/beans", required = true)
+    @XmlElement(namespace = "http://www.vaplication.com/objects", required = true)
     protected List<MapValueType> value;
     @XmlAttribute(name = "key-type")
     protected ValueTypes keyType;

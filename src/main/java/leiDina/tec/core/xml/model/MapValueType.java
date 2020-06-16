@@ -8,35 +8,14 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
-/**
- * <p>Classe Java de mapValueType complex type.
- * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
- * 
- * <pre>
- * &lt;complexType name="mapValueType">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;choice>
- *         &lt;element name="bean" type="{http://www.vaplication.com/beans}beanRefType"/>
- *       &lt;/choice>
- *       &lt;attribute name="key" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "mapValueType", namespace = "http://www.vaplication.com/beans", propOrder = {
-    "bean"
+@XmlType(name = "mapValueType", namespace = "http://www.vaplication.com/objects", propOrder = {
+    "object"
 })
 public class MapValueType {
 
-    @XmlElement(namespace = "http://www.vaplication.com/beans")
-    protected BeanRefType bean;
+    @XmlElement(namespace = "http://www.vaplication.com/objects")
+    protected ObjectRefType object;
     @XmlAttribute(name = "key", required = true)
     protected String key;
 
@@ -45,11 +24,11 @@ public class MapValueType {
      * 
      * @return
      *     possible object is
-     *     {@link BeanRefType }
+     *     {@link ObjectRefType }
      *     
      */
-    public BeanRefType getBean() {
-        return bean;
+    public ObjectRefType getObject() {
+        return object;
     }
 
     /**
@@ -57,11 +36,11 @@ public class MapValueType {
      * 
      * @param value
      *     allowed object is
-     *     {@link BeanRefType }
+     *     {@link ObjectRefType }
      *     
      */
-    public void setBean(BeanRefType value) {
-        this.bean = value;
+    public void setObject(ObjectRefType value) {
+        this.object = value;
     }
 
     /**
@@ -97,12 +76,12 @@ public class MapValueType {
             return false;
         }
         MapValueType valueType = (MapValueType) o;
-        return Objects.equals(getBean(), valueType.getBean()) &&
+        return Objects.equals(getObject(), valueType.getObject()) &&
             Objects.equals(getKey(), valueType.getKey());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getBean(), getKey());
+        return Objects.hash(getObject(), getKey());
     }
 }

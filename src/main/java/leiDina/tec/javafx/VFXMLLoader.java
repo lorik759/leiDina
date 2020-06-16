@@ -29,7 +29,7 @@ public class VFXMLLoader {
     public <T> T load(Scenes scenes) throws Exception {
         FXMLLoader fxmlLoader = this.creatFXMLLoader(scenes);
         T load = fxmlLoader.load();
-        this.wireControllerToModelIfNeed(fxmlLoader);
+        this.wireSceneToModelIfNeed(fxmlLoader);
         return load;
     }
 
@@ -50,7 +50,7 @@ public class VFXMLLoader {
      * Checks if controller is of type {@link BaseModelController}, and if true, than wire the model to scene;
      * @param fxmlLoader
      */
-    private void wireControllerToModelIfNeed(FXMLLoader fxmlLoader) throws Exception {
+    private void wireSceneToModelIfNeed(FXMLLoader fxmlLoader) throws Exception {
         Object controller = fxmlLoader.getController();
         if (controller instanceof BaseModelController) {
             this.modelWire.wire((BaseModelController<?>) controller);

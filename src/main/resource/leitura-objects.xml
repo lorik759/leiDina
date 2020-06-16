@@ -1,0 +1,14 @@
+<objects xmlns="http://www.vaplication.com/objects">
+
+    <object id="configuracaoService" class="main.java.leiDina.biz.service.ConfiguracaoService">
+        <property name="daoFactory">
+            <object ref="daoFactory"/>
+        </property>
+    </object>
+
+    <object id="leituraService" class="main.java.leiDina.biz.service.LeituraService">
+        <property name="configuracaoService">
+            <object ref="configuracaoService"/>
+        </property>
+    </object>
+</objects>

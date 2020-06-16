@@ -9,7 +9,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
 import main.java.leiDina.biz.service.LeituraService;
-import main.java.leiDina.tec.core.beans.annotations.Injected;
+import main.java.leiDina.tec.core.dependency.annotations.Injected;
 import main.java.leiDina.tec.javafx.controller.BaseModelController;
 
 /**

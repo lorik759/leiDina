@@ -1,18 +1,18 @@
 package main.java.leiDina.tec.javafx.factory;
 
-import main.java.leiDina.tec.core.beans.service.BeanWire;
+import main.java.leiDina.tec.core.dependency.service.DependencyWire;
 import main.java.leiDina.tec.core.utils.ReflectionUtils;
 import main.java.leiDina.tec.javafx.exception.BuilderException;
 import main.java.leiDina.tec.javafx.messages.FXSystemMessages;
 
 /**
- * This implementation of the {@link ControllerFactory} is able to instantiate and wire controllers with is dependencies with a {@link BeanWire}
+ * This implementation of the {@link ControllerFactory} is able to instantiate and wire controllers with is dependencies with a {@link DependencyWire}
  *
  * @author vitor.alves
  */
 public class InjectableControllerFactory implements ControllerFactory {
 
-    private BeanWire beanWire;
+    private DependencyWire dependencyWire;
 
     /**
      * {@inheritDoc}
@@ -30,7 +30,7 @@ public class InjectableControllerFactory implements ControllerFactory {
      * @param instance the controller instance to be wired.
      */
     private void wire(Object instance) {
-        this.beanWire.wire(instance);
+        this.dependencyWire.wire(instance);
     }
 
     /**
@@ -47,7 +47,7 @@ public class InjectableControllerFactory implements ControllerFactory {
         }
     }
 
-    public void setBeanWire(BeanWire beanWire) {
-        this.beanWire = beanWire;
+    public void setDependencyWire(DependencyWire dependencyWire) {
+        this.dependencyWire = dependencyWire;
     }
 }

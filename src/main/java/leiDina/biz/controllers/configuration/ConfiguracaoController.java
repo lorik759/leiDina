@@ -4,7 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import main.java.leiDina.biz.domain.Configuracao;
 import main.java.leiDina.biz.service.ConfiguracaoService;
-import main.java.leiDina.tec.core.beans.annotations.Injected;
+import main.java.leiDina.tec.core.dependency.annotations.Injected;
 import main.java.leiDina.tec.javafx.controller.EntityPersisterController;
 import main.java.leiDina.tec.persister.exception.EntityNotFoundException;
 

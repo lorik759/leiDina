@@ -1,8 +1,8 @@
 package main.java.leiDina.tec.core;
 
 
-import main.java.leiDina.tec.core.beans.exception.BeanException;
-import main.java.leiDina.tec.core.beans.factory.BeanFactory;
+import main.java.leiDina.tec.core.dependency.exception.DependencyException;
+import main.java.leiDina.tec.core.dependency.factory.DependencyContainer;
 import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironment;
 
 /**
@@ -11,7 +11,7 @@ import main.java.leiDina.tec.core.env.ConfigurableApplicationEnvironment;
  *
  * @author vitor.alves
  */
-public interface ApplicationContext extends BeanFactory {
+public interface ApplicationContext extends DependencyContainer {
 
     /**
      * Sets the {@link ConfigurableApplicationEnvironment} for this context.
@@ -23,8 +23,8 @@ public interface ApplicationContext extends BeanFactory {
     /**
      * Initializes the context.
      *
-     * @throws BeanException a {@link BeanException}.
+     * @throws DependencyException a {@link DependencyException}.
      */
-    void initialize() throws BeanException;
+    void initialize() throws DependencyException;
 
 }

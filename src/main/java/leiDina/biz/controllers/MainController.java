@@ -7,7 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import main.java.leiDina.biz.scene.LeiDinamicaScenes;
-import main.java.leiDina.tec.core.beans.annotations.Injected;
+import main.java.leiDina.tec.core.dependency.annotations.Injected;
 import main.java.leiDina.tec.javafx.VFXMLLoader;
 import main.java.leiDina.tec.javafx.control.SceneButton;
 import main.java.leiDina.tec.javafx.exception.VFXException;

@@ -1,0 +1,9 @@
+<objects xmlns="http://www.vaplication.com/objects">
+    <object id="daoFactory" class="main.java.leiDina.tec.persister.factory.DAOFactoryImp">
+        <property name="dependencyWire">
+            <object ref="dependencyWire"/>
+        </property>
+    </object>
+
+    <object id="persister" class="main.java.leiDina.tec.persister.TextBasePersister"/>
+</objects>
